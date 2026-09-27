@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBSE Class 7 SA-1 Master Revision & Examination Hub (Sept 2026)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: rgba(22, 30, 49, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(30, 41, 67, 0.95);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.25);
+      --accent: #818cf8;
+      --success: #34d399;
+      --amber: #fbbf24;
+      --purple: #c084fc;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(192, 132, 252, 0.05) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 30px 20px 80px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 45px;
+      padding: 20px 10px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin: 0 auto 25px;
+    }
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .stat-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      padding: 10px 22px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .stat-pill strong { color: var(--primary); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 28px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(56, 189, 248, 0.35);
+      background: var(--card-hover);
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 25px -5px var(--primary-glow);
+    }
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .subject-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .tag-audio {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .card h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .card p.desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      flex-grow: 1;
+      line-height: 1.55;
+    }
+    .audio-preview {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .audio-preview-header {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+    audio {
+      width: 100%;
+      height: 38px;
+      outline: none;
+      border-radius: 6px;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #ffffff;
+      padding: 14px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    }
+    .btn-main:hover {
+      background: linear-gradient(135deg, #0369a1, #1d4ed8);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
+    }
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .btn-sub {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .btn-sub:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Verified CBSE Class 7 SA-1 Examination Portal</div>
+      <h1>SA-1 Master Revision & Exam Suite</h1>
+      <p class="subtitle">Complete interactive study guides, verified solutions, printable formal question papers, Word documents, and high-clarity audio summaries for all 7 subjects.</p>
+      
+      <div class="stats-row">
+        <div class="stat-pill"><strong>7 Subjects</strong> Complete</div>
+        <div class="stat-pill"><strong>Audio Guides</strong> Embedded</div>
+        <div class="stat-pill"><strong>Printable PDFs</strong> Master Solutions & QPs</div>
+        <div class="stat-pill"><strong>Zero-Lag</strong> Instant Mobile Access</div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Science -->
+      <div class="card">
+        <div class="card-top">
+          <div class="subject-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">🔬</div>
+          <span class="tag-audio" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">English Audio</span>
+        </div>
+        <h2>Science (సాధారణ సైన్స్)</h2>
+        <p class="desc">Full coverage of Nutrition in Plants, Nutrition in Animals, Heat, Acids Bases & Salts, Physical & Chemical Changes, and Respiration in Organisms.</p>
+        <div class="audio-preview">
+          <div class="audio-preview-header">
+            <span>Audio Quick-Rev Guide</span>
+            <span>English Neural Voice</span>
+          </div>
+          <audio controls preload="none">
+            <source src="SA1_Science_English_Audio_Guide.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="btn-group">
+          <a href="science_sa1.html" class="btn-main">Open Science Study Portal</a>
+          <div class="btn-row">
+            <a href="SA1_Science_Master_Solutions.pdf" target="_blank" class="btn-sub">Solutions PDF</a>
+            <a href="SA1_Science_Question_Paper.pdf" target="_blank" class="btn-sub">Question Paper</a>
+          </div>
+          <div class="btn-row">
+            <a href="SA1_Science_Master_Solutions.docx" download class="btn-sub">Solutions DOCX</a>
+            <a href="SA1_Science_English_Audio_Guide.mp3" download class="btn-sub">Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Science -->
+      <div class="card">
+        <div class="card-top">
+          <div class="subject-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">🌍</div>
+          <span class="tag-audio" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">English Audio</span>
+        </div>
+        <h2>Social Science (సాంఘిక శాస్త్రం)</h2>
+        <p class="desc">History (New Kings, Delhi Sultans, Mughals), Geography (Environment, Inside Our Earth, Our Changing Earth, Air), Civics (Equality, Health Role, State Govt).</p>
+        <div class="audio-preview">
+          <div class="audio-preview-header">
+            <span>Audio Quick-Rev Guide</span>
+            <span>English Neural Voice</span>
+          </div>
+          <audio controls preload="none">
+            <source src="SA1_Social_English_Audio_Guide.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="btn-group">
+          <a href="social_sa1.html" class="btn-main">Open Social Study Portal</a>
+          <div class="btn-row">
+            <a href="SA1_Social_Master_Solutions.pdf" target="_blank" class="btn-sub">Solutions PDF</a>
+            <a href="SA1_Social_Question_Paper.pdf" target="_blank" class="btn-sub">Question Paper</a>
+          </div>
+          <div class="btn-row">
+            <a href="SA1_Social_Master_Solutions.docx" download class="btn-sub">Solutions DOCX</a>
+            <a href="SA1_Social_English_Audio_Guide.mp3" download class="btn-sub">Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hindi -->
+      <div class="card">
+        <div class="card-top">
+          <div class="subject-icon" style="background: rgba(244, 63, 94, 0.15); color: #fb7185;">📖</div>
+          <span class="tag-audio" style="background: rgba(192, 132, 252, 0.15); color: #c084fc;">Dual-Voice Bilingual</span>
+        </div>
+        <h2>Hindi (हिंदी - वसंत भाग-2)</h2>
+        <p class="desc">हम पंछी उन्मुक्त गगन के, हिमालय की बेटियां, कठपुतली, मिठाईवाला, पापा खो गए. Native Hindi recitation first with English explanation.</p>
+        <div class="audio-preview">
+          <div class="audio-preview-header">
+            <span>Bilingual Audio Guide</span>
+            <span>Hindi + English</span>
+          </div>
+          <audio controls preload="none">
+            <source src="SA1_Hindi_Bilingual_Audio_Guide.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="btn-group">
+          <a href="hindi_sa1.html" class="btn-main">Open Hindi Study Portal</a>
+          <div class="btn-row">
+            <a href="SA1_Hindi_Master_Solutions.pdf" target="_blank" class="btn-sub">Solutions PDF</a>
+            <a href="SA1_Hindi_Question_Paper.pdf" target="_blank" class="btn-sub">Question Paper</a>
+          </div>
+          <div class="btn-row">
+            <a href="SA1_Hindi_Master_Solutions.docx" download class="btn-sub">Solutions DOCX</a>
+            <a href="SA1_Hindi_Bilingual_Audio_Guide.mp3" download class="btn-sub">Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Telugu -->
+      <div class="card">
+        <div class="card-top">
+          <div class="subject-icon" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">✍️</div>
+          <span class="tag-audio" style="background: rgba(192, 132, 252, 0.15); color: #c084fc;">Dual-Voice Bilingual</span>
+        </div>
+        <h2>Telugu (తెలుగు - ప్రథమ భాష)</h2>
+        <p class="desc">చదువు, నాయనమ్మ, శతక సుధ, అమ్మ జ్ఞాపకాలు. Native Telugu verse and grammar recited first, followed by clear English explanation.</p>
+        <div class="audio-preview">
+          <div class="audio-preview-header">
+            <span>Bilingual Audio Guide</span>
+            <span>Telugu + English</span>
+          </div>
+          <audio controls preload="none">
+            <source src="SA1_Telugu_Bilingual_Audio_Guide.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="btn-group">
+          <a href="telugu_sa1.html" class="btn-main">Open Telugu Study Portal</a>
+          <div class="btn-row">
+            <a href="SA1_Telugu_Master_Solutions.pdf" target="_blank" class="btn-sub">Master Solutions PDF</a>
+            <a href="SA1_Telugu_Master_Solutions.docx" download class="btn-sub">Solutions DOCX</a>
+          </div>
+          <div class="btn-row">
+            <a href="SA1_Telugu_Master_Solutions_Updated.pdf" target="_blank" class="btn-sub">Comprehensive PDF</a>
+            <a href="SA1_Telugu_Bilingual_Audio_Guide.mp3" download class="btn-sub">Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- English -->
+      <div class="card">
+        <div class="card-top">
+          <div class="subject-icon" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa;">📚</div>
+          <span class="tag-audio" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">English Audio</span>
+        </div>
+        <h2>English (Honeycomb & Alien Hand)</h2>
+        <p class="desc">Three Questions, The Squirrel, A Gift of Chappals, The Rebel, The Tiny Teacher, Bringing Up Kari, Formal Letter Writing & Reading Comprehension.</p>
+        <div class="audio-preview">
+          <div class="audio-preview-header">
+            <span>Audio Quick-Rev Guide</span>
+            <span>English Neural Voice</span>
+          </div>
+          <audio controls preload="none">
+            <source src="SA1_English_Audio_Guide.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="btn-group">
+          <a href="english_sa1.html" class="btn-main">Open English Study Portal</a>
+          <div class="btn-row">
+            <a href="SA1_English_Master_Solutions.pdf" target="_blank" class="btn-sub">Solutions PDF</a>
+            <a href="SA1_English_Question_Paper.pdf" target="_blank" class="btn-sub">Question Paper</a>
+          </div>
+          <div class="btn-row">
+            <a href="SA1_English_Master_Solutions.docx" download class="btn-sub">Solutions DOCX</a>
+            <a href="SA1_English_Audio_Guide.mp3" download class="btn-sub">Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Computers -->
+      <div class="card">
+        <div class="card-top">
+          <div class="subject-icon" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8;">💻</div>
+          <span class="tag-audio" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">English Audio</span>
+        </div>
+        <h2>Computers (కంప్యూటర్ సైన్స్)</h2>
+        <p class="desc">Number Systems (Binary, Octal, Hexadecimal conversions), Formulas and Functions in Excel, Advanced Features of Excel, Computer Viruses and Cyber Security.</p>
+        <div class="audio-preview">
+          <div class="audio-preview-header">
+            <span>Audio Quick-Rev Guide</span>
+            <span>English Neural Voice</span>
+          </div>
+          <audio controls preload="none">
+            <source src="SA1_Computers_English_Audio_Guide.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="btn-group">
+          <a href="computers_sa1.html" class="btn-main">Open Computers Portal</a>
+          <div class="btn-row">
+            <a href="SA1_Computers_Master_Solutions.pdf" target="_blank" class="btn-sub">Solutions PDF</a>
+            <a href="SA1_Computers_Question_Paper.pdf" target="_blank" class="btn-sub">Question Paper</a>
+          </div>
+          <div class="btn-row">
+            <a href="SA1_Computers_Master_Solutions.docx" download class="btn-sub">Solutions DOCX</a>
+            <a href="SA1_Computers_English_Audio_Guide.mp3" download class="btn-sub">Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GK -->
+      <div class="card">
+        <div class="card-top">
+          <div class="subject-icon" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">🧠</div>
+          <span class="tag-audio" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">English Audio</span>
+        </div>
+        <h2>General Knowledge (సాధారణ జ్ఞానం)</h2>
+        <p class="desc">Flora and Fauna, Science and Technology, World Geography, Sports and Games, Literature and Art, India Our Pride, Current Affairs.</p>
+        <div class="audio-preview">
+          <div class="audio-preview-header">
+            <span>Audio Quick-Rev Guide</span>
+            <span>English Neural Voice</span>
+          </div>
+          <audio controls preload="none">
+            <source src="SA1_GK_English_Audio_Guide.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="btn-group">
+          <a href="gk_sa1.html" class="btn-main">Open GK Study Portal</a>
+          <div class="btn-row">
+            <a href="SA1_GK_Master_Solutions.pdf" target="_blank" class="btn-sub">Solutions PDF</a>
+            <a href="SA1_GK_Question_Paper.pdf" target="_blank" class="btn-sub">Question Paper</a>
+          </div>
+          <div class="btn-row">
+            <a href="SA1_GK_Master_Solutions.docx" download class="btn-sub">Solutions DOCX</a>
+            <a href="SA1_GK_English_Audio_Guide.mp3" download class="btn-sub">Download MP3</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Prepared for CBSE Class 7 SA-1 Examinations &bull; September 2026 Academic Session &bull; All Educational Assets Freely Hosted</p>
+    </footer>
+  </div>
+</body>
+</html>

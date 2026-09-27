@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 7 Science SA-1 Master Portal | 2026-27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nirmala+UI&family=Gautami&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #1e3a8a;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-light: #334155;
+      --card-bg: rgba(30, 41, 59, 0.75);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --font-main: 'Outfit', 'Nirmala UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(217, 119, 6, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding-bottom: 70px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 18px 0;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .subject-icon {
+      font-size: 2rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+    .title-group h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .title-group p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .tabs-nav {
+      display: flex;
+      gap: 10px;
+      margin: 24px 0 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid var(--card-border);
+    }
+
+    .search-box {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px 18px 12px 42px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--surface);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+    }
+    .search-box::before {
+      content: "🔍";
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.95rem;
+    }
+
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .rendered-content h1 {
+      font-size: 1.45rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--card-border);
+      padding-bottom: 6px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .rendered-content h2 {
+      font-size: 1.25rem;
+      color: #38bdf8;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+    .rendered-content h3 {
+      font-size: 1.1rem;
+      color: #7dd3fc;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+    .rendered-content h4 {
+      font-size: 1rem;
+      color: #bae6fd;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+    .rendered-content p {
+      margin-bottom: 10px;
+      color: #e2e8f0;
+    }
+    .rendered-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .rendered-content th, .rendered-content td {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+    .rendered-content th {
+      background: rgba(255, 255, 255, 0.08);
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .rendered-content blockquote {
+      border-left: 4px solid var(--primary);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 16px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      color: #cbd5e1;
+    }
+    .rendered-content strong {
+      color: #fff;
+    }
+    .rendered-content code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      color: #f472b6;
+    }
+    .rendered-content hr {
+      border: none;
+      border-top: 1px solid var(--card-border);
+      margin: 20px 0;
+    }
+
+    @media print {
+      header, .tabs-nav, .search-box, .btn-group {
+        display: none !important;
+      }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .card {
+        background: #fff !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .rendered-content h1, .rendered-content h2, .rendered-content h3 {
+        color: #000 !important;
+      }
+      .rendered-content table {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .rendered-content th {
+        background: #eee !important;
+        color: #000 !important;
+      }
+      .rendered-content td {
+        border: 1px solid #ccc !important;
+      }
+      #tab-qp {
+        display: block !important;
+      }
+      #tab-master {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="subject-icon">🔬</div>
+        <div class="title-group">
+          <h1>Class 7 Science SA-1 Master Portal</h1>
+          <p>Science Textbook - Class 7 (Lessons 5 & 6) | Exam: 03-10-2026 | Marks: 80</p>
+        </div>
+      </div>
+      <div class="btn-group">
+        <a class="btn" href="index.html" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: #fff;">🏠 All Subjects</a>
+        <button class="btn" onclick="window.print()">🖨️ Print Exam Paper</button>
+        <a class="btn btn-primary" href="SA1_Science_Master_Solutions.pdf" target="_blank">📄 Master Solutions PDF</a>
+        <a class="btn" href="SA1_Science_Question_Paper.pdf" target="_blank">📝 Question Paper PDF</a>
+        <a class="btn" href="SA1_Science_Master_Solutions.docx" download>📥 Word DOCX</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 20px;">
+    
+    <!-- EMBEDDED ENGLISH AUDIO GUIDE -->
+    <div style="background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.8rem;">🎧</span>
+        <div>
+          <h3 style="margin: 0; font-size: 1rem; color: #38bdf8;">Complete English Audio Study Guide</h3>
+          <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">High-clarity neural English narration for comprehensive revision</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; max-width: 450px;">
+        <audio controls style="width: 100%; height: 38px; border-radius: 8px;">
+          <source src="SA1_Science_English_Audio_Guide.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <a href="SA1_Science_English_Audio_Guide.mp3" download class="btn" style="padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">⬇️ MP3</a>
+      </div>
+    </div>
+
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('master')">📘 Master Solutions & Study Guide</button>
+      <button class="tab-btn" onclick="switchTab('qp')">📝 Student Question Paper (80 Marks)</button>
+      <button class="tab-btn" onclick="switchTab('overview')">⚡ Syllabus & Exam Blueprint</button>
+    </div>
+
+    <!-- TAB 1: MASTER SOLUTIONS -->
+    <div id="tab-master" class="tab-content active">
+      <div class="search-box">
+        <input type="text" id="masterSearch" placeholder="Type to search questions, keywords, Telugu translations..." onkeyup="filterContent()">
+      </div>
+      <div class="card rendered-content" id="masterContent">
+        <h1>Class 7 General Science — SA1 Master Solutions &amp; Complete Pedagogical Study Guide</h1>
+<h2>Comprehensive Curriculum Blueprint: Lessons 5 &amp; 6 (Summative Assessment - 1)</h2>
+<h3>The Science Scholar &amp; Student's Complete SA-1 Master Key (Bilingual: English &amp; Telugu)</h3>
+<blockquote>
+<p><strong>Syllabus Scope (SA-1 Timetable &amp; Official Textbook Portion):</strong><br />
+- <strong>Lesson 5: Changes Around Us: Physical and Chemical</strong> (Pages 21–36)<br />
+  - Physical Changes: Definition, characteristics, reversible/irreversible, melting, evaporation, condensation, crystallisation, physical weathering.<br />
+  - Chemical Changes: Definition, characteristics, irreversible formation of new substances, color change, gas release, temperature change, curdling of milk, digestion, ripening of fruits.<br />
+  - Rusting of Iron: Reaction conditions ($Fe + O_2 + H_2O \rightarrow Fe_2O_3 \cdot xH_2O$), prevention (painting, greasing, galvanisation with Zinc).<br />
+  - Combustion: Nature of combustion, burning of magnesium ribbon ($2Mg + O_2 \rightarrow 2MgO$), Fire Triangle (Fuel, Oxygen, Heat/Ignition Temperature).<br />
+  - Simultaneous Changes: Burning of a candle (melting of wax = physical change; combustion of wax vapour = chemical change).<br />
+- <strong>Lesson 6: Adolescence: A Stage of Growth and Change</strong> (Pages 37–56)<br />
+  - Adolescence &amp; Puberty: Age range (10–19 years), growth spurt, body proportion changes.<br />
+  - Secondary Sexual Characteristics: Adam's apple, voice change, facial hair in boys; breast development, pelvic widening, high-pitched voice in girls.<br />
+  - Endocrine Glands &amp; Hormones: Pituitary gland (master gland), Testes (Testosterone), Ovaries (Oestrogen &amp; Progesterone), Pancreas (Insulin), Thyroid (Thyroxine), Adrenals (Adrenaline).<br />
+  - Reproductive Health &amp; Menstrual Hygiene: Menstrual cycle (28–30 days), ovulation, menarche, menopause, hygiene practices to avoid infections.<br />
+  - Balanced Lifestyle &amp; De-addiction: Nutrition (Iron, Calcium, Protein), physical fitness, emotional health, Nasha Mukt Bharat Abhiyan (saying NO to drugs and tobacco), cyberbullying awareness.</p>
+</blockquote>
+<hr />
+<h1>Lesson 5: Changes Around Us: Physical and Chemical (Pages 21–36)</h1>
+<h3>🔬 Chapter Synopsis &amp; Core Scientific Principles</h3>
+<ul>
+<li><strong>Physical Change:</strong> A change in which only the physical properties (such as shape, size, color, or state of matter) of a substance undergo transformation, with <strong>no new substance formed</strong>. Most physical changes are reversible (e.g., melting of ice, stretching a rubber band, dissolving sugar in water), though some may be irreversible (e.g., tearing of paper, breaking of glass).</li>
+<li><strong>Chemical Change (Chemical Reaction):</strong> A change in which one or more entirely <strong>new substances with different chemical properties</strong> are formed. Chemical changes are almost always irreversible and involve energy exchange (absorption or release of heat/light). Indicators include change in color, evolution of a gas, formation of a precipitate, or change in temperature and smell.</li>
+<li><strong>Crystallisation:</strong> The process of cooling a hot, concentrated solution of a substance to obtain pure crystals of the solid substance (e.g., Copper Sulphate crystals). It is a <strong>physical change</strong> because no new chemical bonds are created; only the physical arrangement of molecules transitions from liquid to solid lattice.</li>
+<li><strong>Rusting of Iron:</strong> A slow chemical reaction occurring when iron is exposed to both oxygen and water/moisture:<br />
+  $$\text{Iron (Fe)} + \text{Oxygen (O}_2\text{)} + \text{Water (H}_2\text{O)} \longrightarrow \text{Hydrated Iron Oxide [Rust] (Fe}_2\text{O}_3 \cdot x\text{H}_2\text{O)}$$<br />
+  Rusting weakens iron structures, causing immense economic loss. Methods of prevention include applying paint or grease, and <strong>galvanisation</strong> (depositing a protective layer of zinc metal on iron).</li>
+<li><strong>Combustion &amp; The Fire Triangle:</strong> A chemical process where a combustible substance reacts rapidly with oxygen, releasing heat and light. The three essential conditions (Fire Triangle) are:</li>
+<li><strong>Fuel</strong> (combustible material)</li>
+<li><strong>Oxygen</strong> (supporter of combustion)</li>
+<li><strong>Heat</strong> (reaching ignition temperature)<br />
+  Extinguishing a fire involves removing any one of these three components (e.g., spraying water lowers temperature below ignition point; covering with blanket or $CO_2$ cuts off oxygen supply).</li>
+<li><strong>Burning of Magnesium Ribbon:</strong><br />
+  $$2\text{Mg} + \text{O}_2 \longrightarrow 2\text{MgO} \quad (\text{Magnesium Oxide - white ash})$$<br />
+  When dissolved in water: $\text{MgO} + \text{H}_2\text{O} \longrightarrow \text{Mg(OH)}_2$ (basic in nature, turns red litmus blue).</li>
+<li><strong>Simultaneous Physical &amp; Chemical Change (Candle Burning):</strong></li>
+<li><em>Physical Change:</em> Melting of solid wax into liquid wax and vaporisation of molten wax by the heat of the flame (reversible state changes).</li>
+<li><em>Chemical Change:</em> Burning of wax vapors in oxygen to produce carbon dioxide ($CO_2$), water vapor ($H_2O$), heat, and light (irreversible chemical reaction).</li>
+</ul>
+<hr />
+<h3>Textbook Exercises — Lesson 5</h3>
+<h4>A. Read each question carefully and tick (✓) the correct option:</h4>
+<p><strong>Question 1:</strong> Which of these is a physical change?<br />
+- a. Rusting of iron<br />
+- b. Burning of wood<br />
+- c. Melting of ice<br />
+- d. Curdling of milk</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>c. Melting of ice</strong><br />
+- <strong>Explanation:</strong> In melting ice, solid water transforms into liquid water ($H_2O \rightarrow H_2O$). The chemical composition remains completely unchanged, and it can be frozen back into ice.<br />
+- <strong>తెలుగు వివరణ:</strong> మంచు కరగడం అనేది భౌతిక మార్పు (Physical change). ఎందుకంటే ఇందులో కొత్త పదార్థం ఏదీ ఏర్పడదు; కేవలం ఘన రూపంలో ఉన్న నీరు ద్రవ రూపంలోకి మారుతుంది. దీనిని మళ్లీ చల్లబరిస్తే మంచుగా మార్చవచ్చు.<br />
+- ⚠️ <strong>Exam Trap:</strong> Rusting, burning, and curdling all produce entirely new chemical substances with new properties, making them chemical changes.</p>
+</blockquote>
+<p><strong>Question 2:</strong> Which of the following occurs during a chemical change?<br />
+- a. Change in state only<br />
+- b. Formation of one or more new substances<br />
+- c. Reversible transformation<br />
+- d. Change in shape only</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Formation of one or more new substances</strong><br />
+- <strong>Explanation:</strong> The definitive hallmark of a chemical change is the production of new substances with distinct chemical bonds and properties.<br />
+- <strong>తెలుగు వివరణ:</strong> రసాయనిక మార్పు (Chemical change) జరిగినప్పుడు తప్పనిసరిగా ఒకటి లేదా అంతకంటే ఎక్కువ సరికొత్త పదార్థాలు ఏర్పడతాయి.</p>
+</blockquote>
+<p><strong>Question 3:</strong> What is the product of combustion when magnesium ribbon is burned in air?<br />
+- a. Magnesium chloride<br />
+- b. Magnesium oxide<br />
+- c. Magnesium sulphate<br />
+- d. Magnesium carbonate</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Magnesium oxide</strong><br />
+- <strong>Explanation:</strong> Magnesium reacts with atmospheric oxygen to form magnesium oxide white powder: $2Mg + O_2 \rightarrow 2MgO$.<br />
+- <strong>తెలుగు వివరణ:</strong> మెగ్నీషియం తీగను గాలిలో మండించినప్పుడు అది ఆక్సిజన్‌తో చర్య జరిపి తెల్లటి మెగ్నీషియం ఆక్సైడ్ ($MgO$) బూడిదను ఏర్పరుస్తుంది.</p>
+</blockquote>
+<p><strong>Question 4:</strong> Which of the following is an essential condition for rusting to take place?<br />
+- a. Presence of dry nitrogen<br />
+- b. Presence of oxygen and moisture (water)<br />
+- c. Complete absence of air<br />
+- d. High temperature above $100^\circ\text{C}$</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Presence of oxygen and moisture (water)</strong><br />
+- <strong>Explanation:</strong> Rusting of iron cannot occur in dry air alone or in boiled, oxygen-free water. Both oxygen and water vapor are simultaneously required.<br />
+- <strong>తెలుగు వివరణ:</strong> ఇనుము తుప్పు పట్టడానికి గాలిలోని ఆక్సిజన్ మరియు తేమ (నీరు) రెండూ తప్పనిసరిగా ఉండాలి.</p>
+</blockquote>
+<p><strong>Question 5:</strong> Galvanisation is the process of coating iron with a protective layer of:<br />
+- a. Copper<br />
+- b. Aluminium<br />
+- c. Zinc<br />
+- d. Silver</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>c. Zinc</strong><br />
+- <strong>Explanation:</strong> Zinc forms an impermeable sacrificial layer over iron, preventing air and moisture from contacting the underlying iron surface.<br />
+- <strong>తెలుగు వివరణ:</strong> ఇనుము తుప్పు పట్టకుండా ఉండటానికి దానిపై జింక్ (సత్తు) లోహపు పూత పూయడాన్ని 'గాల్వనైజేషన్' (Galvanisation) అంటారు.</p>
+</blockquote>
+<hr />
+<h4>B. Read each sentence carefully and fill in the blanks with the correct words:</h4>
+<ol>
+<li>A change in which no new substance is formed is called a <strong>physical change</strong>.</li>
+<li><em>తెలుగు:</em> ఎటువంటి సరికొత్త పదార్థం ఏర్పడని మార్పును <strong>భౌతిక మార్పు</strong> అంటారు.</li>
+<li>The chemical formula of rust is <strong>$Fe_2O_3 \cdot xH_2O$</strong> (Hydrated ferric oxide).</li>
+<li><em>తెలుగు:</em> తుప్పు యొక్క రసాయన సమీకరణం <strong>$Fe_2O_3 \cdot xH_2O$</strong> (హైడ్రేటెడ్ ఫెర్రిక్ ఆక్సైడ్).</li>
+<li>The three essential components of the fire triangle are <strong>Fuel</strong>, <strong>Oxygen</strong>, and <strong>Heat</strong> (Ignition temperature).</li>
+<li><em>తెలుగు:</em> దహన త్రిభుజం (Fire Triangle) లోని మూడు ముఖ్యమైన అంశాలు <strong>ఇంధనం (Fuel)</strong>, <strong>ఆక్సిజన్ (Oxygen)</strong>, మరియు <strong>ఉష్ణం (Heat)</strong>.</li>
+<li>When a candle burns, the melting of wax is a <strong>physical</strong> change, while the burning of wax vapor is a <strong>chemical</strong> change.</li>
+<li><em>తెలుగు:</em> కొవ్వొత్తి వెలిగించినప్పుడు మైనం కరగడం <strong>భౌతిక</strong> మార్పు, మైనపు ఆవిరి మండడం <strong>రసాయనిక</strong> మార్పు.</li>
+<li>The process of obtaining pure solid crystals from a saturated solution is known as <strong>crystallisation</strong>.</li>
+<li><em>తెలుగు:</em> సంతృప్త ద్రావణం నుండి స్వచ్ఛమైన స్పటికాలను వేరుచేసే పద్ధతిని <strong>స్పటికీకరణం (Crystallisation)</strong> అంటారు.</li>
+</ol>
+<hr />
+<h4>C. Read each statement carefully and write whether it is True or False:</h4>
+<ol>
+<li><strong>Combustion of wood produces only heat without any new substances.</strong></li>
+<li><strong>False</strong></li>
+<li><em>Correction:</em> Combustion of wood is a chemical change that produces new substances such as carbon dioxide, water vapor, ash, and smoke along with heat and light.</li>
+<li><em>తెలుగు:</em> తప్పు. కలప కాలినప్పుడు బూడిద, కార్బన్ డైయాక్సైడ్ వంటి సరికొత్త పదార్థాలు విడుదలవుతాయి.</li>
+<li><strong>Combustion requires fuel, oxygen and heat to sustain the process.</strong></li>
+<li><strong>True</strong></li>
+<li><em>Explanation:</em> These three elements make up the Fire Triangle. Removing any one component extinguishes the flame.</li>
+<li><em>తెలుగు:</em> నిజం. దహనం కొనసాగడానికి ఇంధనం, ఆక్సిజన్ మరియు ఉష్ణం తప్పనిసరి.</li>
+<li><strong>Boiling water is a physical change, not a chemical one.</strong></li>
+<li><strong>True</strong></li>
+<li><em>Explanation:</em> Boiling changes liquid water into steam (gas), but both states consist of $H_2O$ molecules. It is reversible by cooling.</li>
+<li><em>తెలుగు:</em> నిజం. నీరు మరిగి ఆవిరిగా మారడం కేవలం స్థితి మార్పు మాత్రమే, ఎటువంటి కొత్త పదార్థం ఏర్పడదు.</li>
+<li><strong>Crystallisation is a reversible change where dissolved substances form crystals.</strong></li>
+<li><strong>True</strong></li>
+<li><em>Explanation:</em> The crystals can be dissolved back into water to recreate the solution; no chemical composition change occurs.</li>
+<li><em>తెలుగు:</em> నిజం. స్పటికాలను మళ్లీ నీటిలో కరిగించి పూర్వపు ద్రావణాన్ని పొందవచ్చు.</li>
+<li><strong>Rusting of iron is an irreversible change that forms rust.</strong></li>
+<li><strong>True</strong></li>
+<li><em>Explanation:</em> Iron reacts chemically with oxygen and moisture to form iron oxide, which cannot be converted back into metallic iron by simple physical means.</li>
+<li><em>తెలుగు:</em> నిజం. ఇనుము తుప్పు పట్టడం ఒక తిరుగులేని (irreversible) రసాయనిక మార్పు.</li>
+</ol>
+<hr />
+<h4>D. Choose the correct word to complete each given analogy:</h4>
+<ol>
+<li><strong>Melting of ice : Physical change :: Burning of paper : [Chemical change]</strong></li>
+<li><em>తెలుగు:</em> మంచు కరగడం : భౌతిక మార్పు :: కాగితం కాలడం : <strong>రసాయనిక మార్పు</strong></li>
+<li><strong>Dissolving sugar : Reversible change :: Rusting of iron : [Irreversible change]</strong></li>
+<li><em>తెలుగు:</em> చక్కెర కరగడం : పునరావృత మార్పు :: ఇనుము తుప్పు పట్టడం : <strong>తిరుగులేని మార్పు</strong></li>
+<li><strong>Iron rusting : Hydrated iron oxide :: Magnesium burning : [Magnesium oxide]</strong></li>
+<li><em>తెలుగు:</em> ఇనుము తుప్పు : ఐరన్ ఆక్సైడ్ :: మెగ్నీషియం మండడం : <strong>మెగ్నీషియం ఆక్సైడ్</strong></li>
+<li><strong>Combustion : Chemical reaction :: Evaporation : [Physical process]</strong></li>
+<li><em>తెలుగు:</em> దహనం : రసాయనిక చర్య :: బాష్పీభవనం : <strong>భౌతిక ప్రక్రియ</strong></li>
+</ol>
+<hr />
+<h4>E. Descriptive Questions — Short &amp; Long Answers</h4>
+<p><strong>Question 1:</strong> How do physical changes differ from chemical changes? Give two examples of each.<br />
+- <strong>Answer:</strong><br />
+  | Feature | Physical Change | Chemical Change |<br />
+  | :--- | :--- | :--- |<br />
+  | <strong>Formation of New Substance</strong> | No new substance is formed. | One or more entirely new substances are formed. |<br />
+  | <strong>Nature of Change</strong> | Temporary and usually reversible. | Permanent and usually irreversible. |<br />
+  | <strong>Chemical Composition</strong> | Chemical properties remain unchanged. | Original chemical properties are completely altered. |<br />
+  | <strong>Energy Changes</strong> | Generally little or no heat/light energy is exchanged. | Significant energy is either absorbed or released. |<br />
+  | <strong>Examples</strong> | Melting of ice, tearing of paper. | Rusting of iron, burning of wood. |<br />
+- <strong>తెలుగు వివరణ:</strong> భౌతిక మార్పులో ఎటువంటి సరికొత్త పదార్థం ఏర్పడదు (ఉదా: మంచు కరగడం, కాగితం చింపడం). రసాయనిక మార్పులో సరికొత్త లక్షణాలు గల కొత్త పదార్థాలు శాశ్వతంగా ఏర్పడతాయి (ఉదా: ఇనుము తుప్పు పట్టడం, కలప కాలడం).</p>
+<p><strong>Question 2:</strong> What is rusting? Explain the conditions necessary for rusting of iron and list two methods to prevent it.<br />
+- <strong>Answer:</strong><br />
+  1. <strong>Definition:</strong> Rusting is the slow oxidation of iron in the presence of air and moisture to form a reddish-brown flaky substance called hydrated iron oxide (rust).<br />
+  2. <strong>Chemical Equation:</strong><br />
+     $$4\text{Fe} + 3\text{O}_2 + 2x\text{H}_2\text{O} \longrightarrow 2\text{Fe}_2\text{O}_3 \cdot x\text{H}_2\text{O}$$<br />
+  3. <strong>Necessary Conditions:</strong> Both <strong>oxygen</strong> (from air) and <strong>water/moisture</strong> must be simultaneously present.<br />
+  4. <strong>Prevention Methods:</strong><br />
+     - <em>Painting or Greasing:</em> Applying a coat of oil, grease, or paint isolates the iron surface from air and moisture.<br />
+     - <em>Galvanisation:</em> Depositing a thin protective coating of zinc metal onto iron sheets or pipes prevents oxidation.<br />
+- <strong>తెలుగు వివరణ:</strong> గాలిలోని ఆక్సిజన్ మరియు తేమతో ఇనుము చర్య జరిపి ఎరుపు-గోధుమ రంగు తుప్పును ఏర్పరచడాన్ని తుప్పు పట్టడం అంటారు. దీనిని నివారించడానికి రంగులు (పెయింట్) వేయడం, గ్రీజు పూయడం లేదా జింక్ పూత పూసే గాల్వనైజేషన్ పద్ధతులను ఉపయోగిస్తారు.</p>
+<p><strong>Question 3:</strong> What is the Fire Triangle? Draw and explain the role of each component, and describe how removing any one component extinguishes a fire.<br />
+- <strong>Answer:</strong><br />
+  1. <strong>Definition:</strong> The Fire Triangle is a conceptual model representing the three essential components required for combustion: <strong>Fuel</strong>, <strong>Oxygen</strong>, and <strong>Heat</strong>.<br />
+  2. <strong>Roles of Components:</strong><br />
+     - <em>Fuel:</em> The combustible material that undergoes burning (e.g., wood, petrol, LPG).<br />
+     - <em>Oxygen:</em> The chemical supporter that reacts with the fuel to maintain the oxidation process.<br />
+     - <em>Heat:</em> Energy required to raise the temperature of the fuel to its minimum <strong>ignition temperature</strong> to start burning.<br />
+  3. <strong>Extinguishing Mechanism:</strong><br />
+     - <em>Removing Heat:</em> Spraying water absorbs large amounts of heat, bringing the temperature below the fuel's ignition point.<br />
+     - <em>Removing Oxygen:</em> Smothering with a fire blanket, sand, or spraying carbon dioxide ($CO_2$) cuts off atmospheric oxygen supply.<br />
+     - <em>Removing Fuel:</em> Turning off the gas valve or creating firebreaks in a forest removes the combustible material.<br />
+- <strong>తెలుగు వివరణ:</strong> దహనం జరగడానికి ఇంధనం, ఆక్సిజన్, మరియు తగినంత ఉష్ణం (ఇగ్నిషన్ ఉష్ణోగ్రత) అనే మూడు అంశాలు అవసరం. వీటిలో ఏ ఒక్కదానిని తొలగించినా మంటలు ఆరిపోతాయి (ఉదా: నీరు చల్లడం ద్వారా ఉష్ణోగ్రతను తగ్గించవచ్చు, ఇసుక లేదా కార్బన్ డైయాక్సైడ్ చల్లడం ద్వారా ఆక్సిజన్ అందకుండా చేయవచ్చు).</p>
+<p><strong>Question 4:</strong> Is the burning of a candle a physical change, a chemical change, or both? Justify your answer.<br />
+- <strong>Answer:</strong><br />
+  The burning of a candle represents <strong>both physical and chemical changes occurring simultaneously</strong>:<br />
+  1. <em>Physical Change:</em> The heat of the flame melts the solid wax into liquid wax near the wick, and capillary action draws it up where it vaporises. If the candle is extinguished, the molten wax cools down and solidifies back into wax without changing its chemical identity.<br />
+  2. <em>Chemical Change:</em> The wax vapors react with oxygen in the air to undergo combustion, producing carbon dioxide ($CO_2$), water vapor ($H_2O$), soot (carbon), heat, and light. This reaction is irreversible and consumes the wax chemically.<br />
+- <strong>తెలుగు వివరణ:</strong> కొవ్వొత్తి వెలగడం అనేది భౌతిక మరియు రసాయనిక మార్పులు రెండూ ఒకే సమయంలో జరగడానికి అద్భుతమైన ఉదాహరణ. మైనం కరిగి ద్రవంగా మారడం భౌతిక మార్పు; మైనపు ఆవిరి ఆక్సిజన్‌తో మండి కార్బన్ డైయాక్సైడ్ మరియు నీటి ఆవిరిగా మారడం రసాయనిక మార్పు.</p>
+<p><strong>Question 5:</strong> Curdling of milk is considered a chemical change. Justify this statement.<br />
+- <strong>Answer:</strong><br />
+  Curdling of milk is a <strong>chemical change</strong> because:<br />
+  1. When an acidic substance (like lemon juice) or lactic acid bacteria is introduced, the lactose sugar in milk is converted into lactic acid, and milk proteins (casein) coagulate.<br />
+  2. A new substance, curd (or paneer), is formed, which possesses completely different chemical properties, taste, and texture from liquid milk.<br />
+  3. The process is completely irreversible; curd cannot be converted back into original fresh milk.<br />
+- <strong>తెలుగు వివరణ:</strong> పాలు పెరుగుగా మారడం ఒక రసాయనిక మార్పు. ఎందుకంటే బ్యాక్టీరియా చర్య వల్ల పాలలోని లాక్టోస్ లాక్టిక్ ఆమ్లంగా మారి సరికొత్త లక్షణాలు గల పెరుగు ఏర్పడుతుంది. పెరుగును మళ్లీ పాలుగా మార్చలేము.</p>
+<hr />
+<h4>F. Competency-Based &amp; Analytical Questions</h4>
+<p><strong>Case Study 1:</strong> A gardener collects dry fallen leaves, vegetable peels, and garden waste into a compost pit. Over several weeks, the waste decomposes through the action of microorganisms into dark, nutrient-rich compost.<br />
+1. <em>Is the formation of compost a physical or a chemical change? Explain why.</em><br />
+   - <strong>Answer:</strong> It is a <strong>chemical change</strong>. Microorganisms (bacteria and fungi) break down complex organic compounds into simpler chemical substances, generating heat and releasing gases. The resulting compost has entirely different properties from raw vegetable peels and cannot be reversed.<br />
+   - <em>తెలుగు:</em> వ్యర్థాలు కుళ్ళి కంపోస్ట్ ఎరువుగా మారడం ఒక రసాయనిక మార్పు.<br />
+2. <em>State one condition that accelerates this composting process.</em><br />
+   - <strong>Answer:</strong> Presence of moisture and proper aeration (oxygen), which promotes the aerobic respiration of decomposer microbes.</p>
+<p><strong>Assertion &amp; Reason Question 1:</strong><br />
+- <strong>Assertion (A):</strong> Rusting of iron is a chemical change.<br />
+- <strong>Reason (R):</strong> A new substance called hydrated ferric oxide ($Fe_2O_3 \cdot xH_2O$) with different properties is formed.<br />
+- <strong>Options:</strong><br />
+  - A. Both (A) and (R) are true and (R) is the correct explanation of (A).<br />
+  - B. Both (A) and (R) are true, but (R) is not the correct explanation of (A).<br />
+  - C. (A) is true, but (R) is false.<br />
+  - D. Both (A) and (R) are false.<br />
+- <strong>Answer:</strong> <strong>A. Both (A) and (R) are true and (R) is the correct explanation of (A).</strong></p>
+<p><strong>Assertion &amp; Reason Question 2:</strong><br />
+- <strong>Assertion (A):</strong> Crystallisation is considered a physical change.<br />
+- <strong>Reason (R):</strong> It involves a chemical reaction that produces new crystals from molten elements.<br />
+- <strong>Answer:</strong> <strong>C. (A) is true, but (R) is false.</strong><br />
+- <strong>Explanation:</strong> Crystallisation is indeed a physical change, but Reason (R) is false because no chemical reaction or new substance is formed; it is merely a separation/purification technique where dissolved solute molecules pack into a crystal lattice.</p>
+<hr />
+<h1>Lesson 6: Adolescence: A Stage of Growth and Change (Pages 37–56)</h1>
+<h3>🧬 Chapter Synopsis &amp; Core Biological Concepts</h3>
+<ul>
+<li><strong>Adolescence:</strong> The transitional period of life between childhood and adulthood (usually from 10–11 years to 18–19 years), during which a young person undergoes rapid physical, physiological, mental, and emotional growth. Adolescents are often referred to as 'teenagers'.</li>
+<li><strong>Puberty:</strong> The specific developmental period within adolescence during which human beings undergo physical and reproductive maturation, becoming biologically capable of reproduction.</li>
+<li><strong>Physical Changes During Puberty:</strong></li>
+<li><em>Growth Spurt:</em> Rapid increase in the length of long bones (arms and legs), leading to a sudden surge in height.</li>
+<li><em>Body Structure:</em> In boys, shoulders and chest broaden, and muscles develop more prominently. In girls, the pelvic and hip region widens, and body fat deposits increase around the hips and thighs.</li>
+<li><em>Voice Changes:</em> In boys, the larynx (voice box) grows significantly, protruding outwards in the throat as <strong>Adam's apple</strong>, resulting in a deep, cracking voice. In girls, the larynx remains smaller, producing a high-pitched voice.</li>
+<li><em>Sweat &amp; Sebaceous Glands:</em> Increased activity of sweat and oil (sebaceous) glands often leads to acne and pimples on the face.</li>
+<li><em>Secondary Sexual Characteristics:</em><ul>
+<li><em>Boys:</em> Facial hair (mustache and beard), hair on chest, underarms, and pubic area; enlargement of testes and penis; production of sperm.</li>
+<li><em>Girls:</em> Enlargement of breasts and mammary glands; hair in underarms and pubic area; maturation of ovaries and release of mature ova (eggs).</li>
+</ul>
+</li>
+<li><strong>Hormones &amp; Endocrine System:</strong></li>
+<li>Hormones are chemical messengers secreted directly into the bloodstream by <strong>ductless (endocrine) glands</strong>.</li>
+<li><strong>Pituitary Gland:</strong> Located at the base of the brain; known as the <strong>Master Gland</strong> because its hormones stimulate the testes and ovaries to secrete their respective sex hormones.</li>
+<li><strong>Testosterone:</strong> Male sex hormone secreted by testes; regulates sperm development and male secondary sexual characteristics.</li>
+<li><strong>Oestrogen &amp; Progesterone:</strong> Female sex hormones secreted by ovaries; regulate ovum development, female secondary sexual characteristics, and the menstrual cycle.</li>
+<li>Other Vital Endocrine Glands:<ul>
+<li><em>Thyroid Gland:</em> Secretes <strong>Thyroxine</strong> (requires iodine; deficiency causes Goitre).</li>
+<li><em>Pancreas:</em> Secretes <strong>Insulin</strong> (regulates blood glucose; deficiency causes Diabetes).</li>
+<li><em>Adrenal Glands:</em> Secrete <strong>Adrenaline</strong> (the 'fight or flight' emergency hormone that manages heart rate, blood pressure, and stress).</li>
+</ul>
+</li>
+<li><strong>The Menstrual Cycle in Females:</strong></li>
+<li>Begins with <strong>Menarche</strong> (the first occurrence of menstruation, around age 11–13) and ends around age 45–50 with <strong>Menopause</strong>.</li>
+<li>Occurs roughly every <strong>28 to 30 days</strong>:<ol>
+<li>An ovary releases one mature ovum (ovulation).</li>
+<li>The uterine wall thickens with blood vessels to prepare for a fertilised egg.</li>
+<li>If fertilisation does not occur, the egg and the thickened uterine lining break down and are discharged through the vagina as blood and tissue (menstruation), lasting 3 to 7 days.</li>
+</ol>
+</li>
+<li><strong>Nutritional Needs of Adolescents:</strong></li>
+<li>Adolescents require a well-balanced diet rich in <strong>Proteins</strong> (for rapid muscle and tissue growth), <strong>Carbohydrates and Fats</strong> (for energy), <strong>Vitamins and Minerals</strong> (Iron for hemoglobin in blood; Calcium and Phosphorus for bones and teeth).</li>
+<li><strong>Nasha Mukt Bharat Abhiyan (Say NO to Drugs):</strong></li>
+<li>Drugs and alcohol cause severe physical, emotional, and social damage. They impair brain development, cause addiction, and ruin academic and career prospects.</li>
+<li>Injecting drugs with shared syringes carries extreme risk of fatal viral infections like <strong>HIV/AIDS</strong> and Hepatitis B.</li>
+</ul>
+<hr />
+<h3>Textbook Exercises — Lesson 6</h3>
+<h4>A. Read each question carefully and tick (✓) the correct option:</h4>
+<p><strong>Question 1:</strong> The transitional stage that connects childhood and adulthood is called:<br />
+- a. Infancy<br />
+- b. Adolescence<br />
+- c. Senescence<br />
+- d. Toddlerhood</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Adolescence</strong><br />
+- <strong>Explanation:</strong> Adolescence (ages 10–19) serves as the biological and emotional bridge between childhood and adult maturity.<br />
+- <strong>తెలుగు వివరణ:</strong> బాల్యానికి మరియు పెద్దరికానికి మధ్య వారధిగా ఉండే ఎదుగుదల దశను <strong>కౌమార దశ (Adolescence)</strong> అంటారు.</p>
+</blockquote>
+<p><strong>Question 2:</strong> The visible bulge in a boy's throat that develops during puberty is called:<br />
+- a. Thyroid cartilage<br />
+- b. Adam's apple<br />
+- c. Epiglottis<br />
+- d. Pharynx</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Adam's apple</strong><br />
+- <strong>Explanation:</strong> The enlargement of the larynx (voice box) in boys during puberty creates a prominent protrusion in the throat known as the Adam's apple.<br />
+- <strong>తెలుగు వివరణ:</strong> కౌమార దశలో బాలుర గొంతు వద్ద స్వరపేటిక పెరగడం వల్ల బయటకు కనిపించే ఎత్తైన భాగాన్ని <strong>ఆడమ్స్ యాపిల్ (Adam's apple)</strong> అంటారు.</p>
+</blockquote>
+<p><strong>Question 3:</strong> The menstrual cycle in human females usually repeats every:<br />
+- a. 7–10 days<br />
+- b. 14–16 days<br />
+- c. 28–30 days<br />
+- d. 45–50 days</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>c. 28–30 days</strong><br />
+- <strong>Explanation:</strong> Under normal physiological conditions, the menstrual cycle repeats approximately every 28 to 30 days.<br />
+- <strong>తెలుగు వివరణ:</strong> స్త్రీలలో ఋతుచక్రం సాధారణంగా ప్రతి <strong>28 నుండి 30 రోజులకు</strong> ఒకసారి పునరావృతమవుతుంది.</p>
+</blockquote>
+<p><strong>Question 4:</strong> Which hormone is responsible for the development of secondary sexual characteristics in boys?<br />
+- a. Oestrogen<br />
+- b. Insulin<br />
+- c. Testosterone<br />
+- d. Thyroxine</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>c. Testosterone</strong><br />
+- <strong>Explanation:</strong> Testosterone, produced by the testes, stimulates the growth of facial hair, deepening of voice, and muscle development in boys.<br />
+- <strong>తెలుగు వివరణ:</strong> బాలురలో గడ్డం, మీసాలు రావడం, గొంతు బొంగురుపోవడం వంటి ద్వితీయ లైంగిక లక్షణాలను ప్రేరేపించే హార్మోన్ <strong>టెస్టోస్టెరాన్ (Testosterone)</strong>.</p>
+</blockquote>
+<p><strong>Question 5:</strong> Which endocrine gland controls the secretion of hormones from all other endocrine glands?<br />
+- a. Thyroid gland<br />
+- b. Pituitary gland<br />
+- c. Adrenal gland<br />
+- d. Pancreas</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Pituitary gland</strong><br />
+- <strong>Explanation:</strong> The pituitary gland, located at the base of the brain, is known as the Master Gland because its hormones regulate the activity of testes, ovaries, and thyroid.<br />
+- <strong>తెలుగు వివరణ:</strong> ఇతర అంతఃస్రావ గ్రంథుల పనితీరును నియంత్రించే ప్రధాన గ్రంథి <strong>పీయూష గ్రంథి (Pituitary gland)</strong>.</p>
+</blockquote>
+<hr />
+<h4>B. Read each sentence carefully and fill in the blanks with the correct words:</h4>
+<ol>
+<li>The period during which adolescent boys and girls become capable of reproduction is called <strong>puberty</strong>.</li>
+<li><em>తెలుగు:</em> మానవ శరీరంలో పునరుత్పత్తి పరిపక్వత వచ్చే దశను <strong>యుక్తవయస్సు / ప్యూబర్టీ (Puberty)</strong> అంటారు.</li>
+<li>Hormones are chemical messengers secreted directly into the blood by <strong>endocrine (ductless)</strong> glands.</li>
+<li><em>తెలుగు:</em> హార్మోన్లు అనే రసాయన దూతలు <strong>అంతఃస్రావ (నాళరహిత) గ్రంథుల</strong> ద్వారా నేరుగా రక్తంలోకి విడుదలవుతాయి.</li>
+<li>The first menstrual flow that begins at puberty is called <strong>menarche</strong>, while the permanent stoppage of menstruation around age 50 is called <strong>menopause</strong>.</li>
+<li><em>తెలుగు:</em> యుక్తవయస్సులో ప్రారంభమయ్యే తొలి ఋతుస్రావాన్ని <strong>మెనార్కే (Menarche)</strong> అని, వయస్సు పైబడిన తర్వాత అది శాశ్వతంగా ఆగిపోవడాన్ని <strong>మెనోపాజ్ (Menopause)</strong> అని అంటారు.</li>
+<li>Excess secretion of oil from <strong>sebaceous (oil)</strong> glands during adolescence often leads to acne and pimples.</li>
+<li><em>తెలుగు:</em> కౌమారదశలో <strong>సెబేషియస్ (చమురు) గ్రంథులు</strong> ఎక్కువగా పనిచేయడం వల్ల ముఖంపై మొటిమలు వస్తాయి.</li>
+<li>In girls, the female sex hormone produced by ovaries is <strong>oestrogen</strong> (and progesterone).</li>
+<li><em>తెలుగు:</em> స్త్రీలలో అండాశయాల ద్వారా ఉత్పత్తి అయ్యే ప్రధాన స్త్రీ హార్మోన్ <strong>ఈస్ట్రోజెన్ (Oestrogen)</strong>.</li>
+</ol>
+<hr />
+<h4>C. Match the following:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column A</th>
+<th style="text-align: left;">Column B</th>
+<th style="text-align: left;">Target Answer</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Testosterone</strong></td>
+<td style="text-align: left;">a. Online harassment &amp; intimidation</td>
+<td style="text-align: left;"><strong>c. Deep voice and facial hair</strong></td>
+<td style="text-align: left;">Male hormone driving secondary sexual characteristics.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Adolescence</strong></td>
+<td style="text-align: left;">b. Master endocrine gland</td>
+<td style="text-align: left;"><strong>e. Transition from childhood to adulthood</strong></td>
+<td style="text-align: left;">The developmental bridge between 10 and 19 years.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Oestrogen</strong></td>
+<td style="text-align: left;">c. Deep voice and facial hair</td>
+<td style="text-align: left;"><strong>d. Female reproductive hormone</strong></td>
+<td style="text-align: left;">Secreted by ovaries to mature female reproductive organs.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Pituitary</strong></td>
+<td style="text-align: left;">d. Female reproductive hormone</td>
+<td style="text-align: left;"><strong>b. Master endocrine gland</strong></td>
+<td style="text-align: left;">Controls secretions of thyroid, adrenal, and sex glands.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Cyberbullying</strong></td>
+<td style="text-align: left;">e. Transition from childhood to adulthood</td>
+<td style="text-align: left;"><strong>a. Online harassment &amp; intimidation</strong></td>
+<td style="text-align: left;">Digital harassment using social media and mobile phones.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4>D. Choose the correct word to complete each analogy:</h4>
+<ol>
+<li><strong>Testosterone : Boys :: Oestrogen : [Girls]</strong></li>
+<li><em>తెలుగు:</em> టెస్టోస్టెరాన్ : బాలురు :: ఈస్ట్రోజెన్ : <strong>బాలికలు</strong></li>
+<li><strong>Childhood : Slow growth :: Adolescence : [Rapid growth spurt]</strong></li>
+<li><em>తెలుగు:</em> బాల్యం : నెమ్మదైన పెరుగుదల :: కౌమారం : <strong>వేగవంతమైన శారీరక ఎదుగుదల (Growth Spurt)</strong></li>
+<li><strong>Onset of menstruation : Menarche :: Stoppage of menstruation : [Menopause]</strong></li>
+<li><em>తెలుగు:</em> ఋతుస్రావం ప్రారంభం : మెనార్కే :: ఋతుస్రావం ముగింపు : <strong>మెనోపాజ్</strong></li>
+<li><strong>Thyroid : Thyroxine :: Pancreas : [Insulin]</strong></li>
+<li><em>తెలుగు:</em> థైరాయిడ్ : థైరాక్సిన్ :: క్లోమము (Pancreas) : <strong>ఇన్సులిన్</strong></li>
+</ol>
+<hr />
+<h4>E. Descriptive Questions — Short &amp; Long Answers</h4>
+<p><strong>Question 1:</strong> Define adolescence and state the age range it typically spans.<br />
+- <strong>Answer:</strong><br />
+  1. <strong>Definition:</strong> Adolescence is the developmental period of life during which an individual transitions biologically, psychologically, and socially from childhood to adulthood.<br />
+  2. <strong>Age Range:</strong> It typically begins around the age of <strong>10 to 11 years</strong> and lasts up to <strong>18 or 19 years</strong>. Because this span covers the 'teens' (13–19), adolescents are commonly called teenagers.<br />
+- <strong>తెలుగు వివరణ:</strong> బాల్యం నుండి వయోజన దశకు మారే శారీరక, మానసిక పరివర్తన కాలాన్ని కౌమార దశ అంటారు. ఇది సాధారణంగా 10-11 సంవత్సరాల వయస్సులో ప్రారంభమై 18-19 సంవత్సరాల వరకు కొనసాగుతుంది.</p>
+<p><strong>Question 2:</strong> List four prominent secondary sexual characteristics that develop during puberty in (a) boys and (b) girls.<br />
+- <strong>Answer:</strong><br />
+  - <strong>In Boys:</strong><br />
+    1. Growth of facial hair (mustache and beard) and hair on the chest and underarms.<br />
+    2. Deepening of the voice due to the enlargement of the larynx (Adam's apple).<br />
+    3. Broadening of the shoulders and increased muscle mass.<br />
+    4. Enlargement of the male reproductive organs and production of motile sperms.<br />
+  - <strong>In Girls:</strong><br />
+    1. Development and enlargement of breasts and mammary glands.<br />
+    2. Widening of the pelvis and hip region.<br />
+    3. Development of a high-pitched voice.<br />
+    4. Maturation of ovaries and initiation of the monthly menstrual cycle.<br />
+- <strong>తెలుగు వివరణ:</strong><br />
+  - బాలురలో: మీసాలు, గడ్డం రావడం; గొంతు బొంగురుపోవడం (ఆడమ్స్ యాపిల్ ఏర్పడటం); భుజాలు వెడల్పు కావడం; పునరుత్పత్తి అవయవాల పరిపక్వత.<br />
+  - బాలికలలో: వక్షోజాల పెరుగుదల; తుంటి భాగం వెడల్పు కావడం; కీచు గొంతు ఏర్పడటం; ఋతుచక్రం ప్రారంభం కావడం.</p>
+<p><strong>Question 3:</strong> What is the menstrual cycle? Explain the key biological events that occur during this cycle.<br />
+- <strong>Answer:</strong><br />
+  1. <strong>Overview:</strong> The menstrual cycle is a natural, recurring monthly cycle in adolescent and adult females governed by pituitary and ovarian hormones (oestrogen and progesterone).<br />
+  2. <strong>Sequence of Events (approximately 28–30 days):</strong><br />
+     - <em>Phase 1 (Follicular / Proliferative):</em> One ovum matures inside an ovary, and the inner lining of the uterus (<em>endometrium</em>) thickens and becomes rich with blood vessels to prepare for receiving a fertilised egg.<br />
+     - <em>Phase 2 (Ovulation):</em> Around day 14 of the cycle, the mature ovum is released from the ovary into the fallopian tube.<br />
+     - <em>Phase 3 (Luteal / Menstruation):</em> If fertilisation does not occur, the released ovum breaks down. The thickened uterine lining is shed along with blood, mucus, and tissue fluids through the vagina. This bleeding is called <strong>menstruation</strong> and lasts 3 to 7 days.<br />
+- <strong>తెలుగు వివరణ:</strong> స్త్రీలలో ప్రతి 28-30 రోజులకు ఒక పరిపక్వ అండం విడుదలవుతుంది. గర్భధారణ కోసం గర్భాశయ గోడలు రక్తనాళాలతో చిక్కగా మారతాయి. ఫలదీకరణం జరగనప్పుడు ఆ గోడలు విచ్ఛిన్నమై రక్తం రూపంలో బయటకు విడుదలవుతాయి. దీనినే ఋతుచక్రం అంటారు.</p>
+<p><strong>Question 4:</strong> Why is balanced nutrition particularly critical for adolescents? Name three essential nutrients and their functions.<br />
+- <strong>Answer:</strong><br />
+  During adolescence, the body undergoes an unprecedented rapid rate of physical growth, cell division, and hormonal reorganisation. A balanced diet containing proper proportions of all food nutrients is indispensable:<br />
+  1. <strong>Proteins:</strong> Essential for building new tissues, rapid muscle development, and cellular repair (e.g., pulses, eggs, milk, nuts).<br />
+  2. <strong>Iron:</strong> Vital for synthesizing hemoglobin in red blood cells. Iron prevents anemia, which is especially crucial for adolescent girls due to blood loss during menstruation (e.g., green leafy vegetables, jaggery, meat).<br />
+  3. <strong>Calcium &amp; Phosphorus:</strong> Required for rapid bone elongation and strengthening of the skeletal system and teeth (e.g., milk, dairy products, ragi).<br />
+- <strong>తెలుగు వివరణ:</strong> కౌమార దశలో వేగవంతమైన శారీరక ఎదుగుదల జరుగుతుంది కాబట్టి సమతుల్య ఆహారం చాలా ముఖ్యం. కండరాల పెరుగుదలకు <strong>ప్రోటీన్లు</strong>, ఎముకల పుష్టికి <strong>క్యాల్షియం</strong>, మరియు రక్తహీనత రాకుండా ఉండటానికి <strong>ఐరన్ (ఇనుము)</strong> చాలా అవసరం.</p>
+<p><strong>Question 5:</strong> What is the <em>Nasha Mukt Bharat Abhiyan</em>? Discuss the severe physical and mental consequences of substance abuse among youth.<br />
+- <strong>Answer:</strong><br />
+  1. <strong>Overview:</strong> <em>Nasha Mukt Bharat Abhiyan</em> (Drug-Free India Campaign) is a flagship national initiative launched by the Ministry of Social Justice and Empowerment, Government of India, to create mass awareness among youth and communities against the menace of substance abuse.<br />
+  2. <strong>Consequences of Drug Abuse:</strong><br />
+     - <em>Physical Destruction:</em> Causes irreversible damage to the brain, liver, lungs, and central nervous system. Sharing needles to inject drugs leads to transmission of fatal diseases like <strong>HIV/AIDS</strong> and Hepatitis.<br />
+     - <em>Mental &amp; Psychological Harm:</em> Triggers severe anxiety, depression, hallucinations, paranoia, and loss of cognitive faculties.<br />
+     - <em>Social Breakdown:</em> Leads to academic failure, loss of employment, broken family relationships, financial ruin, and engagement in criminal activities.<br />
+  3. <strong>Adolescent Rule:</strong> Firmly and confidently <strong>SAY NO TO DRUGS</strong> under all circumstances, rejecting negative peer pressure.<br />
+- <strong>తెలుగు వివరణ:</strong> 'నషా ముక్త్ భారత్ అభియాన్' అనేది దేశాన్ని మాదకద్రవ్యాల రహితంగా తీర్చిదిద్దడానికి భారత ప్రభుత్వం ప్రారంభించిన ఉద్యమం. డ్రగ్స్ మరియు ఆల్కహాల్ మానసిక, శారీరక ఆరోగ్యాన్ని నాశనం చేస్తాయి. సిరంజీలు పంచుకోవడం వల్ల హెచ్ఐవి/ఎయిడ్స్ వంటి ప్రాణాంతక వ్యాధులు వస్తాయి. యువత ఎల్లప్పుడూ డ్రగ్స్‌కు దూరంగా ఉండాలి.</p>
+<hr />
+<h4>F. Competency-Based &amp; Analytical Questions</h4>
+<p><strong>Case Study:</strong> During a school health check-up, several 13-year-old students expressed anxiety. Rohan was worried about his cracking voice and a hard lump on his neck. Priya was embarrassed by sudden pimples on her face.<br />
+1. <em>What should the school doctor tell Rohan to reassure him?</em><br />
+   - <strong>Answer:</strong> The doctor should explain that the lump is his <strong>Adam's apple</strong> (the growing voice box or larynx) and the voice cracking is a natural consequence of vocal cords lengthening during puberty. This is completely normal and temporary; his voice will settle into a deep male voice soon.<br />
+   - <em>తెలుగు:</em> రోహన్ గొంతు వద్ద ఉన్నది ఆడమ్స్ యాపిల్ (స్వరపేటిక పెరుగుదల). కౌమారదశలో గొంతు మారడం సహజమైన ప్రక్రియ.<br />
+2. <em>What is the physiological cause of Priya's pimples, and what hygiene practice should she adopt?</em><br />
+   - <strong>Answer:</strong> The increased secretion of the male/female hormones during puberty over-stimulates the <strong>sebaceous (oil) glands</strong> on the face, trapping dirt and bacteria. Priya should wash her face regularly with mild soap and clean water, keep her hair clean, avoid popping pimples (which spreads infection), and drink plenty of water.<br />
+   - <em>తెలుగు:</em> చమురు గ్రంథులు ఎక్కువగా పనిచేయడం వల్ల మొటిమలు వస్తాయి. ముఖాన్ని శుభ్రంగా కడుక్కోవడం మంచి అలవాటు.</p>
+<p><strong>Assertion &amp; Reason Question:</strong><br />
+- <strong>Assertion (A):</strong> Menstrual hygiene is vital to prevent reproductive tract infections in adolescent girls.<br />
+- <strong>Reason (R):</strong> Using unhygienic cloths or not changing sanitary pads frequently creates a breeding ground for harmful bacteria.<br />
+- <strong>Answer:</strong> <strong>A. Both (A) and (R) are true and (R) is the correct explanation of (A).</strong></p>
+      </div>
+    </div>
+
+    <!-- TAB 2: QUESTION PAPER -->
+    <div id="tab-qp" class="tab-content">
+      <div class="card rendered-content">
+        <div style="text-align: right; margin-bottom: 12px;">
+          <button class="btn btn-primary" onclick="window.print()">🖨️ Print Question Paper Now</button>
+        </div>
+        <h1>SUMMATIVE ASSESSMENT - I (SA-1) EXAMINATION (2026-27)</h1>
+<h2>CLASS: VII | SUBJECT: GENERAL SCIENCE</h2>
+<p><strong>Time Allowed:</strong> 2 Hours 30 Minutes | <strong>Maximum Marks:</strong> 80 Marks</p>
+<hr />
+<h3>General Instructions:</h3>
+<ol>
+<li><em>This question paper comprises 5 sections: Section A, Section B, Section C, Section D, and Section E.</em></li>
+<li><em>All questions are compulsory. Internal choices are provided in Section D and Section E.</em></li>
+<li><em>Section A consists of 20 Multiple Choice Questions carrying 1 mark each.</em></li>
+<li><em>Section B consists of 6 Very Short Answer Questions carrying 2 marks each.</em></li>
+<li><em>Section C consists of 7 Short Answer Questions carrying 3 marks each.</em></li>
+<li><em>Section D consists of 3 Long Answer Questions carrying 5 marks each.</em></li>
+<li><em>Section E consists of 3 Source-Based / Case-Based Questions carrying 4 marks each.</em></li>
+</ol>
+<hr />
+<h2>SECTION A: OBJECTIVE &amp; MULTIPLE CHOICE QUESTIONS (20 Marks)</h2>
+<p><em>Select and write the most appropriate option for each question:</em></p>
+<ol>
+<li>Which of the following is an example of a chemical change? [1 Mark]</li>
+<li>a. Dissolving sugar in water</li>
+<li>b. Melting of butter in a pan</li>
+<li>c. Rusting of an iron nail</li>
+<li>
+<p>d. Boiling of water into steam</p>
+</li>
+<li>
+<p>When a piece of magnesium ribbon is burned in air, the white ash formed is: [1 Mark]</p>
+</li>
+<li>a. Magnesium hydroxide</li>
+<li>b. Magnesium oxide</li>
+<li>c. Magnesium carbonate</li>
+<li>
+<p>d. Magnesium chloride</p>
+</li>
+<li>
+<p>The three essential conditions required to sustain combustion are: [1 Mark]</p>
+</li>
+<li>a. Fuel, Nitrogen, and Heat</li>
+<li>b. Fuel, Carbon dioxide, and Water</li>
+<li>c. Fuel, Oxygen, and Heat</li>
+<li>
+<p>d. Oxygen, Heat, and Carbon monoxide</p>
+</li>
+<li>
+<p>The protective process of depositing a layer of zinc on iron to prevent rusting is called: [1 Mark]</p>
+</li>
+<li>a. Crystallisation</li>
+<li>b. Galvanisation</li>
+<li>c. Combustion</li>
+<li>
+<p>d. Neutralisation</p>
+</li>
+<li>
+<p>The chemical formula representing rust is: [1 Mark]</p>
+</li>
+<li>a. $FeO$</li>
+<li>b. $Fe_3O_4$</li>
+<li>c. $Fe_2O_3 \cdot xH_2O$</li>
+<li>
+<p>d. $Fe(OH)_2$</p>
+</li>
+<li>
+<p>In a burning candle, which part of the process is considered a physical change? [1 Mark]</p>
+</li>
+<li>a. Burning of wax vapor to produce heat and light</li>
+<li>b. Formation of carbon dioxide gas</li>
+<li>c. Melting and vaporisation of solid wax</li>
+<li>
+<p>d. Formation of black soot</p>
+</li>
+<li>
+<p>Which of the following changes is reversible? [1 Mark]</p>
+</li>
+<li>a. Curdling of milk</li>
+<li>b. Crystallisation of copper sulphate</li>
+<li>c. Cooking of an egg</li>
+<li>
+<p>d. Burning of wood</p>
+</li>
+<li>
+<p>The transitional stage between childhood and adulthood is called: [1 Mark]</p>
+</li>
+<li>a. Infancy</li>
+<li>b. Adolescence</li>
+<li>c. Senescence</li>
+<li>
+<p>d. Toddlerhood</p>
+</li>
+<li>
+<p>The visible protrusion formed by the enlarged larynx in an adolescent boy's throat is called: [1 Mark]</p>
+</li>
+<li>a. Thyroid gland</li>
+<li>b. Epiglottis</li>
+<li>c. Adam's apple</li>
+<li>
+<p>d. Pharynx</p>
+</li>
+<li>
+<p>Which hormone controls the secondary sexual characteristics in boys? [1 Mark]</p>
+<ul>
+<li>a. Insulin</li>
+<li>b. Oestrogen</li>
+<li>c. Testosterone</li>
+<li>d. Thyroxine</li>
+</ul>
+</li>
+<li>
+<p>The master endocrine gland that regulates the hormone production of testes and ovaries is: [1 Mark]</p>
+<ul>
+<li>a. Adrenal gland</li>
+<li>b. Pituitary gland</li>
+<li>c. Thyroid gland</li>
+<li>d. Pancreas</li>
+</ul>
+</li>
+<li>
+<p>The menstrual cycle in human females normally recurs every: [1 Mark]</p>
+<ul>
+<li>a. 7–10 days</li>
+<li>b. 14–16 days</li>
+<li>c. 28–30 days</li>
+<li>d. 45–50 days</li>
+</ul>
+</li>
+<li>
+<p>The first occurrence of menstruation at puberty is termed: [1 Mark]</p>
+<ul>
+<li>a. Menopause</li>
+<li>b. Menarche</li>
+<li>c. Ovulation</li>
+<li>d. Gestation</li>
+</ul>
+</li>
+<li>
+<p>Acne and pimples frequently seen on an adolescent's face are caused by increased activity of: [1 Mark]</p>
+<ul>
+<li>a. Salivary glands</li>
+<li>b. Sebaceous (oil) glands</li>
+<li>c. Thyroid glands</li>
+<li>d. Adrenal glands</li>
+</ul>
+</li>
+<li>
+<p>Complete the analogy: <em>Testosterone : Boys :: Oestrogen : <strong><em>_</em></strong></em> [1 Mark]</p>
+<ul>
+<li>a. Children</li>
+<li>b. Girls</li>
+<li>c. Infants</li>
+<li>d. Elders</li>
+</ul>
+</li>
+<li>
+<p>Which mineral is essential for the formation of hemoglobin in the blood of adolescents? [1 Mark]</p>
+<ul>
+<li>a. Calcium</li>
+<li>b. Sodium</li>
+<li>c. Iron</li>
+<li>d. Iodine</li>
+</ul>
+</li>
+<li>
+<p>Complete the analogy: <em>Melting of ice : Physical change :: Burning of paper : <strong><em>_</em></strong></em> [1 Mark]</p>
+<ul>
+<li>a. Reversible change</li>
+<li>b. Chemical change</li>
+<li>c. Periodic change</li>
+<li>d. Temporary change</li>
+</ul>
+</li>
+<li>
+<p>The national campaign launched by the Government of India against substance abuse is: [1 Mark]</p>
+<ul>
+<li>a. Swachh Bharat Abhiyan</li>
+<li>b. Nasha Mukt Bharat Abhiyan</li>
+<li>c. Beti Bachao Beti Padhao</li>
+<li>d. Digital India</li>
+</ul>
+</li>
+<li>
+<p><strong>Assertion (A):</strong> Rusting of iron is a chemical change. [1 Mark]<br />
+<strong>Reason (R):</strong> A new substance, hydrated ferric oxide, is formed with completely new properties.  </p>
+<ul>
+<li>a. Both (A) and (R) are true and (R) is the correct explanation of (A).</li>
+<li>b. Both (A) and (R) are true, but (R) is not the correct explanation of (A).</li>
+<li>c. (A) is true, but (R) is false.</li>
+<li>d. Both (A) and (R) are false.</li>
+</ul>
+</li>
+<li>
+<p><strong>Assertion (A):</strong> Adolescence is characterized by rapid physical growth and hormonal changes. [1 Mark]<br />
+<strong>Reason (R):</strong> Endocrine glands release hormones directly into the bloodstream to trigger maturation.  </p>
+<ul>
+<li>a. Both (A) and (R) are true and (R) is the correct explanation of (A).</li>
+<li>b. Both (A) and (R) are true, but (R) is not the correct explanation of (A).</li>
+<li>c. (A) is true, but (R) is false.</li>
+<li>d. Both (A) and (R) are false.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>SECTION B: VERY SHORT ANSWER QUESTIONS (12 Marks)</h2>
+<p><em>Answer each question in one or two sentences:</em></p>
+<ol>
+<li>Define a physical change. Give one everyday example. [2 Marks]</li>
+<li>State the two necessary environmental conditions required for rusting of iron to occur. [2 Marks]</li>
+<li>What is the Fire Triangle? Name its three components. [2 Marks]</li>
+<li>Define puberty and mention its typical onset age in human beings. [2 Marks]</li>
+<li>What is the difference between menarche and menopause? [2 Marks]</li>
+<li>Name the hormone secreted by the thyroid gland and the mineral required for its synthesis. [2 Marks]</li>
+</ol>
+<hr />
+<h2>SECTION C: SHORT ANSWER QUESTIONS (21 Marks)</h2>
+<p><em>Answer each question in three to four sentences:</em></p>
+<ol>
+<li>Tabulate any three differences between physical changes and chemical changes. [3 Marks]</li>
+<li>Explain why curdling of milk is considered an irreversible chemical change. [3 Marks]</li>
+<li>Describe the method of galvanisation. Why is it used for iron water pipes and bridge girders? [3 Marks]</li>
+<li>Explain how spraying water helps in extinguishing a fire. In what kind of fires should water NOT be used? [3 Marks]</li>
+<li>List three secondary sexual characteristics that develop in boys during puberty. [3 Marks]</li>
+<li>Why is a balanced diet containing iron, calcium, and proteins essential for adolescents? [3 Marks]</li>
+<li>Write a brief note on the pituitary gland and explain why it is called the 'Master Gland'. [3 Marks]</li>
+</ol>
+<hr />
+<h2>SECTION D: LONG ANSWER QUESTIONS (15 Marks)</h2>
+<p><em>Answer each question in detail (5 to 7 sentences):</em></p>
+<ol>
+<li>
+<p><strong>(a)</strong> Explain the process of burning a candle. Justify how both physical and chemical changes occur simultaneously during this process. [5 Marks]<br />
+<em>OR</em><br />
+<strong>(b)</strong> Describe the chemical reaction that takes place when a magnesium ribbon is burned in air. Write the balanced equation and describe the test to verify the nature (acidic/basic) of the product formed.</p>
+</li>
+<li>
+<p><strong>(a)</strong> Describe the biological sequence of events that takes place during the menstrual cycle in human females. What happens if the released egg is not fertilised? [5 Marks]<br />
+<em>OR</em><br />
+<strong>(b)</strong> What are endocrine glands? Name any four endocrine glands found in the human body, the hormone each secretes, and the primary function of each hormone.</p>
+</li>
+<li>
+<p>Discuss the physical, mental, and social hazards of substance abuse (drugs and alcohol) among teenagers. Mention the role of the <em>Nasha Mukt Bharat Abhiyan</em> in building a healthy youth. [5 Marks]</p>
+</li>
+</ol>
+<hr />
+<h2>SECTION E: SOURCE-BASED / CASE-BASED QUESTIONS (12 Marks)</h2>
+<ol>
+<li>
+<p><strong>Case Study 1 (Changes in Kitchen &amp; Garden):</strong> [4 Marks]<br />
+    Ramesh observed that when an iron pan (<em>tawa</em>) was left wet on the kitchen counter for two days, a reddish-brown coating formed on it. In the backyard, he noticed dry leaves turning into rich, dark compost inside an organic pit.</p>
+<ul>
+<li><em>a. Name the reddish-brown substance formed on the wet tawa and write its chemical name. [1 Mark]</em></li>
+<li><em>b. State the two substances from the environment that reacted with the tawa. [1 Mark]</em></li>
+<li><em>c. Is composting of dry leaves a physical or a chemical change? Justify your answer. [2 Marks]</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Case Study 2 (Adolescent Growth Spurt):</strong> [4 Marks]<br />
+    Sneha and Rahul are 13-year-old classmates. Over the past year, Rahul's voice became deep and rough, and a bulge appeared on his neck. Sneha noticed her height increasing rapidly and experienced her first menstrual flow.</p>
+<ul>
+<li><em>a. What is the name of the bulge on Rahul's throat, and which organ's enlargement causes it? [1 Mark]</em></li>
+<li><em>b. Which hormone is responsible for Rahul's deepening voice? [1 Mark]</em></li>
+<li><em>c. What is the medical term for Sneha's first menstrual period? List two menstrual hygiene guidelines she must follow. [2 Marks]</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Case Study 3 (Fire Safety &amp; Combustibility):</strong> [4 Marks]<br />
+    A chemistry teacher demonstrated that paper catches fire when brought near a burner, but wrapping the paper tightly around an iron rod prevents it from burning immediately when held over the same flame.</p>
+<ul>
+<li><em>a. What is ignition temperature? [1 Mark]</em></li>
+<li><em>b. Why does paper wrapped around an iron rod not catch fire quickly? [2 Marks]</em></li>
+<li><em>c. Which component of the Fire Triangle is affected in this demonstration? [1 Mark]</em></li>
+</ul>
+</li>
+</ol>
+      </div>
+    </div>
+
+    <!-- TAB 3: OVERVIEW & BLUEPRINT -->
+    <div id="tab-overview" class="tab-content">
+      <div class="card">
+        <h2 style="color: var(--primary); margin-bottom: 12px;">📋 Summative Assessment - 1 Curriculum Blueprint</h2>
+        <p><strong>Subject:</strong> General Science</p>
+        <p><strong>Prescribed Syllabus:</strong> Science Textbook - Class 7 (Lessons 5 & 6)</p>
+        <p><strong>Date of Examination:</strong> 03-10-2026</p>
+        <p><strong>Total Marks:</strong> 80 Marks</p>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Key High-Yield Topics:</h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
+          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">L5: Physical & Chemical Changes</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Rusting of Iron</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Combustion & Fire Triangle</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">L6: Adolescence & Puberty</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Endocrine Glands</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Menstrual Hygiene</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Say NO to Drugs</span>
+        </div>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Official Documents Download:</h3>
+        <ul style="margin-left: 20px; line-height: 2;">
+          <li><a href="SA1_Science_Master_Solutions.pdf" target="_blank" style="color: #38bdf8;">Complete Master Answer Key (PDF)</a></li>
+          <li><a href="SA1_Science_Question_Paper.pdf" target="_blank" style="color: #38bdf8;">Formal Student Question Paper (PDF)</a></li>
+          <li><a href="SA1_Science_Master_Solutions.docx" download style="color: #38bdf8;">Editable Master Solutions (DOCX)</a></li>
+          <li><a href="SA1_Science_Question_Paper.docx" download style="color: #38bdf8;">Editable Question Paper (DOCX)</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      if (tabId === 'master') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('tab-master').classList.add('active');
+      } else if (tabId === 'qp') {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('tab-qp').classList.add('active');
+      } else if (tabId === 'overview') {
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+        document.getElementById('tab-overview').classList.add('active');
+      }
+    }
+
+    function filterContent() {
+      const query = document.getElementById('masterSearch').value.toLowerCase();
+      const content = document.getElementById('masterContent');
+      const paragraphs = content.querySelectorAll('p, li, tr, blockquote');
+      
+      paragraphs.forEach(el => {
+        if (!query || el.innerText.toLowerCase().includes(query)) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

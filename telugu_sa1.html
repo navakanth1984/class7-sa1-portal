@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7వ తరగతి తెలుగు SA1 మాస్టర్ హోంవర్క్ పోర్టల్ | Class 7 Telugu SA1 Master Key</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Outfit:wght@400;500;600;700&family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --secondary: #06b6d4;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --danger: #ef4444;
+      --bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-telugu: 'Mandali', 'Tenali Ramakrishna', sans-serif;
+      --font-english: 'Outfit', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: var(--font-english);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    .telugu { font-family: var(--font-telugu); font-size: 1.15rem; line-height: 1.8; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      padding: 35px 0 25px;
+      text-align: center;
+      border-bottom: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(79, 70, 229, 0.2);
+      border: 1px solid rgba(79, 70, 229, 0.4);
+      border-radius: 9999px;
+      color: #818cf8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle { color: var(--text-muted); font-size: 1rem; max-width: 800px; margin: 0 auto 16px; }
+
+    .action-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 12px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 18px; border-radius: 8px; font-size: 0.9rem; font-weight: 500;
+      cursor: pointer; text-decoration: none; transition: all 0.2s; border: none;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .btn-secondary { background: rgba(255, 255, 255, 0.08); color: var(--text); border: 1px solid var(--card-border); }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+
+    .controls { margin: 25px 0 20px; display: flex; flex-direction: column; gap: 16px; }
+
+    .search-box {
+      width: 100%; padding: 14px 20px; border-radius: 12px;
+      background: rgba(30, 41, 59, 0.9); border: 1px solid var(--card-border);
+      color: white; font-size: 1rem; outline: none; transition: all 0.2s;
+    }
+    .search-box:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25); }
+
+    .tabs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+
+    .tab-btn {
+      padding: 8px 16px; border-radius: 8px; background: rgba(30, 41, 59, 0.6);
+      border: 1px solid var(--card-border); color: var(--text-muted);
+      cursor: pointer; font-size: 0.9rem; transition: all 0.2s;
+    }
+    .tab-btn:hover { color: white; background: rgba(255, 255, 255, 0.1); }
+    .tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); font-weight: 600; }
+
+    .grid { display: flex; flex-direction: column; gap: 24px; margin-top: 10px; }
+
+    .card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 24px; backdrop-filter: blur(10px);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); }
+
+    .card-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); padding-bottom: 12px;
+    }
+
+    .card-tag {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;
+      padding: 4px 10px; border-radius: 6px; background: rgba(6, 182, 212, 0.15);
+      color: var(--secondary); font-weight: 600;
+    }
+
+    .card-title { font-size: 1.3rem; font-weight: 600; color: #e2e8f0; margin-top: 4px; }
+
+    .poem-box {
+      background: rgba(15, 23, 42, 0.8); border-left: 4px solid var(--accent);
+      padding: 16px; border-radius: 8px; margin: 12px 0;
+      font-family: var(--font-telugu); font-size: 1.25rem; line-height: 2; color: #fef08a;
+    }
+
+    .section-block { margin-top: 14px; }
+
+    .label-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #38bdf8;
+    }
+
+    .telugu-answer {
+      font-family: var(--font-telugu); font-size: 1.15rem; line-height: 1.8;
+      color: #ffffff; background: rgba(15, 23, 42, 0.5); padding: 14px 18px;
+      border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); margin-bottom: 10px;
+    }
+
+    .telugu-explanation {
+      font-family: var(--font-telugu); font-size: 1.12rem; line-height: 1.8;
+      color: #fed7aa; background: rgba(249, 115, 22, 0.08); padding: 12px 18px;
+      border-radius: 8px; border-left: 3px solid #f97316; margin-bottom: 10px;
+    }
+
+    .english-explanation {
+      color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;
+      padding: 10px 16px; background: rgba(79, 70, 229, 0.08);
+      border-radius: 8px; border-left: 3px solid var(--primary); margin-bottom: 8px;
+    }
+
+    .gaming-hook {
+      background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--accent);
+      padding: 10px 14px; border-radius: 6px; font-size: 0.92rem; color: #fde68a; margin-top: 8px;
+    }
+
+    .exam-trap {
+      background: rgba(239, 68, 68, 0.08); border-left: 3px solid var(--danger);
+      padding: 10px 14px; border-radius: 6px; font-size: 0.92rem; color: #fca5a5; margin-top: 8px;
+    }
+
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.95rem; }
+    th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    th { background: rgba(15, 23, 42, 0.6); color: #93c5fd; font-weight: 600; }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+    .tts-btn {
+      background: none; border: 1px solid rgba(255, 255, 255, 0.2); color: #94a3b8;
+      border-radius: 6px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;
+    }
+    .tts-btn:hover { color: white; border-color: var(--secondary); }
+    .audio-active { color: var(--secondary) !important; border-color: var(--secondary) !important; }
+
+    @media print {
+      body { background: white !important; color: black !important; padding: 0; }
+      header, .controls, .action-bar, .tts-btn { display: none !important; }
+      .card { border: 1px solid #ccc !important; background: none !important; box-shadow: none !important; page-break-inside: avoid; }
+      .poem-box { background: #f8fafc !important; color: #0f172a !important; border-left: 4px solid #0284c7 !important; }
+      .telugu-answer, .telugu-explanation, .english-explanation, .gaming-hook, .exam-trap {
+        background: #f8fafc !important; color: #1e293b !important; border: 1px solid #e2e8f0 !important;
+      }
+      h1, .card-title { color: black !important; -webkit-text-fill-color: initial !important; }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 1.6rem; }
+      .container { padding: 0 12px; }
+      .card { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <span class="hero-badge">SCERT AP / NCF Syllabus 2026</span>
+      <h1>7వ తరగతి తెలుగు (Class 7) — SA1 మాస్టర్ సొల్యూషన్ పోర్టల్</h1>
+      <p class="subtitle">పాఠ్యపుస్తకంలోని 20 పేజీల చిత్రాలను క్షుణ్ణంగా పరిశీలించి పరిష్కరించిన సమగ్ర అధికారిక కీ — పాఠాల జవాబులు & వివరణలు అన్నీ తెలుగు భాషలోనే!</p>
+      <div class="action-bar">
+        <a href="index.html" class="btn btn-secondary" style="border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;">🏠 All Subjects</a>
+        <a href="SA1_Telugu_Master_Solutions.pdf" class="btn btn-primary" download>📥 డౌన్‌లోడ్ PDF</a>
+        <a href="SA1_Telugu_Master_Solutions.docx" class="btn btn-secondary" download>📄 డౌన్‌లోడ్ Word (DOCX)</a>
+        <a href="SA1_Telugu_Master_Solutions.md" class="btn btn-secondary" target="_blank">📝 చూడండి Markdown</a>
+      </div>
+    </div>
+  </header>
+
+    <!-- EMBEDDED BILINGUAL AUDIO GUIDE -->
+    <div style="background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.8rem;">🎙️</span>
+        <div>
+          <h3 style="margin: 0; font-size: 1rem; color: #f59e0b;">Class 7 Telugu SA-1 Bilingual Audio Study Guide</h3>
+          <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">First conveyed in native language, followed immediately by English explanation</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; max-width: 450px;">
+        <audio controls style="width: 100%; height: 38px; border-radius: 8px;">
+          <source src="SA1_Telugu_Bilingual_Audio_Guide.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <a href="SA1_Telugu_Bilingual_Audio_Guide.mp3" download class="btn" style="padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">⬇️ MP3</a>
+      </div>
+    </div>
+
+
+  <div class="container">
+    <div class="controls">
+      <input type="text" id="searchBox" class="search-box" placeholder="🔍 ఏదైనా పదం, ప్రశ్న లేదా టాపిక్ శోధించండి (Search in Telugu or English)..." onkeyup="filterCards()">
+      
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('all')">అన్నీ (All Topics)</button>
+        <button class="tab-btn" onclick="switchTab('history')">విభాగం 1: తెలుగు భాషా ప్రస్థానం</button>
+        <button class="tab-btn" onclick="switchTab('lesson3')">పాఠం 3: చాటువులు</button>
+        <button class="tab-btn" onclick="switchTab('lesson10')">పాఠం 10: జానపద కళలు</button>
+        <button class="tab-btn" onclick="switchTab('lesson16')">పాఠం 16: సామెతలు</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">వ్యాకరణ దర్శిని</button>
+        <button class="tab-btn" onclick="switchTab('modelpaper')">SA1 మోడల్ పేపర్</button>
+      </div>
+    </div>
+
+    <div class="grid" id="cardsContainer">
+      <!-- Cards dynamically rendered below -->
+    </div>
+  </div>
+
+  <script>
+    const cardData = [
+  {
+    "id": "hist-1",
+    "category": "history",
+    "tag": "తెలుగు సంస్కృతి & మూలాలు",
+    "title": "తెలుగు భాష ప్రాచీనత & చారిత్రక శాసనాలు (Origins & History)",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"label-pill\">📜 ప్రాచీన ఆధారాలు & విశేషాలు</div>\n        <div class=\"telugu-answer\">\n          • <strong>ద్రావిడ భాషా కుటుంబం:</strong> తెలుగు దక్షిణ-మధ్య ద్రావిడ భాషా వర్గానికి చెందిన ప్రాచీన భాష. దాదాపు 2400 సంవత్సరాల లిఖిత, మౌఖిక చరిత్ర ఉంది. 2008లో భారత ప్రభుత్వం దీనికి 'ప్రాచీన భాష' (Classical Language) హోదా ఇచ్చింది.<br>\n          • <strong>భట్టిప్రోలు స్తూపం (క్రీ.పూ. 3వ శతాబ్దం):</strong> గుంటూరు జిల్లా భట్టిప్రోలు బౌద్ధ స్తూపం మంజూషికలపై చెక్కిన బ్రాహ్మీ లిపి నుంచే ఆధునిక తెలుగు లిపి విలసిల్లింది.<br>\n          • <strong>అమరావతి శాసనం (క్రీ.శ. 1వ శతాబ్దం):</strong> శాతవాహనుల కాలపు అమరావతి శాసనంలో మొట్టమొదటి లిఖిత తెలుగు పదం <strong>'నాగబు'</strong> కనిపించింది.<br>\n          • <strong>కలమళ్ళ శాసనం (క్రీ.శ. 575):</strong> వైఎస్సార్ కడప జిల్లా కలమళ్ళ గ్రామంలో రేనాటి చోళ రాజు ఎరికల్ ముత్తురాజు ధనంజయుడు వేయించిన శాసనం తెలుగులో లభించిన <strong>మొట్టమొదటి పూర్తి తెలుగు గద్య శాసనం</strong>.<br>\n          • <strong>కుర్క్యాల శాసనం (క్రీ.శ. 945):</strong> కరీంనగర్ జిల్లా కుర్క్యాలలో జినవల్లభుడు వేయించిన శాసనంలో తెలుగులో తొలి కంద పద్యాలు లభించాయి.\n        </div>\n        <div class=\"english-explanation\">\n          <strong>English Summary:</strong> Telugu has an unbroken classical history of 2,400+ years. From the 3rd century BCE Bhattiprolu script and Amaravati's first word 'Nagabu' to the 575 CE Kalamalla stone inscription in Kadapa, Telugu holds a rich heritage.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "hist-2",
+    "category": "history",
+    "tag": "సంగీత శ్రావ్యత",
+    "title": "ఇటాలియన్ ఆఫ్ ద ఈస్ట్ & రాయల ప్రశంస",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"telugu-answer\">\n          • <strong>ఇటాలియన్ ఆఫ్ ద ఈస్ట్ (Italian of the East):</strong> తెలుగు పదాలన్నీ అచ్చులతో (అజంత భాష: అ, ఆ, ఇ, ఈ, ఉ, ఊ...) అంతమవుతాయి (ఉదా: రాముడు, పూవు, మనసు). 15వ శతాబ్దంలో విజయనగర సామ్రాజ్యాన్ని సందర్శించిన ప్రముఖ ఇటాలియన్ యాత్రికుడు <strong>నికోలో డి కాంటి (Niccolò de' Conti)</strong> తెలుగు భాషలోని సహజ సంగీత శ్రావ్యతను విని తన మాతృభాషలాగే అజంతంగా ఉందని మురిసిపోయి <strong>'Italian of the East'</strong> అని ప్రశంసించారు.<br>\n          • <strong>దేశభాషలందు తెలుగు లెస్స:</strong> విజయనగర చక్రవర్తి శ్రీకృష్ణదేవరాయలు తన ఆముక్తమాల్యద కావ్యంలో <em>\"తెలుఁగదేల యెన్న దేశంబు తెలుఁగేను / తెలుఁగు వల్లభుండఁ దెలుఁగొకండ / యెల్ల నృపులు గొలువ నెరుఁగవే బాసాడి / దేశభాషలందుఁ తెలుఁగు లెస్స\"</em> అని కీర్తించారు.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "chatuvu-intro",
+    "category": "lesson3",
+    "tag": "పాఠం 3: పరిచయం",
+    "title": "పాఠం 3: చాటువులు — నేపథ్యం & కవుల వివరాలు (పుటలు 16–18)",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"telugu-answer\">\n          • <strong>నిర్వచనం:</strong> 'చాటువు' అంటే ముఖస్తుతి, ప్రియమైన మాట అని అర్థము. కవులు అప్పటికప్పుడు సందర్భోచితంగా ఆశువుగా చెప్పే పద్యములను 'చాటువులు' లేదా 'చాటు పద్యాలు' అంటారు.<br>\n          • <strong>విశేషాలు:</strong> ఈ చాటువులలో ప్రదేశాల వర్ణనలు, పొగడ్తలు, తెగడ్తలు, సమకాలీన సాంఘిక పరిస్థితులు, పన్నుల వివరాలు, కవుల వ్యక్తిగత అనుభవాలు, అద్భుత పాండిత్య ప్రకర్ష కనిపిస్తాయి.<br>\n          • <strong>పాఠ్యపుస్తక కవుల విభజన (పుట 18 గమనిక):</strong><br>\n          &nbsp;&nbsp;1. <strong>శ్రీనాథకవి:</strong> 1, 3, 4, 5, 6 చాటువులు.<br>\n          &nbsp;&nbsp;2. <strong>కొప్పరపు కవులు:</strong> 2వ చాటువు (ధనవిద్యా సౌజన్యము...).<br>\n          &nbsp;&nbsp;3. <strong>చిలకమర్తి లక్ష్మీనరసింహం:</strong> 7వ చాటువు (భరతఖండంబు చక్కని పాడియావు...).<br>\n          &nbsp;&nbsp;4. <strong>తెనాలి రామకృష్ణుడు:</strong> 8వ చాటువు (రంజన జెడి పాండవుల...).\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "chatuvu-p1",
+    "category": "lesson3",
+    "tag": "పాఠం 3: పద్యం 1",
+    "title": "పద్యం 1: విష్ణువు, శివుల సంసార స్థితి (శ్రీనాథకవి)",
+    "content": "\n      <div class=\"poem-box\">\n        సిరిగల వానికి జెల్లును<br>\n        తరుణుల పదియారువేల దగ బెండ్లాడన్<br>\n        తిరిపెమున కిద్దరాండ్రా<br>\n        పరమేశా గంగవిడుము పార్వతి చాలున్.\n      </div>\n      <button class=\"tts-btn\" onclick=\"speakText('సిరిగల వానికి జెల్లును తరుణుల పదియారువేల దగ బెండ్లాడన్ తిరిపెమున కిద్దరాండ్రా పరమేశా గంగవిడుము పార్వతి చాలున్')\">🔊 పద్యాన్ని వినండి</button>\n      <div class=\"section-block\">\n        <div class=\"label-pill\">🔍 పదవిభాగం & సంధి పరిశీలన</div>\n        <div class=\"telugu-answer\">\n          • <strong>పదవిభాగం:</strong> సిరి, కలవానికిన్, చెల్లును, తరుణులన్, పదియారువేలన్, తగన్, పెండ్లాడన్, తిరిపెమునకున్, ఇద్దరాండ్రా, పరమేశా, గంగన్, విడుము, పార్వతి, చాలున్.<br>\n          • <strong>సంధి పరిశీలన & అసలు పదాలు:</strong><br>\n          &nbsp;&nbsp;- పద్యంలో <em>'జెల్లును'</em> = అసలు పదం <strong>చెల్లును</strong> (సరళాదేశ సంధి: వానికిన్ + చెల్లును = వానికి జెల్లును).<br>\n          &nbsp;&nbsp;- పద్యంలో <em>'దగ బెండ్లాడన్'</em> = అసలు పదాలు <strong>తగన్ + పెండ్లాడన్</strong> (సరళాదేశ సంధి: తగన్ + పెండ్లాడన్ = దగ బెండ్లాడన్).<br>\n          &nbsp;&nbsp;- అభ్యాసాలలోని అసలు పదం: <strong>పెండ్లాడన్</strong> (విడదీస్తే: <strong>పెండ్లి + ఆడన్</strong> — ఇత్వ సంధి).<br>\n          &nbsp;&nbsp;- నాల్గవ పాదంలో ఖచ్చితమైన పాఠం: <strong>పరమేశా గంగవిడుము పార్వతి చాలున్</strong>.\n        </div>\n        <div class=\"label-pill\">📖 ప్రతిపదార్థం & తాత్పర్యం</div>\n        <div class=\"telugu-answer\">\n          • <strong>సిరి కలవానికిన్</strong> = సర్వ సంపదలకు అధిపతియైన విష్ణుమూర్తికి; <strong>పదియారువేల తరుణులన్</strong> = పదహారు వేలమంది స్త్రీలను; <strong>తగన్ పెండ్లాడన్</strong> = న్యాయముగా వివాహం చేసుకొనుట; <strong>చెల్లును</strong> = తగును;<br>\n          • <strong>తిరిపెమునకున్</strong> = నిత్యం భిక్షమెత్తుకునే భిక్షగాడివైన నీకు; <strong>ఇద్దరాండ్రా</strong> = ఇద్దరు భార్యలు ఎందుకు?; <strong>పరమేశా</strong> = ఓ పరమశివా!; <strong>గంగన్ విడుము</strong> = నీ జటాజూటంలోని గంగను కిందకు విడిచిపెట్టుము; <strong>పార్వతి చాలున్</strong> = నీ సంసారానికి పార్వతీదేవి ఒక్కతె చాలును కదా!<br>\n          • <strong>తాత్పర్యం (పుట 17):</strong> పదహారువేల మందిని పెండ్లాడుటయనేది ధనవంతుడైన శ్రీకృష్ణునికి చెల్లుతుంది. కాని భిక్షగాడైన నీకిద్దరు భార్యలా పరమేశా! నీకు పార్వతి చాలు కాని గంగను విడిచిపెట్టు. (పల్నాడులో తిరిగినప్పుడు దాహం వేసిన శ్రీనాథుడు దానిని తీర్చుకోటానికై చెప్పిన పద్యమిది).\n        </div>\n        <div class=\"telugu-explanation\">\n          💡 <strong>12 ఏళ్ల విద్యార్థికి వివరణ:</strong> శ్రీనాథుడు పల్నాటి ఎండల్లో తిరుగుతూ విపరీతమైన దాహంతో మంచినీళ్ళ కోసం వెతికాడు. ఎక్కడా నీళ్ళు దొరకలేదు. అప్పుడు శివుడిని ఆటపట్టిస్తూ: \"శివా! విష్ణువు ధనవంతుడు కాబట్టి పదహారు వేలమందిని పెళ్లి చేసుకున్నా పోషించగలడు. కానీ భిక్షమెత్తుకునే నీకు ఇద్దరు భార్యలు ఎందుకు? నీ తలమీద ఉన్న గంగమ్మను కిందకు వదిలేస్తే మా దాహం తీరుతుంది కదా, నీకు పార్వతి ఒక్కర్తె చాలులే!\" అని చమత్కరించాడు.\n        </div>\n        <div class=\"english-explanation\">\n          <strong>English Summary:</strong> Wealthy Krishna can maintain 16,000 wives, but poor mendicant Shiva shouldn't keep two! Srinatha teasingly asks Shiva to release River Ganga from his matted locks to quench the parched travelers, keeping only Parvati.\n        </div>\n        <div class=\"gaming-hook\">\n          🎮 <strong>Gaming Hook:</strong> A maxed-out player with infinite gold can summon multiple companions, but a beggar-class character should release the water element to help thirsty party members!\n        </div>\n        <div class=\"exam-trap\">\n          ⚠️ <strong>Exam Trap:</strong> పరీక్షలో అడిగే పదం <strong>పెండ్లాడన్</strong> (విడదీస్తే: పెండ్లి + ఆడన్ — ఇత్వ సంధి). పద్యంలో సరళాదేశ సంధి వల్ల 'దగ బెండ్లాడన్' అయింది. నాల్గవ పాదంలో 'పరమేశా' అని గుర్తుంచుకోవాలి.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "chatuvu-p2",
+    "category": "lesson3",
+    "tag": "పాఠం 3: పద్యం 2",
+    "title": "పద్యం 2: మూడు సుగుణాలు గల ఉత్తముడు (కొప్పరపు కవులు)",
+    "content": "\n      <div class=\"poem-box\">\n        ధనవిద్యా సౌజన్యము<br>\n        లను త్రితయము గల్గుటరది యవి యున్నయు యెం<br>\n        దుని యెడ జూడంబడదు నా<br>\n        ఘను పుణ్య విశేష మఖిల గణ్యంబనఘా!\n      </div>\n      <button class=\"tts-btn\" onclick=\"speakText('ధనవిద్యా సౌజన్యములను త్రితయము గల్గుటరది యవి యున్నయు యెందుని యెడ జూడంబడదు నాఘను పుణ్య విశేష మఖిల గణ్యంబనఘా')\">🔊 పద్యాన్ని వినండి</button>\n      <div class=\"section-block\">\n        <div class=\"label-pill\">🔍 పదవిభాగం & ప్రతిపదార్థం</div>\n        <div class=\"telugu-answer\">\n          • <strong>పదవిభాగం:</strong> ధన, విద్యా, సౌజన్యములు, అను, త్రితయము, కల్గుట, అరది, అవి, ఉన్నయున్, ఎందుని, ఎడన్, చూడంబడదు, ఆ, ఘను, పుణ్య, విశేషము, అఖిల, గణ్యంబు, అనఘా!<br>\n          • <strong>ప్రతిపదార్థం:</strong> అనఘా = పుణ్యాత్ముడా!; ధన, విద్యా, సౌజన్యములు అను త్రితయము = ధనము, విద్య, మంచితనము అనే ఈ మూడు గుణాలు; కల్గుట = ఒకరిలోనే ఉండటం; అరది = చాలా అరుదు; అవి ఉన్నయున్ = ఆ మూడూ ఎవరిలోనైనా ఉన్నా కూడా; ఎందుని ఎడన్ చూడంబడదు = ఎక్కడా గర్వము కనిపించదు; ఆ ఘను పుణ్య విశేషము = అటువంటి మహాపురుషుని విశేషమైన పుణ్యము; అఖిల గణ్యము = సమస్త లోకముల చేత కొనియాడదగినది.<br>\n          • <strong>తాత్పర్యం (పుట 17):</strong> ధనము, విద్య, మంచితనము అను మూడు గుణములు ఎవని యందుండునో అతడు సకల జనుల చేత పొగడబడతాడు. (ఇది కొప్పరపు కవుల పద్యము).\n        </div>\n        <div class=\"telugu-explanation\">\n          💡 <strong>12 ఏళ్ల విద్యార్థికి వివరణ:</strong> ధనం ఉన్నవాడికి చదువు ఉండకపోవచ్చు, చదువుకున్నవాడికి వినయం లేదా మంచితనం ఉండకపోవచ్చు. ఈ మూడు సుగుణాలు (ధనం, విద్య, మంచితనం) ఒక్కరిలోనే ఉండటం చాలా అరుదు. ఒకవేళ ఈ మూడూ ఎవరిలోనైనా ఉంటే, ఆ వ్యక్తిని లోకమంతా ఆదర్శంగా తీసుకుని వేనోళ్ళ పొగుడుతుంది!\n        </div>\n        <div class=\"exam-trap\">\n          ⚠️ <strong>Exam Trap:</strong> 'త్రితయము' = మూడింటి సముదాయము. 'అరది' = అరుదైనది. 'అనఘా' = పాపము లేనివాడా/ఓ పుణ్యాత్ముడా. కవులు: కొప్పరపు కవులు.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "chatuvu-p3",
+    "category": "lesson3",
+    "tag": "పాఠం 3: పద్యం 3",
+    "title": "పద్యం 3: నల్లుల బాధతో దేవుళ్ళ పలాయనం! (శ్రీనాథకవి)",
+    "content": "\n      <div class=\"poem-box\">\n        శివుడద్రిని శయనించుట<br>\n        రవిచంద్రులు మింటనుండు రాజీవాక్షుం<br>\n        డవిరళముగ శేషునిపై<br>\n        బవళించుట నల్లిబాధ పడలేక సుమీ!\n      </div>\n      <button class=\"tts-btn\" onclick=\"speakText('శివుడద్రిని శయనించుట రవిచంద్రులు మింటనుండు రాజీవాక్షుండవిరళముగ శేషునిపై బవళించుట నల్లిబాధ పడలేక సుమీ')\">🔊 పద్యాన్ని వినండి</button>\n      <div class=\"section-block\">\n        <div class=\"label-pill\">🔍 పదవిభాగం & సంధి పరిశీలన</div>\n        <div class=\"telugu-answer\">\n          • <strong>పదవిభాగం:</strong> శివుడు, అద్రిని, శయనించుట, రవిచంద్రులు, మింటన్, ఉండు, రాజీవాక్షుండు, అవిరళముగన్, శేషునిపైన్, పవళించుట, నల్లిబాధ, పడలేక, సుమీ!<br>\n          • <strong>సంధి పరిశీలన:</strong><br>\n          &nbsp;&nbsp;- పద్యంలో 3-4 పాదాలు: <em>శేషునిపైన్ + పవళించుట = శేషునిపై బవళించుట</em> (సరళాదేశ సంధి: ప $\rightarrow$ బ).<br>\n          &nbsp;&nbsp;- అసలు మూల క్రియాపదం: <strong>పవళించుట</strong> (శయనించుట/నిద్రించుట).<br>\n          • <strong>తాత్పర్యం (పుట 17):</strong> శివుడద్రిని శయనించటం, సూర్యచంద్రులు నింగినుండటం, విష్ణు శేషతల్పంపై శయనించటం అనేది నల్లుల బాధ పడలేక సుమా! (శ్రీనాథకవి చాటువు).\n        </div>\n        <div class=\"telugu-explanation\">\n          💡 <strong>12 ఏళ్ల విద్యార్థికి వివరణ:</strong> ఒకరి ఇంట్లో దిగినప్పుడు మంచంలో నల్లులు కుట్టడంతో శ్రీనాథుడు ఉదయాన్నే హాస్యంగా చెప్పాడు: \"శివుడు కొండపై ఎందుకున్నాడు? సూర్యచంద్రులు ఆకాశంలో ఎందుకు తిరుగుతున్నారు? విష్ణువు సముద్రంలో పాము మీద ఎందుకు పడుకున్నాడు? భూమిమీద మంచాల్లో ఉండే నల్లుల కాటు తట్టుకోలేకనే కదా!\"\n        </div>\n        <div class=\"exam-trap\">\n          ⚠️ <strong>Exam Trap:</strong> అసలు పదం <strong>పవళించుట</strong> (పద్యంలో 'బవళించుట'). 'అద్రి' = కొండ/పర్వతం. 'రాజీవాక్షుడు' = పద్మముల వంటి కన్నులు కలవాడు (విష్ణువు - బహువ్రీహి సమాసం).\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "chatuvu-p4",
+    "category": "lesson3",
+    "tag": "పాఠం 3: పద్యం 4",
+    "title": "పద్యం 4: పల్నాటి సీమ రాళ్ళు - రప్పలు (శ్రీనాథకవి)",
+    "content": "\n      <div class=\"poem-box\">\n        చిన్న చిన్న రాళ్ళు చిల్లర దేవుళ్ళు<br>\n        నాగులేటి నీళ్ళు నాపరాళ్ళు<br>\n        సజ్జ జొన్న కూళ్ళు సర్పంబులునుదేళ్ళు<br>\n        పల్లెనాటి సీమ పల్లెటూళ్ళు.\n      </div>\n      <button class=\"tts-btn\" onclick=\"speakText('చిన్న చిన్న రాళ్ళు చిల్లర దేవుళ్ళు నాగులేటి నీళ్ళు నాపరాళ్ళు సజ్జ జొన్న కూళ్ళు సర్పంబులునుదేళ్ళు పల్లెనాటి సీమ పల్లెటూళ్ళు')\">🔊 పద్యాన్ని వినండి</button>\n      <div class=\"section-block\">\n        <div class=\"label-pill\">🔍 పదవిభాగం & తాత్పర్యం</div>\n        <div class=\"telugu-answer\">\n          • <strong>పదవిభాగం:</strong> చిన్న, చిన్న, రాళ్ళు, చిల్లర, దేవుళ్ళు, నాగులేటి, నీళ్ళు, నాపరాళ్ళు, సజ్జ, జొన్న, కూళ్ళు, సర్పంబులునున్, తేళ్ళు, పల్లెనాటి, సీమ, పల్లెటూళ్ళు.<br>\n          • <strong>సంధి:</strong> సర్పంబులునున్ + తేళ్ళు = <strong>సర్పంబులునుదేళ్ళు</strong> (సరళాదేశ సంధి: త $\rightarrow$ ద). అసలు పదం: <strong>తేళ్ళు</strong>.<br>\n          • <strong>తాత్పర్యం (పుట 17):</strong> పల్నాడులో ఎక్కడ చూచినా చిన్న చిన్న రాళ్ళు, గుళ్ళు, నాగులేటి నీళ్ళు, నాపరాళ్ళు, సజ్జ-జొన్నల కూళ్ళు, పాములు, తేళ్ళు ఉండేవని కవి వర్ణించాడు.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "chatuvu-p5",
+    "category": "lesson3",
+    "tag": "పాఠం 3: పద్యం 5",
+    "title": "పద్యం 5: నెమలిపురి యమపురి (శ్రీనాథకవి)",
+    "content": "\n      <div class=\"poem-box\">\n        నెమలిపురి యమ పురముగా<br>\n        యముడాయెను బసివిరెడ్డి యంతకు మిగులన్<br>\n        యముదూతలైరి కాపులు<br>\n        క్రమమెఱుగని దుష్టశైలి కరణాలెల్లన్.\n      </div>\n      <button class=\"tts-btn\" onclick=\"speakText('నెమలిపురి యమ పురముగా యముడాయెను బసివిరెడ్డి యంతకు మిగులన్ యముదూతలైరి కాపులు క్రమమెఱుగని దుష్టశైలి కరణాలెల్లన్')\">🔊 పద్యాన్ని వినండి</button>\n      <div class=\"section-block\">\n        <div class=\"label-pill\">🔍 పదవిభాగం & తాత్పర్యం</div>\n        <div class=\"telugu-answer\">\n          • <strong>పదవిభాగం:</strong> నెమలిపురి, యమ, పురముగా, యముడు, ఆయెను, బసివిరెడ్డి, అంతకున్, మిగులన్, యమదూతలు, ఐరి, కాపులు, క్రమము, ఎఱుగని, దుష్టశైలి, కరణాలు, ఎల్లన్.<br>\n          • <strong>సంధులు:</strong> యముడు + ఆయెను = <strong>యముడాయెను</strong> (ఉత్వ సంధి); యమదూతలు + అయిరి = <strong>యమదూతలైరి</strong> (ఉత్వ సంధి); కరణాలు + ఎల్లన్ = <strong>కరణాలెల్లన్</strong> (ఉత్వ సంధి).<br>\n          • <strong>తాత్పర్యం (పుట 18):</strong> నెమలిపురి యమపురములలో బసివిరెడ్డి యముడుగా, అచటి కాపులు యమభటులుగా, కరణాలు క్రమంతెలియని దుర్మార్గులుగా ఉన్నారని కవి తెలిపాడు.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "chatuvu-p6",
+    "category": "lesson3",
+    "tag": "పాఠం 3: పద్యం 6",
+    "title": "పద్యం 6: సర్వజ్ఞ నామధేయము (శ్రీనాథకవి)",
+    "content": "\n      <div class=\"poem-box\">\n        సర్వజ్ఞ నామధేయము<br>\n        శర్వునకే రావు సింగ భూపాలునకే<br>\n        యుర్విం జెల్లును దక్కొరు<br>\n        సర్వజ్ఞుండనుట కుక్క సామజమనుటే!\n      </div>\n      <button class=\"tts-btn\" onclick=\"speakText('సర్వజ్ఞ నామధేయము శర్వునకే రావు సింగ భూపాలునకే యుర్విం జెల్లును దక్కొరు సర్వజ్ఞుండనుట కుక్క సామజమనుటే')\">🔊 పద్యాన్ని వినండి</button>\n      <div class=\"section-block\">\n        <div class=\"label-pill\">🔍 పదవిభాగం & సంధి పరిశీలన</div>\n        <div class=\"telugu-answer\">\n          • <strong>పదవిభాగం:</strong> సర్వజ్ఞ, నామధేయము, శర్వునకే, రావు, సింగ, భూపాలునకే, ఉర్విన్, చెల్లును, తక్కొరున్, సర్వజ్ఞుండు, అనుట, కుక్కన్, సామజము, అనుటే!<br>\n          • <strong>సంధులు:</strong> ఉర్విన్ + చెల్లును = <strong>యుర్విం జెల్లును</strong> (సరళాదేశం); తక్కొరున్ = <strong>దక్కొరు</strong> (సరళాదేశం). అసలు పదాలు: <strong>చెల్లును</strong>, <strong>తక్కొరు</strong>.<br>\n          • <strong>తాత్పర్యం (పుట 18):</strong> శివునకే సర్వజ్ఞుడనే పేరు చెల్లుతుంది. కాని రావుసింగ భూపాలుని కాని ఇతరుల్ని కాని సర్వజ్ఞుడనటం అనేది కుక్కకు ఏనుగన్నట్లుంటుంది.<br>\n          • <strong>అర్థాలు:</strong> శర్వుడు = శివుడు; ఉర్వి = భూమి; సామజము = ఏనుగు.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "chatuvu-p7",
+    "category": "lesson3",
+    "tag": "పాఠం 3: పద్యం 7",
+    "title": "పద్యం 7: భరతఖండంబు చక్కని పాడియావు (చిలకమర్తి లక్ష్మీనరసింహం)",
+    "content": "\n      <div class=\"poem-box\">\n        భరతఖండంబు చక్కని పాడియావు<br>\n        హిందువులు లేగదూడలై యేడ్చుచుండ<br>\n        దెల్లవారను గడుసరి గొల్లవారు<br>\n        పితుకుచున్నారు మూతులు బిగియగట్టి.\n      </div>\n      <button class=\"tts-btn\" onclick=\"speakText('భరతఖండంబు చక్కని పాడియావు హిందువులు లేగదూడలై యేడ్చుచుండ దెల్లవారను గడుసరి గొల్లవారు పితుకుచున్నారు మూతులు బిగియగట్టి')\">🔊 పద్యాన్ని వినండి</button>\n      <div class=\"section-block\">\n        <div class=\"label-pill\">🔍 పదవిభాగం & సంధి పరిశీలన</div>\n        <div class=\"telugu-answer\">\n          • <strong>పదవిభాగం:</strong> భరతఖండంబు, చక్కని, పాడియావు, హిందువులు, లేగదూడలై, ఏడ్చుచుండన్, తెల్లవారను, కడుసరి, గొల్లవారు, పితుకుచున్నారు, మూతులు, బిగియగట్టి.<br>\n          • <strong>సంధి పరిశీలన & అసలు పదాలు:</strong><br>\n          &nbsp;&nbsp;- పద్యంలో <em>'దెల్లవారను'</em> = అసలు పదం <strong>తెల్లవారను</strong> (సరళాదేశ సంధి: త $\rightarrow$ ద). విడదీస్తే: <strong>తెల్లవారు + అను</strong> (ఉత్వ సంధి).<br>\n          &nbsp;&nbsp;- పద్యంలో <em>'గడుసరి'</em> = అసలు పదం <strong>కడుసరి</strong> (సరళాదేశం: క $\rightarrow$ గ). అర్థం: మిక్కిలి నేర్పరి / జిత్తులమారి.<br>\n          • <strong>తాత్పర్యం (పుట 18):</strong> భరతఖండమంత ఒక చక్కని పాడియావు వంటిది. భారతీయులంతా దాని లేగదూడలు. ఆ లేగడలన్నీ ఏడుస్తూన్నా వాటి మూతులను బిగగట్టి తెల్లవారనే గడుసరి గొల్లవారు ఆ ఆవుపాలను పితుకుతున్నారు. (దీనిని చిలకమర్తి లక్ష్మీనరసింహంగారు చెప్పారు).\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "chatuvu-p8",
+    "category": "lesson3",
+    "tag": "పాఠం 3: పద్యం 8",
+    "title": "పద్యం 8: పాండవుల విరాట కొలువు (తెనాలి రామకృష్ణుడు)",
+    "content": "\n      <div class=\"poem-box\">\n        రంజన జెడి పాండవుల ర<br>\n        భంజనమై విరటు గొడ్ల బాపుడి రకటా<br>\n        సంజయ! యేమని చెప్పుదు<br>\n        కుంజరయూధంబు దోమకుత్తుక జొచ్చెన్.\n      </div>\n      <button class=\"tts-btn\" onclick=\"speakText('రంజన జెడి పాండవుల రభంజనమై విరటు గొడ్ల బాపుడి రకటా సంజయ యేమని చెప్పుదు కుంజరయూధంబు దోమకుత్తుక జొచ్చెన్')\">🔊 పద్యాన్ని వినండి</button>\n      <div class=\"section-block\">\n        <div class=\"label-pill\">🔍 పదవిభాగం & సంధి పరిశీలన</div>\n        <div class=\"telugu-answer\">\n          • <strong>పదవిభాగం:</strong> రంజనన్, చెడి, పాండవుల, రభంజనమై, విరటు, గొడ్లన్, కాచిరి, అకటా, సంజయ, ఏమని, చెప్పుదున్, కుంజరయూధంబు, దోమ, కుత్తుకన్, చొచ్చెన్.<br>\n          • <strong>సంధి పరిశీలన & అసలు పదాలు:</strong><br>\n          &nbsp;&nbsp;- పద్యంలో <em>'రంజన జెడి'</em> = అసలు పదాలు <strong>రంజనన్ + చెడి</strong> (సరళాదేశ సంధి: చ $\rightarrow$ జ). అసలు పదం: <strong>చెడి</strong>.<br>\n          &nbsp;&nbsp;- పద్యంలో <em>'కుత్తుక జొచ్చెన్'</em> = అసలు పదాలు <strong>కుత్తుకన్ + చొచ్చెన్</strong> (సరళాదేశ సంధి: చ $\rightarrow$ జ). అసలు పదం: <strong>చొచ్చెన్</strong> (ప్రవేశించెను).<br>\n          • <strong>తాత్పర్యం (పుట 18):</strong> ఓ సంజయా! ఏమి చెప్పుదును? ఏనుగుల గుంపు దోమ గొంతులో దూరటం ఎంతటి ఆశ్చర్యమో, శత్రువుల్ని చల్లాచెదురుగా కొట్టే బలవంతులైన పాండవులు సంతోషమును కోల్పోయి విరాటరాజు పశువుల కాపరులయ్యారు. (రాయల ఆస్థాన కవి తెనాలి రామకృష్ణుడు).\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "chatuvu-exercises",
+    "category": "lesson3",
+    "tag": "పాఠం 3: సమగ్ర అభ్యాసాలు",
+    "title": "పాఠం 3 సమగ్ర అభ్యాసాలు (పుటలు 18–19)",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"label-pill\">📖 2. అర్థములు (పుట 18)</div>\n        <table>\n          <tr><th>తెలుగు పదం</th><th>పాఠ్యపుస్తక అర్థం</th><th>English Meaning</th></tr>\n          <tr><td>సిరి</td><td>సంపద</td><td>Wealth</td></tr>\n          <tr><td>తరుణులు</td><td>స్త్రీలు</td><td>Women</td></tr>\n          <tr><td>తిరిపెము</td><td>భిచ్చగాడు / భిక్షము</td><td>Beggar / Alms</td></tr>\n          <tr><td>రవి</td><td>సూర్యుడు</td><td>Sun</td></tr>\n          <tr><td>ఉర్వి</td><td>భూమి</td><td>Earth</td></tr>\n          <tr><td>సామజము</td><td>ఏనుగు</td><td>Elephant</td></tr>\n          <tr><td>రంజనము</td><td>సంతోషము</td><td>Happiness</td></tr>\n        </table>\n\n        <div class=\"label-pill\">🔄 3. పర్యాయపదములు (పుట 18)</div>\n        <div class=\"telugu-answer\">\n          • <strong>రవి:</strong> సూర్యుడు, భానుడు, దినకరుడు, ఆదిత్యుడు.<br>\n          • <strong>నల్లి:</strong> మత్కుణము, రక్తపాశి.<br>\n          • <strong>శివుడు:</strong> శర్వుడు, ఈశ్వరుడు, ముక్కంటి, శంకరుడు.<br>\n          • <strong>మేక:</strong> అజము, ఛాగము.<br>\n          • <strong>ఆవు:</strong> గోవు, ధేనువు, సౌరభేయి.<br>\n          • <strong>సర్పము:</strong> పాము, భుజంగము, అహి, ఉరగము.\n        </div>\n\n        <div class=\"label-pill\">🎭 4. నానార్థములు (పుట 18)</div>\n        <div class=\"telugu-answer\">\n          • <strong>పురి:</strong> పట్టణము, నెమలి పింఛము, తాడు మెలిక.<br>\n          • <strong>జోరు:</strong> వేగము, వర్షపు ధార, బలము.<br>\n          • <strong>కాపు:</strong> కాపలా, నివాసము, రక్షణ, ఒక కులము.<br>\n          • <strong>అద్రి:</strong> పర్వతము, చెట్టు, సూర్యుడు.\n        </div>\n\n        <div class=\"label-pill\">🔗 5 & 6. పదాలను విడదీయుట & కలిపి రాయుట (పుట 19)</div>\n        <div class=\"telugu-answer\">\n          <small style=\"color: #64748b; display: block; margin-bottom: 6px;\">📌 <strong>పాఠ్యపుస్తక సూచన:</strong> ఇక్కడ పదాలను విడదీయడం, కలిపి రాయడం మాత్రమే అడిగారు. ఇవి అచ్చులు కలిసే 'సంధులు' (ఉత్వ/ఇత్వ సంధులు), సమాసాలు కావు. పూర్తి అవగాహన కోసం సంధి పేరు బ్రాకెట్‌లో ఇవ్వడమైనది.</small>\n          • <strong>5. విడదీసి రాయుము:</strong><br>\n          &nbsp;&nbsp;1. <strong>పెండ్లాడన్</strong> = <strong>పెండ్లి + ఆడన్</strong> <em>(వ్యాకరణ పరిశీలన: ఇత్వ సంధి)</em><br>\n          &nbsp;&nbsp;2. <strong>శివుడద్రిని</strong> = <strong>శివుడు + అద్రిని</strong> <em>(వ్యాకరణ పరిశీలన: ఉత్వ సంధి)</em><br>\n          &nbsp;&nbsp;3. <strong>కరణాలెల్లన్</strong> = <strong>కరణాలు + ఎల్లన్</strong> <em>(వ్యాకరణ పరిశీలన: ఉత్వ సంధి)</em><br><br>\n          • <strong>6. కలిపి రాయుము:</strong><br>\n          &nbsp;&nbsp;1. <strong>యముడు + ఆయెను</strong> = <strong>యముడాయెను</strong> <em>(వ్యాకరణ పరిశీలన: ఉత్వ సంధి)</em><br>\n          &nbsp;&nbsp;2. <strong>తెల్లవారు + అను</strong> = <strong>తెల్లవారను</strong> <em>(వ్యాకరణ పరిశీలన: ఉత్వ సంధి)</em><br>\n          &nbsp;&nbsp;3. <strong>దూతలు + అయిరి</strong> = <strong>దూతలయిరి</strong> <em>(వ్యాకరణ పరిశీలన: ఉత్వ సంధి)</em><br>\n          <div style=\"background: #eef2ff; border-left: 3px solid #6366f1; padding: 6px 10px; margin-top: 8px; border-radius: 4px; font-size: 0.9em;\">\n            💡 <strong>సంధి vs సమాసము స్పష్టత:</strong> ఇక్కడ 'ఉ' కారమునకు అచ్చు పరమై అచ్చు రూపం స్థిరపడింది (యముడు+ఆయెను = యముడాయెను). కాబట్టి ఇవి 100% <strong>సంధులు</strong> మాత్రమే. సమాసాలు క్రింది 7 & 8 వ అభ్యాసాలలో ఉన్నాయి.\n          </div>\n        </div>\n\n        <div class=\"label-pill\">⚖️ 7 & 8. సమాసాలు — ద్వంద్వ & బహువ్రీహి (పుట 19)</div>\n        <div class=\"telugu-answer\">\n          • <strong>7. ద్వంద్వ సమాసము:</strong> ఉభయ పదార్థ ప్రాధాన్యము కలది (రెండు పదాలకూ సమాన ప్రాధాన్యం).<br>\n          &nbsp;&nbsp;- <strong>రవిచంద్రులు</strong> = రవియును, చంద్రుడును.<br>\n          &nbsp;&nbsp;- <strong>ఆటపాటలు</strong> = ఆటయును, పాటయును.<br>\n          &nbsp;&nbsp;- <strong>మొదలుచివరలు</strong> = మొదలును, చివరయును.<br><br>\n          • <strong>8. బహువ్రీహి సమాసము:</strong> అన్యపదార్థ ప్రాధాన్యము కలది (విగ్రహవాక్యంలో కలది, కలవాడు వచ్చును).<br>\n          &nbsp;&nbsp;- <strong>రాజీవాక్షుడు</strong> = రాజీవముల (పద్మముల) వంటి కన్నులు కలవాడు (శ్రీమహావిష్ణువు).\n        </div>\n\n        <div class=\"label-pill\">❓ 9. ప్రశ్నలు - జవాబులు (పుట 19)</div>\n        <div class=\"telugu-answer\">\n          <strong>1. గంగను విడువమని శ్రీనాథుడెందుకడిగాడు?</strong><br>\n          జవాబు: శ్రీమహావిష్ణువు సర్వసంపదలు గల ధనవంతుడు కాబట్టి 16,000 మంది భార్యలను పోషించగలడు. కానీ శివుడు భిక్షగాడు. ఇద్దరు భార్యలు ఆయనకు దండగని, పల్నాటి ఎండల్లో దాహంతో ఉన్న తమ దాహం తీర్చడానికి తలమీది గంగను కిందకు విడిచిపెట్టమని, సంసారానికి పార్వతి చాలని శ్రీనాథుడు చమత్కరించాడు.<br><br>\n\n          <strong>2. ఎలాంటి వారిని అందరూ పొగుడుతారు?</strong><br>\n          జవాబు: ధనము, విద్యా పాండిత్యము, మంచితనము (సౌజన్యము) అనే ఈ మూడు సుగుణాలు ఎవరిలో కలిసి ఉంటాయో అటువంటి మహాపురుషుని లోకంలోని సకల జనులూ వేనోళ్ళ పొగుడుతారు.<br><br>\n\n          <strong>3. పల్నాడు ప్రాంతమెలా ఉందని శ్రీనాథుడు వర్ణించాడు?</strong><br>\n          జవాబు: పల్నాటి పల్లెలలో కాలికి గుచ్చుకునే గులకరాళ్ళు, ఊరికో చిల్లర దేవతలు, నాగులేటి వాగు నీళ్ళు, నాపరాళ్ళు, సజ్జ-జొన్న అన్నాలు, పాములు, తేళ్ళు తిరుగుతూ ఎంతో నిస్సారంగా ఉందని శ్రీనాథుడు వర్ణించాడు.<br><br>\n\n          <strong>4. సర్వజ్ఞుడనే పేరెవరికి చెల్లుతుంది? ఎవరికి చెల్లదు?</strong><br>\n          జవాబు: సర్వజ్ఞుడు (సమస్తమూ తెలిసినవాడు) అనే బిరుదు పరమశివునికి మరియు రావు సింగ భూపాలునికి మాత్రమే చెల్లుతుంది. మిగతా ఏ సామాన్య రాజుకైనా ఆ పేరు పెట్టడం కుక్కను తీసుకువచ్చి ఏనుగు అని పిలిచినట్లే హాస్యాస్పదంగా ఉంటుందని, వారికి ఆ పేరు చెల్లదని కవి తెలిపాడు.\n        </div>\n\n        <div class=\"label-pill\">✏️ 10. ఖాళీలను పూరింపుము (పుట 19)</div>\n        <div class=\"telugu-answer\">\n          1. రాజీవాక్షుడు <strong>శేషుని</strong> పై పవళించాడు.<br>\n          2. <strong>కరణాలెల్లన్</strong> క్రమమెరుగని దుష్టశైలి.<br>\n          3. <strong>భరతఖండంబు</strong> చక్కని పాడియావు.<br>\n          4. <strong>కుంజర</strong> యూధంబు దోమకుత్తుక జొచ్చెన్.<br>\n          5. <strong>హిందువులు</strong> లేగదూడలై యేడ్చుచుండెను.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "kalalu-7arts",
+    "category": "lesson10",
+    "tag": "పాఠం 10: జానపద కళలు",
+    "title": "7 ప్రముఖ జానపద కళారూపాలు — సమగ్ర చిత్రణ (పుటలు 57–60)",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"telugu-answer\">\n          1. <strong>పులివేషము (Tiger Dance):</strong> కళాకారులు ఒంటికి పసుపు, నలుపు చారల రంగులు వేసుకుని పులి ముసుగు, తోక ధరిస్తారు. డప్పు దరువులకు అనుగుణంగా గాల్లోకి ఎగురుతూ పులిలా గాండ్రిస్తారు. మొహర్రం (పీర్ల పండుగ), దసరా నవరాత్రులలో హిందూ-ముస్లిం మత సామరస్య ప్రతీకగా ప్రదర్శిస్తారు.<br><br>\n          2. <strong>చెక్క భజన (Chekka Bhajana):</strong> ఇత్తడి బిళ్ళల చెక్క చిడతలు కొడుతూ, కాళ్ళకు గజ్జెలతో దేవాలయాల ప్రాంగణంలో రామాయణ, భారత కథలను భక్తితో గానం చేస్తూ వలయాకారంగా నృత్యం చేస్తారు.<br><br>\n          3. <strong>డప్పు నాట్యం (Dappu Dance):</strong> జంతు చర్మంతో చేసిన ఆదిమ మానవుడి తొలి చర్మవాద్యం. పూర్వం ఊళ్ళలో దండోరా వేయడానికి వాడేవారు. జాతరలు, పెళ్ళిళ్ళలో వీరత్వపు అడుగులతో ఉత్సాహం నింపే నాట్యం.<br><br>\n          4. <strong>కోలాటము (Kolatam):</strong> చేతుల్లో రంగురంగుల కర్రలు (కోలలు) పట్టుకుని పెన్నూడు, పొన్నూడు లయలతో 'ఉద్ది' (జంటలు) గా ఆడే నృత్యం. పైనుండి వేలాడే తాళ్ళను అల్లుతూ విడదీసే <em>'జడ కోలాటం'</em> ప్రసిద్ధమైనది. హంపి, లేపాక్షి ఆలయాల్లో దీని శిల్పాలు ఉన్నాయి.<br><br>\n          5. <strong>ధింసా నృత్యము (Dhimsa Dance):</strong> విశాఖపట్నం ఏజెన్సీ అరకు లోయ గిరిజనులు (భోడ్జా జాతి) పంటలు బాగా పండాలని, గ్రామదేవతల పూజలు, పెళ్ళిళ్ళలో ఒకరి భుజంపై ఒకరు చేతులు వేసుకుని గొలుసుకట్టుగా వలయాలు తిరుగుతూ చేసే సంతోషకర నృత్యం.<br><br>\n          6. <strong>పిట్టల దొర (పగటివేషం - Pittala Dora):</strong> ఖాకీ బట్టలు, టోపీ, భుజాన కొయ్య తుపాకితో వీధుల్లో తిరుగుతూ \"లండన్ లో సింహం తోక పట్టి విసిరాను\" అంటూ వీర డాంబికాలతో ప్రజలను నవ్వించే హాస్య కళారూపం. ప్రసిద్ధ కళాకారుడు: సర్దాల హనుమంతు.<br><br>\n          7. <strong>పేరిణి శివతాండవం (Perini Shiva Tandavam):</strong> కాకతీయుల నాటి వీర పురుష నృత్యం. సైనికులలో వీరావేశాన్ని రగిల్చే శివతాండవం. జాయప సేనాని 'నృత్యరత్నావళి' గ్రంథంలో, రామప్ప దేవాలయ శిల్పాలలో నమోదైంది. దీనిని పునరుద్ధరించిన మహనీయుడు పద్మశ్రీ డాక్టర్ నటరాజ రామకృష్ణ.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "kalalu-vocab",
+    "category": "lesson10",
+    "tag": "పాఠం 10: పదజాలం",
+    "title": "అర్థాలు, వ్యతిరేకపదాలు, పర్యాయపదాలు & నానార్థాలు (పుటలు 61–62)",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"label-pill\">📖 అర్థాలు (పుటలు 61–62)</div>\n        <div class=\"telugu-answer\">\n          • <strong>విన్యాసము</strong> = శైలి / కదలిక; <strong>ధోరణి</strong> = పద్ధతి, నడవడిక; <strong>హేతువు</strong> = కారణము;<br>\n          • <strong>ప్రతీక</strong> = గుర్తు, చిహ్నము; <strong>సన్న</strong> = సైగ, సంకేతము; <strong>అనివార్యము</strong> = తప్పనిసరి;<br>\n          • <strong>మేళవించు</strong> = కలుపు, సమ్మిళితం చేయు; <strong>హృద్యమైన</strong> = మనసుకు నచ్చిన, మనోహరమైన;<br>\n          • <strong>మిన్ను</strong> = ఆకాశము; <strong>ఆవిర్భవించు</strong> = పుట్టు, ఉద్భవించు; <strong>మరుగు</strong> = చాటు, కనుమరుగగు.\n        </div>\n\n        <div class=\"label-pill\">↔️ వ్యతిరేక పదాలు (పుట 62)</div>\n        <div class=\"telugu-answer\">\n          • <strong>సహితము</strong> $\times$ అసహితము / రహితము (లేదా సహజత్వము $\times$ అసహజత్వము)<br>\n          • <strong>ప్రకృతి</strong> $\times$ వికృతి<br>\n          • <strong>ఉత్సాహము</strong> $\times$ నిరుత్సాహము<br>\n          • <strong>ఆసక్తి</strong> $\times$ అనాసక్తి<br>\n          • <strong>ఆకర్షణ</strong> $\times$ వికర్షణ<br>\n          • <strong>ఆదరణ</strong> $\times$ నిరాదరణ\n        </div>\n\n        <div class=\"label-pill\">🎭 నానార్థాలు & పర్యాయపదాలు (పుట 62)</div>\n        <div class=\"telugu-answer\">\n          • <strong>నానార్థాలు:</strong><br>\n          &nbsp;&nbsp;- <em>ప్రకృతి:</em> స్వభావము, జానపదం, మూలభాష.<br>\n          &nbsp;&nbsp;- <em>వృత్తి:</em> జీవనాధారము, పని, ప్రవర్తన.<br>\n          &nbsp;&nbsp;- <em>రసము:</em> పండ్ల రసము, పాదరసము, నవరసాలు, ఆనందము.<br>\n          &nbsp;&nbsp;- <em>విధి:</em> బ్రహ్మ, భాగ్యము, కర్తవ్యము, పని.<br>\n          • <strong>పర్యాయపదాలు:</strong><br>\n          &nbsp;&nbsp;- <em>నెమలి:</em> మయూరము, కేకి, బర్హి.<br>\n          &nbsp;&nbsp;- <em>జంతువు:</em> ప్రాణి, మృగము, పశువు.<br>\n          &nbsp;&nbsp;- <em>గోడ:</em> కుడ్యము, భిత్తి.<br>\n          &nbsp;&nbsp;- <em>శిల్పము:</em> విగ్రహము, ప్రతిమ.<br>\n          &nbsp;&nbsp;- <em>ప్రార్థన:</em> విన్నపము, యాచన, స్తోత్రము.\n        </div>\n\n        <div class=\"label-pill\">🌱 ప్రకృతి - వికృతులు (పుట 62)</div>\n        <div class=\"telugu-answer\">\n          • <strong>అటవి</strong> $\rightarrow$ అడవి<br>\n          • <strong>విజ్ఞానము</strong> $\rightarrow$ విన్నాణము<br>\n          • <strong>ఆసక్తి</strong> $\rightarrow$ అసక్తి<br>\n          • <strong>క్రాంతి</strong> $\rightarrow$ కాంతి\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "kalalu-sentences-grammar",
+    "category": "lesson10",
+    "tag": "పాఠం 10: వ్యాకరణం & వాక్యాలు",
+    "title": "సొంత వాక్యాలు, సంధులు & ద్విరుక్తటకార సంధి (పుటలు 62–64)",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"label-pill\">📝 సొంత వాక్యాలు (పుటలు 62–63)</div>\n        <div class=\"telugu-answer\">\n          1. <strong>ఆషామాషీ:</strong> పదవ తరగతిలో ఉత్తమ మార్కులు సాధించడం ఆషామాషీ వ్యవహారం కాదు.<br>\n          2. <strong>చాకచక్యము:</strong> తెనాలి రామకృష్ణుడు తన చాకచక్యంతో రాయలవారి సమస్యలను పరిష్కరించేవాడు.<br>\n          3. <strong>పరిపాటి:</strong> వేసవి సెలవుల్లో తాతయ్య ఊరికి వెళ్ళడం మా ఇంట్లో పరిపాటిగా మారింది.<br>\n          4. <strong>సర్దారులు:</strong> ఛత్రపతి శివాజీ సైన్యంలో వీరత్వము గల ఎందరో సర్దారులు ఉండేవారు.<br>\n          5. <strong>ఎప్పటికప్పుడు:</strong> ఉపాధ్యాయులు ఇచ్చే హోంవర్కును విద్యార్థులు ఎప్పటికప్పుడు పూర్తిచేయాలి.\n        </div>\n\n        <div class=\"label-pill\">⚡ సంధులు (పుట 63)</div>\n        <div class=\"telugu-answer\">\n          • <strong>మానసికోల్లాసము</strong> = మానసిక + ఉల్లాసము — <strong>గుణ సంధి</strong><br>\n          • <strong>ప్రజాదరణ</strong> = ప్రజా + ఆదరణ — <strong>సవర్ణదీర్ఘ సంధి</strong><br>\n          • <strong>ప్రధానాకర్షణ</strong> = ప్రధాన + ఆకర్షణ — <strong>సవర్ణదీర్ఘ సంధి</strong>\n        </div>\n\n        <div class=\"label-pill\">🔥 ద్విరుక్తటకార సంధి సూత్రం & ఉదాహరణలు (పుట 64)</div>\n        <div class=\"telugu-answer\">\n          <em>\"కుఱు, చిఱు, కడు, నడు, నిడు శబ్దముల ఱ, డ లకు అచ్చు పరమగునప్పుడు ద్విరుక్త టకారంబగు.\"</em><br>\n          • నడు + ఇల్లు = <strong>నట్టిల్లు</strong><br>\n          • కుఱు + ఉసురు = <strong>కుట్టుసురు</strong><br>\n          • చిఱు + అత = <strong>చిట్టత</strong><br>\n          • కడు + ఎదురు = <strong>కట్టెదురు</strong><br>\n          • నిడు + ఊర్పు = <strong>నిట్టూర్పు</strong>\n        </div>\n\n        <div class=\"label-pill\">🔄 వాక్య సంశ్లేషణ & వాక్యాల మార్పు (పుటలు 63–64)</div>\n        <div class=\"telugu-answer\">\n          • <strong>కలిపి ఒకే వాక్యంగా రాయుట:</strong><br>\n          &nbsp;&nbsp;1. రమ పాడింది. కమల పాడింది. $\rightarrow$ <strong>రమ, కమల పాడారు.</strong><br>\n          &nbsp;&nbsp;2. నీరజ ఆడింది. నీత ఆడింది. $\rightarrow$ <strong>నీరజ, నీత ఆడారు.</strong><br>\n          • <strong>వ్యతిరేక / షరతు వాక్యాల మార్పు:</strong><br>\n          &nbsp;&nbsp;1. రమణ పుస్తకం చదివితే రోహిత్ చదువుతాడు. $\rightarrow$ <strong>రమణ పుస్తకం చదవకపోతే రోహిత్ చదవడు.</strong><br>\n          &nbsp;&nbsp;2. మా అమ్మ రాకపోతే నేను రాను. $\rightarrow$ <strong>మా అమ్మ వస్తే నేను వస్తాను.</strong>\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "kalalu-qna",
+    "category": "lesson10",
+    "tag": "పాఠం 10: ప్రశ్నోత్తరాలు",
+    "title": "లఘు & వ్యాసరూప ప్రశ్నలకు సంపూర్ణ సమాధానాలు (పుట 63)",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"label-pill\">❓ లఘు ప్రశ్నలు (4–5 వాక్యాలు)</div>\n        <div class=\"telugu-answer\">\n          <strong>1. కళలు వేటిని ప్రతిబింబిస్తాయి?</strong><br>\n          జవాబు: కళలు మానవ సంస్కృతిని, ప్రజా జీవన విధానాన్ని, సమాజపు ఆచార వ్యవహారాలను ప్రతిబింబిస్తాయి. ఆనాటి కాలపు ప్రజల ఆనందోత్సాహాలను, భావ వ్యక్తీకరణను, ప్రకృతితో వారికున్న అనుబంధాన్ని కళలు సజీవంగా మన కళ్ళముందు నిలుపుతాయి.<br><br>\n\n          <strong>2. పులివేషాలెన్నెప్పుడు వేస్తారు? అది దేనికి ప్రతీక?</strong><br>\n          జవాబు: పులివేషాలను ముఖ్యంగా మొహర్రం (పీర్ల పండుగ), దసరా ఉత్సవాల సమయాలలో వేస్తారు. డప్పు దరువులకు అనుగుణంగా గాల్లోకి ఎగురుతూ పులిలా గాండ్రించడం దీని ప్రత్యేకత. ఇది హిందూ-ముస్లిం మత సామరస్యానికి మరియు పరస్పర సోదరభావానికి ప్రతీకగా నిలుస్తుంది.<br><br>\n\n          <strong>3. చెక్క భజన ఎటువంటి కళ?</strong><br>\n          జవాబు: చెక్క భజన అనేది ఇత్తడి బిళ్ళల చెక్క చిడతలు పట్టుకుని, కాళ్ళకు గజ్జెలు కట్టుకుని దేవాలయ ప్రాంగణాలలో రాత్రివేళ చేసే సామూహిక భక్తి నాట్య కళారూపం. రామాయణ, మహాభారత గాథలను, భక్తి కీర్తనలను లయబద్ధంగా పాడుతూ వలయాకారంగా తిరుగుతూ భక్తిపారవశ్యంతో నృత్యం చేస్తారు.<br><br>\n\n          <strong>4. డప్పు ప్రాధాన్యత ఏమిటి?</strong><br>\n          జవాబు: డప్పు అనేది జంతు చర్మంతో తయారైన మానవజాతి తొలి చర్మవాద్యం. పూర్వకాలం నుండి గ్రామాలలో ముఖ్యమైన వార్తలను చాటడానికి (దండోరా వేయడానికి), పండుగలు, జాతరలు, శుభకార్యాలలో ప్రజలలో వీరావేశాన్ని, ఉత్సాహాన్ని రగల్చడానికి డప్పు ఎంతో ప్రాధాన్యత కలిగిన వాద్యంగా నిలిచింది.\n        </div>\n\n        <div class=\"label-pill\">📚 వ్యాసరూప ప్రశ్నలు (10 వాక్యాలు)</div>\n        <div class=\"telugu-answer\">\n          <strong>1. కోలాటం గురించి వ్రాయుము:</strong><br>\n          కోలాటం తెలుగు గ్రామీణ ప్రాంతాలలో అత్యంత ప్రజాదరణ పొందిన ప్రాచీన సమూహ నృత్య కళారూపం. కళాకారులు రెండు చేతులలో రంగురంగుల కర్రలను (కోలలను) పట్టుకుని, కాళ్ళకు గజ్జెలు కట్టుకుని ప్రదర్శిస్తారు. ఇందులో కళాకారులు 'ఉద్ది' అనే జంటలుగా ఏర్పడి గుండ్రంగా తిరుగుతూ కోలలను తాకిస్తూ లయబద్ధమైన శబ్దాలు చేస్తారు. కోలాటంలో 'పెన్నూడు', 'పొన్నూడు' అనే లయ విన్యాసాలు ఉంటాయి. హంపి, లేపాక్షి దేవాలయాల శిల్పాలలో కోలాట శిల్పాలు చెక్కబడి ఉన్నాయి. పైనుండి వేలాడే రంగుల తాళ్ళను అల్లుతూ ఆడే 'జడ కోలాటం' అత్యంత ప్రసిద్ధి చెందిన కళ. ఇది గ్రామీణ ప్రజలలో సమిష్టి తత్వాన్ని, ఐకమత్యాన్ని పెంపొందిస్తుంది.<br><br>\n\n          <strong>2. ధింసా నృత్యం ఎక్కడిది? దానినెలా చేస్తారు?</strong><br>\n          ధింసా నృత్యం విశాఖపట్నం ఏజెన్సీ ప్రాంతంలోని అరకు లోయలో నివసించే భోడ్జా, కొండ దొరలు తదితర గిరిజనుల సాంప్రదాయ నృత్యం. పోడు వ్యవసాయంలో మంచి పంటలు పండాలని, ప్రజలంతా సుఖశాంతులతో ఉండాలని గ్రామదేవతలను పూజిస్తూ ఈ నృత్యం చేస్తారు. చైత్ర పండుగలు, వివాహ వేడుకలలో సామూహికంగా చేస్తారు. స్త్రీ పురుషులు సాంప్రదాయ గిరిజన వస్త్రాలను ధరించి, ఒకరి భుజాలపై ఒకరు చేతులు వేసుకుని గొలుసుకట్టుగా వలయాలు తిరుగుతూ మోరి, తుడుము, డప్పు వాయిద్యాల శబ్దాలకు అనుగుణంగా అడుగులు వేస్తారు.<br><br>\n\n          <strong>3. పిట్టలదొర పగటి వేషం గురించి వ్రాయుము:</strong><br>\n          పిట్టలదొర అనేది తెలుగు పగటివేషాలలో అత్యంత ప్రాచుర్యం పొందిన హాస్యభరిత కళారూపం. కళాకారుడు ఖాకీ రంగు చొక్కా, నిక్కరు, తలపై పెద్ద పోలీసు టోపీ, భుజాన చెక్క తుపాకి (కొయ్య తుపాకి) ధరించి దొరబాబులా కనిపిస్తాడు. \"నేను లండన్ వెళ్ళినప్పుడు తెల్లదొరలంతా నా కాళ్ళమీద పడ్డారు\", \"సింహం తోక పట్టి గాల్లోకి విసిరాను\" అంటూ అసాధ్యమైన వీర ప్రగల్భాలు పలుకుతూ ప్రజలను కడుపుబ్బా నవ్విస్తాడు. సమాజంలో ఏ అర్హత లేకుండా గొప్పలు చెప్పుకునే డాంబికులను ఎత్తిచూపి పరిహసించడమే ఈ వేషం వెనుక ఉన్న అంతరార్థం. సర్దాల హనుమంతు దీని ప్రసిద్ధ కళాకారుడు.<br><br>\n\n          <strong>4. పేరిణి నృత్యం గురించి వ్రాయుము:</strong><br>\n          పేరిణి శివతాండవం కాకతీయుల స్వర్ణయుగంలో ఓరుగల్లు గడ్డపై విలసిల్లిన వీర పురుష నృత్యం. యుద్ధ రంగానికి బయలుదేరే కాకతీయ వీర సైనికులలో వీరావేశాన్ని, శౌర్యాన్ని నింపడానికి శివుని ముందు ఈ నాట్యం చేసేవారు. కాకతీయ గణపతిదేవ చక్రవర్తి గజసైన్యాధిపతి 'జాయప సేనాని' రచించిన 'నృత్యరత్నావళి' గ్రంథంలో దీని లక్షణాలు నమోదయ్యాయి. రామప్ప దేవాలయం రాతి స్తంభాలపై పేరిణి నృత్య భంగిమలు సజీవంగా చెక్కబడి ఉన్నాయి. ఆధునిక కాలంలో ప్రముఖ నాట్యాచార్యులు పద్మశ్రీ డాక్టర్ నటరాజ రామకృష్ణ రామప్ప శిల్పాలను పరిశోధించి పేరిణి నాట్యాన్ని పునరుద్ధరించారు.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "sametalu-overview",
+    "category": "lesson16",
+    "tag": "పాఠం 16: సామెతలు",
+    "title": "సామెత నిర్వచనం, లక్షణాలు & వర్గీకరణ (పుటలు 105–111)",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"telugu-answer\">\n          • <strong>నిర్వచనం:</strong> సంస్కృతంలో సామెతను <strong>'ఆభాణకము'</strong> లేదా <strong>'లోకోక్తి'</strong> అంటారు. పెద్దల సుదీర్ఘ జీవిత అనుభవాల సారమే సామెత.<br>\n          • <strong>లక్షణాలు:</strong> అల్పక్షరములలో అనల్పార్థ రచన (కొద్ది మాటల్లో కొండంత అర్థం), సూటిదనం, ప్రాస, కాలాతీత సత్యం.<br>\n          • <strong>ప్రముఖ సామెతలు & విభాగాలు:</strong><br>\n          - <em>పంచభూతాలు:</em> ఆకాశానికి నిచ్చెన వేసినట్లు, నీటిమీద రాత, నిప్పు ముడిచినా కాలక మానదు, గాలికి పోయే పేలపిండి కృష్ణార్పణం.<br>\n          - <em>వృక్షాలు:</em> మొక్కై వంగనిది మానై వంగునా?, పాలుపోసి పెంచినా ముష్టి చెట్టుకు విషము పోదు.<br>\n          - <em>జీవన తత్త్వం:</em> చిత్తము శివుడి మీద భక్తి చెప్పుల మీద, నీరేరిని విస్తరి ఎగిరెగిరి పడుతుంది అన్నీ ఉన్న విస్తరి అణగిమణిగి ఉంటుంది, రోగికి భోగికి యోగికి నిద్రుండదు.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "sametalu-qna",
+    "category": "lesson16",
+    "tag": "పాఠం 16: ప్రశ్నోత్తరాలు",
+    "title": "పుట 112 లోని 10 ప్రశ్నలకు సమగ్ర సమాధానాలు",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"telugu-answer\">\n          <strong>1. 'సామెత' అంటే అర్థం ఏమిటి? ఆ సామెతలు మనకేం చెబుతున్నాయి?</strong><br>\n          పెద్దల సుదీర్ఘ జీవిత అనుభవ సారాంశమే సామెత. సంస్కృతంలో 'ఆభాణకము', 'లోకోక్తి' అంటారు. అల్పక్షరములలో అనల్పార్థాన్ని నింపి, జీవితంలో ఏది మంచో ఏది చెడో మనకు హితవు చెబుతాయి.<br><br>\n\n          <strong>2. పంచభూతాలని వేటినంటారు? వాటిని గురించి చెప్పబడిన సామెతలేవి?</strong><br>\n          భూమి, నీరు, నిప్పు, గాలి, ఆకాశములను పంచభూతాలు అంటారు. 'ఆకాశానికి నిచ్చెన వేసినట్లు', 'నీటిమీద రాత', 'నిప్పు ముడిచినా కాలక మానదు', 'గాలికి పోయే పేలపిండి కృష్ణార్పణం'.<br><br>\n\n          <strong>3. సమాజంలోని వివిధ వృత్తులవారి గురించి చెప్పిన వివిధ సామెతలను రాయుము:</strong><br>\n          'ఏ విద్యనైనా కులవిద్యలకు సాటిరాదు', 'కుమ్మరి వీధిలో కుండలమ్మినట్లు', 'చేనుకు గట్టు మనిషికి కట్టు కావాలి' వంటి సామెతలు శ్రమజీవుల నైపుణ్యాన్ని తెలియజేస్తాయి.<br><br>\n\n          <strong>4. డబ్బు గురించి సామెతలేముంటున్నాయి?</strong><br>\n          'ద్రవ్యం సర్వత్ర సాధనం', 'పూడ్చలేనంత గొయ్యి తవ్వలేనంత అప్పు చేయరాదు', 'అప్పు లేని వాడే అధిక భాగ్యవంతుడు'.<br><br>\n\n          <strong>5. బడి, చదువుల గురించి రాయుము:</strong><br>\n          'గురువును మించిన శిష్యుడు', 'బడికి బెత్తం మడికి గెత్తం', 'సంస్కారములేని చదువు కొరగాయరాని చెట్టువంటిది'.<br><br>\n\n          <strong>6. మాట - దీనిని గురించి రాయుము:</strong><br>\n          'నోరు మంచిదైతే ఊరు మంచిదవుతుంది', 'కాలం జారిపోతుంది మాట నిలిచిపోతుంది', 'మాటకు ప్రాణము సత్యము', 'మాటలతో మూటలు కొనవచ్చు'.<br><br>\n\n          <strong>7. సోమరితనం మంచిదికాదు. ఎలా?</strong><br>\n          సోమరితనం దారిద్ర్యానికి, అప్పులపాలు కావడానికి దారితీస్తుంది. కష్టపడకుండా బ్రతకాలనుకుంటే పతనం తప్పదు. 'బ్రతికుంటే బలుసాకు తినవచ్చు' అని స్వశక్తితో శ్రమించాలి.<br><br>\n\n          <strong>8. నోటినెందుకు అదుపులో పెట్టుకోవాలి?</strong><br>\n          అహంకారంతో అదుపులేకుండా మాట్లాడితే శత్రుత్వాలు పెరుగుతాయి. మాట బాణం లాంటిది; ఒకసారి జారితే వెనక్కి తీసుకోలేము. కాబట్టి ఆలోచించి మాట్లాడాలి.<br><br>\n\n          <strong>9. మొక్కై వంగనిది మానై వంగునా? దీనిని వివరించండి:</strong><br>\n          చిన్న మొక్కగా ఉన్నప్పుడే వంచడం సులభం; పెద్ద చెట్టయ్యాక వంచితే విరిగిపోతుంది. అలాగే పిల్లలు చిన్నప్పుడే సద్గుణాలు, క్రమశిక్షణ అలవరచుకోవాలి, పెద్దయ్యాక మార్చడం సాధ్యం కాదు.<br><br>\n\n          <strong>10. రోగి - భోగి - యోగి వీరిని గురించి రాయుము:</strong><br>\n          రోగి వ్యాధి బాధతో ఆరోగ్యం కోసం నిద్రపోడు; భోగి సుఖాలను అనుభవించే ఆశతో నిద్రపోడు; యోగి భగవద్ధ్యానం, మోక్షం కోసం నిద్రను జయిస్తాడు.\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "grammar-blueprint",
+    "category": "grammar",
+    "tag": "సమగ్ర వ్యాకరణం",
+    "title": "SA1 సమగ్ర వ్యాకరణ దర్శిని (సంధులు, సమాసాలు, క్రియలు)",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"label-pill\">⚡ సంధులు & సమగ్ర సూత్రాలు</div>\n        <div class=\"telugu-answer\">\n          • <strong>సరళాదేశ సంధి:</strong> దృతప్రకృతికము మీది పరుషములకు సరళములగు. (క, చ, ట, త, ప $\rightarrow$ గ, జ, డ, ద, బ).<br>\n          &nbsp;&nbsp;- తగన్ + <strong>పెండ్లాడన్</strong> = దగ బెండ్లాడన్ (అసలు పదం: <strong>పెండ్లాడన్</strong>)<br>\n          &nbsp;&nbsp;- శేషునిపైన్ + <strong>పవళించుట</strong> = శేషునిపై బవళించుట (అసలు పదం: <strong>పవళించుట</strong>)<br>\n          &nbsp;&nbsp;- రంజనన్ + <strong>చెడి</strong> = రంజన జెడి (అసలు పదం: <strong>చెడి</strong>)<br>\n          &nbsp;&nbsp;- కుత్తుకన్ + <strong>చొచ్చెన్</strong> = కుత్తుక జొచ్చెన్ (అసలు పదం: <strong>చొచ్చెన్</strong>)<br>\n          • <strong>ఇత్వ సంధి:</strong> పెండ్లి + ఆడన్ = <strong>పెండ్లాడన్</strong> (ఏమ్యాదుల ఇత్తునకు సంధి వైకల్పికముగానగు).<br>\n          • <strong>ఉత్వ సంధి:</strong> ఉత్తునకు అచ్చు పరమగునప్పుడు సంధియగు.<br>\n          &nbsp;&nbsp;- శివుడు + అద్రిని = <strong>శివుడద్రిని</strong><br>\n          &nbsp;&nbsp;- యముడు + ఆయెను = <strong>యముడాయెను</strong><br>\n          &nbsp;&nbsp;- కరణాలు + ఎల్లన్ = <strong>కరణాలెల్లన్</strong><br>\n          &nbsp;&nbsp;- తెల్లవారు + అను = <strong>తెల్లవారను</strong><br>\n          • <strong>ద్విరుక్తటకార సంధి:</strong> కుఱు, చిఱు, కడు, నడు, నిడు శబ్దముల ఱ, డ లకు అచ్చు పరమగునప్పుడు ద్విరుక్త టకారంబగు.<br>\n          &nbsp;&nbsp;- నడు + ఇల్లు = <strong>నట్టిల్లు</strong>; కుఱు + ఉసురు = <strong>కుట్టుసురు</strong>; చిఱు + అత = <strong>చిట్టత</strong>; కడు + ఎదురు = <strong>కట్టెదురు</strong>; నిడు + ఊర్పు = <strong>నిట్టూర్పు</strong>.<br>\n          • <strong>సవర్ణదీర్ఘ సంధి:</strong> ప్రజా + ఆదరణ = <strong>ప్రజాదరణ</strong>; ప్రధాన + ఆకర్షణ = <strong>ప్రధానాకర్షణ</strong>.<br>\n          • <strong>గుణ సంధి:</strong> మానసిక + ఉల్లాసము = <strong>మానసికోల్లాసము</strong>.\n        </div>\n\n        <div class=\"label-pill\">⚖️ సమాసాలు</div>\n        <div class=\"telugu-answer\">\n          • <strong>ద్వంద్వ సమాసము:</strong> ఉభయ పదార్థ ప్రధానము (రెండు నామవాచకాలు). ఉదా: రవిచంద్రులు (రవియును, చంద్రుడును), ఆటపాటలు, తల్లిదండ్రులు.<br>\n          • <strong>బహువ్రీహి సమాసము:</strong> అన్య పదార్థ ప్రధానము (విగ్రహవాక్యంలో 'కలది', 'కలవాడు' వచ్చును). ఉదా: రాజీవాక్షుడు (తామరల వంటి కన్నులు కలవాడు — విష్ణువు), ముక్కంటి (మూడు కన్నులు కలవాడు — శివుడు).\n        </div>\n      </div>\n    "
+  },
+  {
+    "id": "model-paper",
+    "category": "modelpaper",
+    "tag": "SA1 మోడల్ పేపర్",
+    "title": "SA1 తెలుగు మాస్టర్ ప్రశ్నాపత్రం (80 మార్కులు)",
+    "content": "\n      <div class=\"section-block\">\n        <div class=\"telugu-answer\">\n          <strong>విభాగం 1: అవగాహన - ప్రతిస్పందన (20 మార్కులు)</strong><br>\n          1. పద్యానికి ప్రతిపదార్థ తాత్పర్యాలు: 'సిరిగల వానికి జెల్లును...' (లేదా) 'భరతఖండంబు చక్కని పాడియావు...' (8 మా)<br>\n          2. అపరిచిత గద్యం & ప్రశ్నలు (12 మా)<br><br>\n\n          <strong>విభాగం 2: వ్యక్తీకరణ - సృజనాత్మకత (36 మార్కులు)</strong><br>\n          3. లఘు ప్రశ్నలు (4 x 4 = 16 మా): శివుని సంసారంపై శ్రీనాథుని చమత్కారం; పులివేషం ప్రత్యేకత; జడ కోలాటం; మొక్కై వంగనిది సామెత అర్థం.<br>\n          4. వ్యాసరూప ప్రశ్నలు (2 x 8 = 16 మా): పేరిణి శివతాండవం విశిష్టత; ధింసా నృత్యం; మాటల ప్రాధాన్యం ('నోరు మంచిదైతే ఊరు మంచిదవుతుంది').<br>\n          5. సృజనాత్మకత / లేఖ (4 మా): సాంస్కృతిక వేడుకల్లో జానపద కళల ప్రదర్శన గురించి మిత్రునికి లేఖ.<br><br>\n\n          <strong>విభాగం 3: భాషాంశాలు - వ్యాకరణం (24 మార్కులు)</strong><br>\n          6. సంధులు: పెండ్లాడన్, నట్టిల్లు, కుట్టుసురు, ప్రజాదరణ (6 మా)<br>\n          7. సమాసాలు: రాజీవాక్షుడు, రవిచంద్రులు (4 మా)<br>\n          8. పర్యాయపదాలు & నానార్థాలు: రవి, పురి, కడుసరి (4 మా)<br>\n          9. సొంత వాక్యాలు: ఆషామాషీ, ఎప్పటికప్పుడు (4 మా)<br>\n          10. ప్రకృతి-వికృతులు & వాక్య సంశ్లేషణ (6 మా)\n        </div>\n      </div>\n    "
+  }
+];
+
+    function renderCards(data) {
+      const container = document.getElementById('cardsContainer');
+      if (data.length === 0) {
+        container.innerHTML = '<div style="text-align:center; padding: 40px; color: var(--text-muted);">ఏ ఫలితాలూ లభించలేదు (No results found). దయచేసి వేరొక పదం శోధించండి.</div>';
+        return;
+      }
+      container.innerHTML = data.map(item => `
+        <div class="card" id="${item.id}" data-category="${item.category}">
+          <div class="card-header">
+            <div>
+              <span class="card-tag">${item.tag}</span>
+              <h2 class="card-title">${item.title}</h2>
+            </div>
+          </div>
+          ${item.content}
+        </div>
+      `).join('');
+    }
+
+    let activeCategory = 'all';
+
+    function switchTab(category) {
+      activeCategory = category;
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      filterCards();
+    }
+
+    function filterCards() {
+      const query = document.getElementById('searchBox').value.toLowerCase().trim();
+      const filtered = cardData.filter(item => {
+        const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
+        const matchesQuery = !query || 
+          item.title.toLowerCase().includes(query) || 
+          item.tag.toLowerCase().includes(query) || 
+          item.content.toLowerCase().includes(query);
+        return matchesCategory && matchesQuery;
+      });
+      renderCards(filtered);
+    }
+
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'te-IN';
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert('మీ బ్రౌజర్‌లో టెక్స్ట్-టు-స్పీచ్ సపోర్ట్ లేదు.');
+      }
+    }
+
+    // Initial render
+    renderCards(cardData);
+  </script>
+</body>
+</html>

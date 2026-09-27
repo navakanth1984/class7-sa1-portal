@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 7 GK SA-1 Master Portal | 2026-27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nirmala+UI&family=Gautami&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0ea5e9;
+      --primary-dark: #1e3a8a;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-light: #334155;
+      --card-bg: rgba(30, 41, 59, 0.75);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --font-main: 'Outfit', 'Nirmala UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding-bottom: 70px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 18px 0;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .subject-icon {
+      font-size: 2rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+    .title-group h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .title-group p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    /* Nav Tabs */
+    .tabs-nav {
+      display: flex;
+      gap: 10px;
+      margin: 24px 0 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid var(--card-border);
+    }
+
+    /* Search Bar */
+    .search-box {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px 18px 12px 42px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--surface);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+    }
+    .search-box::before {
+      content: "🔍";
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.95rem;
+    }
+
+    /* Content Area */
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Typography inside content */
+    .rendered-content h1 {
+      font-size: 1.45rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--card-border);
+      padding-bottom: 6px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .rendered-content h2 {
+      font-size: 1.25rem;
+      color: #38bdf8;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+    .rendered-content h3 {
+      font-size: 1.1rem;
+      color: #7dd3fc;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+    .rendered-content h4 {
+      font-size: 1rem;
+      color: #bae6fd;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+    .rendered-content p {
+      margin-bottom: 10px;
+      color: #e2e8f0;
+    }
+    .rendered-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .rendered-content th, .rendered-content td {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+    .rendered-content th {
+      background: rgba(255, 255, 255, 0.08);
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .rendered-content blockquote {
+      border-left: 4px solid var(--primary);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 16px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      color: #cbd5e1;
+    }
+    .rendered-content strong {
+      color: #fff;
+    }
+    .rendered-content code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      color: #f472b6;
+    }
+    .rendered-content hr {
+      border: none;
+      border-top: 1px solid var(--card-border);
+      margin: 20px 0;
+    }
+
+    /* Action bar on cards */
+    .tts-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      border: 1px solid var(--card-border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .tts-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Print View */
+    @media print {
+      header, .tabs-nav, .search-box, .btn-group, .tts-btn {
+        display: none !important;
+      }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .card {
+        background: #fff !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .rendered-content h1, .rendered-content h2, .rendered-content h3 {
+        color: #000 !important;
+      }
+      .rendered-content table {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .rendered-content th {
+        background: #eee !important;
+        color: #000 !important;
+      }
+      .rendered-content td {
+        border: 1px solid #ccc !important;
+      }
+      #tab-qp {
+        display: block !important;
+      }
+      #tab-master {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="subject-icon">🌍</div>
+        <div class="title-group">
+          <h1>Class 7 GK SA-1 Master Portal</h1>
+          <p>Encyclopaedia Express - 7 (Unit 1: Lessons 1 to 4) | Exam: 07-10-2026 | Marks: 50</p>
+        </div>
+      </div>
+      <div class="btn-group">
+        <a class="btn" href="index.html" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: #fff;">🏠 All Subjects</a>
+        <button class="btn" onclick="window.print()">🖨️ Print Exam Paper</button>
+        <a class="btn btn-primary" href="SA1_GK_Master_Solutions.pdf" target="_blank">📄 Master Solutions PDF</a>
+        <a class="btn" href="SA1_GK_Question_Paper.pdf" target="_blank">📝 Question Paper PDF</a>
+        <a class="btn" href="SA1_GK_Master_Solutions.docx" download>📥 Word DOCX</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 20px;">
+    
+    <!-- EMBEDDED ENGLISH AUDIO GUIDE -->
+    <div style="background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.8rem;">🎧</span>
+        <div>
+          <h3 style="margin: 0; font-size: 1rem; color: #38bdf8;">Complete English Audio Study Guide</h3>
+          <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">High-clarity neural English narration for comprehensive revision</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; max-width: 450px;">
+        <audio controls style="width: 100%; height: 38px; border-radius: 8px;">
+          <source src="SA1_GK_English_Audio_Guide.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <a href="SA1_GK_English_Audio_Guide.mp3" download class="btn" style="padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">⬇️ MP3</a>
+      </div>
+    </div>
+
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('master')">📘 Master Solutions & Study Guide</button>
+      <button class="tab-btn" onclick="switchTab('qp')">📝 Student Question Paper (50 Marks)</button>
+      <button class="tab-btn" onclick="switchTab('overview')">⚡ Syllabus & Exam Blueprint</button>
+    </div>
+
+    <!-- TAB 1: MASTER SOLUTIONS -->
+    <div id="tab-master" class="tab-content active">
+      <div class="search-box">
+        <input type="text" id="masterSearch" placeholder="Type to search questions, keywords, Telugu translations..." onkeyup="filterContent()">
+      </div>
+      <div class="card rendered-content" id="masterContent">
+        <h1>7th Class General Knowledge (G.K.) — SA1 Master Solutions &amp; Comprehensive Guide</h1>
+<h2>Encyclopaedia Express - 7 (Unit 1: Fresh Finds) — Summative Assessment-1 Complete Blueprint</h2>
+<blockquote>
+<p><strong>Syllabus Scope (SA-1 Timetable &amp; Textbook Portion):</strong><br />
+<strong>Unit 1: Fresh Finds (Pages 5–9)</strong><br />
+1. <strong>Chapter 1: Union Budget 2025</strong> (Page 5) — Fiscal deficit, CapEx, nominal GDP growth, agriculture as first engine of development, and government liabilities target.<br />
+2. <strong>Chapter 2: State Governors of India</strong> (Pages 6–7) — High-accuracy state-wise mapping of all 13 Indian Governors with constitutional roles.<br />
+3. <strong>Chapter 3: Port Blair to Sri Vijaya Puram</strong> (Page 8) — Renaming history, Andaman &amp; Nicobar geography, Netaji Subhash Chandra Bose 1943 tricolour hoisting, and Cellular Jail heritage.<br />
+4. <strong>Chapter 4: Robot Teachers in Schools</strong> (Page 9) — Educational robotics (Nao, Pepper, Robovie, Tega), AI classroom assistance, emotional robotics, and coding tutors.</p>
+<p><strong>Pedagogical Standards:</strong><br />
+- Every exercise, multiple-choice question, matching table, fill-in-the-blank, fact box, and teacher note is 100% solved with zero omissions.<br />
+- <strong>5-Layer Architecture:</strong> Target Answer Key, Formal Explanation, Real-World Context &amp; Memory Hack, ⚠️ Ninja Exam Trap, and ✅ Sanity Check.</p>
+</blockquote>
+<hr />
+<h1>Chapter 1: Union Budget 2025 (Page 5)</h1>
+<h3>Context &amp; Core Summary:</h3>
+<p>The Union Budget presented by the Finance Minister focuses on 4 core pillars: Youth, Women, Farmers (Annadata), and the Poor (Gareeb). Key budgetary allocations prioritize capital expenditure (CapEx) to spur infrastructure, fiscal consolidation to bring down the fiscal deficit below 4.5% of GDP, and positioning agriculture as the primary engine of inclusive economic growth.</p>
+<hr />
+<h3>Textbook Exercises: Tick (✓) the correct option</h3>
+<h4>Question 1</h4>
+<p><strong>The total expenditure estimated for the budget year 2025-26 (excluding borrowings) is approximately:</strong><br />
+- a. ₹34.96 lakh crore<br />
+- b. ₹50.65 lakh crore<br />
+- c. ₹28.37 lakh crore<br />
+- d. ₹14.82 lakh crore</p>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>b. ₹50.65 lakh crore</strong></p>
+<p><strong>Formal Explanation:</strong> The Union Budget for the fiscal year estimates an overall budget expenditure crossing the landmark ₹50 lakh crore threshold, pegged at approximately ₹50.65 lakh crore to balance development spending with fiscal consolidation.</p>
+<p>💡 <strong>Memory Hack:</strong> Remember "Fifty-Fifty" — the Indian Union Budget breaks the 50-lakh-crore barrier at ₹50.65 lakh crore.</p>
+<p>⚠️ <strong>Ninja Exam Trap:</strong> Do not confuse <em>Total Expenditure</em> (₹50.65 lakh crore) with <em>Net Tax Receipts</em> (₹28.37 lakh crore) or <em>Revenue Expenditure</em>.</p>
+<p>✅ <strong>Sanity Check:</strong> Total expenditure is always the largest figure in the budget equation: $\text{Expenditure} = \text{Revenue Receipts} + \text{Capital Receipts} + \text{Borrowings}$.</p>
+</blockquote>
+<hr />
+<h4>Question 2</h4>
+<p><strong>The fiscal deficit target for the year 2025-26 is set at:</strong><br />
+- a. 5.0% of GDP<br />
+- b. 4.4% of GDP<br />
+- c. 3.1% of GDP<br />
+- d. 6.2% of GDP</p>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>b. 4.4% of GDP</strong></p>
+<p><strong>Formal Explanation:</strong> The Government of India committed to a strict fiscal consolidation roadmap under the FRBM framework to bring the fiscal deficit below 4.5% by FY 2025-26. Thus, the target is set at 4.4% of Gross Domestic Product (GDP).</p>
+<p>💡 <strong>Memory Hack:</strong> "Below 4.5" — the target is precisely <strong>4.4%</strong>.</p>
+<p>⚠️ <strong>Ninja Exam Trap:</strong> Students often select 5.0% or 5.1% because that was the target for the previous year (2024-25). The 2025-26 target is strictly 4.4%.</p>
+<p>✅ <strong>Sanity Check:</strong> Fiscal deficit trend must show a declining trajectory year-on-year (e.g., $5.8\% \rightarrow 5.1\% \rightarrow 4.4\%$).</p>
+</blockquote>
+<hr />
+<h4>Question 3</h4>
+<p><strong>The estimated capital expenditure (CapEx) for 2025-26 amounts to about:</strong><br />
+- a. ₹11.21 lakh crore<br />
+- b. ₹8.50 lakh crore<br />
+- c. ₹12.75 lakh crore<br />
+- d. ₹9.90 lakh crore</p>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>a. ₹11.21 lakh crore</strong></p>
+<p><strong>Formal Explanation:</strong> Capital Expenditure (CapEx), which is money spent on creating long-term productive physical assets like national highways, railways, bridges, airports, and power grids, is maintained at an all-time record level of approximately ₹11.21 lakh crore (representing ~3.4% of GDP).</p>
+<p>💡 <strong>Memory Hack:</strong> "11-21" like an auspicious gift amount (Shagun) — ₹11.21 lakh crore.</p>
+<p>⚠️ <strong>Ninja Exam Trap:</strong> Do not confuse <em>CapEx</em> (₹11.21 lakh crore) with <em>Revenue Expenditure</em> which covers salaries, pensions, and subsidies.</p>
+<p>✅ <strong>Sanity Check:</strong> CapEx should be roughly 22% of total budget expenditure ($\frac{11.21}{50.65} \approx 22.1\%$).</p>
+</blockquote>
+<hr />
+<h4>Question 4</h4>
+<p><strong>Under the Budget, agriculture is referred to as:</strong><br />
+- a. The third engine of growth<br />
+- b. The second engine of growth<br />
+- c. The first engine of development<br />
+- d. A minor priority sector</p>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>c. The first engine of development</strong></p>
+<p><strong>Formal Explanation:</strong> The Union Budget specifically designates Agriculture and rural prosperity as the "First Engine of Development," emphasizing productivity enhancements, natural farming, pulse self-sufficiency, and Digital Public Infrastructure (DPI) for agriculture.</p>
+<p>💡 <strong>Memory Hack:</strong> Farmers come <em>first</em> in India — "First Engine".</p>
+<p>⚠️ <strong>Ninja Exam Trap:</strong> Do not pick "The second engine of growth" or "third engine". The official speech calls it the <em>First Engine of Development</em>.</p>
+</blockquote>
+<hr />
+<h4>Question 5</h4>
+<p><strong>The estimated net tax receipts (other than borrowings) for 2025-26 are:</strong><br />
+- a. ₹34.96 lakh crore<br />
+- b. ₹28.37 lakh crore<br />
+- c. ₹50.65 lakh crore<br />
+- d. ₹14.82 lakh crore</p>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>b. ₹28.37 lakh crore</strong></p>
+<p><strong>Formal Explanation:</strong> Net tax receipts represent the net tax revenue flowing into the Consolidated Fund of India after transferring the mandatory devolution share (41%) to the States. For the budget year, net tax receipts are estimated at ₹28.37 lakh crore.</p>
+<p>⚠️ <strong>Ninja Exam Trap:</strong> Gross Tax Receipts are higher (~₹38.4 lakh crore); <em>Net</em> tax receipts after state transfers are ₹28.37 lakh crore.</p>
+<p>✅ <strong>Sanity Check:</strong> Net tax receipts (₹28.37L Cr) + Non-tax revenue (~₹5.5L Cr) + Capital receipts &amp; Borrowings (~₹16.8L Cr) = Total Expenditure (₹50.65L Cr).</p>
+</blockquote>
+<hr />
+<h4>Question 6</h4>
+<p><strong>The government's nominal GDP growth estimate for 2025-26 is about:</strong><br />
+- a. 9.2%<br />
+- b. 10.1%<br />
+- c. 8.5%<br />
+- d. 11.0%</p>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>b. 10.1%</strong> (or <strong>d. 11.0%</strong> based on standard projection models; 10.1% is the baseline assumption used in the budget arithmetic).</p>
+<p><strong>Formal Explanation:</strong> Nominal GDP accounts for real GDP growth plus anticipated inflation (GDP deflator). The Union Budget estimates nominal GDP growth at approximately 10.1% to 10.5% for budgetary calculations.</p>
+<p>💡 <strong>Memory Hack:</strong> Double digits beginning with 10 — "10.1%".</p>
+<p>⚠️ <strong>Ninja Exam Trap:</strong> Real GDP growth is around 6.5%–7.0%. Nominal GDP includes inflation and is therefore 10.1%–11.0%. Always check if the question asks for <em>Real</em> or <em>Nominal</em>.</p>
+</blockquote>
+<hr />
+<h4>Question 7</h4>
+<p><strong>The outstanding liabilities of the central government for March 2031 are aimed to be around what percentage of GDP?</strong><br />
+- a. 60%<br />
+- b. 56.1%<br />
+- c. 50%<br />
+- d. 45%</p>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>c. 50%</strong></p>
+<p><strong>Formal Explanation:</strong> Under the revised debt-to-GDP roadmap, the central government aims to bring down its outstanding public debt liabilities from over 56.8% to 50% of GDP by the end of March 2031.</p>
+<p>💡 <strong>Memory Hack:</strong> Half of GDP = <strong>50%</strong>.</p>
+<p>⚠️ <strong>Ninja Exam Trap:</strong> 56.1% is the current level. The future target for March 2031 is 50%.</p>
+</blockquote>
+<hr />
+<h3>Fact Box &amp; Teacher's Note (Page 5)</h3>
+<ul>
+<li><strong>Teacher's Note:</strong> Encourage students to relate budget highlights with real-life benefits for society and citizens (e.g., cheaper mobile phones, higher farm productivity, tax relief for middle class, faster train corridors).</li>
+<li><strong>Core Concept:</strong> A budget is an Annual Financial Statement presented under Article 112 of the Constitution of India.</li>
+</ul>
+<hr />
+<h1>Chapter 2: State Governors of India (Pages 6 &amp; 7)</h1>
+<h3>Constitutional Background:</h3>
+<p>Under <strong>Article 153</strong> of the Constitution of India, there shall be a Governor for each State. The Governor is appointed by the <strong>President of India</strong> under Article 155 and holds office during the pleasure of the President. The Governor is the constitutional and executive head of the state.</p>
+<hr />
+<h3>Complete Governors Table (Items 1 to 13):</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">S.No.</th>
+<th style="text-align: left;">Governor's Name</th>
+<th style="text-align: left;">Official Designation / State</th>
+<th style="text-align: left;">Important Constitutional &amp; Career Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>Ajay Kumar Bhalla</strong></td>
+<td style="text-align: left;"><strong>Manipur</strong></td>
+<td style="text-align: left;">Former Union Home Secretary of India (1984 batch IAS officer); appointed Governor of Manipur.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;"><strong>Arif Mohammad Khan</strong></td>
+<td style="text-align: left;"><strong>Kerala</strong></td>
+<td style="text-align: left;">Prominent scholar, statesman, and constitutionalist; serving as Governor of Kerala.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;"><strong>Dr. Kambhampati Hari Babu</strong></td>
+<td style="text-align: left;"><strong>Odisha</strong> <em>(previously Mizoram)</em></td>
+<td style="text-align: left;">Former Member of Parliament from Visakhapatnam, academician (PhD from Andhra University); distinguished Telugu leader.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;"><strong>Rajendra Vishwanath Arlekar</strong></td>
+<td style="text-align: left;"><strong>Bihar</strong></td>
+<td style="text-align: left;">Former Speaker of Goa Legislative Assembly and Governor of Himachal Pradesh; currently Governor of Bihar.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: left;"><strong>Vijay Kumar Singh (Gen. V. K. Singh)</strong></td>
+<td style="text-align: left;"><strong>Mizoram</strong></td>
+<td style="text-align: left;">Former Chief of Army Staff (4-star General) and Union Minister of State; serving as Governor of Mizoram.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: left;"><strong>Sayed Abdul Nazeer (Justice S. Abdul Nazeer)</strong></td>
+<td style="text-align: left;"><strong>Andhra Pradesh</strong></td>
+<td style="text-align: left;">Former Judge of the Supreme Court of India; currently serving as the Governor of Andhra Pradesh.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>7</strong></td>
+<td style="text-align: left;"><strong>Kaiwalya Trivikram Parnaik (Lt. Gen. K. T. Parnaik)</strong></td>
+<td style="text-align: left;"><strong>Arunachal Pradesh</strong></td>
+<td style="text-align: left;">Highly decorated retired Lieutenant General of the Indian Army; serving as Governor of strategic frontier state Arunachal Pradesh.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: left;"><strong>Lakshman Prasad Acharya</strong></td>
+<td style="text-align: left;"><strong>Assam</strong></td>
+<td style="text-align: left;">Distinguished public figure; serving as Governor of Assam (also held additional charge of Manipur).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: left;"><strong>Ramen Deka</strong></td>
+<td style="text-align: left;"><strong>Chhattisgarh</strong></td>
+<td style="text-align: left;">Former Member of Parliament from Assam and veteran political leader; appointed Governor of Chhattisgarh.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: left;"><strong>P. S. Sreedharan Pillai</strong></td>
+<td style="text-align: left;"><strong>Goa</strong></td>
+<td style="text-align: left;">Eminent advocate, author of over 100 books, and former Governor of Mizoram; currently Governor of Goa.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>11</strong></td>
+<td style="text-align: left;"><strong>Acharya Devvrat</strong></td>
+<td style="text-align: left;"><strong>Gujarat</strong></td>
+<td style="text-align: left;">Renowned educationist, natural farming champion, and former Governor of Himachal Pradesh; currently Governor of Gujarat.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>12</strong></td>
+<td style="text-align: left;"><strong>Bandaru Dattatreya</strong></td>
+<td style="text-align: left;"><strong>Haryana</strong></td>
+<td style="text-align: left;">Veteran Telugu statesman, former Union Minister of State for Labour; currently serving as Governor of Haryana.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>13</strong></td>
+<td style="text-align: left;"><strong>Shiv Pratap Shukla</strong></td>
+<td style="text-align: left;"><strong>Himachal Pradesh</strong></td>
+<td style="text-align: left;">Former Union Minister of State for Finance; currently serving as Governor of Himachal Pradesh.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>High-Yield Exam Memory Aids:</h3>
+<ul>
+<li><strong>Andhra Pradesh Governor:</strong> Justice S. Abdul Nazeer (former Supreme Court Judge).</li>
+<li><strong>Telugu Leaders as Governors:</strong> Dr. Kambhampati Hari Babu (Odisha) and Bandaru Dattatreya (Haryana).</li>
+<li><strong>Military Generals as Governors:</strong> Gen. V. K. Singh (Mizoram) and Lt. Gen. K. T. Parnaik (Arunachal Pradesh).</li>
+</ul>
+<hr />
+<h1>Chapter 3: Port Blair to Sri Vijaya Puram (Page 8)</h1>
+<h3>Complete Historical Narrative:</h3>
+<p>In September 2024, the Government of India officially renamed <strong>Port Blair</strong>, the capital city of the Union Territory of Andaman and Nicobar Islands, to <strong>Sri Vijaya Puram</strong>. <br />
+- <strong>Symbolism of Sri Vijaya Puram:</strong> While 'Port Blair' honored British naval surveyor Archibald Blair, 'Sri Vijaya Puram' symbolizes the victory of India's freedom struggle and honours the ancient maritime legacy of the Chola Empire (Sri Vijaya kingdom).<br />
+- <strong>Geographical Location:</strong> Located in the Bay of Bengal, the Andaman &amp; Nicobar archipelago forms a strategic maritime gateway.<br />
+- <strong>Historic Milestones:</strong><br />
+  1. <strong>Netaji Subhash Chandra Bose:</strong> On <strong>30th December 1943</strong>, Netaji Subhash Chandra Bose hoisted the National Tricolour at Port Blair, declaring the Andaman and Nicobar Islands as the <strong>first Indian territory liberated from British colonial rule</strong>. He named the islands <em>Shaheed</em> and <em>Swaraj</em>.<br />
+  2. <strong>Cellular Jail (Kala Pani):</strong> Built by the British between 1896 and 1906, it housed heroic Indian freedom fighters including <strong>Vinayak Damodar Savarkar (Veer Savarkar)</strong>, Batukeshwar Dutt, and Yogendra Shukla in solitary confinement.<br />
+  3. <strong>World War II History:</strong> During WWII (1942–1945), Japanese forces occupied the islands and built fortified concrete bunkers near Corbyn's Cove, which remain standing today as historical landmarks.</p>
+<hr />
+<h3>Textbook Exercises: Fill in the blanks (Page 8)</h3>
+<h4>1. The former name of Sri Vijaya Puram was <strong><em>_</em></strong>___.</h4>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>Port Blair</strong></p>
+<p><strong>Explanation:</strong> Renamed in September 2024 to shed colonial vestiges.</p>
+</blockquote>
+<h4>2. The Cellular Jail in Sri Vijaya Puram is associated with India's <strong><em>_</em></strong>___.</h4>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>freedom struggle</strong></p>
+<p><strong>Explanation:</strong> Thousands of revolutionary patriots endured solitary torture here during the independence movement.</p>
+</blockquote>
+<h4>3. Netaji Subhash Chandra Bose hoisted the Indian tricolour here in <strong><em>_</em></strong>___.</h4>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>1943</strong> <em>(specifically 30 December 1943)</em></p>
+<p><strong>Explanation:</strong> Netaji visited the islands after the Japanese handed over administrative control to the Azad Hind government.</p>
+</blockquote>
+<h4>4. This Indian union territory is located in <strong><em>_</em></strong>___.</h4>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>Bay of Bengal</strong></p>
+<p><strong>Explanation:</strong> The Andaman and Nicobar chain separates the Bay of Bengal to the west from the Andaman Sea to the east.</p>
+</blockquote>
+<h4>5. Sri Vijaya Puram is the capital of the <strong><em>_</em></strong><strong><em> and </em></strong><strong><em>_</em></strong> Islands.</h4>
+<blockquote>
+<p><strong>Target Answer Key:</strong> <strong>Andaman</strong> and <strong>Nicobar</strong></p>
+<p><strong>Explanation:</strong> It is the administrative headquarters and sole municipal council of the Andaman and Nicobar Islands Union Territory.</p>
+</blockquote>
+<hr />
+<h3>Fact Box &amp; Hint Box Verification (Page 8):</h3>
+<ul>
+<li><strong>Fact:</strong> During World War II, the Japanese occupied Sri Vijaya Puram and constructed bunkers near Corbyn's Cove, which still stand today as historical remnants.</li>
+<li><strong>Hint Box Check:</strong> <code>Bay of Bengal</code>, <code>freedom struggle</code>, <code>1943</code>, <code>Andaman</code>, <code>Nicobar</code>, <code>Port Blair</code> — all 6 hint keywords perfectly match the 5 questions!</li>
+</ul>
+<hr />
+<h1>Chapter 4: Robot Teachers in Schools (Page 9)</h1>
+<h3>Technological Overview:</h3>
+<p>Modern classrooms worldwide are incorporating Social and Educational Robotics to make STEM education and language acquisition engaging, adaptive, and interactive.</p>
+<hr />
+<h3>Robot Profiles &amp; Functionalities:</h3>
+<ol>
+<li><strong>Nao Robot:</strong></li>
+<li><strong>Form Factor:</strong> Small (58 cm tall), bipedal humanoid robot.</li>
+<li><strong>Key Capabilities:</strong> Capable of walking, talking, recognizing faces, tracking motion, and dancing.</li>
+<li>
+<p><strong>Educational Role:</strong> Used worldwide to teach Mathematics, Science, and foreign languages through interactive dialogue and gamified exercises.</p>
+</li>
+<li>
+<p><strong>Pepper Robot:</strong></p>
+</li>
+<li><strong>Form Factor:</strong> Larger humanoid robot (120 cm tall) on a wheeled mobile base.</li>
+<li><strong>Key Capabilities:</strong> Equipped with high-level emotion recognition software; interprets facial expressions, voice pitch, and body language.</li>
+<li>
+<p><strong>Educational Role:</strong> Acts as an interactive school receptionist, answers students' open-ended questions, and delivers empathetic conversational instruction.</p>
+</li>
+<li>
+<p><strong>Robovie:</strong></p>
+</li>
+<li><strong>Form Factor:</strong> Interactive tabletop and mobile robotics platform developed by ATR (Japan).</li>
+<li><strong>Key Capabilities:</strong> Speech recognition, tactile sensors, interactive displays.</li>
+<li>
+<p><strong>Educational Role:</strong> Designed specifically to assist students in mastering <strong>computer programming and coding logic</strong>, encouraging learners to construct basic algorithms.</p>
+</li>
+<li>
+<p><strong>Tega Robot:</strong></p>
+</li>
+<li><strong>Form Factor:</strong> Cute, fluffy, brightly coloured squash-and-stretch robotic creature developed by MIT Media Lab.</li>
+<li><strong>Key Capabilities:</strong> Smartphone-powered face display, animated expressive movements, speech synthesis.</li>
+<li><strong>Educational Role:</strong> Specifically tailored for early childhood education to improve <strong>reading, storytelling, and writing literacy</strong>.</li>
+</ol>
+<hr />
+<h3>Textbook Exercises: A. Match the following (Page 9)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column A (Robot Name)</th>
+<th style="text-align: center;">Match</th>
+<th style="text-align: left;">Column B (Primary Role)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Nao</strong></td>
+<td style="text-align: center;">$\rightarrow$ <strong>c</strong></td>
+<td style="text-align: left;"><strong>Teaches Maths, Science and Languages</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Pepper</strong></td>
+<td style="text-align: center;">$\rightarrow$ <strong>b</strong></td>
+<td style="text-align: left;"><strong>Displays emotions through expressions</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Robovie</strong></td>
+<td style="text-align: center;">$\rightarrow$ <strong>a</strong></td>
+<td style="text-align: left;"><strong>Teaches programming and coding</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Tega</strong></td>
+<td style="text-align: center;">$\rightarrow$ <strong>d</strong></td>
+<td style="text-align: left;"><strong>Improves reading and writing skills</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Fact Box &amp; Teacher's Note (Page 9):</h3>
+<ul>
+<li><strong>Fact:</strong> Robots like Pepper and Nao are equipped with sensors, microphones, and cameras to understand and respond to students' emotions and queries in real time.</li>
+<li><strong>Teacher's Note:</strong> Encourage students to explore the exciting possibilities of learning with technology, highlighting the unique features and ethical safety considerations of teaching robots.</li>
+<li>⚠️ <strong>Ninja Exam Trap:</strong> </li>
+<li>Robovie = <strong>Coding &amp; Programming</strong></li>
+<li>Tega = <strong>Reading &amp; Writing</strong> (for younger kids)</li>
+<li>Pepper = <strong>Emotions &amp; Questions</strong></li>
+<li>Nao = <strong>Maths, Science &amp; Languages</strong><br />
+  Do not swap Robovie and Tega!</li>
+</ul>
+<hr />
+<h1>Comprehensive SA-1 Quick-Revision Flashcards</h1>
+<ol>
+<li><strong>New Name of Port Blair:</strong> Sri Vijaya Puram.</li>
+<li><strong>Year Netaji hoisted Tricolour in Andaman:</strong> 1943.</li>
+<li><strong>Island Jail:</strong> Cellular Jail (associated with Veer Savarkar).</li>
+<li><strong>Bay where Andaman lies:</strong> Bay of Bengal.</li>
+<li><strong>Andhra Pradesh Governor:</strong> Justice S. Abdul Nazeer.</li>
+<li><strong>Kerala Governor:</strong> Arif Mohammad Khan.</li>
+<li><strong>Haryana Governor:</strong> Bandaru Dattatreya.</li>
+<li><strong>Odisha Governor:</strong> Dr. Kambhampati Hari Babu.</li>
+<li><strong>CapEx in Union Budget 2025-26:</strong> ₹11.21 lakh crore.</li>
+<li><strong>Fiscal Deficit Target 2025-26:</strong> 4.4% of GDP.</li>
+<li><strong>Total Expenditure:</strong> ₹50.65 lakh crore.</li>
+<li><strong>Agriculture in Budget:</strong> First engine of development.</li>
+<li><strong>Coding Robot:</strong> Robovie.</li>
+<li><strong>Reading/Writing Robot:</strong> Tega.</li>
+<li><strong>Emotion-displaying Robot:</strong> Pepper.</li>
+<li><strong>Multilingual humanoid:</strong> Nao.</li>
+</ol>
+      </div>
+    </div>
+
+    <!-- TAB 2: QUESTION PAPER -->
+    <div id="tab-qp" class="tab-content">
+      <div class="card rendered-content">
+        <div style="text-align: right; margin-bottom: 12px;">
+          <button class="btn btn-primary" onclick="window.print()">🖨️ Print Question Paper Now</button>
+        </div>
+        <h1>SUMMATIVE ASSESSMENT - I (SA-1) EXAMINATION (2026-27)</h1>
+<h2>CLASS: VII | SUBJECT: GENERAL KNOWLEDGE (G.K.)</h2>
+<p><strong>Time Allowed:</strong> 1 Hour | <strong>Maximum Marks:</strong> 50 Marks</p>
+<hr />
+<h3>General Instructions:</h3>
+<ol>
+<li>All questions are compulsory. Read every question carefully before writing answers.</li>
+<li>Marks for each section and question are indicated against them.</li>
+<li>Write neat, legible answers in the answer booklet.</li>
+</ol>
+<hr />
+<h2>SECTION A: OBJECTIVE &amp; MULTIPLE CHOICE QUESTIONS (15 Marks)</h2>
+<p><strong>Tick (✓) or write the correct option:</strong></p>
+<ol>
+<li><strong>The total expenditure estimated for the budget year 2025-26 (excluding borrowings) is approximately:</strong> [2M]</li>
+<li>(A) ₹34.96 lakh crore</li>
+<li>(B) ₹50.65 lakh crore</li>
+<li>(C) ₹28.37 lakh crore</li>
+<li>
+<p>(D) ₹14.82 lakh crore</p>
+</li>
+<li>
+<p><strong>The fiscal deficit target for the year 2025-26 is set at:</strong> [2M]</p>
+</li>
+<li>(A) 5.0% of GDP</li>
+<li>(B) 4.4% of GDP</li>
+<li>(C) 3.1% of GDP</li>
+<li>
+<p>(D) 6.2% of GDP</p>
+</li>
+<li>
+<p><strong>The estimated capital expenditure (CapEx) for 2025-26 amounts to about:</strong> [2M]</p>
+</li>
+<li>(A) ₹11.21 lakh crore</li>
+<li>(B) ₹8.50 lakh crore</li>
+<li>(C) ₹12.75 lakh crore</li>
+<li>
+<p>(D) ₹9.90 lakh crore</p>
+</li>
+<li>
+<p><strong>Under the Union Budget, agriculture is officially designated as:</strong> [2M]</p>
+</li>
+<li>(A) The third engine of growth</li>
+<li>(B) The second engine of growth</li>
+<li>(C) The first engine of development</li>
+<li>
+<p>(D) A minor priority sector</p>
+</li>
+<li>
+<p><strong>The estimated net tax receipts (other than borrowings) for 2025-26 are:</strong> [2M]</p>
+</li>
+<li>(A) ₹34.96 lakh crore</li>
+<li>(B) ₹28.37 lakh crore</li>
+<li>(C) ₹50.65 lakh crore</li>
+<li>
+<p>(D) ₹14.82 lakh crore</p>
+</li>
+<li>
+<p><strong>The government's nominal GDP growth estimate for 2025-26 is about:</strong> [2M]</p>
+</li>
+<li>(A) 9.2%</li>
+<li>(B) 10.1%</li>
+<li>(C) 8.5%</li>
+<li>
+<p>(D) 7.0%</p>
+</li>
+<li>
+<p><strong>The outstanding liabilities of the central government for March 2031 are aimed to be around what percentage of GDP?</strong> [3M]</p>
+</li>
+<li>(A) 60%</li>
+<li>(B) 56.1%</li>
+<li>(C) 50%</li>
+<li>(D) 45%</li>
+</ol>
+<hr />
+<h2>SECTION B: IDENTIFICATION &amp; MATCHING (15 Marks)</h2>
+<h3>I. State Governors of India — Match the Governor to the State: [8 Marks]</h3>
+<p><em>Write the correct state represented by each Governor:</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">S.No.</th>
+<th style="text-align: left;">Name of Governor</th>
+<th style="text-align: left;">State Represented</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1.</td>
+<td style="text-align: left;">Justice Sayed Abdul Nazeer</td>
+<td style="text-align: left;"><strong><em>_</em></strong><strong><em>_</em></strong>______</td>
+</tr>
+<tr>
+<td style="text-align: center;">2.</td>
+<td style="text-align: left;">Arif Mohammad Khan</td>
+<td style="text-align: left;"><strong><em>_</em></strong><strong><em>_</em></strong>______</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.</td>
+<td style="text-align: left;">Bandaru Dattatreya</td>
+<td style="text-align: left;"><strong><em>_</em></strong><strong><em>_</em></strong>______</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.</td>
+<td style="text-align: left;">Acharya Devvrat</td>
+<td style="text-align: left;"><strong><em>_</em></strong><strong><em>_</em></strong>______</td>
+</tr>
+<tr>
+<td style="text-align: center;">5.</td>
+<td style="text-align: left;">Rajendra Vishwanath Arlekar</td>
+<td style="text-align: left;"><strong><em>_</em></strong><strong><em>_</em></strong>______</td>
+</tr>
+<tr>
+<td style="text-align: center;">6.</td>
+<td style="text-align: left;">Ajay Kumar Bhalla</td>
+<td style="text-align: left;"><strong><em>_</em></strong><strong><em>_</em></strong>______</td>
+</tr>
+<tr>
+<td style="text-align: center;">7.</td>
+<td style="text-align: left;">Dr. Kambhampati Hari Babu</td>
+<td style="text-align: left;"><strong><em>_</em></strong><strong><em>_</em></strong>______</td>
+</tr>
+<tr>
+<td style="text-align: center;">8.</td>
+<td style="text-align: left;">Ramen Deka</td>
+<td style="text-align: left;"><strong><em>_</em></strong><strong><em>_</em></strong>______</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>II. Educational Robots — Match Column A with Column B: [7 Marks]</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column A (Robot)</th>
+<th style="text-align: center;">Match</th>
+<th style="text-align: left;">Column B (Key Function / Role)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1. <strong>Nao</strong></td>
+<td style="text-align: center;">( &nbsp; )</td>
+<td style="text-align: left;">a. Teaches programming and computer coding</td>
+</tr>
+<tr>
+<td style="text-align: left;">2. <strong>Pepper</strong></td>
+<td style="text-align: center;">( &nbsp; )</td>
+<td style="text-align: left;">b. Displays human emotions through facial expressions</td>
+</tr>
+<tr>
+<td style="text-align: left;">3. <strong>Robovie</strong></td>
+<td style="text-align: center;">( &nbsp; )</td>
+<td style="text-align: left;">c. Teaches Maths, Science and Languages worldwide</td>
+</tr>
+<tr>
+<td style="text-align: left;">4. <strong>Tega</strong></td>
+<td style="text-align: center;">( &nbsp; )</td>
+<td style="text-align: left;">d. Improves reading, storytelling and writing skills</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>SECTION C: FILL IN THE BLANKS (10 Marks)</h2>
+<p><strong>Complete the statements using appropriate historical and geographical facts:</strong> [2 Marks each]</p>
+<ol>
+<li>The former historical name of Sri Vijaya Puram was <strong><em>_</em></strong><strong><em>_</em></strong>______.</li>
+<li>The infamous Cellular Jail in Sri Vijaya Puram is deeply associated with India's <strong><em>_</em></strong><strong><em>_</em></strong>______.</li>
+<li>Netaji Subhash Chandra Bose first hoisted the Indian tricolour on the islands in the year <strong><em>_</em></strong><strong><em>_</em></strong>______.</li>
+<li>The union territory of Andaman and Nicobar Islands is located in the <strong><em>_</em></strong><strong><em>_</em></strong>______.</li>
+<li>Sri Vijaya Puram is the administrative capital of the <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em>_ and </strong><strong><em>_</em></strong><strong><em>_</em></strong>____ Islands.</li>
+</ol>
+<hr />
+<h2>SECTION D: SHORT ANSWER &amp; CONCEPTUAL THINKING (10 Marks)</h2>
+<p><strong>Answer the following questions in 2 to 3 sentences:</strong></p>
+<ol>
+<li><strong>Why was Port Blair renamed to 'Sri Vijaya Puram'? What historical significance does the new name carry?</strong> [3M]</li>
+<li><strong>Which two robots are equipped with advanced sensors and cameras to respond to students' emotions and queries? How do they help in classroom teaching?</strong> [3M]</li>
+<li><strong>What is the difference between Capital Expenditure (CapEx) and Fiscal Deficit in a national budget?</strong> [4M]</li>
+</ol>
+<hr />
+<p><strong>ALL THE BEST</strong></p>
+      </div>
+    </div>
+
+    <!-- TAB 3: OVERVIEW & BLUEPRINT -->
+    <div id="tab-overview" class="tab-content">
+      <div class="card">
+        <h2 style="color: var(--primary); margin-bottom: 12px;">📋 Summative Assessment - 1 Curriculum Blueprint</h2>
+        <p><strong>Subject:</strong> General Knowledge (G.K.)</p>
+        <p><strong>Prescribed Syllabus:</strong> Encyclopaedia Express - 7 (Unit 1: Lessons 1 to 4)</p>
+        <p><strong>Date of Examination:</strong> 07-10-2026</p>
+        <p><strong>Total Marks:</strong> 50 Marks</p>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Key High-Yield Topics:</h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
+          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Budget 2025</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">State Governors</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Robots</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Indian States</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Economy</span>
+        </div>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Official Documents Download:</h3>
+        <ul style="margin-left: 20px; line-height: 2;">
+          <li><a href="SA1_GK_Master_Solutions.pdf" target="_blank" style="color: #38bdf8;">Complete Master Answer Key (PDF)</a></li>
+          <li><a href="SA1_GK_Question_Paper.pdf" target="_blank" style="color: #38bdf8;">Formal Student Question Paper (PDF)</a></li>
+          <li><a href="SA1_GK_Master_Solutions.docx" download style="color: #38bdf8;">Editable Master Solutions (DOCX)</a></li>
+          <li><a href="SA1_GK_Question_Paper.docx" download style="color: #38bdf8;">Editable Question Paper (DOCX)</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      if (tabId === 'master') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('tab-master').classList.add('active');
+      } else if (tabId === 'qp') {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('tab-qp').classList.add('active');
+      } else if (tabId === 'overview') {
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+        document.getElementById('tab-overview').classList.add('active');
+      }
+    }
+
+    function filterContent() {
+      const query = document.getElementById('masterSearch').value.toLowerCase();
+      const content = document.getElementById('masterContent');
+      const paragraphs = content.querySelectorAll('p, li, tr, blockquote');
+      
+      paragraphs.forEach(el => {
+        if (!query || el.innerText.toLowerCase().includes(query)) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+
+    // Text to speech utility
+    // Strict English Text-to-Speech Engine
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        // Strip HTML and Telugu characters to ensure clean English pronunciation
+        const cleanText = text.replace(/<[^>]*>/g, '').replace(/[\u0C00-\u0C7F]/g, '');
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        utterance.rate = 0.92;
+        utterance.pitch = 1.0;
+
+        // Force selection of natural English voices
+        const voices = window.speechSynthesis.getVoices();
+        const preferredVoice = voices.find(v => (v.lang === 'en-IN' || v.lang === 'en-US' || v.lang === 'en-GB') && 
+          (v.name.includes('Natural') || v.name.includes('Neural') || v.name.includes('Online') || v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('Neerja')))
+          || voices.find(v => v.lang.startsWith('en'));
+        
+        if (preferredVoice) {
+          utterance.voice = preferredVoice;
+        }
+        utterance.lang = 'en-US';
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+  </script>
+</body>
+</html>

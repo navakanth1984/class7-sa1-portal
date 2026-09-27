@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 7 Computers SA-1 Master Portal | 2026-27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nirmala+UI&family=Gautami&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #1e3a8a;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-light: #334155;
+      --card-bg: rgba(30, 41, 59, 0.75);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --font-main: 'Outfit', 'Nirmala UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding-bottom: 70px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 18px 0;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .subject-icon {
+      font-size: 2rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+    .title-group h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .title-group p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    /* Nav Tabs */
+    .tabs-nav {
+      display: flex;
+      gap: 10px;
+      margin: 24px 0 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid var(--card-border);
+    }
+
+    /* Search Bar */
+    .search-box {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px 18px 12px 42px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--surface);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+    }
+    .search-box::before {
+      content: "🔍";
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.95rem;
+    }
+
+    /* Content Area */
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Typography inside content */
+    .rendered-content h1 {
+      font-size: 1.45rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--card-border);
+      padding-bottom: 6px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .rendered-content h2 {
+      font-size: 1.25rem;
+      color: #38bdf8;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+    .rendered-content h3 {
+      font-size: 1.1rem;
+      color: #7dd3fc;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+    .rendered-content h4 {
+      font-size: 1rem;
+      color: #bae6fd;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+    .rendered-content p {
+      margin-bottom: 10px;
+      color: #e2e8f0;
+    }
+    .rendered-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .rendered-content th, .rendered-content td {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+    .rendered-content th {
+      background: rgba(255, 255, 255, 0.08);
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .rendered-content blockquote {
+      border-left: 4px solid var(--primary);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 16px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      color: #cbd5e1;
+    }
+    .rendered-content strong {
+      color: #fff;
+    }
+    .rendered-content code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      color: #f472b6;
+    }
+    .rendered-content hr {
+      border: none;
+      border-top: 1px solid var(--card-border);
+      margin: 20px 0;
+    }
+
+    /* Action bar on cards */
+    .tts-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      border: 1px solid var(--card-border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .tts-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Print View */
+    @media print {
+      header, .tabs-nav, .search-box, .btn-group, .tts-btn {
+        display: none !important;
+      }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .card {
+        background: #fff !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .rendered-content h1, .rendered-content h2, .rendered-content h3 {
+        color: #000 !important;
+      }
+      .rendered-content table {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .rendered-content th {
+        background: #eee !important;
+        color: #000 !important;
+      }
+      .rendered-content td {
+        border: 1px solid #ccc !important;
+      }
+      #tab-qp {
+        display: block !important;
+      }
+      #tab-master {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="subject-icon">💻</div>
+        <div class="title-group">
+          <h1>Class 7 Computers SA-1 Master Portal</h1>
+          <p>Click and Learn - 7 (Chapters 1 to 4 & Test Paper - 1) | Exam: 06-10-2026 | Marks: 50</p>
+        </div>
+      </div>
+      <div class="btn-group">
+        <a class="btn" href="index.html" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: #fff;">🏠 All Subjects</a>
+        <button class="btn" onclick="window.print()">🖨️ Print Exam Paper</button>
+        <a class="btn btn-primary" href="SA1_Computers_Master_Solutions.pdf" target="_blank">📄 Master Solutions PDF</a>
+        <a class="btn" href="SA1_Computers_Question_Paper.pdf" target="_blank">📝 Question Paper PDF</a>
+        <a class="btn" href="SA1_Computers_Master_Solutions.docx" download>📥 Word DOCX</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 20px;">
+    
+    <!-- EMBEDDED ENGLISH AUDIO GUIDE -->
+    <div style="background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.8rem;">🎧</span>
+        <div>
+          <h3 style="margin: 0; font-size: 1rem; color: #38bdf8;">Complete English Audio Study Guide</h3>
+          <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">High-clarity neural English narration for comprehensive revision</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; max-width: 450px;">
+        <audio controls style="width: 100%; height: 38px; border-radius: 8px;">
+          <source src="SA1_Computers_English_Audio_Guide.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <a href="SA1_Computers_English_Audio_Guide.mp3" download class="btn" style="padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">⬇️ MP3</a>
+      </div>
+    </div>
+
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('master')">📘 Master Solutions & Study Guide</button>
+      <button class="tab-btn" onclick="switchTab('qp')">📝 Student Question Paper (50 Marks)</button>
+      <button class="tab-btn" onclick="switchTab('overview')">⚡ Syllabus & Exam Blueprint</button>
+    </div>
+
+    <!-- TAB 1: MASTER SOLUTIONS -->
+    <div id="tab-master" class="tab-content active">
+      <div class="search-box">
+        <input type="text" id="masterSearch" placeholder="Type to search questions, keywords, Telugu translations..." onkeyup="filterContent()">
+      </div>
+      <div class="card rendered-content" id="masterContent">
+        <h1>Class 7 Computer Science (Click and Learn - 7) — SA1 Master Solutions &amp; Complete Guide</h1>
+<h2>Summative Assessment - 1 Complete Curriculum Blueprint (Chapters 1 to 4 &amp; Test Paper - 1)</h2>
+<blockquote>
+<p><strong>Syllabus Scope (SA-1 Timetable &amp; Portions Covered):</strong><br />
+1. <strong>Chapter 1: Formulae and Functions in Excel 2016</strong> (Pages 1–15)<br />
+2. <strong>Chapter 2: Charts in Excel 2016</strong> (Pages 16–29)<br />
+3. <strong>Chapter 3: Advanced Features of Excel 2016</strong> (Pages 30–41)<br />
+4. <strong>Chapter 4: Introduction to Adobe Animate 2020</strong> (Pages 42–55)<br />
+5. <strong>Test Paper - 1: Comprehensive Assessment on Chapters 1 to 4</strong> (Pages 56–58)</p>
+<p><strong>Pedagogical Standards:</strong><br />
+- Every exercise, multiple-choice question (MCQ), fill-in-the-blank, true/false statement, matching column, practical step, formula breakdown, and differentiated table is 100% solved with zero omissions.<br />
+- Detailed step-by-step explanations, syntax breakdowns, ⚠️ Ninja Exam Traps, and ✅ Sanity Checks included for every single technical concept.</p>
+</blockquote>
+<hr />
+<h1>Chapter 1: Formulae and Functions in Excel 2016 (Pages 1–15)</h1>
+<h3>Core Theoretical Concepts:</h3>
+<ol>
+<li><strong>What is a Formula?</strong></li>
+<li>A formula is an expression that calculates values in a cell or range of cells.</li>
+<li><strong>Golden Rule:</strong> Every formula in Excel <strong>MUST begin with an equal sign (<code>=</code>)</strong>. Without <code>=</code>, Excel treats the entry as plain text.</li>
+<li>
+<p><strong>Elements of a Formula:</strong></p>
+<ul>
+<li>Mathematical Operators: <code>+</code> (Addition), <code>-</code> (Subtraction), <code>*</code> (Multiplication), <code>/</code> (Division), <code>^</code> (Exponentiation), <code>%</code> (Percentage).</li>
+<li>Cell References (Addresses): e.g., <code>A1</code>, <code>B5</code>, <code>C10</code>.</li>
+<li>Constants: Numbers or fixed text values directly entered (e.g., <code>=A1 * 10</code>).</li>
+<li>Functions: Pre-built formula commands (e.g., <code>SUM</code>, <code>AVERAGE</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Cell Ranges:</strong></p>
+</li>
+<li>A cell range is a group or block of contiguous cells selected in a worksheet.</li>
+<li>Range notation uses a <strong>colon (<code>:</code>)</strong> between the top-left cell and bottom-right cell.</li>
+<li>
+<p>Types of Cell Ranges:</p>
+<ul>
+<li><strong>Vertical Range:</strong> Cells located in the same column (e.g., <code>A1:A10</code>).</li>
+<li><strong>Horizontal Range:</strong> Cells located in the same row (e.g., <code>A1:G1</code>).</li>
+<li><strong>Rectangular Range:</strong> A 2D block across multiple rows and columns (e.g., <code>B2:D8</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Cell Referencing Modes:</strong></p>
+</li>
+<li><strong>Relative Referencing:</strong> Default mode. Cell references adjust automatically when copied to other cells (e.g., <code>=A1+B1</code> copied down becomes <code>=A2+B2</code>).</li>
+<li><strong>Absolute Referencing:</strong> Cell references stay locked to an exact location when copied. Identified by <strong>dollar signs (<code>$</code>)</strong> before both column and row (e.g., <code>=$A$1</code>).</li>
+<li>
+<p><strong>Mixed Referencing:</strong> Either the column is locked or the row is locked (e.g., <code>=$A1</code> locks column A; <code>=A$1</code> locks row 1).</p>
+</li>
+<li>
+<p><strong>Functions &amp; Basic Syntax:</strong></p>
+</li>
+<li><strong>Syntax:</strong> <code>=Function_Name(Argument1, Argument2, ...)</code></li>
+<li><strong>Common Functions:</strong><ul>
+<li><code>=SUM(A1:A5)</code>: Adds all numbers in the specified range.</li>
+<li><code>=AVERAGE(A1:A5)</code>: Calculates the arithmetic mean.</li>
+<li><code>=COUNT(A1:A10)</code>: Counts cells containing numbers.</li>
+<li><code>=MAX(A1:A10)</code>: Finds the highest numerical value in the range.</li>
+<li><code>=MIN(A1:A10)</code>: Finds the lowest numerical value in the range.</li>
+<li><code>=PRODUCT(A1:A3)</code>: Multiplies all numbers in the specified range.</li>
+<li><code>=TODAY()</code>: Returns the current system date.</li>
+</ul>
+</li>
+<li>
+<p><strong>AutoSum Feature:</strong> Located on both the <strong>Home Tab</strong> (Editing Group) and <strong>Formulas Tab</strong>. Automatically detects adjacent cell ranges and inserts <code>=SUM()</code>. Shortcut: <code>Alt + =</code>.</p>
+</li>
+<li>
+<p><strong>Common Excel Error Codes:</strong></p>
+</li>
+<li><code>#####</code>: Column width is too narrow to display the number, or negative date/time. (Fix: Increase column width).</li>
+<li><code>#DIV/0!</code>: Formula attempts to divide a number by zero or an empty cell.</li>
+<li><code>#VALUE!</code>: Formula contains incorrect argument data type (e.g., adding text to a number: <code>=A1 + "Apple"</code>).</li>
+<li><code>#NAME?</code>: Function name is misspelled (e.g., <code>=SUMM(A1:A5)</code> instead of <code>=SUM</code>).</li>
+<li><code>#REF!</code>: Invalid cell reference (occurs when referenced cells were deleted).</li>
+</ol>
+<hr />
+<h3>Textbook Exercises — Chapter 1</h3>
+<h4>A. Tick (✓) the correct option:</h4>
+<ol>
+<li><strong>Which symbol must every Excel formula begin with?</strong></li>
+<li>a. <code>+</code> &nbsp;&nbsp; <strong>b. <code>=</code> [ ✓ ]</strong> &nbsp;&nbsp; c. <code>@</code> &nbsp;&nbsp; d. <code>#</code></li>
+<li><strong>Which function is used to add numbers in a range?</strong></li>
+<li>a. <code>MAX</code> &nbsp;&nbsp; b. <code>AVERAGE</code> &nbsp;&nbsp; <strong>c. <code>SUM</code> [ ✓ ]</strong> &nbsp;&nbsp; d. <code>COUNT</code></li>
+<li><strong>What is the symbol used for multiplication in Excel?</strong></li>
+<li>a. <code>x</code> &nbsp;&nbsp; b. <code>.</code> &nbsp;&nbsp; <strong>c. <code>*</code> [ ✓ ]</strong> &nbsp;&nbsp; d. <code>&amp;</code></li>
+<li><strong>Which function returns the largest value in a selected cell range?</strong></li>
+<li><strong>a. <code>MAX</code> [ ✓ ]</strong> &nbsp;&nbsp; b. <code>MIN</code> &nbsp;&nbsp; c. <code>SUM</code> &nbsp;&nbsp; d. <code>LARGE</code></li>
+<li><strong>The cell range <code>B2:E6</code> contains how many total cells?</strong></li>
+<li>a. 15 &nbsp;&nbsp; <strong>b. 20 [ ✓ ]</strong> &nbsp;&nbsp; c. 12 &nbsp;&nbsp; d. 24<br />
+<em>(Working: 4 columns [B, C, D, E] $\times$ 5 rows [2, 3, 4, 5, 6] = 20 cells).</em></li>
+</ol>
+<h4>B. Fill in the blanks:</h4>
+<ol>
+<li>A formula in Excel always begins with an <strong>equal to (<code>=</code>)</strong> sign.</li>
+<li>The colon (<strong><code>:</code></strong>) symbol is used to separate the starting and ending cell addresses of a range.</li>
+<li>The <strong>AutoSum</strong> feature allows quick addition of numbers without typing the full formula manually.</li>
+<li>The <strong><code>PRODUCT</code></strong> function multiplies all numbers given as arguments.</li>
+<li>In <strong>absolute</strong> referencing, a dollar sign (<code>$</code>) is placed before both column letter and row number.</li>
+</ol>
+<h4>C. State True (T) or False (F):</h4>
+<ol>
+<li><code>=A1+B1</code> is an example of an absolute reference. $\rightarrow$ <strong>[ F ]</strong> <em>(It is a relative reference).</em></li>
+<li>Functions in Excel are pre-designed formulas to perform complex calculations. $\rightarrow$ <strong>[ T ]</strong></li>
+<li><code>#DIV/0!</code> error appears when a column is not wide enough. $\rightarrow$ <strong>[ F ]</strong> <em>(It appears when divided by zero; <code>#####</code> appears when column is narrow).</em></li>
+<li>The <code>COUNT</code> function counts both text and numeric cells. $\rightarrow$ <strong>[ F ]</strong> <em>(It counts only cells containing numerical values).</em></li>
+<li>The <code>TODAY()</code> function requires no arguments inside its parentheses. $\rightarrow$ <strong>[ T ]</strong></li>
+</ol>
+<h4>D. Answer the following questions in brief:</h4>
+<p><strong>Q1: Define a Cell Range with an example.</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> A cell range is a collection or block of two or more adjacent cells selected in an Excel worksheet. It is represented by the starting cell address and ending cell address separated by a colon (<code>:</code>).<br />
+<em>Example:</em> <code>B2:D6</code> refers to the rectangular block of cells spanning columns B to D and rows 2 to 6.</p>
+</blockquote>
+<p><strong>Q2: What is the basic syntax of an Excel function?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> The basic syntax is:<br />
+<code>=FUNCTION_NAME(Argument1, Argument2, ...)</code><br />
+<em>Example:</em> <code>=SUM(A1:A10)</code> where <code>=SUM</code> is the function name and <code>A1:A10</code> is the argument range.</p>
+</blockquote>
+<p><strong>Q3: Explain the difference between <code>MAX()</code> and <code>MIN()</code> functions.</strong></p>
+<blockquote>
+<p><strong>Answer:</strong><br />
+- <code>MAX()</code> returns the highest (maximum) numerical value from the specified range (e.g., <code>=MAX(10, 45, 22)</code> returns <code>45</code>).<br />
+- <code>MIN()</code> returns the lowest (minimum) numerical value from the specified range (e.g., <code>=MIN(10, 45, 22)</code> returns <code>10</code>).</p>
+</blockquote>
+<p><strong>Q4: What causes the <code>#NAME?</code> error in Excel?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> The <code>#NAME?</code> error occurs when Excel does not recognize text entered in a formula, most commonly caused by misspelling a function name (e.g., typing <code>=SUUM(A1:A5)</code>) or referencing an undefined range name.</p>
+</blockquote>
+<h4>E. Answer the following questions in detail:</h4>
+<p><strong>Q1: Explain the three types of cell referencing in Excel 2016 with suitable examples.</strong></p>
+<blockquote>
+<p><strong>Answer:</strong><br />
+1. <strong>Relative Referencing:</strong> The cell address in the formula changes automatically when copied to another cell based on relative position.<br />
+<em>Example:</em> If cell <code>C1</code> contains <code>=A1+B1</code> and is copied down to <code>C2</code>, it automatically becomes <code>=A2+B2</code>.<br />
+2. <strong>Absolute Referencing:</strong> The cell address remains locked and does not change when copied. It uses dollar signs before both column and row (<code>$A$1</code>).<br />
+<em>Example:</em> In <code>=B2 * $C$1</code>, when copied to row 3, it becomes <code>=B3 * $C$1</code>. Cell <code>C1</code> remains constant.<br />
+3. <strong>Mixed Referencing:</strong> Either the column is locked or the row is locked, but not both.<br />
+<em>Example:</em> <code>=$A1</code> (locks column A, row changes) or <code>=A$1</code> (locks row 1, column changes).</p>
+</blockquote>
+<hr />
+<h1>Chapter 2: Charts in Excel 2016 (Pages 16–29)</h1>
+<h3>Core Theoretical Concepts:</h3>
+<ol>
+<li><strong>What is a Chart?</strong></li>
+<li>A chart is a graphical, pictorial representation of numeric worksheet data.</li>
+<li>
+<p>Benefits: Visualizes trends, simplifies complex data, enables instant comparison, and makes presentations impactful.</p>
+</li>
+<li>
+<p><strong>Components of a Chart:</strong></p>
+</li>
+<li><strong>Chart Area:</strong> The entire chart window including all objects, titles, legends, and plot area.</li>
+<li><strong>Plot Area:</strong> The bounded rectangular area where the actual data is plotted, surrounded by axes.</li>
+<li><strong>Chart Title:</strong> Descriptive heading placed at the top explaining what the chart represents.</li>
+<li><strong>Category Axis (X-Axis):</strong> The horizontal axis displaying data categories (e.g., Student Names, Months).</li>
+<li><strong>Value Axis (Y-Axis):</strong> The vertical axis displaying numerical values/measurements (e.g., Marks, Sales).</li>
+<li><strong>Data Series:</strong> The actual visual bars, slices, columns, or lines that represent individual data points.</li>
+<li><strong>Legend:</strong> A color-coded or patterned key identifying which color/symbol corresponds to which data series.</li>
+<li><strong>Gridlines:</strong> Horizontal and vertical lines extending across the plot area to make reading values easier.</li>
+<li>
+<p><strong>Data Labels:</strong> Labels that show the exact numerical values directly on top of the bars or data markers.</p>
+</li>
+<li>
+<p><strong>Types of Charts in Excel 2016:</strong></p>
+</li>
+<li><strong>Column Chart:</strong> Uses vertical rectangular columns to compare items across categories over time.</li>
+<li><strong>Bar Chart:</strong> Uses horizontal bars; ideal when category names are long or comparisons are non-temporal.</li>
+<li><strong>Line Chart:</strong> Displays continuous data points connected by straight lines; best for showing trends over time (e.g., stock prices, temperature).</li>
+<li><strong>Pie Chart:</strong> A circular disk divided into proportional slices; shows the relationship of parts to a whole for a <strong>single data series</strong> (percentages).</li>
+<li><strong>Area Chart:</strong> Highlights the magnitude of change over time by shading the area below the line.</li>
+<li>
+<p><strong>Scatter (XY) Chart:</strong> Plots pairs of numerical values to show correlations or scientific relationships.</p>
+</li>
+<li>
+<p><strong>Modifying and Customising Charts:</strong></p>
+</li>
+<li><strong>Chart Tools Contextual Tabs:</strong> When a chart is clicked, two tabs appear on the Ribbon: <strong>Design</strong> and <strong>Format</strong>.</li>
+<li><strong>Chart Elements Button (<code>+</code>):</strong> Quick shortcut floating beside the chart to add/remove Data Labels, Axis Titles, and Legends.</li>
+<li><strong>Moving a Chart:</strong> Click <strong>Move Chart</strong> in the Location group on the Design tab to move the chart to a dedicated <strong>Chart Sheet</strong> or another worksheet.</li>
+</ol>
+<hr />
+<h3>Textbook Exercises — Chapter 2</h3>
+<h4>A. Tick (✓) the correct option:</h4>
+<ol>
+<li><strong>The entire area occupied by a chart and all its components is called the:</strong></li>
+<li>a. Plot Area &nbsp;&nbsp; <strong>b. Chart Area [ ✓ ]</strong> &nbsp;&nbsp; c. Gridline &nbsp;&nbsp; d. Legend</li>
+<li><strong>Which chart type is best suited to display trends over continuous time intervals?</strong></li>
+<li>a. Pie Chart &nbsp;&nbsp; <strong>b. Line Chart [ ✓ ]</strong> &nbsp;&nbsp; c. Bar Chart &nbsp;&nbsp; d. Scatter Chart</li>
+<li><strong>The horizontal axis of a column chart is known as the:</strong></li>
+<li><strong>a. Category Axis (X-Axis) [ ✓ ]</strong> &nbsp;&nbsp; b. Value Axis &nbsp;&nbsp; c. Legend Axis &nbsp;&nbsp; d. Data Axis</li>
+<li><strong>Which chart displays only a single data series as slices of a circle?</strong></li>
+<li>a. Column Chart &nbsp;&nbsp; b. Bar Chart &nbsp;&nbsp; <strong>c. Pie Chart [ ✓ ]</strong> &nbsp;&nbsp; d. Area Chart</li>
+<li><strong>Excel's tool for modifying a chart type is located under which tab?</strong></li>
+<li><strong>a. Design Tab [ ✓ ]</strong> &nbsp;&nbsp; b. View Tab &nbsp;&nbsp; c. Review Tab &nbsp;&nbsp; d. Home Tab</li>
+</ol>
+<h4>B. Fill in the blanks:</h4>
+<ol>
+<li>A <strong>chart</strong> is an effective visual representation of worksheet data.</li>
+<li>The <strong>Legend</strong> helps identify different data series by assigning distinct colors or patterns.</li>
+<li>The vertical axis that displays numerical values is called the <strong>Value Axis (Y-Axis)</strong>.</li>
+<li><strong>Data Labels</strong> provide the exact values directly on the plotted bars or points.</li>
+<li>In a Column Chart, values are plotted along the <strong>vertical</strong> axis and categories along the <strong>horizontal</strong> axis.</li>
+</ol>
+<h4>C. State True (T) or False (F):</h4>
+<ol>
+<li>A Pie chart can be used to compare multiple data series simultaneously. $\rightarrow$ <strong>[ F ]</strong> <em>(Pie charts can represent only one single data series).</em></li>
+<li>The Plot Area contains the chart title and legends. $\rightarrow$ <strong>[ F ]</strong> <em>(The Plot Area contains only the plotted data series and gridlines).</em></li>
+<li>Changing data in the worksheet automatically updates the chart. $\rightarrow$ <strong>[ T ]</strong></li>
+<li>A Bar chart displays data using horizontal bars. $\rightarrow$ <strong>[ T ]</strong></li>
+<li>Gridlines cannot be removed once a chart is created. $\rightarrow$ <strong>[ F ]</strong> <em>(They can be added or removed using the Chart Elements button).</em></li>
+</ol>
+<h4>D. Differentiate between the following:</h4>
+<ol>
+<li><strong>Column Chart vs. Bar Chart:</strong></li>
+<li><strong>Column Chart:</strong> Displays data using <strong>vertical columns</strong>. The category axis is horizontal (X-axis) and the value axis is vertical (Y-axis).</li>
+<li><strong>Bar Chart:</strong> Displays data using <strong>horizontal bars</strong>. The category axis is vertical (Y-axis) and the value axis is horizontal (X-axis).</li>
+<li><strong>Chart Area vs. Plot Area:</strong></li>
+<li><strong>Chart Area:</strong> The complete rectangular space encompassing all chart elements (title, legends, axes, and plot area).</li>
+<li><strong>Plot Area:</strong> The inner region bounded by the axes where the actual graphical data (bars, lines, slices) is rendered.</li>
+</ol>
+<h4>E. Answer the following questions in brief:</h4>
+<p><strong>Q1: What are the main components of a chart in Excel?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> The primary components are: Chart Area, Plot Area, Chart Title, Category Axis (X-axis), Value Axis (Y-axis), Data Series, Legend, Gridlines, and Data Labels.</p>
+</blockquote>
+<p><strong>Q2: How can you move an existing chart to another worksheet?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> Click on the chart $\rightarrow$ Go to the <strong>Design Tab</strong> under Chart Tools $\rightarrow$ Click <strong>Move Chart</strong> in the Location group $\rightarrow$ In the Move Chart dialog box, choose either <strong>New sheet</strong> or select an existing worksheet from the <strong>Object in</strong> dropdown $\rightarrow$ Click <strong>OK</strong>.</p>
+</blockquote>
+<hr />
+<h1>Chapter 3: Advanced Features of Excel 2016 (Pages 30–41)</h1>
+<h3>Core Theoretical Concepts:</h3>
+<ol>
+<li><strong>Sorting Data:</strong></li>
+<li>Organizing data in a specific sequential order to analyze it efficiently.</li>
+<li><strong>Sort Orders:</strong><ul>
+<li>Ascending Order: Smallest to largest (Numbers) or A to Z (Text).</li>
+<li>Descending Order: Largest to smallest (Numbers) or Z to A (Text).</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom / Multi-Level Sorting:</strong> Sorting data by more than one column (e.g., first sort by <code>Department</code> in alphabetical order, and within each department, sort by <code>Salary</code> from largest to smallest). Located on <strong>Data Tab $\rightarrow$ Sort</strong>.</p>
+</li>
+<li>
+<p><strong>Filtering Data:</strong></p>
+</li>
+<li>Filtering extracts and displays only the records that meet specified criteria, temporarily hiding unwanted rows.</li>
+<li>Unlike sorting, filtering does not rearrange data; it selectively hides non-matching rows.</li>
+<li><strong>AutoFilter:</strong> Added by selecting headers and clicking <strong>Data Tab $\rightarrow$ Filter</strong> (Shortcut: <code>Ctrl + Shift + L</code>). Small dropdown arrows appear on each column header.</li>
+<li>
+<p><strong>Filter Types:</strong></p>
+<ul>
+<li>Number Filters: <em>Equals, Does Not Equal, Greater Than, Less Than, Between, Top 10</em>.</li>
+<li>Text Filters: <em>Equals, Contains, Begins With, Ends With</em>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Conditional Formatting:</strong></p>
+</li>
+<li>Allows users to automatically apply specific formatting (fill colors, font bolding, borders, data bars, icon sets) to cells that fulfill certain criteria.</li>
+<li>Located on: <strong>Home Tab $\rightarrow$ Styles Group $\rightarrow$ Conditional Formatting</strong>.</li>
+<li>Presets include:<ul>
+<li>Highlight Cells Rules (<em>Greater Than, Less Than, Between, Equal To, Text that Contains</em>).</li>
+<li>Top/Bottom Rules (<em>Top 10 Items, Top 10%, Below Average</em>).</li>
+<li>Data Bars, Color Scales, and Icon Sets.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3>Textbook Exercises — Chapter 3</h3>
+<h4>A. Tick (✓) the correct option:</h4>
+<ol>
+<li><strong>Arranging data in ascending or descending order is known as:</strong></li>
+<li>a. Filtering &nbsp;&nbsp; <strong>b. Sorting [ ✓ ]</strong> &nbsp;&nbsp; c. Formatting &nbsp;&nbsp; d. Validating</li>
+<li><strong>Which feature selectively displays rows meeting specified criteria while hiding the rest?</strong></li>
+<li><strong>a. Filtering [ ✓ ]</strong> &nbsp;&nbsp; b. Sorting &nbsp;&nbsp; c. AutoSum &nbsp;&nbsp; d. Grouping</li>
+<li><strong>The Filter button is available under which tab on the Ribbon?</strong></li>
+<li>a. Insert Tab &nbsp;&nbsp; b. Home Tab &nbsp;&nbsp; <strong>c. Data Tab [ ✓ ]</strong> &nbsp;&nbsp; d. Review Tab</li>
+<li><strong>Conditional Formatting option is found in which group on the Home Tab?</strong></li>
+<li>a. Font Group &nbsp;&nbsp; b. Alignment Group &nbsp;&nbsp; <strong>c. Styles Group [ ✓ ]</strong> &nbsp;&nbsp; d. Editing Group</li>
+<li><strong>Custom sorting allows sorting data by:</strong></li>
+<li>a. Only one column &nbsp;&nbsp; <strong>b. Multiple columns [ ✓ ]</strong> &nbsp;&nbsp; c. Font color only &nbsp;&nbsp; d. None of these</li>
+</ol>
+<h4>B. Fill in the blanks:</h4>
+<ol>
+<li>Arranging data from A to Z is known as <strong>ascending</strong> order.</li>
+<li>The keyboard shortcut to turn AutoFilter on or off is <strong><code>Ctrl + Shift + L</code></strong>.</li>
+<li><strong>Conditional Formatting</strong> dynamically changes the appearance of cells based on conditions you specify.</li>
+<li>When a filter is applied, the dropdown arrow changes to a <strong>filter funnel icon</strong>.</li>
+<li>Custom sorting is configured using the <strong>Sort Dialog Box</strong> on the Data Tab.</li>
+</ol>
+<h4>C. State True (T) or False (F):</h4>
+<ol>
+<li>Filtering permanently deletes rows that do not match the criteria. $\rightarrow$ <strong>[ F ]</strong> <em>(It only temporarily hides them).</em></li>
+<li>You can apply Conditional Formatting to highlight students scoring above 90 marks in green. $\rightarrow$ <strong>[ T ]</strong></li>
+<li>Data Bars in conditional formatting visually represent values directly inside the cells. $\rightarrow$ <strong>[ T ]</strong></li>
+<li>Multi-level sorting cannot sort both text and numbers simultaneously. $\rightarrow$ <strong>[ F ]</strong> <em>(You can sort by text in Level 1 and number in Level 2).</em></li>
+<li>To clear a filter, click 'Clear' in the Sort &amp; Filter group on the Data tab. $\rightarrow$ <strong>[ T ]</strong></li>
+</ol>
+<h4>D. Answer the following questions in brief:</h4>
+<p><strong>Q1: What is the primary difference between Sorting and Filtering?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong><br />
+- <strong>Sorting</strong> rearranges the physical order of all records in the table (e.g., alphabetical or numerical order) without hiding any data.<br />
+- <strong>Filtering</strong> displays only the rows that satisfy specific criteria and temporarily hides all non-matching rows.</p>
+</blockquote>
+<p><strong>Q2: What is Conditional Formatting? Give one real-life use case.</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> Conditional Formatting is an Excel tool that applies visual styling (colors, data bars, icons) to cells automatically when their values meet designated rules.<br />
+<em>Use Case:</em> Highlighting student test scores where scores below 35 are automatically shaded in red, and scores of 90 or above are shaded in green.</p>
+</blockquote>
+<hr />
+<h1>Chapter 4: Introduction to Adobe Animate 2020 (Pages 42–55)</h1>
+<h3>Core Theoretical Concepts:</h3>
+<ol>
+<li><strong>What is Adobe Animate 2020?</strong></li>
+<li>
+<p>Adobe Animate is a professional multimedia vector animation authoring software used to create interactive 2D vector animations, banner advertisements, cartoons, animated web graphics, and interactive educational content.</p>
+</li>
+<li>
+<p><strong>Workspace Components of Adobe Animate:</strong></p>
+</li>
+<li><strong>Menu Bar:</strong> Top of the screen providing access to commands (<code>File</code>, <code>Edit</code>, <code>View</code>, <code>Insert</code>, <code>Modify</code>, <code>Text</code>, <code>Commands</code>, <code>Control</code>, <code>Window</code>, <code>Help</code>).</li>
+<li><strong>Stage:</strong> The central white rectangular canvas where graphics, drawings, animations, and text are placed. Only elements placed within the stage boundaries appear in the exported movie.</li>
+<li><strong>Pasteboard:</strong> The gray background area surrounding the stage. Used to store objects, work on elements off-screen, or position items that will animate into the stage later.</li>
+<li><strong>Timeline:</strong> The vital panel (usually at the bottom) that organizes and controls the animation's timing, frame rate, layers, and sequencing.</li>
+<li><strong>Layers:</strong> Transparent sheets stacked on top of one another, allowing different animated objects to be drawn and manipulated independently without interfering with each other.</li>
+<li><strong>Frames &amp; Keyframes:</strong><ul>
+<li><strong>Frame:</strong> Individual unit of time represented by small rectangular boxes along the timeline.</li>
+<li><strong>Keyframe:</strong> A critical frame (marked with a black solid dot) where a new symbol appears, changes position, or initiates an action. Shortcut: <code>F6</code>.</li>
+<li><strong>Blank Keyframe:</strong> A keyframe with no content on the stage (marked with an empty circle). Shortcut: <code>F7</code>.</li>
+</ul>
+</li>
+<li><strong>Tools Panel:</strong> Contains all creative drawing, painting, selection, and transformation tools (Selection, Free Transform, Rectangle, Oval, Brush, Eraser, Eyedropper).</li>
+<li><strong>Properties Panel:</strong> Contextual inspector displaying properties (size, color, stroke weight, font, coordinates) of whatever tool or object is currently selected.</li>
+<li>
+<p><strong>Library Panel:</strong> Central storage locker containing reusable graphic symbols, buttons, movie clips, sound effects, and imported bitmaps. Shortcut: <code>Ctrl + L</code>.</p>
+</li>
+<li>
+<p><strong>Strokes and Fills:</strong></p>
+</li>
+<li><strong>Stroke:</strong> The outer border or outline of a shape. Attributes include Stroke Color, Stroke Width, and Stroke Style.</li>
+<li><strong>Fill:</strong> The interior body color, gradient, or pattern inside a closed shape.</li>
+<li>
+<p><strong>Eyedropper Tool (<code>I</code>):</strong> Used to sample and pick colors or stroke styles directly from existing stage objects.</p>
+</li>
+<li>
+<p><strong>Symbols &amp; Animation:</strong></p>
+</li>
+<li>A <strong>Symbol</strong> is an original graphic, button, or movie clip stored once in the Library and reused multiple times as <strong>Instances</strong> on the Stage.</li>
+<li>Converting an object to a Symbol: Select object $\rightarrow$ Press <strong><code>F8</code></strong> (or <code>Modify $\rightarrow$ Convert to Symbol</code>) $\rightarrow$ Name symbol and choose type (<strong>Movie Clip</strong>, <strong>Button</strong>, or <strong>Graphic</strong>).</li>
+<li><strong>Text Animation:</strong><ul>
+<li>Type text with the Text Tool (<code>T</code>).</li>
+<li>Break text apart into individual letters using <strong><code>Ctrl + B</code></strong>.</li>
+<li>Convert each letter into a graphic symbol (<code>F8</code>).</li>
+<li>Distribute to layers and apply <strong>Create Classic Tween</strong> or <strong>Create Motion Tween</strong> between keyframes.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3>Textbook Exercises — Chapter 4</h3>
+<h4>A. Tick (✓) the correct option:</h4>
+<ol>
+<li><strong>Adobe Animate 2020 is primarily used for creating:</strong></li>
+<li>a. Word documents &nbsp;&nbsp; b. Spreadsheets &nbsp;&nbsp; <strong>c. 2D Vector Animations [ ✓ ]</strong> &nbsp;&nbsp; d. Operating Systems</li>
+<li><strong>The rectangular white area where graphics and animations are created is called the:</strong></li>
+<li><strong>a. Stage [ ✓ ]</strong> &nbsp;&nbsp; b. Pasteboard &nbsp;&nbsp; c. Timeline &nbsp;&nbsp; d. Library</li>
+<li><strong>The panel that controls the timing and layers of an animation is the:</strong></li>
+<li>a. Tools Panel &nbsp;&nbsp; <strong>b. Timeline [ ✓ ]</strong> &nbsp;&nbsp; c. Properties Panel &nbsp;&nbsp; d. Swatches</li>
+<li><strong>Which tool is used to scale, rotate, or skew an object freely?</strong></li>
+<li>a. Selection Tool &nbsp;&nbsp; <strong>b. Free Transform Tool (Q) [ ✓ ]</strong> &nbsp;&nbsp; c. Hand Tool &nbsp;&nbsp; d. Zoom Tool</li>
+<li><strong>The shortcut key to convert a selected object into a Symbol in Adobe Animate is:</strong></li>
+<li>a. <code>F5</code> &nbsp;&nbsp; b. <code>F6</code> &nbsp;&nbsp; <strong>c. <code>F8</code> [ ✓ ]</strong> &nbsp;&nbsp; d. <code>F9</code></li>
+<li><strong>The tool used to pick and copy colors from one object to another is the:</strong></li>
+<li>a. Paint Bucket &nbsp;&nbsp; <strong>b. Eyedropper Tool [ ✓ ]</strong> &nbsp;&nbsp; c. Brush Tool &nbsp;&nbsp; d. Pencil Tool</li>
+</ol>
+<h4>B. Fill in the blanks:</h4>
+<ol>
+<li>The <strong>Stage</strong> is the visible drawing canvas in Adobe Animate.</li>
+<li>The gray area surrounding the stage is known as the <strong>Pasteboard</strong>.</li>
+<li>A <strong>Keyframe</strong> is a special frame that signifies a change in the animation, marked by a black solid circle.</li>
+<li><strong>Layers</strong> act like transparent sheets of plastic stacked over each other.</li>
+<li>In Adobe Animate, <strong>Stroke</strong> refers to the outline of a shape, while <strong>Fill</strong> refers to the interior color.</li>
+<li>Reusable animation assets stored in the Library are called <strong>Symbols</strong>.</li>
+</ol>
+<h4>C. State True (T) or False (F):</h4>
+<ol>
+<li>Objects drawn on the Pasteboard will be visible in the final exported movie. $\rightarrow$ <strong>[ F ]</strong> <em>(Only objects placed on the Stage are visible).</em></li>
+<li>A keyframe is inserted using the <code>F6</code> shortcut key. $\rightarrow$ <strong>[ T ]</strong></li>
+<li>Stroke refers to the interior color of a shape. $\rightarrow$ <strong>[ F ]</strong> <em>(Stroke is the outline; Fill is the interior).</em></li>
+<li>The Library panel stores symbols, movie clips, and audio files. $\rightarrow$ <strong>[ T ]</strong></li>
+<li>Breaking apart text is done using the shortcut <code>Ctrl + B</code>. $\rightarrow$ <strong>[ T ]</strong></li>
+</ol>
+<h4>D. Answer the following questions in brief:</h4>
+<p><strong>Q1: What is the difference between the Stage and the Pasteboard?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong><br />
+- <strong>The Stage</strong> is the rectangular central area where the animation takes place; all objects placed here are visible in the exported output.<br />
+- <strong>The Pasteboard</strong> is the gray work area surrounding the Stage where assets are kept off-screen before animating into view, or where work-in-progress objects are stored without appearing in the final movie.</p>
+</blockquote>
+<p><strong>Q2: What is the purpose of Keyframes in the Timeline?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> Keyframes indicate a major change or action in an animation—such as a change in position, color, shape, or scale of a symbol. A keyframe with content is indicated on the timeline by a solid black circle.</p>
+</blockquote>
+<p><strong>Q3: Define Stroke and Fill in Adobe Animate.</strong></p>
+<blockquote>
+<p><strong>Answer:</strong><br />
+- <strong>Stroke:</strong> The outer border, line, or perimeter outline of an object or shape.<br />
+- <strong>Fill:</strong> The solid color, gradient, or pattern that fills the interior closed area of an object.</p>
+</blockquote>
+<h4>E. Answer the following questions in detail:</h4>
+<p><strong>Q1: Describe the major components of the Adobe Animate 2020 workspace.</strong></p>
+<blockquote>
+<p><strong>Answer:</strong><br />
+1. <strong>Stage:</strong> The primary white canvas where animation is viewed and rendered.<br />
+2. <strong>Pasteboard:</strong> Off-stage working area to hold temporary objects.<br />
+3. <strong>Timeline:</strong> Organizes sequence, frame rates, and timing with layers and frames.<br />
+4. <strong>Tools Panel:</strong> Contains 2D vector drawing, coloring, and transformation tools.<br />
+5. <strong>Properties Panel:</strong> Context-sensitive inspector that changes depending on what is selected.<br />
+6. <strong>Library Panel:</strong> Manages all reusable symbols, graphics, and imported media assets.</p>
+</blockquote>
+<p><strong>Q2: How do you animate text in Adobe Animate? Outline the step-by-step process.</strong></p>
+<blockquote>
+<p><strong>Answer:</strong><br />
+1. Select the <strong>Text Tool (<code>T</code>)</strong> and type the desired word on the Stage.<br />
+2. Press <strong><code>Ctrl + B</code></strong> (Break Apart) to convert the text block into individual letter graphics.<br />
+3. Select the letters, right-click, and select <strong>Distribute to Layers</strong>.<br />
+4. Convert each letter into a Graphic Symbol by pressing <strong><code>F8</code></strong>.<br />
+5. In the Timeline, click on a future frame (e.g., Frame 30) and insert Keyframes (<strong><code>F6</code></strong>).<br />
+6. Move or rotate the letters to their final positions on Frame 30.<br />
+7. Right-click between Frame 1 and Frame 30 and choose <strong>Create Classic Tween</strong> to produce smooth motion.</p>
+</blockquote>
+<hr />
+<h1>Test Paper - 1: Comprehensive Assessment (Chapters 1 to 4) (Pages 56–58)</h1>
+<h3>Complete Section-by-Section Solutions:</h3>
+<h4>Section A: Multiple Choice Questions (MCQs)</h4>
+<ol>
+<li><strong>Which function calculates the average of numbers in a range?</strong></li>
+<li>a. <code>AVG()</code> &nbsp;&nbsp; <strong>b. <code>AVERAGE()</code> [ ✓ ]</strong> &nbsp;&nbsp; c. <code>MEAN()</code> &nbsp;&nbsp; d. <code>SUM()</code></li>
+<li><strong>In Excel, an absolute reference is denoted by:</strong></li>
+<li>a. <code>%</code> &nbsp;&nbsp; b. <code>#</code> &nbsp;&nbsp; <strong>c. <code>$</code> [ ✓ ]</strong> &nbsp;&nbsp; d. <code>&amp;</code></li>
+<li><strong>The chart type that represents data as horizontal bars is called:</strong></li>
+<li>a. Column Chart &nbsp;&nbsp; <strong>b. Bar Chart [ ✓ ]</strong> &nbsp;&nbsp; c. Line Chart &nbsp;&nbsp; d. Pie Chart</li>
+<li><strong>Which feature in Excel rearranges rows based on alphabetical or numerical order?</strong></li>
+<li>a. Filtering &nbsp;&nbsp; <strong>b. Sorting [ ✓ ]</strong> &nbsp;&nbsp; c. AutoSum &nbsp;&nbsp; d. Chart</li>
+<li><strong>In Adobe Animate, what is the default shortcut to create a Keyframe?</strong></li>
+<li>a. <code>F5</code> &nbsp;&nbsp; <strong>b. <code>F6</code> [ ✓ ]</strong> &nbsp;&nbsp; c. <code>F7</code> &nbsp;&nbsp; d. <code>F8</code></li>
+<li><strong>The tool in Adobe Animate used to modify shapes and rotate objects is the:</strong></li>
+<li>a. Text Tool &nbsp;&nbsp; b. Paint Tool &nbsp;&nbsp; <strong>c. Free Transform Tool [ ✓ ]</strong> &nbsp;&nbsp; d. Hand Tool</li>
+</ol>
+<h4>Section B: Fill in the Blanks</h4>
+<ol>
+<li>The <strong><code>COUNT()</code></strong> function in Excel counts only the cells that contain numbers.</li>
+<li>The <strong>Legend</strong> in a chart identifies what each color or pattern represents.</li>
+<li>The shortcut key to apply or remove AutoFilter in Excel is <strong><code>Ctrl + Shift + L</code></strong>.</li>
+<li>In Adobe Animate, the <strong>Pasteboard</strong> is the off-screen workspace surrounding the stage.</li>
+<li>Pressing <strong><code>Ctrl + B</code></strong> breaks apart grouped objects or text into editable shapes.</li>
+</ol>
+<h4>Section C: Match the Following</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Item in Column A</th>
+<th style="text-align: center;">Match</th>
+<th style="text-align: left;">Definition in Column B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1. <strong>AutoSum</strong></td>
+<td style="text-align: center;">$\rightarrow$ <strong>c</strong></td>
+<td style="text-align: left;">Automatically inserts the <code>=SUM()</code> formula</td>
+</tr>
+<tr>
+<td style="text-align: left;">2. <strong>Line Chart</strong></td>
+<td style="text-align: center;">$\rightarrow$ <strong>d</strong></td>
+<td style="text-align: left;">Displays trends and variations over continuous time</td>
+</tr>
+<tr>
+<td style="text-align: left;">3. <strong>Conditional Formatting</strong></td>
+<td style="text-align: center;">$\rightarrow$ <strong>a</strong></td>
+<td style="text-align: left;">Formats cells dynamically based on specified rules</td>
+</tr>
+<tr>
+<td style="text-align: left;">4. <strong>Keyframe</strong></td>
+<td style="text-align: center;">$\rightarrow$ <strong>e</strong></td>
+<td style="text-align: left;">Timeline frame indicating a change in animation (<code>F6</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">5. <strong>Eyedropper Tool</strong></td>
+<td style="text-align: center;">$\rightarrow$ <strong>b</strong></td>
+<td style="text-align: left;">Samples and copies color attributes between objects</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1>🎯 SA-1 Computer Science Quick Revision Matrix</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Key Tool / Formula</th>
+<th style="text-align: center;">Shortcut</th>
+<th style="text-align: left;">Primary Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Sum of Range</strong></td>
+<td style="text-align: left;"><code>=SUM(A1:A10)</code></td>
+<td style="text-align: center;"><code>Alt + =</code></td>
+<td style="text-align: left;">Instant total of contiguous numbers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Average</strong></td>
+<td style="text-align: left;"><code>=AVERAGE(A1:A10)</code></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">Arithmetic mean calculation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Max / Min</strong></td>
+<td style="text-align: left;"><code>=MAX()</code> / <code>=MIN()</code></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">Highest and lowest value identification</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Absolute Cell</strong></td>
+<td style="text-align: left;"><code>=$A$1</code></td>
+<td style="text-align: center;"><code>F4</code></td>
+<td style="text-align: left;">Locks reference during formula copy</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chart Creation</strong></td>
+<td style="text-align: left;">Insert $\rightarrow$ Recommended Charts</td>
+<td style="text-align: center;"><code>F11</code> (Chart Sheet)</td>
+<td style="text-align: left;">Visual graphical analysis of data</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Filter Toggle</strong></td>
+<td style="text-align: left;">Data $\rightarrow$ Filter</td>
+<td style="text-align: center;"><code>Ctrl + Shift + L</code></td>
+<td style="text-align: left;">Hides non-matching records</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Convert to Symbol</strong></td>
+<td style="text-align: left;">Modify $\rightarrow$ Convert to Symbol</td>
+<td style="text-align: center;"><code>F8</code></td>
+<td style="text-align: left;">Creates reusable Library asset</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Insert Keyframe</strong></td>
+<td style="text-align: left;">Insert $\rightarrow$ Timeline $\rightarrow$ Keyframe</td>
+<td style="text-align: center;"><code>F6</code></td>
+<td style="text-align: left;">Defines motion change in animation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Break Apart</strong></td>
+<td style="text-align: left;">Modify $\rightarrow$ Break Apart</td>
+<td style="text-align: center;"><code>Ctrl + B</code></td>
+<td style="text-align: left;">Deconstructs text into vector paths</td>
+</tr>
+</tbody>
+</table>
+      </div>
+    </div>
+
+    <!-- TAB 2: QUESTION PAPER -->
+    <div id="tab-qp" class="tab-content">
+      <div class="card rendered-content">
+        <div style="text-align: right; margin-bottom: 12px;">
+          <button class="btn btn-primary" onclick="window.print()">🖨️ Print Question Paper Now</button>
+        </div>
+        <h1>SUMMATIVE ASSESSMENT - I (SA-1) EXAMINATION (2026-27)</h1>
+<h2>CLASS: VII | SUBJECT: COMPUTER SCIENCE</h2>
+<p><strong>Time Allowed:</strong> 2 Hours | <strong>Maximum Marks:</strong> 50 Marks</p>
+<hr />
+<h3>General Instructions:</h3>
+<ol>
+<li>All questions are compulsory. Read instructions carefully before writing.</li>
+<li>Marks are allotted against each question.</li>
+<li>Draw neat, labeled diagrams wherever asked.</li>
+</ol>
+<hr />
+<h2>SECTION A: MULTIPLE CHOICE QUESTIONS (10 Marks)</h2>
+<p><strong>Choose and write the correct option:</strong> [1 Mark each]</p>
+<ol>
+<li><strong>Every formula in Microsoft Excel must begin with the following character:</strong></li>
+<li>(A) <code>+</code></li>
+<li>(B) <code>=</code></li>
+<li>(C) <code>$</code></li>
+<li>
+<p>(D) <code>#</code></p>
+</li>
+<li>
+<p><strong>The cell range <code>C2:F5</code> contains how many total cells in the worksheet?</strong></p>
+</li>
+<li>(A) 12</li>
+<li>(B) 16</li>
+<li>(C) 20</li>
+<li>
+<p>(D) 8</p>
+</li>
+<li>
+<p><strong>Which function returns the highest numerical value in a range?</strong></p>
+</li>
+<li>(A) <code>SUM()</code></li>
+<li>(B) <code>MAX()</code></li>
+<li>(C) <code>HIGH()</code></li>
+<li>
+<p>(D) <code>TOP()</code></p>
+</li>
+<li>
+<p><strong>The horizontal axis in a Column chart that displays categories is called:</strong></p>
+</li>
+<li>(A) Value Axis</li>
+<li>(B) Category Axis (X-axis)</li>
+<li>(C) Plot Area</li>
+<li>
+<p>(D) Legend</p>
+</li>
+<li>
+<p><strong>Which chart type displays only a single data series as slices of a circle?</strong></p>
+</li>
+<li>(A) Line Chart</li>
+<li>(B) Bar Chart</li>
+<li>(C) Pie Chart</li>
+<li>
+<p>(D) Area Chart</p>
+</li>
+<li>
+<p><strong>The feature that changes the cell color based on a condition is called:</strong></p>
+</li>
+<li>(A) AutoFormat</li>
+<li>(B) Conditional Formatting</li>
+<li>(C) Data Validation</li>
+<li>
+<p>(D) AutoFilter</p>
+</li>
+<li>
+<p><strong>What is the keyboard shortcut to turn AutoFilter ON or OFF in Excel?</strong></p>
+</li>
+<li>(A) <code>Ctrl + F</code></li>
+<li>(B) <code>Ctrl + Shift + L</code></li>
+<li>(C) <code>Alt + F4</code></li>
+<li>
+<p>(D) <code>Ctrl + Alt + V</code></p>
+</li>
+<li>
+<p><strong>In Adobe Animate 2020, the rectangular white area where animation occurs is:</strong></p>
+</li>
+<li>(A) Pasteboard</li>
+<li>(B) Stage</li>
+<li>(C) Timeline</li>
+<li>
+<p>(D) Canvas</p>
+</li>
+<li>
+<p><strong>The shortcut key to convert a selected object into a Symbol in Adobe Animate is:</strong></p>
+</li>
+<li>(A) <code>F5</code></li>
+<li>(B) <code>F6</code></li>
+<li>(C) <code>F8</code></li>
+<li>
+<p>(D) <code>F9</code></p>
+</li>
+<li>
+<p><strong>In Adobe Animate, a Keyframe on the timeline is represented by:</strong></p>
+<ul>
+<li>(A) A red hollow box</li>
+<li>(B) A solid black circle</li>
+<li>(C) A green arrow</li>
+<li>(D) An exclamation mark</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>SECTION B: FILL IN THE BLANKS (10 Marks)</h2>
+<p><strong>Complete each sentence with the correct technical term:</strong> [1 Mark each]</p>
+<ol>
+<li>The colon (<strong><code>:</code></strong>) symbol is used in Excel to separate the start and end of a cell <strong><em>_</em></strong>___.</li>
+<li>In <strong><em>_</em></strong>___ cell referencing, both column letter and row number are locked with dollar signs (<code>$</code>).</li>
+<li>The <strong><em>_</em></strong>___ identifies each data series in a chart using unique colors or patterns.</li>
+<li>When a filter is applied to a column, the dropdown arrow changes to a <strong><em>_</em></strong>___ icon.</li>
+<li>In Excel, the error code <strong><em>_</em></strong>___ appears when the column is too narrow to display the number.</li>
+<li>In Adobe Animate, the gray workspace surrounding the stage is called the <strong><em>_</em></strong>___.</li>
+<li>In Adobe Animate, the perimeter border of a shape is called the <strong><em>_</em></strong><strong><em>, while the interior color is called the </em></strong><strong><em>_</em></strong>.</li>
+<li>The shortcut to insert a new Keyframe in the timeline is <strong><em>_</em></strong>___.</li>
+<li>The <strong><em>_</em></strong>___ panel in Adobe Animate stores reusable graphic assets, buttons, and sounds.</li>
+<li>Pressing <strong><code>Ctrl + B</code></strong> in Adobe Animate is used to <strong><em>_</em></strong>___ text or shapes into individual elements.</li>
+</ol>
+<hr />
+<h2>SECTION C: STATE TRUE OR FALSE (5 Marks)</h2>
+<p><strong>Write 'T' for True and 'F' for False statements:</strong> [1 Mark each]</p>
+<ol>
+<li>Changing data in the worksheet does not update the linked chart automatically. [ &nbsp;&nbsp;&nbsp; ]</li>
+<li>Filtering data permanently deletes rows that do not match the specified criteria. [ &nbsp;&nbsp;&nbsp; ]</li>
+<li>Objects placed on the Pasteboard in Adobe Animate will be visible in the exported animation. [ &nbsp;&nbsp;&nbsp; ]</li>
+<li>The AutoSum feature can be inserted using the keyboard shortcut <code>Alt + =</code>. [ &nbsp;&nbsp;&nbsp; ]</li>
+<li>The <code>COUNT()</code> function in Excel counts only cells containing numerical values. [ &nbsp;&nbsp;&nbsp; ]</li>
+</ol>
+<hr />
+<h2>SECTION D: SHORT ANSWER QUESTIONS (15 Marks)</h2>
+<p><strong>Answer the following questions briefly:</strong> [3 Marks each]</p>
+<ol>
+<li><strong>What is a Cell Range? Write an example of a vertical range, horizontal range, and rectangular range.</strong></li>
+<li><strong>Differentiate between Relative Referencing and Absolute Referencing in Excel with formula examples.</strong></li>
+<li><strong>What is the difference between a Column Chart and a Bar Chart? When is a Line Chart preferred?</strong></li>
+<li><strong>Define Sorting and Filtering. Mention the key difference between them.</strong></li>
+<li><strong>What is a Keyframe in Adobe Animate? Why is it crucial for creating animations?</strong></li>
+</ol>
+<hr />
+<h2>SECTION E: APPLICATION &amp; LONG PRACTICAL QUESTIONS (10 Marks)</h2>
+<p><strong>Answer the following detailed questions:</strong> [5 Marks each]</p>
+<ol>
+<li><strong>Practical Scenario — Excel Calculation &amp; Charting:</strong><br />
+   A teacher has entered the marks of 5 students in 3 subjects in cells <code>A1:D6</code>.</li>
+<li>(a) Write the exact formula to calculate the Total Marks of the first student whose marks are in cells <code>B2</code>, <code>C2</code>, and <code>D2</code>.</li>
+<li>(b) Write the formula to find the Average marks of all 5 students in Subject 1 (cells <code>B2:B6</code>).</li>
+<li>(c) Write the formula to display the Highest mark scored in Subject 1.</li>
+<li>
+<p>(d) Which chart type should the teacher insert to visually compare the total performance of all 5 students?</p>
+</li>
+<li>
+<p><strong>Step-by-Step Procedure — Text Animation in Adobe Animate:</strong><br />
+   Explain the step-by-step procedure to animate a word (e.g., "WELCOME") from the left side of the stage to the center using Adobe Animate 2020. Mention the tools, shortcuts (<code>Ctrl + B</code>, <code>F8</code>, <code>F6</code>), and tweening methods used.</p>
+</li>
+</ol>
+<hr />
+<p><strong>ALL THE BEST</strong></p>
+      </div>
+    </div>
+
+    <!-- TAB 3: OVERVIEW & BLUEPRINT -->
+    <div id="tab-overview" class="tab-content">
+      <div class="card">
+        <h2 style="color: var(--primary); margin-bottom: 12px;">📋 Summative Assessment - 1 Curriculum Blueprint</h2>
+        <p><strong>Subject:</strong> Computer Science</p>
+        <p><strong>Prescribed Syllabus:</strong> Click and Learn - 7 (Chapters 1 to 4 & Test Paper - 1)</p>
+        <p><strong>Date of Examination:</strong> 06-10-2026</p>
+        <p><strong>Total Marks:</strong> 50 Marks</p>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Key High-Yield Topics:</h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
+          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Ch1: Excel Formulas</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Ch2: Advanced Excel</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Ch3: Animate Workspace</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Ch4: Animate Animation</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Test Paper-1</span>
+        </div>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Official Documents Download:</h3>
+        <ul style="margin-left: 20px; line-height: 2;">
+          <li><a href="SA1_Computers_Master_Solutions.pdf" target="_blank" style="color: #38bdf8;">Complete Master Answer Key (PDF)</a></li>
+          <li><a href="SA1_Computers_Question_Paper.pdf" target="_blank" style="color: #38bdf8;">Formal Student Question Paper (PDF)</a></li>
+          <li><a href="SA1_Computers_Master_Solutions.docx" download style="color: #38bdf8;">Editable Master Solutions (DOCX)</a></li>
+          <li><a href="SA1_Computers_Question_Paper.docx" download style="color: #38bdf8;">Editable Question Paper (DOCX)</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      if (tabId === 'master') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('tab-master').classList.add('active');
+      } else if (tabId === 'qp') {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('tab-qp').classList.add('active');
+      } else if (tabId === 'overview') {
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+        document.getElementById('tab-overview').classList.add('active');
+      }
+    }
+
+    function filterContent() {
+      const query = document.getElementById('masterSearch').value.toLowerCase();
+      const content = document.getElementById('masterContent');
+      const paragraphs = content.querySelectorAll('p, li, tr, blockquote');
+      
+      paragraphs.forEach(el => {
+        if (!query || el.innerText.toLowerCase().includes(query)) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+
+    // Text to speech utility
+    // Strict English Text-to-Speech Engine
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        // Strip HTML and Telugu characters to ensure clean English pronunciation
+        const cleanText = text.replace(/<[^>]*>/g, '').replace(/[\u0C00-\u0C7F]/g, '');
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        utterance.rate = 0.92;
+        utterance.pitch = 1.0;
+
+        // Force selection of natural English voices
+        const voices = window.speechSynthesis.getVoices();
+        const preferredVoice = voices.find(v => (v.lang === 'en-IN' || v.lang === 'en-US' || v.lang === 'en-GB') && 
+          (v.name.includes('Natural') || v.name.includes('Neural') || v.name.includes('Online') || v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('Neerja')))
+          || voices.find(v => v.lang.startsWith('en'));
+        
+        if (preferredVoice) {
+          utterance.voice = preferredVoice;
+        }
+        utterance.lang = 'en-US';
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+  </script>
+</body>
+</html>

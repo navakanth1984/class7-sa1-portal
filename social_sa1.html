@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 7 Social SA-1 Master Portal | 2026-27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nirmala+UI&family=Gautami&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #d97706;
+      --primary-dark: #1e3a8a;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-light: #334155;
+      --card-bg: rgba(30, 41, 59, 0.75);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --font-main: 'Outfit', 'Nirmala UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(217, 119, 6, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding-bottom: 70px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 18px 0;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .subject-icon {
+      font-size: 2rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+    .title-group h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .title-group p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .tabs-nav {
+      display: flex;
+      gap: 10px;
+      margin: 24px 0 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid var(--card-border);
+    }
+
+    .search-box {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px 18px 12px 42px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--surface);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+    }
+    .search-box::before {
+      content: "🔍";
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.95rem;
+    }
+
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .rendered-content h1 {
+      font-size: 1.45rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--card-border);
+      padding-bottom: 6px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .rendered-content h2 {
+      font-size: 1.25rem;
+      color: #38bdf8;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+    .rendered-content h3 {
+      font-size: 1.1rem;
+      color: #7dd3fc;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+    .rendered-content h4 {
+      font-size: 1rem;
+      color: #bae6fd;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+    .rendered-content p {
+      margin-bottom: 10px;
+      color: #e2e8f0;
+    }
+    .rendered-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .rendered-content th, .rendered-content td {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+    .rendered-content th {
+      background: rgba(255, 255, 255, 0.08);
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .rendered-content blockquote {
+      border-left: 4px solid var(--primary);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 16px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      color: #cbd5e1;
+    }
+    .rendered-content strong {
+      color: #fff;
+    }
+    .rendered-content code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      color: #f472b6;
+    }
+    .rendered-content hr {
+      border: none;
+      border-top: 1px solid var(--card-border);
+      margin: 20px 0;
+    }
+
+    @media print {
+      header, .tabs-nav, .search-box, .btn-group {
+        display: none !important;
+      }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .card {
+        background: #fff !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .rendered-content h1, .rendered-content h2, .rendered-content h3 {
+        color: #000 !important;
+      }
+      .rendered-content table {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .rendered-content th {
+        background: #eee !important;
+        color: #000 !important;
+      }
+      .rendered-content td {
+        border: 1px solid #ccc !important;
+      }
+      #tab-qp {
+        display: block !important;
+      }
+      #tab-master {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="subject-icon">🏛️</div>
+        <div class="title-group">
+          <h1>Class 7 Social SA-1 Master Portal</h1>
+          <p>Geography L3, History L8, Civics L13, Economics L17 | Exam: 05-10-2026 | Marks: 80</p>
+        </div>
+      </div>
+      <div class="btn-group">
+        <a class="btn" href="index.html" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: #fff;">🏠 All Subjects</a>
+        <button class="btn" onclick="window.print()">🖨️ Print Exam Paper</button>
+        <a class="btn btn-primary" href="SA1_Social_Master_Solutions.pdf" target="_blank">📄 Master Solutions PDF</a>
+        <a class="btn" href="SA1_Social_Question_Paper.pdf" target="_blank">📝 Question Paper PDF</a>
+        <a class="btn" href="SA1_Social_Master_Solutions.docx" download>📥 Word DOCX</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 20px;">
+    
+    <!-- EMBEDDED ENGLISH AUDIO GUIDE -->
+    <div style="background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.8rem;">🎧</span>
+        <div>
+          <h3 style="margin: 0; font-size: 1rem; color: #38bdf8;">Complete English Audio Study Guide</h3>
+          <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">High-clarity neural English narration for comprehensive revision</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; max-width: 450px;">
+        <audio controls style="width: 100%; height: 38px; border-radius: 8px;">
+          <source src="SA1_Social_English_Audio_Guide.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <a href="SA1_Social_English_Audio_Guide.mp3" download class="btn" style="padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">⬇️ MP3</a>
+      </div>
+    </div>
+
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('master')">📘 Master Solutions & Study Guide</button>
+      <button class="tab-btn" onclick="switchTab('qp')">📝 Student Question Paper (80 Marks)</button>
+      <button class="tab-btn" onclick="switchTab('overview')">⚡ Syllabus & Exam Blueprint</button>
+    </div>
+
+    <!-- TAB 1: MASTER SOLUTIONS -->
+    <div id="tab-master" class="tab-content active">
+      <div class="search-box">
+        <input type="text" id="masterSearch" placeholder="Type to search questions, keywords, Telugu translations..." onkeyup="filterContent()">
+      </div>
+      <div class="card rendered-content" id="masterContent">
+        <h1>Class 7 Social Science — SA1 Master Solutions &amp; Complete Pedagogical Study Guide</h1>
+<h2>Comprehensive Curriculum Blueprint: Geography L3, History L8, Civics L13, Economics L17</h2>
+<h3>The Social Science Scholar &amp; Student's Complete SA-1 Master Key (Bilingual: English &amp; Telugu)</h3>
+<blockquote>
+<p><strong>Syllabus Scope (SA-1 Timetable &amp; Official Textbook Portion):</strong><br />
+- <strong>Geography — Chapter 3: The Climates of India</strong> (Unit 1: India and the World, Pages 39–55)<br />
+  - Weather vs Climate, Factors influencing India's climate (Latitude, Altitude, Distance from Sea, Relief, Monsoon Winds).<br />
+  - 6 Major Climatic Zones of India (Alpine, Temperate, Subtropical, Arid, Semi-Arid, Tropical Wet).<br />
+  - Monsoons: Southwest Monsoon (June–Sept) &amp; Northeast / Retreating Monsoon (Oct–Nov).<br />
+  - Climate &amp; Economy, Disasters (Floods, Cyclones, Forest Fires, GLOFs), Climate Change (Mitigation &amp; Adaptation).<br />
+- <strong>History — Chapter 8: The Age of Reorganisation</strong> (Unit 2: Tapestry of the Past, Pages 56–75)<br />
+  - Post-Mauryan Dynasties: Shungas (Pushyamitra Shunga), Chedis of Kalinga (King Kharavela, Hathigumpha Inscription).<br />
+  - Satavahanas: Gautamiputra Satakarni, Gautami Balashri, Ship coins (maritime trade), Roman trade, Karla Caves.<br />
+  - Kushanas: Kanishka, 4th Buddhist Council, Silk Route trade, Gandhara &amp; Mathura Art, Shaka Samvat calendar (78 CE).<br />
+  - Southern Kingdoms &amp; Sangam Age: Cholas (Karikala Chola, Grand Anicut/Kallanai on Cauvery), Pandyas (Madurai, pearls, Sangam assemblies), Cheras.<br />
+- <strong>Civics — Chapter 13: India's Tapestry of Communities / Cultural Coexistence</strong> (Unit 3: Cultural Heritage, Pages 76–95)<br />
+  - Unity in Diversity &amp; <em>Vasudhaiva Kutumbakam</em> ("The world is one family").<br />
+  - Sanctuary for Persecuted Refugees: Parsis/Zoroastrians (King Jadi Rana, milk &amp; sugar metaphor), Cochin Jews, Bene Israel, Syrian Christians (St. Thomas tradition), Mappila Muslims, Baha'i Community (Lotus Temple), Tibetan Refugees (Dalai Lama, Dharamshala, Bylakuppe), Polish WWII orphans (Good Maharaja of Jamnagar).<br />
+- <strong>Economics — Chapter 17: From Barter to Money</strong> (Unit 5: Economic Life Around Us, Pages 96–112)<br />
+  - Barter System &amp; its 5 critical limitations (Double coincidence of wants, lack of common measure of value, storage of value, indivisibility, deferred payments).<br />
+  - Evolution of Money: Commodity money $\rightarrow$ Metallic coins (Punch-marked, Dynastic) $<br />
+ightarrow$ Paper currency (RBI authority) $<br />
+ightarrow$ Bank money $<br />
+ightarrow$ Digital &amp; Plastic money (Cards, UPI, Net Banking).<br />
+  - Modern Barter survival: The Jonbeel Mela in Assam; Indian Rupee Symbol (₹) design and significance.</p>
+</blockquote>
+<hr />
+<h1>Geography — Chapter 3: The Climates of India (Pages 39–55)</h1>
+<h3>🌍 Conceptual Synopsis &amp; Core Principles</h3>
+<ul>
+<li><strong>Weather vs. Climate:</strong></li>
+<li><em>Weather:</em> Atmospheric conditions (temperature, humidity, rainfall, wind) of a specific location over a short period (day-to-day or hour-to-hour).</li>
+<li><em>Climate:</em> The statistical average of weather conditions observed over a prolonged period (typically <strong>30 years or more</strong>) across a large geographical region.</li>
+<li><strong>Factors Influencing India's Climate:</strong></li>
+<li><em>Latitude:</em> The Tropic of Cancer ($23.5^\circ\text{N}$) divides India into a tropical south and a subtropical north.</li>
+<li><em>Altitude:</em> Temperature decreases with height at approximately $6.5^\circ\text{C}$ per 1,000 meters (<em>normal lapse rate</em>). Hence, hill stations (Shimla, Ooty) remain cool while adjacent plains are hot.</li>
+<li><em>Distance from the Sea:</em> Coastal areas (Mumbai, Chennai) experience an equable/moderate maritime climate due to land and sea breezes, whereas interior locations (Delhi, Nagpur) experience extreme/continental climate.</li>
+<li><em>Relief Features:</em> High mountains act as climatic barriers. The Himalayas block freezing Arctic winds from Central Asia and trap the moisture-laden monsoon winds within the subcontinent. The Western Ghats cause heavy orographic rainfall on the windward western coastal strip, leaving the Deccan Plateau in the dry <em>rain shadow area</em>.</li>
+<li><em>Monsoon Winds:</em> Periodic seasonal winds that reverse their direction twice a year.</li>
+<li><strong>India's Climatic Zones:</strong></li>
+<li><em>Alpine Climate:</em> High Himalayas (Ladakh, Jammu &amp; Kashmir, Uttarakhand) — freezing winters, heavy snowfall.</li>
+<li><em>Temperate Climate:</em> Himalayan foothills and Nilgiri hill resorts (pleasant summers, cool winters).</li>
+<li><em>Subtropical Climate:</em> Northern Plains (Punjab to West Bengal) — scorching summers, chilly winters, moderate monsoon rain.</li>
+<li><em>Arid / Desert Climate:</em> Western Rajasthan (Thar Desert) — extreme summer heat, very little rainfall ($&lt;25\text{ cm/year}$), large diurnal temperature range.</li>
+<li><em>Semi-Arid Climate:</em> Interior Deccan Plateau (rain shadow zone) — hot, dry, low-to-moderate irregular rainfall.</li>
+<li><em>Tropical Wet Climate:</em> Western coastal strip and northeastern states — high humidity, torrential monsoon rainfall ($&gt;200\text{ cm/year}$).</li>
+<li><strong>The Monsoons: India's Lifeline:</strong></li>
+<li>Derived from the Arabic word <em>'Mawsim'</em> meaning 'season'.</li>
+<li><em>Southwest Monsoon (June to September):</em> Blows from the Indian Ocean towards the heated subcontinent, dividing into the Arabian Sea Branch and the Bay of Bengal Branch. Accounts for over 75% of India's annual precipitation.</li>
+<li><em>Northeast / Retreating Monsoon (October to November):</em> Blows from the cooling northern landmass towards the Bay of Bengal, picking up moisture and depositing heavy rainfall on the Coromandel Coast (Tamil Nadu and coastal Andhra Pradesh).</li>
+<li><strong>Climate-Related Disasters:</strong> Floods, droughts, cyclones, forest fires, and Glacial Lake Outburst Floods (GLOFs) caused by sudden breaches of moraine dams in warming Himalayan valleys.</li>
+<li><strong>Climate Change:</strong> Global warming driven by excessive greenhouse gas emissions ($CO_2$, methane) and deforestation. Tackled via <strong>Mitigation</strong> (reducing carbon emissions, renewable solar/wind energy, afforestation) and <strong>Adaptation</strong> (drought-resistant crops, flood management, green infrastructure).</li>
+</ul>
+<hr />
+<h3>Textbook Exercises — Chapter 3 (Geography)</h3>
+<h4>A. Read each question carefully and tick (✓) the correct option:</h4>
+<p><strong>Question 1:</strong> Which factor is mainly responsible for causing monsoon rainfall in India?<br />
+- a. Westerly disturbances<br />
+- b. Seasonal reversal of monsoon winds<br />
+- c. Ocean currents from Antarctica<br />
+- d. Trade winds from the Arctic</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Seasonal reversal of monsoon winds</strong><br />
+- <strong>Explanation:</strong> Differential heating of land and water causes the seasonal reversal of winds from sea to land in summer, bringing moisture-laden monsoon rains.<br />
+- <strong>తెలుగు వివరణ:</strong> భారతదేశంలో రుతుపవన వర్షాలకు ప్రధాన కారణం రుతువులను బట్టి గాలులు తమ దిశను మార్చుకోవడమే (Seasonal reversal of winds).</p>
+</blockquote>
+<p><strong>Question 2:</strong> Which of the following regions in India experiences a tropical wet climate?<br />
+- a. Thar Desert<br />
+- b. Ladakh Plateau<br />
+- c. Western coastal strip of Kerala<br />
+- d. Northern Plains of Haryana</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>c. Western coastal strip of Kerala</strong><br />
+- <strong>Explanation:</strong> The western slopes of the Western Ghats receive heavy rainfall ($&gt;250\text{ cm}$) from the Southwest Monsoon winds.<br />
+- <strong>తెలుగు వివరణ:</strong> కేరళ తీర ప్రాంతంలో అధిక తేమ మరియు భారీ రుతుపవన వర్షాలతో కూడిన ఉష్ణమండల తేమ వాతావరణం (Tropical wet climate) ఉంటుంది.</p>
+</blockquote>
+<p><strong>Question 3:</strong> What type of climate is characterized by very low rainfall, high summer temperatures, and sandy landscapes?<br />
+- a. Alpine climate<br />
+- b. Arid (Desert) climate<br />
+- c. Temperate climate<br />
+- d. Subtropical climate</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Arid (Desert) climate</strong><br />
+- <strong>Explanation:</strong> Arid climate in Rajasthan receives under 25 cm of rainfall annually and experiences extreme diurnal temperature variations.<br />
+- <strong>తెలుగు వివరణ:</strong> అతి తక్కువ వర్షపాతం, అధిక వేసవి ఉష్ణోగ్రతలు ఉండే రాజస్థాన్ థార్ ఎడారి ప్రాంత వాతావరణాన్ని 'శుష్క / ఎడారి శీతోష్ణస్థితి' (Arid climate) అంటారు.</p>
+</blockquote>
+<p><strong>Question 4:</strong> Locations near the ocean generally enjoy which type of climate?<br />
+- a. Extreme climate<br />
+- b. Moderate (Equable) climate<br />
+- c. Frigid climate<br />
+- d. Continental climate</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Moderate (Equable) climate</strong><br />
+- <strong>Explanation:</strong> The sea heats up and cools down much more slowly than land, producing moderating sea breezes that prevent extreme summer heat or winter cold.<br />
+- <strong>తెలుగు వివరణ:</strong> సముద్ర తీర ప్రాంతాలలో సముద్ర గాలుల ప్రభావం వల్ల ఎండాకాలంలో మరీ వేడిగా, చలికాలంలో మరీ చల్లగా ఉండని సమశీతోష్ణ వాతావరణం (Moderate climate) ఉంటుంది.</p>
+</blockquote>
+<p><strong>Question 5:</strong> The Deccan Plateau receives relatively low rainfall compared to the Konkan coast because it lies in:<br />
+- a. The windward zone<br />
+- b. The rain shadow area<br />
+- c. The alpine zone<br />
+- d. The cyclonic trough</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. The rain shadow area</strong><br />
+- <strong>Explanation:</strong> The Western Ghats block the moist Arabian Sea branch; after releasing moisture on the western slopes, dry descending air warms up, yielding little rain on the eastern plateau.<br />
+- <strong>తెలుగు వివరణ:</strong> పశ్చిమ కనుమలు వర్షపు గాలులను అడ్డుకోవడం వల్ల దక్కన్ పీఠభూమి వర్షచ్ఛాయా ప్రాంతం (Rain shadow area) లో పడి తక్కువ వర్షపాతాన్ని పొందుతుంది.</p>
+</blockquote>
+<hr />
+<h4>B. Fill in the blanks with the correct words:</h4>
+<ol>
+<li>The statistical average of weather patterns recorded over a period of 30 years or more is known as <strong>climate</strong>.</li>
+<li><em>తెలుగు:</em> కనీసం 30 సంవత్సరాల పాటు నమోదైన సగటు వాతావరణ పరిస్థితులను <strong>శీతోష్ణస్థితి (Climate)</strong> అంటారు.</li>
+<li>The seasonal wind that brings rainfall to the major part of India from June to September is the <strong>Southwest Monsoon</strong>.</li>
+<li><em>తెలుగు:</em> జూన్ నుండి సెప్టెంబర్ వరకు భారతదేశంలోని ఎక్కువ ప్రాంతాలకు వర్షాన్నిచ్చే గాలులు <strong>నైరుతి రుతుపవనాలు (Southwest Monsoon)</strong>.</li>
+<li>Places situated at higher altitudes experience <strong>lower (cooler)</strong> temperatures due to the normal lapse rate.</li>
+<li><em>తెలుగు:</em> ఎత్తైన పర్వత ప్రాంతాలలో ఎత్తు పెరిగే కొద్దీ ఉష్ణోగ్రత <strong>తగ్గిపోతుంది (చల్లగా ఉంటుంది)</strong>.</li>
+<li>The sudden bursting of glacial moraine lakes in warming mountain valleys is called a <strong>Glacial Lake Outburst Flood (GLOF)</strong>.</li>
+<li><em>తెలుగు:</em> హిమానీనదాలు కరిగి సరస్సులు ఒక్కసారిగా తెగిపోయి వచ్చే వరదలను <strong>గ్లేసియల్ లేక్ అవుట్‌బర్స్ట్ ఫ్లడ్స్ (GLOF)</strong> అంటారు.</li>
+<li>In winter, the <strong>Northeast (Retreating)</strong> monsoon brings significant rainfall to the coastal areas of Tamil Nadu.</li>
+<li><em>తెలుగు:</em> శీతాకాలంలో తమిళనాడు తీరానికి భారీ వర్షాలను తెచ్చేవి <strong>ఈశాన్య (తిరోగమన) రుతుపవనాలు</strong>.</li>
+</ol>
+<hr />
+<h4>C. State whether the following statements are True or False:</h4>
+<ol>
+<li><strong>Weather can change daily, but climate remains relatively constant over decades.</strong></li>
+<li><strong>True</strong> (Weather is short-term; climate is the 30-year long-term baseline).</li>
+<li><em>తెలుగు:</em> నిజం. వాతావరణం రోజువారీగా మారుతుంది, కానీ శీతోష్ణస్థితి దశాబ్దాల పాటు స్థిరంగా ఉంటుంది.</li>
+<li><strong>Alpine climate occurs in the low-lying Northern Plains of India.</strong></li>
+<li><strong>False</strong> (Alpine climate occurs only at high elevations in the Himalayas; the Northern Plains have a Subtropical climate).</li>
+<li><em>తెలుగు:</em> తప్పు. ఆల్పైన్ శీతోష్ణస్థితి హిమాలయ పర్వతాలలో మాత్రమే ఉంటుంది.</li>
+<li><strong>Monsoon winds blow in the same direction throughout the year without any change.</strong></li>
+<li><strong>False</strong> (Monsoon winds reverse direction completely between summer and winter).</li>
+<li><em>తెలుగు:</em> తప్పు. రుతుపవనాలు వేసవిలో నైరుతి నుండి, శీతాకాలంలో ఈశాన్యం నుండి వీస్తూ దిశను మార్చుకుంటాయి.</li>
+<li><strong>Planting trees (afforestation) is an effective strategy to mitigate global climate change.</strong></li>
+<li><strong>True</strong> (Trees absorb carbon dioxide through photosynthesis, reducing atmospheric greenhouse gases).</li>
+<li><em>తెలుగు:</em> నిజం. చెట్లు నాటడం వల్ల వాతావరణంలోని కర్బన ఉద్గారాలు తగ్గి భూతాపం నియంత్రణలో ఉంటుంది.</li>
+</ol>
+<hr />
+<h4>D. Match the following:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column A</th>
+<th style="text-align: left;">Column B</th>
+<th style="text-align: left;">Target Answer</th>
+<th style="text-align: left;">Scientific Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Altitude</strong></td>
+<td style="text-align: left;">a. Rain shadow region</td>
+<td style="text-align: left;"><strong>d. Temperature decreases with height</strong></td>
+<td style="text-align: left;">Normal environmental lapse rate.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Western Ghats</strong></td>
+<td style="text-align: left;">b. Coromandel coast rainfall</td>
+<td style="text-align: left;"><strong>e. Causes heavy orographic rainfall on western coast</strong></td>
+<td style="text-align: left;">Physical barrier to monsoon winds.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Northeast Monsoon</strong></td>
+<td style="text-align: left;">c. Hot, dry climate with low rain</td>
+<td style="text-align: left;"><strong>b. Coromandel coast rainfall</strong></td>
+<td style="text-align: left;">Picks up Bay of Bengal moisture in Oct–Nov.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Thar Desert</strong></td>
+<td style="text-align: left;">d. Temperature decreases with height</td>
+<td style="text-align: left;"><strong>c. Hot, dry climate with low rain</strong></td>
+<td style="text-align: left;">Arid zone with $&lt;25   ext{ cm}$ annual rain.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Deccan Interior</strong></td>
+<td style="text-align: left;">e. Causes heavy orographic rainfall</td>
+<td style="text-align: left;"><strong>a. Rain shadow region</strong></td>
+<td style="text-align: left;">Leeward side of Western Ghats.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1>History — Chapter 8: The Age of Reorganisation (Pages 56–75)</h1>
+<h3>🏛️ Conceptual Synopsis &amp; Core Principles</h3>
+<ul>
+<li><strong>The Post-Mauryan Era (The Age of Reorganisation):</strong></li>
+<li>Following the decline and fall of the vast Mauryan Empire around 185 BCE (when Pushyamitra Shunga assassinated the last Maurya king, Brihadratha), India did not fragment into chaos. Instead, dynamic regional dynasties arose, reorganising political authority, reviving cultural institutions, and expanding maritime and overland trade networks.</li>
+<li><strong>Key Northern &amp; Central Dynasties:</strong></li>
+<li><strong>The Shungas:</strong> Founded by Pushyamitra Shunga (c. 185 BCE). Revived the Vedic horse sacrifice (<strong>Ashvamedha Yajna</strong>), renovated Buddhist stupas at Sanchi and Bharhut, and patronized the grammarian Patanjali.</li>
+<li><strong>The Chedis of Kalinga:</strong> Led by the celebrated King <strong>Kharavela</strong>. His life, military campaigns, and public works are recorded in the 17-line rock-cut <strong>Hathigumpha Inscription</strong> at Udayagiri hills near Bhubaneswar. Kharavela was a generous patron of Jainism who carved residential cave shelters for Jain monks while maintaining complete tolerance for all faiths.</li>
+<li><strong>The Satavahanas of the Deccan (The Andhras):</strong></li>
+<li>Ruled the Deccan plateau between the Godavari and Krishna valleys from capitals like Pratishthana (Paithan) and Amaravati.</li>
+<li><strong>Gautamiputra Satakarni:</strong> Greatest Satavahana emperor, who destroyed the pride of the Shakas (Scythians) and Yavanas (Greeks). His mother, <strong>Queen Gautami Balashri</strong>, composed the famous <strong>Nashik Inscription</strong> describing his valour and virtues.</li>
+<li><em>Matronymics:</em> Satavahana kings proudly adopted their mothers' names (e.g., Gautamiputra = son of Gautami; Vashishtiputra = son of Vashishti).</li>
+<li><em>Maritime Supremacy:</em> Struck lead and copper coins bearing images of <strong>double-masted ships</strong>, reflecting a flourishing oceanic trade with the Roman Empire and Southeast Asia.</li>
+<li><em>Architecture:</em> Excavated spectacular rock-cut Buddhist chaityas and viharas at <strong>Karla</strong>, Kanheri, and Nashik, and built the great stupa at <strong>Amaravati</strong>.</li>
+<li><strong>The Kushana Empire &amp; Kanishka:</strong></li>
+<li>Descended from the Yuezhi of Central Asia; established a trans-regional empire connecting northern India with Central Asia.</li>
+<li><strong>Emperor Kanishka (c. 78 CE):</strong> Initiated the <strong>Shaka Samvat</strong> era (official calendar of the Republic of India today). Convened the <strong>4th Buddhist Council</strong> in Kashmir, which led to the codification of Mahayana Buddhism.</li>
+<li>Controlled vital nodes of the overland <strong>Silk Route</strong>, levying tolls on silk, spices, and gemstones traded between China, India, and Rome.</li>
+<li><em>Art:</em> Fostered the hybrid <strong>Gandhara School of Art</strong> (blending Greek anatomical realism with Buddhist iconography) and the indigenous <strong>Mathura School of Art</strong> (using spotted red sandstone).</li>
+<li><strong>The Southern Dynasties &amp; The Sangam Age:</strong></li>
+<li><strong>Sangam Literature:</strong> Golden age of Tamil poetry created in literary assemblies (<em>Sangams</em>) hosted by the Pandyan kings at Madurai.</li>
+<li><strong>The Cholas:</strong> Led by legendary king <strong>Karikala Chola</strong>, who defeated an alliance of Cheras and Pandyas at Venni. He constructed the historic <strong>Grand Anicut (Kallanai)</strong> across the Cauvery river—one of the world's oldest active water-diversion dams.</li>
+<li><strong>The Pandyas:</strong> Ruled southern Tamil Nadu from Madurai; famous for sea-pearl fisheries and direct diplomatic and commercial missions to Rome.</li>
+<li><strong>The Cheras:</strong> Ruled the Malabar coast of Kerala; major exporters of black pepper ('black gold') to Roman merchants at ports like Muziris.</li>
+</ul>
+<hr />
+<h3>Textbook Exercises — Chapter 8 (History)</h3>
+<h4>A. Read each question carefully and tick (✓) the correct option:</h4>
+<p><strong>Question 1:</strong> Who was the founder of the Shunga dynasty after the fall of the Mauryan Empire?<br />
+- a. Bimbisara<br />
+- b. Pushyamitra Shunga<br />
+- c. Gautamiputra Satakarni<br />
+- d. Karikala Chola</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Pushyamitra Shunga</strong><br />
+- <strong>Explanation:</strong> Pushyamitra Shunga, military commander (<em>Senapati</em>) under the Mauryas, overthrew Brihadratha around 185 BCE.<br />
+- <strong>తెలుగు వివరణ:</strong> మౌర్య సామ్రాజ్య పతనం తరువాత శుంగ వంశాన్ని స్థాపించిన చక్రవర్తి <strong>పుష్యమిత్ర శుంగుడు</strong>.</p>
+</blockquote>
+<p><strong>Question 2:</strong> Which dynasty ruled the Deccan region and was famous for issuing coins with ship motifs?<br />
+- a. Cholas<br />
+- b. Pandyas<br />
+- c. Satavahanas<br />
+- d. Indo-Greeks</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>c. Satavahanas</strong><br />
+- <strong>Explanation:</strong> The Satavahanas dominated maritime trade across the Bay of Bengal and Arabian Sea, issuing unique coins depicting ships.<br />
+- <strong>తెలుగు వివరణ:</strong> దక్కన్ ప్రాంతాన్ని పరిపాలిస్తూ, సముద్ర వ్యాపారానికి ప్రతీకగా ఓడ బొమ్మలు ఉన్న నాణేలను ముద్రించిన ఘనత <strong>శాతవాహనులది</strong>.</p>
+</blockquote>
+<p><strong>Question 3:</strong> King Kharavela, whose military and religious deeds are inscribed on the Hathigumpha Inscription, ruled over:<br />
+- a. Magadha<br />
+- b. Kalinga<br />
+- c. Gandhara<br />
+- d. Chola kingdom</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Kalinga</strong><br />
+- <strong>Explanation:</strong> Kharavela was the third ruler of the Mahameghavahana (Chedi) dynasty of Kalinga (modern-day Odisha).<br />
+- <strong>తెలుగు వివరణ:</strong> హాథీగుంఫా శాసనం ద్వారా ప్రసిద్ధి చెందిన చక్రవర్తి ఖారవేలుడు <strong>కళింగ</strong> రాజ్యాన్ని పరిపాలించాడు.</p>
+</blockquote>
+<p><strong>Question 4:</strong> The Greco-Buddhist art form that developed during the Kushana period in northwestern India is known as:<br />
+- a. Mathura art<br />
+- b. Gandhara art<br />
+- c. Chola bronze art<br />
+- d. Amaravati art</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Gandhara art</strong><br />
+- <strong>Explanation:</strong> Gandhara art combined classical Greek and Roman sculptural techniques with Buddhist subjects.<br />
+- <strong>తెలుగు వివరణ:</strong> కుషాణుల కాలంలో వాయవ్య భారతదేశంలో గ్రీకు మరియు బౌద్ధ శిల్పకళల కలయికతో విలసిల్లిన కళాశైలి <strong>గాంధార కళ (Gandhara Art)</strong>.</p>
+</blockquote>
+<p><strong>Question 5:</strong> Which Chola ruler is celebrated for constructing the Grand Anicut (Kallanai) dam on the Cauvery river?<br />
+- a. Rajaraja Chola<br />
+- b. Karikala Chola<br />
+- c. Rajendra Chola<br />
+- d. Kulottunga Chola</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Karikala Chola</strong><br />
+- <strong>Explanation:</strong> Karikala Chola built the Kallanai stone dam in the 2nd century CE to divert floodwaters for irrigation.<br />
+- <strong>తెలుగు వివరణ:</strong> కావేరి నదిపై ప్రపంచ ప్రసిద్ధ 'కల్లనై' (గ్రాండ్ ఆనికట్) డ్యామ్‌ను నిర్మించిన చోళ రాజు <strong>కరికాల చోళుడు</strong>.</p>
+</blockquote>
+<hr />
+<h4>B. Fill in the blanks with the correct words:</h4>
+<ol>
+<li>The Age of Reorganisation began after the downfall of the <strong>Mauryan</strong> Empire around 185 BCE.</li>
+<li><em>తెలుగు:</em> క్రీస్తుపూర్వం 185 లో <strong>మౌర్య</strong> సామ్రాజ్య పతనం తరువాత పునర్వ్యవస్థీకరణ యుగం ప్రారంభమైంది.</li>
+<li>The ancient rock-cut <strong>Hathigumpha</strong> Inscription at Udayagiri describes the military victories and public charity of King Kharavela.</li>
+<li><em>తెలుగు:</em> ఉదయగిరి కొండల్లోని <strong>హాథీగుంఫా</strong> శాసనం ఖారవేలుడి ఘనతలను వివరిస్తుంది.</li>
+<li>The Indian national calendar, <strong>Shaka Samvat</strong>, was initiated in the year 78 CE by the Kushana ruler <strong>Kanishka</strong>.</li>
+<li><em>తెలుగు:</em> భారతదేశ అధికారిక శకమైన <strong>శక సంవత్ (Shaka Samvat)</strong> క్రీ.శ. 78 లో కుషాణ చక్రవర్తి <strong>కనిష్కుడు</strong> ప్రారంభించాడు.</li>
+<li>The Satavahana ruler who described himself as the destroyer of the Shakas was <strong>Gautamiputra Satakarni</strong>.</li>
+<li><em>తెలుగు:</em> శక రాజులను ఓడించి శాతవాహన కీర్తిని పెంచిన గొప్ప చక్రవర్తి <strong>గౌతమీపుత్ర శాతకర్ణి</strong>.</li>
+<li>Tamil poetic literature compiled during the royal assemblies at Madurai is known as <strong>Sangam Literature</strong>.</li>
+<li><em>తెలుగు:</em> మధురైలో పాండ్య రాజుల ఆధ్వర్యంలో జరిగిన సాహిత్య సభల్లో వెలువడిన తమిళ సాహిత్యాన్ని <strong>సంగం సాహిత్యం</strong> అంటారు.</li>
+</ol>
+<hr />
+<h1>Civics — Chapter 13: India's Tapestry of Communities / Cultural Coexistence (Pages 76–95)</h1>
+<h3>🤝 Conceptual Synopsis &amp; Core Principles</h3>
+<ul>
+<li><strong>Unity in Diversity &amp; <em>Vasudhaiva Kutumbakam</em>:</strong></li>
+<li>India has preserved a unique civilisational ethos that welcomes diverse cultures, languages, and religions into an integrated social fabric. The Sanskrit phrase <em>'Vasudhaiva Kutumbakam'</em> from the Maha Upanishad encapsulates this: <strong>"The whole world is one family."</strong></li>
+<li><strong>India as a Historic Sanctuary for Persecuted Refugees:</strong></li>
+<li>Over centuries, when religious and ethnic communities faced persecution, exile, or expulsion in other parts of the world, India welcomed them with open arms, complete religious freedom, and land grants.</li>
+<li><strong>1. The Zoroastrians (Parsis):</strong><ul>
+<li>Fled Persia (Iran) during the 8th–10th centuries following political upheaval. Landed at Sanjan on the coast of Gujarat.</li>
+<li><em>The Sugar in Milk Metaphor:</em> The local ruler, King Jadi Rana, sent a bowl of milk filled to the brim to signify his land was fully populated. The Parsi high priest added sugar to the milk without spilling a drop, showing they would blend seamlessly into Indian society while enriching it.</li>
+<li>Established their sacred fire temples (<strong>Atash Behram</strong>). Parsis contributed immensely to India's industrial, commercial, and scientific progress (e.g., Jamsetji Tata, Dadabhai Naoroji, Dr. Homi Bhabha).</li>
+</ul>
+</li>
+<li><strong>2. The Jewish Communities of India:</strong><ul>
+<li>India is one of the few lands in the world where Jews lived for millennia with <strong>zero instances of antisemitism</strong>.</li>
+<li><em>Cochin Jews (Malabar):</em> Ancient community in Kerala; received copper plate grants from Hindu rulers.</li>
+<li><em>Bene Israel (Konkan Coast):</em> Shipwreck survivors on the Maharashtra coast who adopted the Marathi language while strictly observing Saturday Sabbath (<em>Shanwar Teli</em> / Saturday oil-pressers).</li>
+<li><em>Baghdadi Jews:</em> Traders who settled in Mumbai and Kolkata in the 18th–19th centuries.</li>
+</ul>
+</li>
+<li><strong>3. Syrian Christians of Kerala:</strong><ul>
+<li>Trace their lineage to the arrival of Apostle St. Thomas in 52 CE. Local Chera kings granted them high social status, land, and royal privileges (<em>copper plate charters</em>). Integrated seamlessly with local Kerala Hindu cultural practices (brass oil lamps, floral decorations).</li>
+</ul>
+</li>
+<li><strong>4. The Mappila Muslim Community:</strong><ul>
+<li>Descended from Arab merchants who conducted sea trade with the Malabar coast. Welcomed by the Hindu Zamorin rulers of Calicut, who patronized their mosques and encouraged coastal navigation.</li>
+</ul>
+</li>
+<li><strong>5. The Baha'i Community:</strong><ul>
+<li>Originated in 19th-century Persia based on Baha'u'llah's principles of the oneness of God, religion, and humanity. Today, the iconic <strong>Lotus Temple</strong> in New Delhi stands as a global beacon of universal interfaith prayer.</li>
+</ul>
+</li>
+<li><strong>6. Tibetan Refugees:</strong><ul>
+<li>In 1959, following the occupation of Tibet, His Holiness the 14th Dalai Lama and thousands of Tibetan refugees found asylum in India. Prime Minister Jawaharlal Nehru facilitated settlements at <strong>Dharamshala</strong> (Himachal Pradesh) and <strong>Bylakuppe</strong> (Karnataka), preserving Tibetan culture, language, and Buddhist monasteries.</li>
+</ul>
+</li>
+<li><strong>7. The Good Maharaja of Nawanagar (Poland Connection):</strong><ul>
+<li>During World War II, Maharajah Jam Sahib Digvijaysinhji of Nawanagar (Jamnagar, Gujarat) provided shelter, food, and schooling to over 1,000 Polish orphan children escaping war-torn Europe. Poland honours his memory with prominent memorials in Warsaw.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3>Textbook Exercises — Chapter 13 (Civics)</h3>
+<h4>A. Read each question carefully and tick (✓) the correct option:</h4>
+<p><strong>Question 1:</strong> The ancient philosophical phrase <em>'Vasudhaiva Kutumbakam'</em> translates to:<br />
+- a. Knowledge is supreme power<br />
+- b. The whole world is one family<br />
+- c. Truth alone triumphs<br />
+- d. Unity through strength</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. The whole world is one family</strong><br />
+- <strong>Explanation:</strong> Originating from ancient Sanskrit texts, it signifies universal brotherhood and inclusivity.<br />
+- <strong>తెలుగు వివరణ:</strong> 'వసుధైవ కుటుంబకం' అనగా <strong>"ప్రపంచమంతా ఒకే కుటుంబం"</strong> అని అర్థం.</p>
+</blockquote>
+<p><strong>Question 2:</strong> Which king welcomed the Zoroastrian (Parsi) refugees when they landed on the coast of Gujarat?<br />
+- a. King Ashoka<br />
+- b. King Jadi Rana<br />
+- c. King Harshavardhana<br />
+- d. King Karikala</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. King Jadi Rana</strong><br />
+- <strong>Explanation:</strong> King Jadi Rana of Sanjan offered shelter to Parsis after witnessing the famous bowl-of-milk sugar demonstration.<br />
+- <strong>తెలుగు వివరణ:</strong> గుజరాత్ తీరానికి చేరిన పార్సీ శరణార్థులకు ఆశ్రయం కల్పించిన స్థానిక రాజు <strong>జాదీ రాణా (Jadi Rana)</strong>.</p>
+</blockquote>
+<p><strong>Question 3:</strong> The ancient Jewish community that settled along the Konkan coast of Maharashtra is known as:<br />
+- a. Cochin Jews<br />
+- b. Bene Israel<br />
+- c. Baghdadi Jews<br />
+- d. Ashkenazi Jews</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Bene Israel</strong><br />
+- <strong>Explanation:</strong> The Bene Israel survived a shipwreck on the Konkan coast, adopted Marathi, and preserved Jewish customs for centuries.<br />
+- <strong>తెలుగు వివరణ:</strong> మహారాష్ట్ర కొంకణ్ తీరంలో స్థిరపడి మరాఠీ సంస్కృతితో మమేకమైన ప్రాచీన యూదు వర్గాన్ని <strong>బెనే ఇజ్రాయిల్ (Bene Israel)</strong> అంటారు.</p>
+</blockquote>
+<p><strong>Question 4:</strong> Where is the major settlement of Tibetan refugees located in Karnataka, South India?<br />
+- a. Dharamshala<br />
+- b. Bylakuppe<br />
+- c. Sanjan<br />
+- d. Madurai</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Bylakuppe</strong><br />
+- <strong>Explanation:</strong> Bylakuppe near Mysuru is the largest Tibetan settlement in South India, hosting major monastic universities.<br />
+- <strong>తెలుగు వివరణ:</strong> దక్షిణ భారతదేశంలో అతిపెద్ద టిబెటన్ శరణార్థుల కేంద్రం కర్ణాటకలోని <strong>బైలకుప్పె (Bylakuppe)</strong> లో ఉంది.</p>
+</blockquote>
+<hr />
+<h1>Economics — Chapter 17: From Barter to Money (Pages 96–112)</h1>
+<h3>💰 Conceptual Synopsis &amp; Core Principles</h3>
+<ul>
+<li><strong>The Barter System:</strong></li>
+<li>The direct exchange of goods and services for other goods and services without the use of money.</li>
+<li><strong>Five Serious Limitations of the Barter System:</strong></li>
+<li><strong>Lack of Double Coincidence of Wants:</strong> Exchange can occur only if person A has what person B wants, AND person B has what person A wants at the same time. Finding this match is extremely difficult and time-consuming.</li>
+<li><strong>Lack of a Common Measure of Value:</strong> There was no standard yardstick to evaluate how many cows were equal to a sack of wheat or a pair of shoes.</li>
+<li><strong>Difficulty in Storing Wealth (Perishability):</strong> Storing wealth in the form of animals, grains, or milk resulted in spoilage, death, or heavy storage costs.</li>
+<li><strong>Problem of Divisibility:</strong> Many commodities cannot be divided without destroying their utility (e.g., one cannot divide a live sheep to buy a clay pot).</li>
+<li><strong>Difficulty in Deferred Payments:</strong> Making contracts for future repayments was risky because the quality and value of physical goods fluctuate over time.</li>
+<li><strong>The Evolution of Money:</strong></li>
+<li><em>Commodity Money:</em> Grain, cattle, cowrie shells, salt, tobacco.</li>
+<li><em>Metallic Money:</em> Gold, silver, copper. First standardized in ancient India as <strong>Punch-Marked Coins</strong> (<em>Karshapana</em>) around the 6th century BCE, bearing symbols of sun, hills, trees, and animals.</li>
+<li><em>Paper Currency:</em> Government-backed banknotes. In modern India, the <strong>Reserve Bank of India (RBI)</strong> has the sole legal monopoly to issue currency notes.</li>
+<li><em>Bank Money:</em> Cheques, drafts, and demand deposits.</li>
+<li><em>Plastic &amp; Digital Money:</em> Debit/Credit cards, Internet Banking, and mobile payment platforms powered by <strong>UPI (Unified Payments Interface)</strong>.</li>
+<li><strong>The Rupee Symbol (₹):</strong></li>
+<li>Designed by <strong>D. Udaya Kumar</strong> and officially adopted by the Government of India in 2010.</li>
+<li>Blends the Devanagari letter <strong>'र'</strong> (Ra) and the Roman capital letter <strong>'R'</strong>. The two horizontal parallel lines at the top represent the Indian national tricolour and economic equilibrium.</li>
+<li><strong>Living Barter in Modern Times — The Jonbeel Mela:</strong></li>
+<li>A historic annual 3-day harvest fair held in the Morigaon district of <strong>Assam</strong>.</li>
+<li>Tribal communities from the surrounding hills (Tiwa, Karbi, Khasi) descend to exchange mountain produce (spices, ginger, bamboo items) directly for fish, rice cakes, and woven cloth with plains communities, preserving an unbroken centuries-old barter tradition.</li>
+</ul>
+<hr />
+<h3>Textbook Exercises — Chapter 17 (Economics)</h3>
+<h4>A. Read each question carefully and tick (✓) the correct option:</h4>
+<p><strong>Question 1:</strong> The primary requirement for a barter exchange to succeed is called:<br />
+- a. Universal liquidity<br />
+- b. Double coincidence of wants<br />
+- c. Legal tender authorization<br />
+- d. Standard divisibility</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Double coincidence of wants</strong><br />
+- <strong>Explanation:</strong> Both trading parties must mutually desire each other's goods for a direct barter swap to take place.<br />
+- <strong>తెలుగు వివరణ:</strong> వస్తుమార్పిడి పద్ధతి (Barter system) జరగడానికి రెండు వైపులా వ్యక్తులకు ఒకరి వద్ద ఉన్న వస్తువులు మరొకరికి అవసరమయ్యే స్థితిని 'కోరికల పరస్పర కలయిక' (Double coincidence of wants) అంటారు.</p>
+</blockquote>
+<p><strong>Question 2:</strong> Which of the following is considered the sole authority to issue currency notes in India?<br />
+- a. State Bank of India<br />
+- b. Reserve Bank of India (RBI)<br />
+- c. Ministry of Finance<br />
+- d. NITI Aayog</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Reserve Bank of India (RBI)</strong><br />
+- <strong>Explanation:</strong> Under the RBI Act of 1934, the Reserve Bank of India holds the exclusive authority to issue currency notes in India.<br />
+- <strong>తెలుగు వివరణ:</strong> భారతదేశంలో కరెన్సీ నోట్లను ముద్రించి జారీ చేసే ఏకైక సర్వోన్నత సంస్థ <strong>రిజర్వ్ బ్యాంక్ ఆఫ్ ఇండియా (RBI)</strong>.</p>
+</blockquote>
+<p><strong>Question 3:</strong> What is the famous historical festival in Assam where people still practise the barter system today?<br />
+- a. Bihu Mela<br />
+- b. Jonbeel Mela<br />
+- c. Ambubachi Mela<br />
+- d. Hornbill Festival</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. Jonbeel Mela</strong><br />
+- <strong>Explanation:</strong> Jonbeel Mela in Assam is a living cultural heritage where hill tribes and plains people barter agricultural produce.<br />
+- <strong>తెలుగు వివరణ:</strong> నేటి ఆధునిక కాలంలో కూడా ప్రాచీన వస్తుమార్పిడి పద్ధతిని కొనసాగిస్తూ అస్సాంలో జరిగే ప్రసిద్ధ సాంప్రదాయ ఉత్సవం <strong>జోన్‌బీల్ మేళా (Jonbeel Mela)</strong>.</p>
+</blockquote>
+<p><strong>Question 4:</strong> Who among the following designed the official Indian Rupee symbol (₹) adopted in 2010?<br />
+- a. Rabindranath Tagore<br />
+- b. D. Udaya Kumar<br />
+- c. Nandan Nilekani<br />
+- d. Amartya Sen</p>
+<blockquote>
+<p><strong>Answer:</strong> <strong>b. D. Udaya Kumar</strong><br />
+- <strong>Explanation:</strong> Designed by Prof. D. Udaya Kumar of IIT Bombay, combining Devanagari 'र' and Roman 'R'.<br />
+- <strong>తెలుగు వివరణ:</strong> 2010 లో భారత రూపాయి అధికారిక చిహ్నాన్ని (₹) రూపొందించిన వ్యక్తి <strong>డి. ఉదయ కుమార్</strong>.</p>
+</blockquote>
+<hr />
+<h3>Integrated Section: Descriptive Questions (Short &amp; Long Answers)</h3>
+<p><strong>Question 1 (Geography):</strong> Explain the difference between weather and climate. Why is the Indian monsoon called the 'lifeline' of India's economy?<br />
+- <strong>Answer:</strong><br />
+  1. <strong>Difference:</strong> Weather is the temporary, day-to-day state of the atmosphere (rain, wind, temperature) in a localized area. Climate is the long-term average pattern of weather evaluated over 30 years or more across a vast geographical region.<br />
+  2. <strong>Monsoon as Lifeline:</strong><br />
+     - Agriculture employs over 50% of India's population; a successful Southwest Monsoon ensures abundant foodgrain production (rice, sugarcane, cotton) and refills irrigation reservoirs.<br />
+     - A good monsoon fuels rural consumer demand, keeps food inflation low, and drives overall GDP growth. Failure of monsoon rains triggers drought, rural debt, and economic contraction.<br />
+- <strong>తెలుగు వివరణ:</strong> వాతావరణం అనేది రోజువారీగా మారే పరిస్థితి కాగా, శీతోష్ణస్థితి కనీసం 30 ఏళ్ల సగటును సూచిస్తుంది. భారతదేశ వ్యవసాయం, నదులు, భూగర్భ జలాలు మరియు ఆర్థిక వ్యవస్థ పూర్తిగా రుతుపవనాలపై ఆధారపడి ఉంటాయి కాబట్టి రుతుపవనాలను భారత ఆర్థిక వ్యవస్థకు 'జీవనాడి' (Lifeline) అంటారు.</p>
+<p><strong>Question 2 (History):</strong> Discuss the achievements of Gautamiputra Satakarni and explain why Satavahana coins featuring ships are historically significant.<br />
+- <strong>Answer:</strong><br />
+  1. <strong>Gautamiputra Satakarni:</strong> He was the greatest ruler of the Satavahana dynasty (ruled c. 1st–2nd century CE). He defeated the Western Kshatrapas (Shakas), eradicated foreign invaders, patronized Vedic and Buddhist traditions, and revived the prosperity of the Deccan.<br />
+  2. <strong>Ship Coins Significance:</strong><br />
+     - Satavahana lead and copper coins bearing detailed depictions of two-masted sailing vessels provide concrete archaeological proof of advanced shipbuilding and maritime navigation.<br />
+     - They demonstrate that the Satavahanas conducted extensive international oceanic commerce with the Roman Empire, Egypt, and Southeast Asia from eastern ports (Machilipatnam, Ghantasala) and western ports (Kalyan, Sopara).<br />
+- <strong>తెలుగు వివరణ:</strong> గౌతమీపుత్ర శాతకర్ణి శాతవాహనులలో అత్యంత పరాక్రమవంతుడైన రాజు. శాతవాహనుల నాణేలపై రెండు తెరచాపలు గల ఓడల చిత్రాలు ఉండటం వల్ల ప్రాచీన కాలంలోనే వారికి ఉన్నతమైన నౌకా నిర్మాణం, రోమన్ సామ్రాజ్యంతో అంతర్జాతీయ సముద్ర వాణిజ్యం ఉండేవని తెలుస్తోంది.</p>
+<p><strong>Question 3 (Civics):</strong> How did King Jadi Rana welcome the Zoroastrians (Parsis) to Sanjan, Gujarat? What does this historic event teach us about Indian cultural coexistence?<br />
+- <strong>Answer:</strong><br />
+  1. <strong>The Event:</strong> When Zoroastrian refugees arrived at Sanjan seeking asylum, King Jadi Rana sent their leader a brass bowl filled to the brim with milk, indicating that Gujarat was overcrowded and could accept no more people.<br />
+  2. <strong>The Response:</strong> The Parsi high priest took a spoonful of sugar and gently stirred it into the milk without spilling a single drop. He explained that just as sugar dissolves invisibly into milk to make it sweet, the Parsis would blend seamlessly with the local people without displacing anyone, enriching the land.<br />
+  3. <strong>Significance:</strong> Impressed by their wisdom and humility, the King granted them land and religious autonomy. This historical episode exemplifies the Indian civilisational ethos of <em>Atithi Devo Bhava</em> and <em>Vasudhaiva Kutumbakam</em>, proving that cultural integration thrives through mutual respect rather than forced assimilation.<br />
+- <strong>తెలుగు వివరణ:</strong> పార్సీ శరణార్థులు గుజరాత్‌కు వచ్చినప్పుడు రాజా జాదీ రాణా పాలు నిండిన గిన్నెను పంపి తమ దేశంలో స్థలం లేదని సంకేతం ఇచ్చాడు. పార్సీ గురువు అందులో పంచదార వేసి, పాలు పొంగకుండా ఎలా తీపినిచ్చాయో, తాము కూడా సమాజంలో కలిసిపోయి దేశాన్ని సుసంపన్నం చేస్తామని నిరూపించారు. ఇది భారతీయ సర్వధర్మ సహనానికి గొప్ప నిదర్శనం.</p>
+<p><strong>Question 4 (Economics):</strong> What were the major limitations of the barter system that led to the invention and evolution of money?<br />
+- <strong>Answer:</strong><br />
+  The barter system collapsed in complex economies due to 5 fundamental flaws:<br />
+  1. <em>Lack of Double Coincidence of Wants:</em> Trading requires both parties to desire each other's goods simultaneously.<br />
+  2. <em>Absence of a Common Unit of Value:</em> Valuing diverse items (e.g., how much cloth equals a cow) was arbitrary and chaotic.<br />
+  3. <em>Perishability and Storage Constraints:</em> Wealth could not be saved because commodities (grain, livestock, vegetables) decay over time.<br />
+  4. <em>Indivisibility of Commodities:</em> Living animals or indivisible goods could not be split to make smaller purchases.<br />
+  5. <em>Difficulty in Deferred Payments:</em> Lending and future debt settlements were risky due to quality degradation of physical goods.<br />
+  Money resolved all these issues by serving as an accepted <strong>medium of exchange</strong>, a <strong>standard unit of account</strong>, a <strong>durable store of value</strong>, and a <strong>standard of deferred payments</strong>.<br />
+- <strong>తెలుగు వివరణ:</strong> వస్తుమార్పిడి పద్ధతిలో కోరికల కలయిక లేకపోవడం, వస్తువుల విలువను కొలవడానికి ఉమ్మడి ప్రమాణం లేకపోవడం, ఆవులు లేదా కూరగాయలను ఎక్కువ కాలం నిల్వ చేయలేకపోవడం, మరియు వస్తువులను విభజించలేకపోవడం వంటి తీవ్రమైన సమస్యలు ఉండేవి. ఈ సమస్యలను పరిష్కరించడానికే 'ద్రవ్యం' (Money) పుట్టి క్రమంగా అభివృద్ధి చెందింది.</p>
+      </div>
+    </div>
+
+    <!-- TAB 2: QUESTION PAPER -->
+    <div id="tab-qp" class="tab-content">
+      <div class="card rendered-content">
+        <div style="text-align: right; margin-bottom: 12px;">
+          <button class="btn btn-primary" onclick="window.print()">🖨️ Print Question Paper Now</button>
+        </div>
+        <h1>SUMMATIVE ASSESSMENT - I (SA-1) EXAMINATION (2026-27)</h1>
+<h2>CLASS: VII | SUBJECT: SOCIAL SCIENCE</h2>
+<p><strong>Time Allowed:</strong> 2 Hours 30 Minutes | <strong>Maximum Marks:</strong> 80 Marks</p>
+<hr />
+<h3>General Instructions:</h3>
+<ol>
+<li><em>The question paper comprises 5 sections: Section A, Section B, Section C, Section D, and Section E.</em></li>
+<li><em>All questions are compulsory. Internal choices are provided in Section D.</em></li>
+<li><em>Section A contains 20 Multiple Choice Questions carrying 1 mark each.</em></li>
+<li><em>Section B contains 6 Very Short Answer Questions carrying 2 marks each.</em></li>
+<li><em>Section C contains 7 Short Answer Questions carrying 3 marks each.</em></li>
+<li><em>Section D contains 3 Long Answer Questions carrying 5 marks each.</em></li>
+<li><em>Section E contains 3 Source-Based / Case-Based Questions carrying 4 marks each.</em></li>
+</ol>
+<hr />
+<h2>SECTION A: OBJECTIVE &amp; MULTIPLE CHOICE QUESTIONS (20 Marks)</h2>
+<p><em>Select and write the correct option for each question:</em></p>
+<ol>
+<li>The statistical average of weather conditions recorded over 30 years or more is termed: [1 Mark]</li>
+<li>a. Weather</li>
+<li>b. Climate</li>
+<li>c. Atmospheric pressure</li>
+<li>
+<p>d. Humidity</p>
+</li>
+<li>
+<p>Which Indian region experiences an Arid (Desert) climate with very low annual rainfall? [1 Mark]</p>
+</li>
+<li>a. Western coastal plain of Kerala</li>
+<li>b. Thar Desert of Rajasthan</li>
+<li>c. Brahmaputra valley of Assam</li>
+<li>
+<p>d. Malabar coast</p>
+</li>
+<li>
+<p>Which seasonal winds bring summer monsoon rainfall to most parts of India? [1 Mark]</p>
+</li>
+<li>a. Northeast Monsoon</li>
+<li>b. Southwest Monsoon</li>
+<li>c. Westerly Jet Streams</li>
+<li>
+<p>d. Polar Easterlies</p>
+</li>
+<li>
+<p>The Deccan Plateau receives less rainfall than Mumbai because it lies in: [1 Mark]</p>
+</li>
+<li>a. The windward zone</li>
+<li>b. The rain shadow area</li>
+<li>c. The alpine region</li>
+<li>
+<p>d. The sub-tropical plain</p>
+</li>
+<li>
+<p>The sudden breaching and catastrophic flooding of moraine-dammed glacial lakes in high mountains is called: [1 Mark]</p>
+</li>
+<li>a. Cyclone</li>
+<li>b. GLOF (Glacial Lake Outburst Flood)</li>
+<li>c. Tsunami</li>
+<li>
+<p>d. Drought</p>
+</li>
+<li>
+<p>Who founded the Shunga dynasty following the decline of the Mauryan Empire? [1 Mark]</p>
+</li>
+<li>a. Bimbisara</li>
+<li>b. Pushyamitra Shunga</li>
+<li>c. Gautamiputra Satakarni</li>
+<li>
+<p>d. Karikala Chola</p>
+</li>
+<li>
+<p>The celebrated 17-line rock-cut Hathigumpha Inscription is attributed to King: [1 Mark]</p>
+</li>
+<li>a. Kanishka</li>
+<li>b. Kharavela of Kalinga</li>
+<li>c. Ashoka</li>
+<li>
+<p>d. Chandragupta II</p>
+</li>
+<li>
+<p>The Satavahana dynasty, known for issuing coins with ship motifs, ruled over which region? [1 Mark]</p>
+</li>
+<li>a. Ganga-Yamuna Doab</li>
+<li>b. The Deccan Plateau</li>
+<li>c. Kashmir Valley</li>
+<li>
+<p>d. Thar Desert</p>
+</li>
+<li>
+<p>The Shaka Samvat calendar, initiated in 78 CE, was founded by which Kushana emperor? [1 Mark]</p>
+</li>
+<li>a. Kadphises I</li>
+<li>b. Kanishka</li>
+<li>c. Menander</li>
+<li>
+<p>d. Rudradaman</p>
+</li>
+<li>
+<p>The Greco-Buddhist art style developed during the Kushana rule in northwestern India is called: [1 Mark]</p>
+<ul>
+<li>a. Mathura Art</li>
+<li>b. Gandhara Art</li>
+<li>c. Amaravati Art</li>
+<li>d. Chola Art</li>
+</ul>
+</li>
+<li>
+<p>Which Chola king built the historic Grand Anicut (Kallanai) dam across the Cauvery river? [1 Mark]</p>
+<ul>
+<li>a. Rajaraja Chola</li>
+<li>b. Karikala Chola</li>
+<li>c. Rajendra Chola</li>
+<li>d. Sundara Chola</li>
+</ul>
+</li>
+<li>
+<p>The Sanskrit philosophical phrase <em>'Vasudhaiva Kutumbakam'</em> means: [1 Mark]</p>
+<ul>
+<li>a. Truth alone triumphs</li>
+<li>b. The whole world is one family</li>
+<li>c. Knowledge gives humility</li>
+<li>d. Protect the environment</li>
+</ul>
+</li>
+<li>
+<p>The Zoroastrian (Parsi) refugees from Persia were granted shelter in Gujarat by King: [1 Mark]</p>
+<ul>
+<li>a. Jadi Rana</li>
+<li>b. Pulakeshin II</li>
+<li>c. Harsha</li>
+<li>d. Bhoja</li>
+</ul>
+</li>
+<li>
+<p>The ancient Jewish community that settled on the Konkan coast of Maharashtra is known as: [1 Mark]</p>
+<ul>
+<li>a. Cochin Jews</li>
+<li>b. Bene Israel</li>
+<li>c. Baghdadi Jews</li>
+<li>d. Ashkenazi Jews</li>
+</ul>
+</li>
+<li>
+<p>Complete the analogy: <em>Dharamshala : North India :: Bylakuppe : <strong><em>_</em></strong></em> [1 Mark]</p>
+<ul>
+<li>a. Kerala</li>
+<li>b. Karnataka</li>
+<li>c. Tamil Nadu</li>
+<li>d. Maharashtra</li>
+</ul>
+</li>
+<li>
+<p>What was the most critical limitation of the direct barter exchange system? [1 Mark]</p>
+<ul>
+<li>a. Excessive metal coins</li>
+<li>b. Lack of double coincidence of wants</li>
+<li>c. High bank interest rates</li>
+<li>d. Availability of paper currency</li>
+</ul>
+</li>
+<li>
+<p>The sole legal authority to issue currency notes in India is: [1 Mark]</p>
+<ul>
+<li>a. State Bank of India</li>
+<li>b. Reserve Bank of India (RBI)</li>
+<li>c. Ministry of Finance</li>
+<li>d. NITI Aayog</li>
+</ul>
+</li>
+<li>
+<p>In which Indian state is the ancient barter tradition preserved during the annual Jonbeel Mela? [1 Mark]</p>
+<ul>
+<li>a. Manipur</li>
+<li>b. Assam</li>
+<li>c. Nagaland</li>
+<li>d. Odisha</li>
+</ul>
+</li>
+<li>
+<p><strong>Assertion (A):</strong> The Indian monsoon plays a crucial role in supporting India's agriculture and economy. [1 Mark]<br />
+<strong>Reason (R):</strong> Southwest monsoon winds bring rain across the subcontinent between June and September.  </p>
+<ul>
+<li>a. Both (A) and (R) are true and (R) is the correct explanation of (A).</li>
+<li>b. Both (A) and (R) are true, but (R) is not the correct explanation of (A).</li>
+<li>c. (A) is true, but (R) is false.</li>
+<li>d. Both (A) and (R) are false.</li>
+</ul>
+</li>
+<li>
+<p><strong>Assertion (A):</strong> The barter system was convenient for long-distance international trade. [1 Mark]<br />
+<strong>Reason (R):</strong> Perishable agricultural goods could be stored indefinitely without any loss in value.  </p>
+<ul>
+<li>a. Both (A) and (R) are true and (R) is the correct explanation of (A).</li>
+<li>b. Both (A) and (R) are true, but (R) is not the correct explanation of (A).</li>
+<li>c. (A) is true, but (R) is false.</li>
+<li>d. Both (A) and (R) are false.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>SECTION B: VERY SHORT ANSWER QUESTIONS (12 Marks)</h2>
+<p><em>Answer each question in one or two sentences:</em></p>
+<ol>
+<li>Define climate and state how it differs from weather. [2 Marks]</li>
+<li>What is the 'rain shadow effect'? Name one rain shadow region in India. [2 Marks]</li>
+<li>What was the historical significance of the Hathigumpha Inscription? [2 Marks]</li>
+<li>Why did Satavahana kings take their mothers' names in their royal titles? [2 Marks]</li>
+<li>Explain the metaphor of sugar dissolving in a bowl of milk demonstrated by the Parsis. [2 Marks]</li>
+<li>State two major difficulties encountered in the barter system. [2 Marks]</li>
+</ol>
+<hr />
+<h2>SECTION C: SHORT ANSWER QUESTIONS (21 Marks)</h2>
+<p><em>Answer each question in three to four sentences:</em></p>
+<ol>
+<li>How does altitude influence the temperature and climate of hill stations compared to plains? [3 Marks]</li>
+<li>Explain the difference between Southwest Monsoon and Northeast Monsoon in terms of season and rainfall areas. [3 Marks]</li>
+<li>Describe the role of Emperor Kanishka in the spread of Buddhism and the development of art. [3 Marks]</li>
+<li>Write a short note on the Sangam Age and the literary assemblies held at Madurai. [3 Marks]</li>
+<li>How did India serve as a historic sanctuary for Jewish communities without facing discrimination? [3 Marks]</li>
+<li>What is the significance of the Jonbeel Mela celebrated in Assam? [3 Marks]</li>
+<li>Describe the design features and symbolic meaning of the Indian Rupee symbol (₹). [3 Marks]</li>
+</ol>
+<hr />
+<h2>SECTION D: LONG ANSWER QUESTIONS (15 Marks)</h2>
+<p><em>Answer each question in detail (5 to 7 sentences):</em></p>
+<ol>
+<li>
+<p><strong>(a)</strong> Discuss the key physical factors that influence the climate of India (Latitude, Himalayas, Altitude, and Distance from the Sea). [5 Marks]<br />
+<em>OR</em><br />
+<strong>(b)</strong> What is climate change? Describe its major causes, visible global effects, and the distinction between climate mitigation and adaptation.</p>
+</li>
+<li>
+<p><strong>(a)</strong> Elucidate the political, commercial, and architectural contributions of the Satavahana dynasty in the Deccan. [5 Marks]<br />
+<em>OR</em><br />
+<strong>(b)</strong> Describe the construction and historical importance of the Grand Anicut (Kallanai) built by Karikala Chola on the river Cauvery.</p>
+</li>
+<li>
+<p>Trace the evolution of money from the barter system to modern digital transactions, explaining the key stages of transformation. [5 Marks]</p>
+</li>
+</ol>
+<hr />
+<h2>SECTION E: SOURCE-BASED / CASE-BASED QUESTIONS (12 Marks)</h2>
+<ol>
+<li>
+<p><strong>Case Study 1 (Geography — Orographic Rainfall):</strong> [4 Marks]<br />
+    When the moisture-rich Southwest Monsoon winds strike the towering Western Ghats, the air is forced to rise. As it ascends, it cools, condenses, and pours heavy rain on the western coastal slopes. By the time these winds cross over the mountain crest and descend onto the eastern plateau, they are dry and warm.</p>
+<ul>
+<li><em>a. What type of rainfall is described in this passage? [1 Mark]</em></li>
+<li><em>b. Name the coastal strip that receives heavy rainfall from these winds. [1 Mark]</em></li>
+<li><em>c. Why does the interior Deccan Plateau receive sparse rainfall from the same winds? [2 Marks]</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Case Study 2 (History — Roman Maritime Trade):</strong> [4 Marks]<br />
+    Archaeologists excavating coastal sites in peninsular India have unearthed hoards of Roman gold and silver coins, amphorae jars used for Mediterranean wine, and fine Arretine pottery. Satavahana and Pandyan rulers sent direct trade delegations to Rome.</p>
+<ul>
+<li><em>a. Which luxury spices were in high demand among Roman merchants in South India? [1 Mark]</em></li>
+<li><em>b. What feature on Satavahana coins confirms their active seafaring trade? [1 Mark]</em></li>
+<li><em>c. How did international trade contribute to the prosperity of ancient southern kingdoms? [2 Marks]</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Case Study 3 (Civics — Universal Sanctuary):</strong> [4 Marks]<br />
+    During World War II, when European refugees sought safety, Maharajah Digvijaysinhji of Nawanagar gave sanctuary to over 1,000 Polish orphan children in Balachadi, Gujarat, building schools and dormitories for them.</p>
+<ul>
+<li><em>a. By what title is Maharajah Digvijaysinhji affectionately remembered in Poland? [1 Mark]</em></li>
+<li><em>b. How does this act demonstrate the civilisational concept of 'Vasudhaiva Kutumbakam'? [2 Marks]</em></li>
+<li><em>c. Name one other refugee community that found permanent safety and freedom of worship in India. [1 Mark]</em></li>
+</ul>
+</li>
+</ol>
+      </div>
+    </div>
+
+    <!-- TAB 3: OVERVIEW & BLUEPRINT -->
+    <div id="tab-overview" class="tab-content">
+      <div class="card">
+        <h2 style="color: var(--primary); margin-bottom: 12px;">📋 Summative Assessment - 1 Curriculum Blueprint</h2>
+        <p><strong>Subject:</strong> Social Science</p>
+        <p><strong>Prescribed Syllabus:</strong> Geography L3, History L8, Civics L13, Economics L17</p>
+        <p><strong>Date of Examination:</strong> 05-10-2026</p>
+        <p><strong>Total Marks:</strong> 80 Marks</p>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Key High-Yield Topics:</h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
+          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Geo L3: Climates of India</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Monsoons & Climate Change</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Hist L8: Satavahanas & Cholas</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Kushanas & Silk Route</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Civics L13: Vasudhaiva Kutumbakam</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Econ L17: Barter to Money</span>
+        </div>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Official Documents Download:</h3>
+        <ul style="margin-left: 20px; line-height: 2;">
+          <li><a href="SA1_Social_Master_Solutions.pdf" target="_blank" style="color: #38bdf8;">Complete Master Answer Key (PDF)</a></li>
+          <li><a href="SA1_Social_Question_Paper.pdf" target="_blank" style="color: #38bdf8;">Formal Student Question Paper (PDF)</a></li>
+          <li><a href="SA1_Social_Master_Solutions.docx" download style="color: #38bdf8;">Editable Master Solutions (DOCX)</a></li>
+          <li><a href="SA1_Social_Question_Paper.docx" download style="color: #38bdf8;">Editable Question Paper (DOCX)</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      if (tabId === 'master') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('tab-master').classList.add('active');
+      } else if (tabId === 'qp') {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('tab-qp').classList.add('active');
+      } else if (tabId === 'overview') {
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+        document.getElementById('tab-overview').classList.add('active');
+      }
+    }
+
+    function filterContent() {
+      const query = document.getElementById('masterSearch').value.toLowerCase();
+      const content = document.getElementById('masterContent');
+      const paragraphs = content.querySelectorAll('p, li, tr, blockquote');
+      
+      paragraphs.forEach(el => {
+        if (!query || el.innerText.toLowerCase().includes(query)) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

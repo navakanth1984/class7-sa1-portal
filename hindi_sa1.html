@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 7 Hindi SA-1 Master Portal | 2026-27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nirmala+UI&family=Gautami&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #f97316;
+      --primary-dark: #1e3a8a;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-light: #334155;
+      --card-bg: rgba(30, 41, 59, 0.75);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --font-main: 'Outfit', 'Nirmala UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding-bottom: 70px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 18px 0;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .subject-icon {
+      font-size: 2rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+    .title-group h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .title-group p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    /* Nav Tabs */
+    .tabs-nav {
+      display: flex;
+      gap: 10px;
+      margin: 24px 0 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid var(--card-border);
+    }
+
+    /* Search Bar */
+    .search-box {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px 18px 12px 42px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--surface);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+    }
+    .search-box::before {
+      content: "🔍";
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.95rem;
+    }
+
+    /* Content Area */
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Typography inside content */
+    .rendered-content h1 {
+      font-size: 1.45rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--card-border);
+      padding-bottom: 6px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .rendered-content h2 {
+      font-size: 1.25rem;
+      color: #38bdf8;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+    .rendered-content h3 {
+      font-size: 1.1rem;
+      color: #7dd3fc;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+    .rendered-content h4 {
+      font-size: 1rem;
+      color: #bae6fd;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+    .rendered-content p {
+      margin-bottom: 10px;
+      color: #e2e8f0;
+    }
+    .rendered-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .rendered-content th, .rendered-content td {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+    .rendered-content th {
+      background: rgba(255, 255, 255, 0.08);
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .rendered-content blockquote {
+      border-left: 4px solid var(--primary);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 16px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      color: #cbd5e1;
+    }
+    .rendered-content strong {
+      color: #fff;
+    }
+    .rendered-content code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      color: #f472b6;
+    }
+    .rendered-content hr {
+      border: none;
+      border-top: 1px solid var(--card-border);
+      margin: 20px 0;
+    }
+
+    /* Action bar on cards */
+    .tts-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      border: 1px solid var(--card-border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .tts-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Print View */
+    @media print {
+      header, .tabs-nav, .search-box, .btn-group, .tts-btn {
+        display: none !important;
+      }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .card {
+        background: #fff !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .rendered-content h1, .rendered-content h2, .rendered-content h3 {
+        color: #000 !important;
+      }
+      .rendered-content table {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .rendered-content th {
+        background: #eee !important;
+        color: #000 !important;
+      }
+      .rendered-content td {
+        border: 1px solid #ccc !important;
+      }
+      #tab-qp {
+        display: block !important;
+      }
+      #tab-master {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="subject-icon">🇮🇳</div>
+        <div class="title-group">
+          <h1>Class 7 Hindi SA-1 Master Portal</h1>
+          <p>हिन्दी पाठमाला - 7 (Lessons 7, 8, 9, 10 एवं सम्पूर्ण पाठ्यपुस्तक व्याकरण) | Exam: 29-09-2026 | Marks: 80</p>
+        </div>
+      </div>
+      <div class="btn-group">
+        <a class="btn" href="index.html" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: #fff;">🏠 All Subjects</a>
+        <button class="btn" onclick="window.print()">🖨️ Print Exam Paper</button>
+        <a class="btn btn-primary" href="SA1_Hindi_Master_Solutions.pdf" target="_blank">📄 Master Solutions PDF</a>
+        <a class="btn" href="SA1_Hindi_Question_Paper.pdf" target="_blank">📝 Question Paper PDF</a>
+        <a class="btn" href="SA1_Hindi_Master_Solutions.docx" download>📥 Word DOCX</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 20px;">
+    
+    <!-- EMBEDDED BILINGUAL AUDIO GUIDE -->
+    <div style="background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.8rem;">🎙️</span>
+        <div>
+          <h3 style="margin: 0; font-size: 1rem; color: #f59e0b;">Class 7 Hindi SA-1 Bilingual Audio Study Guide</h3>
+          <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">First conveyed in native language, followed immediately by English explanation</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; max-width: 450px;">
+        <audio controls style="width: 100%; height: 38px; border-radius: 8px;">
+          <source src="SA1_Hindi_Bilingual_Audio_Guide.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <a href="SA1_Hindi_Bilingual_Audio_Guide.mp3" download class="btn" style="padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">⬇️ MP3</a>
+      </div>
+    </div>
+
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('master')">📘 Master Solutions & Study Guide</button>
+      <button class="tab-btn" onclick="switchTab('qp')">📝 Student Question Paper (80 Marks)</button>
+      <button class="tab-btn" onclick="switchTab('overview')">⚡ Syllabus & Exam Blueprint</button>
+    </div>
+
+    <!-- TAB 1: MASTER SOLUTIONS -->
+    <div id="tab-master" class="tab-content active">
+      <div class="search-box">
+        <input type="text" id="masterSearch" placeholder="Type to search questions, keywords, Telugu translations..." onkeyup="filterContent()">
+      </div>
+      <div class="card rendered-content" id="masterContent">
+        <h1>7वीं कक्षा हिन्दी (Class 7 Hindi) — SA1 मास्टर सॉल्यूशंस व अध्ययन मार्गदर्शिका</h1>
+<h2>हिन्दी पाठमाला - 7 (Lessons 7, 8, 9, 10 एवं सम्पूर्ण पाठ्यपुस्तक व्याकरण)</h2>
+<h3>The Hindi Scholar &amp; Student's Complete SA-1 Master Key (Trilingual: Hindi, English &amp; Telugu)</h3>
+<blockquote>
+<p><strong>पाठ्यक्रम सीमा (Exact Lessons Covered for Summative Assessment - 1):</strong><br />
+1. <strong>पाठ 7: पाप और पुण्य (Good and Bad)</strong> — (पृष्ठ 26–29)<br />
+2. <strong>पाठ 8: चतुर धनवान (The Clever Rich Man)</strong> — (पृष्ठ 30–33)<br />
+3. <strong>पाठ 9: लोकमान्य बालगंगाधर तिलक (Lokmanya Balgangadhar Tilak)</strong> — (पृष्ठ 34–37)<br />
+4. <strong>पाठ 10: अपना काम स्वयं करो (Do your Work Yourself)</strong> — (पृष्ठ 38–40)<br />
+5. <strong>समग्र व्याकरण दर्शन (Comprehensive Hindi Grammar Blueprint):</strong><br />
+   - वचन बदलिए (Singular &amp; Plural)<br />
+   - विलोम शब्द (Opposite Words / Antonyms)<br />
+   - विशेषण एवं विशेष्य (Adjectives &amp; Noun-Subjects)<br />
+   - अनुस्वार (ं) एवं अनुनासिक (ँ) के नियम<br />
+   - प्रेरणार्थक क्रियाएँ (Causal Verbs)<br />
+   - पर्यायवाची शब्द (Synonyms)<br />
+   - लिंग निर्णय व सही जोड़े (Gender Rules)<br />
+   - मानक वर्तनी (Standard Spelling Rules)</p>
+<p><strong>त्रिभाषीय शिक्षण पद्धति (Trilingual Pedagogy):</strong><br />
+- प्रत्येक पाठ का मूल भाव, शब्दार्थ, प्रश्नोत्तर एवं व्याकरण <strong>हिन्दी (Hindi)</strong>, <strong>अंग्रेजी (English)</strong>, तथा <strong>क्षेत्रीय भाषा तेलुगु (Telugu / తెలుగు వివరణ)</strong> में प्रस्तुत किया गया है।</p>
+</blockquote>
+<hr />
+<h1>पाठ 7: पाप और पुण्य (Good and Bad) — पृष्ठ 26–29</h1>
+<h3>📖 पाठ का सारांश (Lesson Summary):</h3>
+<ul>
+<li><strong>हिन्दी सारांश:</strong> एक दिन एक घने जंगल में 'पाप' और 'पुण्य' की भेंट हुई। पाप ने अहंकार में आकर पुण्य से कहा कि तुम मेरे विरोधी हो और अपनी करामात दिखाने के लिए उसने एक सुंदर सोने के हिरण का रूप धारण कर लिया। वहाँ दो शिकारी पहुँचे, जिन्होंने सोने के हिरण को मारकर आपस में आधा-आधा बाँटने का फैसला किया। तभी दो और शिकारी आ गए, जिससे चारों में हिरण को चार हिस्सों में बाँटने की बात तय हुई। गर्मी के कारण प्यास लगने पर पहले दो शिकारी पानी लाने तालाब पर गए। रास्ते में उनके मन में लालच आया और उन्होंने पानी में ज़हर मिला दिया ताकि बाकी दोनों को मारकर पूरा हिरण खुद ले सकें। उधर हिरण के पास बैठे दो शिकारियों ने सोचा कि पानी लेकर आते ही उन दोनों को मार डालेंगे। जैसे ही वे पानी लेकर लौटे, उन्हें मार दिया गया। फिर उन दोनों ने ज़हरीला पानी पिया और तड़प-तड़पकर मर गए। इस प्रकार चारों शिकारियों का विनाश हो गया। पाप ने हंसकर अपनी करामात दिखाई, किंतु पुण्य ने कहा कि किसी की जान लेना करामात नहीं है, यदि सामर्थ्य है तो किसी मरे हुए को जीवित करके दिखाओ। यह सुनकर पाप लज्जित हो गया और सिर झुकाकर अपनी बस्ती की ओर लौट गया।</li>
+<li><strong>English Summary:</strong> Sin (Paap) and Virtue (Punya) meet in a forest. Arrogant Paap challenges Punya and turns into a golden deer to exhibit his power. Four hunters find the deer and turn greedy. The two sent to fetch water poison it to eliminate the other two, while the two waiting plan an ambush. Both pairs end up dead through murder and poison. Paap boasts of his destructive miracle, but Punya humbles him by stating that taking life is no true power; true greatness lies in giving life. Ashamed, Paap walks away.</li>
+<li><strong>తెలుగు తాత్పర్యం (Telugu Summary):</strong> ఒక దట్టమైన అడవిలో 'పాపం' మరియు 'పుణ్యం' కలుసుకున్నాయి. అహంకారంతో పాపం తాను మాయ చేయగలనని చెప్పి ఒక బంగారు జింకగా మారింది. అక్కడికి వచ్చిన నలుగురు వేటగాళ్లు అత్యాశతో ఒకరినొకరు చంపుకోవడానికి కుట్ర పన్నారు. ఇద్దరు నీటిలో విషం కలపగా, మిగిలిన ఇద్దరు వారిని దాడి చేసి చంపారు. ఆ తర్వాత విషపు నీరు తాగి ఆ ఇద్దరూ కూడా మరణించారు. ప్రాణం తీయడం గొప్పతనం కాదని, చనిపోయిన వారిని బతికించడమే నిజమైన శక్తి అని పుణ్యం చెప్పడంతో పాపం సిగ్గుతో తలదించుకుంది.</li>
+<li>💡 <strong>नैतिक सीख (Moral):</strong> बुराई विनाश लाती है, जबकि अच्छाई जीवन और शांति देती है। (Evil destroys; virtue sustains).</li>
+<li>⚠️ <strong>Exam Trap:</strong> पाप ने हिरण का रूप बनाया था (सोने का हिरण), शेर या भालू का नहीं। चारों शिकारी लालच और कपट के कारण मारे गए।</li>
+</ul>
+<hr />
+<h3>शब्द-ज्ञान (Word Power) — पृष्ठ 27</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">क्र.सं.</th>
+<th style="text-align: left;">हिन्दी शब्द</th>
+<th style="text-align: left;">हिन्दी अर्थ</th>
+<th style="text-align: left;">English Meaning</th>
+<th style="text-align: left;">తెలుగు అర్థం (Telugu)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>अचानक</strong></td>
+<td style="text-align: left;">एकाएक</td>
+<td style="text-align: left;">Suddenly</td>
+<td style="text-align: left;">అనుకోకుండా / అకస్మాత్తుగా</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>पुरानी</strong></td>
+<td style="text-align: left;">प्राचीन</td>
+<td style="text-align: left;">Ancient / Old</td>
+<td style="text-align: left;">పురాతనమైన / పాత</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>पाप</strong></td>
+<td style="text-align: left;">बुराई</td>
+<td style="text-align: left;">Evil / Sin</td>
+<td style="text-align: left;">పాపము / చెడు</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>पुण्य</strong></td>
+<td style="text-align: left;">सत्कर्म</td>
+<td style="text-align: left;">Good act / Virtue</td>
+<td style="text-align: left;">పుణ్యము / సత్కార్యము</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><strong>अकड़कर</strong></td>
+<td style="text-align: left;">उग्र होकर / गर्व से</td>
+<td style="text-align: left;">Aggressively / Proudly</td>
+<td style="text-align: left;">గర్వముతో / బిగుసుకుని</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>शांति</strong></td>
+<td style="text-align: left;">चैन, संतोष</td>
+<td style="text-align: left;">Peace / Satisfaction</td>
+<td style="text-align: left;">శాంతి / ప్రశాంతత</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><strong>नम्र</strong></td>
+<td style="text-align: left;">विनयशील</td>
+<td style="text-align: left;">Gentle / Polite</td>
+<td style="text-align: left;">వినయము గల / నమ్రత</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><strong>करामात</strong></td>
+<td style="text-align: left;">कार्य / चमत्कार</td>
+<td style="text-align: left;">Miracle / Action</td>
+<td style="text-align: left;">అద్భుత శక్తి / మహిమ</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><strong>मृग</strong></td>
+<td style="text-align: left;">हिरण</td>
+<td style="text-align: left;">Deer</td>
+<td style="text-align: left;">జింక / హరిణము</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;"><strong>दम तोड़ना</strong></td>
+<td style="text-align: left;">मरना</td>
+<td style="text-align: left;">To be dead / Expire</td>
+<td style="text-align: left;">ప్రాణాలు విడుచుట / మరణించుట</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;"><strong>शिकारी</strong></td>
+<td style="text-align: left;">शिकार करने वाला</td>
+<td style="text-align: left;">Hunter</td>
+<td style="text-align: left;">వేటగాడు</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;"><strong>फैसला</strong></td>
+<td style="text-align: left;">निर्णय</td>
+<td style="text-align: left;">Decision</td>
+<td style="text-align: left;">నిర్ణయము / తీర్పు</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;"><strong>ज़हर</strong></td>
+<td style="text-align: left;">विष</td>
+<td style="text-align: left;">Poison</td>
+<td style="text-align: left;">విషము</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;"><strong>पेट</strong></td>
+<td style="text-align: left;">उदर</td>
+<td style="text-align: left;">Belly / Stomach</td>
+<td style="text-align: left;">కడుపు / ఉదరము</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;"><strong>वास्तविक</strong></td>
+<td style="text-align: left;">असली</td>
+<td style="text-align: left;">Real / Genuine</td>
+<td style="text-align: left;">నిజమైన / వాస్తవమైన</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;"><strong>शक्ति</strong></td>
+<td style="text-align: left;">ताकत</td>
+<td style="text-align: left;">Power / Strength</td>
+<td style="text-align: left;">శక్తి / బలము</td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: left;"><strong>शर्म</strong></td>
+<td style="text-align: left;">लज्जा</td>
+<td style="text-align: left;">Shame</td>
+<td style="text-align: left;">సిగ్గు / లజ్జ</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;"><strong>मौसम</strong></td>
+<td style="text-align: left;">ऋतु</td>
+<td style="text-align: left;">Season / Weather</td>
+<td style="text-align: left;">కాలము / వాతావరణము</td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: left;"><strong>धीरे-धीरे</strong></td>
+<td style="text-align: left;">धीमी गति से</td>
+<td style="text-align: left;">Slowly</td>
+<td style="text-align: left;">మెల్లమెల్లగా / క్రమంగా</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>अभ्यास (Exercise) — पृष्ठ 28</h3>
+<h4>I. इन प्रश्नों के उत्तर दीजिए (Answer the following questions):</h4>
+<p><strong>प्र. 1: पाप और पुण्य की मुलाकात कहाँ हुई?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> पाप और पुण्य की मुलाकात एक घने जंगल में अचानक हुई।<br />
+- <em>English:</em> Sin and Virtue met suddenly in a dense forest.<br />
+- <em>Telugu:</em> ఒక దట్టమైన అడవిలో పాపం మరియు పుణ్యం అనుకోకుండా కలుసుకున్నాయి.</p>
+</blockquote>
+<p><strong>प्र. 2: पाप ने अपना विरोधी किसे बताया?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> पाप ने 'पुण्य' को अपना विरोधी बताया।<br />
+- <em>English:</em> Sin identified Virtue (Punya) as its opponent/adversary.<br />
+- <em>Telugu:</em> పాపం 'పుణ్యం'ను తన శత్రువుగా / విరోధిగా పేర్కొంది.</p>
+</blockquote>
+<p><strong>प्र. 3: पाप ने किसका रूप धारण किया?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> पाप ने अपनी करामात दिखाने के लिए 'सोने के मृग' (हिरण) का रूप धारण किया।<br />
+- <em>English:</em> Sin took the form of a golden deer.<br />
+- <em>Telugu:</em> పాపం తన మాయాశక్తిని చూపించడానికి బంగారు జింక రూపాన్ని ధరించింది.</p>
+</blockquote>
+<p><strong>प्र. 4: पानी लेने गए शिकारियों के मन में क्या पाप आया?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> पानी लेने गए दोनों शिकारियों के मन में यह लालच (पाप) आया कि वे पानी में ज़हर मिला दें, जिससे बाकी दोनों शिकारी मर जाएँ और पूरा सोने का हिरण वे दोनों आपस में बाँट लें।<br />
+- <em>English:</em> Greed corrupted the two hunters fetching water; they decided to poison the water so they could kill the other two and keep the entire golden deer for themselves.<br />
+- <em>Telugu:</em> నీళ్లు తేవడానికి వెళ్లిన వేటగాళ్ల మనసులో అత్యాశ పుట్టింది. నీటిలో విషం కలిపితే మిగిలిన ఇద్దరు చనిపోతారని, బంగారు జింక మొత్తం తమకే దక్కుతుందని కుట్ర పన్నారు.</p>
+</blockquote>
+<p><strong>प्र. 5: चारों शिकारियों का अंत कैसे हुआ?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> हिरण के पास बैठे दो शिकारियों ने पानी लेकर लौटे दोनों शिकारियों पर हमला करके उन्हें मार डाला। तत्पश्चात, उन्होंने वही ज़हरीला पानी पी लिया, जिससे तड़प-तड़पकर उन दोनों की भी मृत्यु हो गई। इस प्रकार चारों शिकारियों का अंत हो गया।<br />
+- <em>English:</em> The two hunters waiting by the deer ambushed and killed the returning pair. Then, unaware of the poison, they drank the water and died in agony.<br />
+- <em>Telugu:</em> కాపలా ఉన్న ఇద్దరు వేటగాళ్లు తిరిగి వచ్చిన ఇద్దరినీ చంపేశారు. ఆపై వారు తెచ్చిన విషపు నీటిని తాగి ఆ మిగిలిన ఇద్దరూ కూడా మరణించారు.</p>
+</blockquote>
+<p><strong>प्र. 6: पुण्य ने पाप की शक्ति की क्या सीमा बताई?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> पुण्य ने कहा कि दूसरों की जान लेना कोई करामात या सच्ची शक्ति नहीं है। सच्ची शक्ति किसी मरे हुए को पुनः जीवित करने में है, जो पाप के वश में नहीं है।<br />
+- <em>English:</em> Virtue explained that destroying life is not true power; true power lies in resurrecting or giving life, which is beyond the capacity of evil.<br />
+- <em>Telugu:</em> ఇతరుల ప్రాణాలు తీయడం గొప్పతనం కాదని, చనిపోయిన వారిని బతికించడమే నిజమైన శక్తి అని, అది పాపం వల్ల సాధ్యం కాదని పుణ్యం తెలియజేసింది.</p>
+</blockquote>
+<hr />
+<h4>II. इन शब्दों से वाक्य बनाइए (Sentence Formation):</h4>
+<ol>
+<li><strong>घटना:</strong> जंगल में एक अनोखी घटना घटी। (A strange event took place in the forest).</li>
+<li><strong>शालीनता:</strong> हमें बड़ों के साथ सदैव शालीनता से बात करनी चाहिए। (We must always speak with humility/gentleness).</li>
+<li><strong>करामात:</strong> जादूगर ने मंच पर अपनी अनोखी करामात दिखाई। (The magician showed his wonderful trick).</li>
+<li><strong>प्यास:</strong> भीषण गर्मी में राहगीर को बहुत प्यास लगी थी। (The traveler felt very thirsty in the scorching heat).</li>
+<li><strong>वास्तविक:</strong> संकट के समय ही मनुष्य के वास्तविक चरित्र की पहचान होती है। (A person's real character is tested in adversity).</li>
+</ol>
+<hr />
+<h4>III. सही शब्द चुनकर खाली स्थान भरिए (Fill in the Blanks):</h4>
+<ol>
+<li>एक दिन पाप और <strong>पुण्य</strong> जंगल में अचानक मिले। (पुण्य / भगवान)</li>
+<li>मेरे पास कोई <strong>करामात</strong> नहीं है। (धन / करामात)</li>
+<li>उन्होंने <strong>सोने</strong> के हिरण को देखा तो मार डाला। (चाँदी / सोने)</li>
+<li>उन चारों को <strong>प्यास</strong> सताने लगी। (प्यास / भूख)</li>
+<li>उन्होंने पानी में <strong>ज़हर</strong> मिला दिया। (दूध / ज़हर)</li>
+<li>उनके मरते ही <strong>पाप</strong> ने अपना वास्तविक रूप धारण कर लिया। (पुण्य / पाप)</li>
+</ol>
+<hr />
+<h3>भाषा-ज्ञान (Learn the Language) — पृष्ठ 29</h3>
+<h4>1. वचन बदलिए (Singular to Plural):</h4>
+<ul>
+<li>घटना $\rightarrow$ <strong>घटनाएँ</strong></li>
+<li>आवाज़ $\rightarrow$ <strong>आवाज़ें</strong></li>
+<li>गरमी $\rightarrow$ <strong>गरमियाँ</strong></li>
+<li>अस्थि $\rightarrow$ <strong>अस्थियाँ</strong></li>
+<li>सड़क $\rightarrow$ <strong>सड़कें</strong></li>
+<li>शक्ति $\rightarrow$ <strong>शक्तियाँ</strong></li>
+<li>आँख $\rightarrow$ <strong>आँखें</strong></li>
+<li>गली $\rightarrow$ <strong>गलियाँ</strong></li>
+</ul>
+<h4>2. विलोम शब्द लिखिए (Antonyms / Opposites):</h4>
+<ul>
+<li>पुरानी $\times$ <strong>नई (नवीन)</strong></li>
+<li>पाप $\times$ <strong>पुण्य</strong></li>
+<li>शांति $\times$ <strong>अशांति</strong></li>
+<li>अच्छा $\times$ <strong>बुरा</strong></li>
+<li>पास $\times$ <strong>दूर</strong></li>
+<li>गरमी $\times$ <strong>सरदी (ठंड)</strong></li>
+<li>जीवन $\times$ <strong>मरण (मृत्यु)</strong></li>
+<li>वास्तविक $\times$ <strong>अवास्तविक (काल्पनिक)</strong></li>
+</ul>
+<h4>3. विशेषण और विशेष्य (Adjectives &amp; Noun-Subjects):</h4>
+<ul>
+<li><strong>परिभाषा:</strong> जो शब्द संज्ञा या सर्वनाम की विशेषता बताते हैं, उन्हें <strong>विशेषण (Adjective)</strong> कहते हैं। (जैसे: पुरानी, सुनहरी, दयालु)।</li>
+<li><strong>विशेष्य:</strong> विशेषण शब्द जिस संज्ञा या सर्वनाम की विशेषता बताते हैं, उसे <strong>विशेष्य (Noun/Subject)</strong> कहते हैं। (जैसे: घटना, हिरण, राजा)।</li>
+<li><strong>सही विशेषण चुनकर रिक्त स्थान की पूर्ति:</strong></li>
+<li><strong>दयालु</strong> राजा</li>
+<li><strong>चार</strong> शिकारी</li>
+<li><strong>घना</strong> जंगल</li>
+<li><strong>सुंदर</strong> लड़की</li>
+<li><strong>विशाल</strong> वृक्ष (या <strong>हरा</strong> वृक्ष)</li>
+<li><strong>ऊँची</strong> इमारत</li>
+<li><strong>ठंडा</strong> पानी</li>
+<li><strong>गीली</strong> मिट्टी</li>
+<li><strong>शुद्ध</strong> हवा</li>
+<li><strong>काला</strong> बादल</li>
+<li><strong>गहरा</strong> तालाब (या <strong>विशाल</strong> तालाब)</li>
+<li><strong>शरारती</strong> बंदर</li>
+</ul>
+<hr />
+<h1>पाठ 8: चतुर धनवान (The Clever Rich Man) — पृष्ठ 30–33</h1>
+<h3>📖 पाठ का सारांश (Lesson Summary):</h3>
+<ul>
+<li><strong>हिन्दी सारांश:</strong> चतुर सेन नाम का एक बुद्धिमान और धनी व्यक्ति किसी गाँव में रहता था। एक रात जब वह घर लौट रहा था, उसने देखा कि कुछ चोर उसके घर में चोरी की योजना बना रहे हैं। घर पहुँचकर उसने देखा कि उसकी धान की फसल पानी के बिना सूख रही है। चतुर सेन ने अपनी बुद्धिमत्ता का परिचय देते हुए एक पुरानी पेटी (संदूक) में भारी ईंट-पत्थर भरे और अपनी पत्नी की मदद से उसे घसीटते हुए कुएँ में फेंक दिया। कुएँ के पास छिपे चोरों को लगा कि संदूक में सोने-चाँदी के भारी आभूषण हैं। रात भर चोर बाल्टी से कुएँ का पानी निकाल-निकालकर फेंकते रहे ताकि संदूक बाहर निकाल सकें। उनके द्वारा निकाला गया पानी सीधे खेतों में गया और धान की पूरी फसल की मुफ्त में उत्तम सिंचाई हो गई। सुबह जब चोरों ने भारी संदूक बाहर निकालकर तोड़ा, तो उसमें केवल ईंट-पत्थर देखकर वे अपना माथा पीटने लगे और डरकर भाग गए। चतुर सेन की पत्नी ने प्रसन्न होकर कहा—"तुमने एक तीर से दो शिकार कर लिए!"</li>
+<li><strong>English Summary:</strong> Chatur Sen, a wealthy and exceptionally clever man, overhears thieves planning to rob his house. Knowing that his paddy crop is dying due to lack of water, he places heavy bricks and stones in a large trunk and, with his wife's assistance, drops it into the well while pretending it contains all his family gold and jewelry. The eavesdropping thieves spend the entire night drawing buckets of water from the well to retrieve the treasure box. The drained water completely irrigates Chatur Sen's parched fields! When the thieves finally open the trunk at dawn, they find only stones, realize they were outsmarted, and flee empty-handed.</li>
+<li><strong>తెలుగు తాత్పర్యం (Telugu Summary):</strong> చతురసేనుడు అనే సంపన్నుడు, పరమ తెలివిగల వ్యక్తి తన ఇంట్లో దొంగతనం చేయాలని కొందరు దొంగలు ప్లాన్ చేయడం విన్నాడు. అదే సమయంలో నీరు లేక తన వరి పంట ఎండిపోతోంది. చతురసేనుడు తెలివితో ఒక పెట్టెలో ఇటుకలు, రాళ్లు నింపి, అందులోనే బంగారం ఉందని నమ్మించి దానిని బావిలో పడేశాడు. ఆ పెట్టెను తీయడానికి దొంగలు రాత్రంతా బావిలోని నీళ్లన్నీ తోడి బయట పోశారు. ఆ నీరంతా వరి పొలానికి పారి పంట చక్కగా తడిచింది. ఉదయాన్నే పెట్టె తెరిచిన దొంగలు రాళ్లు చూసి లబోదిబోమంటూ పారిపోయారు.</li>
+<li>💡 <strong>नैतिक सीख:</strong> संकट के समय घबराने के बजाय बुद्धि और विवेक का प्रयोग करने से कठिन से कठिन समस्या भी सुलझ जाती है।</li>
+</ul>
+<hr />
+<h3>शब्द-ज्ञान (Word Power) — पृष्ठ 32</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">क्र.सं.</th>
+<th style="text-align: left;">शब्द</th>
+<th style="text-align: left;">हिन्दी अर्थ</th>
+<th style="text-align: left;">English Meaning</th>
+<th style="text-align: left;">తెలుగు అర్థం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>धनी</strong></td>
+<td style="text-align: left;">अमीर, धनवान</td>
+<td style="text-align: left;">Rich man</td>
+<td style="text-align: left;">ధనవంతుడు</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>बुद्धिमत्ता</strong></td>
+<td style="text-align: left;">ज्ञान / अकल</td>
+<td style="text-align: left;">Intelligence / Wisdom</td>
+<td style="text-align: left;">తెలివితేటలు / వివేకము</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>योजना</strong></td>
+<td style="text-align: left;">युक्ति / तरकीब</td>
+<td style="text-align: left;">Plan / Scheme</td>
+<td style="text-align: left;">పథకము / ఆలోచన</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>बर्बाद</strong></td>
+<td style="text-align: left;">नष्ट</td>
+<td style="text-align: left;">Ruin / Destroyed</td>
+<td style="text-align: left;">నాశనము</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><strong>आँगन</strong></td>
+<td style="text-align: left;">घर के आगे का खुला स्थान</td>
+<td style="text-align: left;">Courtyard</td>
+<td style="text-align: left;">ప్రాంగణము / వాకిలి</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>संदूक</strong></td>
+<td style="text-align: left;">पेटी / बक्सा</td>
+<td style="text-align: left;">Trunk / Box</td>
+<td style="text-align: left;">పెట్టె</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><strong>शरीर</strong></td>
+<td style="text-align: left;">देह / तन</td>
+<td style="text-align: left;">Body</td>
+<td style="text-align: left;">శరీరము / దేహము</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><strong>सौभाग्य</strong></td>
+<td style="text-align: left;">अच्छा भाग्य / किस्मत</td>
+<td style="text-align: left;">Good luck / Fortune</td>
+<td style="text-align: left;">అదృష్టము</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><strong>चतुर</strong></td>
+<td style="text-align: left;">सयाना / होशियार</td>
+<td style="text-align: left;">Clever</td>
+<td style="text-align: left;">ఉపాయశాలి / తెలివైన</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;"><strong>कंगाल</strong></td>
+<td style="text-align: left;">गरीब / निर्धन</td>
+<td style="text-align: left;">Penniless / Poor</td>
+<td style="text-align: left;">దరిద్రుడు / నిరుపేద</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;"><strong>धान</strong></td>
+<td style="text-align: left;">चावल (छिलके सहित)</td>
+<td style="text-align: left;">Paddy / Rice</td>
+<td style="text-align: left;">వరి / ధాన్యము</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;"><strong>मदद</strong></td>
+<td style="text-align: left;">सहायता</td>
+<td style="text-align: left;">Help / Assistance</td>
+<td style="text-align: left;">సహాయము</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;"><strong>मिलजुलकर</strong></td>
+<td style="text-align: left;">सामूहिक रूप से</td>
+<td style="text-align: left;">Cooperatively</td>
+<td style="text-align: left;">కలిసికట్టుగా</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;"><strong>सिंचाई</strong></td>
+<td style="text-align: left;">पौधों/खेतों में पानी देना</td>
+<td style="text-align: left;">Irrigation</td>
+<td style="text-align: left;">నీటిపారుదల / తడుపుట</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;"><strong>आभूषण</strong></td>
+<td style="text-align: left;">ज़ेवर / गहने</td>
+<td style="text-align: left;">Ornaments / Jewelry</td>
+<td style="text-align: left;">నగలు / ఆభరణాలు</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;"><strong>प्रसन्न</strong></td>
+<td style="text-align: left;">खुश</td>
+<td style="text-align: left;">Happy / Delighted</td>
+<td style="text-align: left;">సంతోషము గల</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>अभ्यास (Exercise) — पृष्ठ 32–33</h3>
+<h4>I. इन प्रश्नों के उत्तर दीजिए:</h4>
+<p><strong>प्र. 1: चतुर सेन कैसा व्यक्ति था?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> चतुर सेन गाँव का सबसे अधिक धनी, बुद्धिमान और चतुर व्यक्ति था।<br />
+- <em>Telugu:</em> చతురసేనుడు ఆ గ్రామంలోకెల్లా అత్యంత సంపన్నుడు, తెలివైనవాడు.</p>
+</blockquote>
+<p><strong>प्र. 2: चोर क्या योजना बना रहे थे?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> चोर रात के अँधेरे में चतुर सेन के घर में घुसकर उसका सारा धन चुराने और उसे कंगाल बनाने की योजना बना रहे थे।<br />
+- <em>Telugu:</em> రాత్రికి చతురసేనుడి ఇంట్లోకి ప్రవేశించి అతని సంపదనంతా దోచుకోవాలని దొంగలు పథకం వేశారు.</p>
+</blockquote>
+<p><strong>प्र. 3: संदूक में क्या भरा हुआ था?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> संदूक में ईंट और पत्थर भरे हुए थे।<br />
+- <em>Telugu:</em> పెట్టెలో ఇటుకలు మరియు రాళ్లు నింపి ఉన్నాయి.</p>
+</blockquote>
+<p><strong>प्र. 4: चतुर सेन की पत्नी हैरत में क्यों पड़ी?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> चतुर सेन को खाली संदूक में ईंट-पत्थर भरकर कुएँ में फेंकने की अजीब हरकत करते देखकर उसकी पत्नी हैरत (अचरज) में पड़ गई।<br />
+- <em>Telugu:</em> ఖాళీ పెట్టెలో రాళ్లు నింపి బావిలో పడేయాలన్న భర్త విచిత్ర ప్రవర్తన చూసి భార్య ఆశ్చర్యపోయింది.</p>
+</blockquote>
+<p><strong>प्र. 5: चोरों ने कुएँ का पानी खाली क्यों किया?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> चोरों ने सोचा कि संदूक में सोने-चाँदी के कीमती आभूषण हैं। पानी में डूबे उस भारी संदूक को बाहर निकालने के लिए चोरों ने रात भर बाल्टी से पानी निकालकर कुएँ को खाली किया।<br />
+- <em>Telugu:</em> పెట్టెలో బంగారు నగలు ఉన్నాయని భ్రమపడి, ఆ పెట్టెను బయటకు తీయడానికి దొంగలు బావిలోని నీరంతా తోడేశారు.</p>
+</blockquote>
+<p><strong>प्र. 6: इस कहानी से क्या शिक्षा मिलती है?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> इस कहानी से यह शिक्षा मिलती है कि सूझ-बूझ और चतुराई से विपत्ति को भी अवसर में बदला जा सकता है और शत्रुओं को बिना लड़े परास्त किया जा सकता है।<br />
+- <em>Telugu:</em> ఆపద సమయంలో తెలివిగా ఆలోచిస్తే సమస్య పరిష్కారమవడమే కాకుండా శత్రువులు కూడా పరాభవం చెందుతారు.</p>
+</blockquote>
+<hr />
+<h4>II. खाली स्थान भरिए (Fill in the Blanks):</h4>
+<ol>
+<li>किसी गाँव में <strong>चतुर सेन</strong> नाम का एक धनी व्यक्ति रहता था।</li>
+<li>उसकी <strong>बुद्धिमत्ता</strong> तथा <strong>चतुराई</strong> के चर्चे दूर-दूर तक थे।</li>
+<li>फसल <strong>बर्बाद</strong> हो जाएगी।</li>
+<li>दोनों <strong>संदूक</strong> को घसीटते हुए कुएँ तक ले गए।</li>
+<li>तुमने एक तीर से <strong>दो</strong> शिकार किए।</li>
+</ol>
+<hr />
+<h4>III. वाक्य बनाइए:</h4>
+<ol>
+<li><strong>बुद्धिमत्ता:</strong> बीरबल अपनी बुद्धिमत्ता के लिए पूरे राज्य में प्रसिद्ध थे।</li>
+<li><strong>कंगाल:</strong> जुए की लत ने धनी व्यापारी को भी कंगाल बना दिया।</li>
+<li><strong>योजना:</strong> सेनापति ने शत्रु को घेरने की अचूक योजना बनाई।</li>
+<li><strong>आँगन:</strong> बच्चे घर के आँगन में खेल रहे हैं।</li>
+<li><strong>दुर्भाग्य:</strong> दुर्भाग्य से उस दिन भारी वर्षा के कारण यात्रा रद्द हो गई।</li>
+</ol>
+<hr />
+<h3>भाषा-ज्ञान (Learn the Language) — पृष्ठ 33</h3>
+<h4>1. विलोम शब्द लिखिए:</h4>
+<ul>
+<li>धनी $\times$ <strong>निर्धन (कंगाल)</strong></li>
+<li>रात $\times$ <strong>दिन</strong></li>
+<li>अँधेरा $\times$ <strong>उजाला</strong></li>
+<li>सुरक्षित $\times$ <strong>असुरक्षित</strong></li>
+<li>अंदर $\times$ <strong>बाहर</strong></li>
+<li>चतुर $\times$ <strong>मूर्ख</strong></li>
+<li>पास $\times$ <strong>दूर</strong></li>
+<li>सूखा $\times$ <strong>गीला</strong></li>
+<li>सौभाग्य $\times$ <strong>दुर्भाग्य</strong></li>
+<li>प्रसन्न $\times$ <strong>अप्रसन्न (उदास)</strong></li>
+</ul>
+<h4>2. अनुस्वार (ं) तथा अनुनासिक (ँ) मात्रा सुधार:</h4>
+<ul>
+<li>गाव $\rightarrow$ <strong>गाँव</strong></li>
+<li>पतग $\rightarrow$ <strong>पतंग</strong></li>
+<li>कुआ $\rightarrow$ <strong>कुआँ</strong></li>
+<li>अदर $\rightarrow$ <strong>अंदर</strong></li>
+<li>चाद $\rightarrow$ <strong>चाँद</strong></li>
+<li>मगल $\rightarrow$ <strong>मंगल</strong></li>
+<li>सदूक $\rightarrow$ <strong>संदूक</strong></li>
+<li>पाच $\rightarrow$ <strong>पाँच</strong></li>
+</ul>
+<h4>3. उदाहरण के अनुसार प्रेरणार्थक क्रियाएँ बनाइए:</h4>
+<ul>
+<li>चलना $\rightarrow$ <strong>चलवाना</strong></li>
+<li>भेजना $\rightarrow$ <strong>भिजवाना</strong></li>
+<li>लिखना $\rightarrow$ <strong>लिखवाना</strong></li>
+<li>उठाना $\rightarrow$ <strong>उठवाना</strong></li>
+<li>पढ़ना $\rightarrow$ <strong>पढ़वाना</strong></li>
+<li>बेचना $\rightarrow$ <strong>बिकवाना</strong></li>
+<li>बनाना $\rightarrow$ <strong>बनवाना</strong></li>
+<li>कूटना $\rightarrow$ <strong>कुटवाना</strong></li>
+</ul>
+<h4>4. मात्रा सुधार एवं प्रत्यय जोड़ना:</h4>
+<ul>
+<li>चेन $\rightarrow$ <strong>चैन</strong></li>
+<li>बेल $\rightarrow$ <strong>बैल</strong></li>
+<li>मेल $\rightarrow$ <strong>मैल</strong></li>
+<li>सेर $\rightarrow$ <strong>सैर</strong></li>
+<li>आदर $\rightarrow$ <strong>आदरपूर्वक</strong></li>
+<li>सम्मान $\rightarrow$ <strong>सम्मानपूर्वक</strong></li>
+<li>बल $\rightarrow$ <strong>बलपूर्वक</strong></li>
+<li>शांति $\rightarrow$ <strong>शांतिपूर्वक</strong></li>
+</ul>
+<hr />
+<h1>पाठ 9: लोकमान्य बालगंगाधर तिलक — पृष्ठ 34–37</h1>
+<h3>📖 पाठ का सारांश (Lesson Summary):</h3>
+<ul>
+<li><strong>हिन्दी सारांश:</strong> "स्वराज्य मेरा जन्मसिद्ध अधिकार है, और मैं इसे लेकर रहूँगा"—इस अमर उद्घोष से भारतीय स्वतंत्रता संग्राम में नई चेतना फूँकने वाले महान नेता लोकमान्य बालगंगाधर तिलक का जन्म 23 जुलाई, 1856 को महाराष्ट्र के रत्नागिरि जिले के चिखली गाँव में हुआ था। उनके पिता गंगाधरपंत एक संस्कृत अध्यापक थे। तिलक कुशाग्र बुद्धि के थे और कठिन गणितीय प्रश्नों को मौखिक ही हल कर लेते थे। उनके पिता श्लोक सिखाने के लिए कागज़ पर श्लोक लिखकर उस पर एक पैसा रख देते थे; श्लोक कंठस्थ करते ही वह पैसा तिलक का हो जाता था। एक बार बाणभट्ट की प्रसिद्ध पुस्तक 'कादंबरी' पढ़ने के लिए उन्होंने अपने पिता द्वारा दिए गए अत्यंत कठिन गणितीय प्रश्न को एक ही दिन में हल कर दिखाया। कानून (एलएलबी) की परीक्षा उत्तीर्ण करने के बाद उन्होंने पूणे में 'न्यू इंग्लिश स्कूल' तथा 'फर्ग्यूसन कॉलेज' की स्थापना की। जनता में जनजागरण हेतु उन्होंने 'केसरी' (मराठी) और 'मराठा' (अंग्रेजी) समाचार पत्र निकाले। देशद्रोह के झूठे मुकदमे में जब उन्हें 6 वर्ष का कारावास देकर बर्मा (म्यांमार) की मांडले जेल भेजा गया, तो वहाँ उन्होंने अमर ग्रंथ <strong>'गीतारहस्य'</strong> की रचना की। 1 अगस्त, 1920 को मुंबई में उनका देहांत हो गया।</li>
+<li><strong>English Summary:</strong> Lokmanya Bal Gangadhar Tilak, who roared <em>"Swaraj is my birthright and I shall have it,"</em> was born on 23 July 1856 in Ratnagiri, Maharashtra. Endowed with extraordinary mathematical and linguistic brilliance, he solved complex problems mentally. To impart Sanskrit, his father rewarded him with a coin for every verse memorized. To earn the right to read Banabhatta's 'Kadambari', young Tilak solved an intricate math puzzle in a single day. He founded the New English School in Pune and launched two revolutionary newspapers: <em>Kesari</em> (Marathi) and <em>The Mahratta</em> (English). Imprisoned by the British for 6 years in Mandalay Jail (Burma), he authored the monumental philosophical commentary <strong>'Gita Rahasya'</strong>. He passed away on 1 August 1920.</li>
+<li><strong>తెలుగు తాత్పర్యం (Telugu Summary):</strong> "స్వరాజ్యం నా జన్మహక్కు, దానిని నేను సాధించి తీరుతాను" అని నినదించిన మహానాయకుడు బాలగంగాధర తిలక్. ఈయన 1856 జూలై 23న మహారాష్ట్రలోని రత్నగిరి జిల్లా చిఖలీ గ్రామంలో జన్మించారు. చిన్నతనంలోనే గణితంలో అద్భుత ప్రతిభ చూపి క్లిష్టమైన లెక్కలను నోటితోనే సాధించేవారు. తండ్రి సంస్కృత శ్లోకాలు నేర్పడానికి ప్రతి శ్లోకానికి పైసా బహుమతిగా ఇచ్చేవారు. బాణభట్టుని 'కాదంబరి' పుస్తకం చదవడానికి తండ్రి ఇచ్చిన క్లిష్టమైన లెక్కను ఒక్క రోజులోనే సాధించారు. పూణేలో న్యూ ఇంగ్లీష్ స్కూల్ స్థాపించారు. 'కేసరి', 'మరాఠా' పత్రికలను నడిపి స్వాతంత్య్ర కాంక్షను రగిలించారు. మాండలే జైలులో 6 సంవత్సరాలు శిక్ష అనుభవిస్తూ 'గీతారహస్యం' అనే గొప్ప గ్రంథాన్ని రచించారు. 1920 ఆగస్టు 1న ముంబైలో దివంగతులయ్యారు.</li>
+</ul>
+<hr />
+<h3>शब्द-ज्ञान (Word Power) — पृष्ठ 35</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">क्र.सं.</th>
+<th style="text-align: left;">शब्द</th>
+<th style="text-align: left;">अर्थ</th>
+<th style="text-align: left;">English Meaning</th>
+<th style="text-align: left;">తెలుగు అర్థం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>स्वराज्य</strong></td>
+<td style="text-align: left;">स्वाधीनता / अपना राज्य</td>
+<td style="text-align: left;">Self-rule / Freedom</td>
+<td style="text-align: left;">స్వరాజ్యము / స్వాతంత్ర్యము</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>अनोखा</strong></td>
+<td style="text-align: left;">विचित्र / अद्भुत</td>
+<td style="text-align: left;">Unique / Wonderful</td>
+<td style="text-align: left;">విచిత్రమైన / అరుదైన</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>तेज़</strong></td>
+<td style="text-align: left;">होशियार / प्रखर</td>
+<td style="text-align: left;">Sharp / Intelligent</td>
+<td style="text-align: left;">చురుకైన / ప్రజ్ఞావంతమైన</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>जटिल</strong></td>
+<td style="text-align: left;">कठिन / पेचीदा</td>
+<td style="text-align: left;">Complex / Difficult</td>
+<td style="text-align: left;">క్లిష్టమైన</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><strong>मित्र</strong></td>
+<td style="text-align: left;">दोस्त / सखा</td>
+<td style="text-align: left;">Friend</td>
+<td style="text-align: left;">మిత్రుడు / స్నేహితుడు</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>विश्वास</strong></td>
+<td style="text-align: left;">भरोसा / यकीन</td>
+<td style="text-align: left;">Faith / Trust</td>
+<td style="text-align: left;">నమ్మకము / విశ్వాసము</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><strong>जन्मसिद्ध अधिकार</strong></td>
+<td style="text-align: left;">जन्म से प्राप्त हक</td>
+<td style="text-align: left;">Birthright</td>
+<td style="text-align: left;">జన్మహక్కు</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><strong>स्वतंत्र</strong></td>
+<td style="text-align: left;">आज़ाद</td>
+<td style="text-align: left;">Free / Independent</td>
+<td style="text-align: left;">స్వతంత్రమైన</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><strong>मृत्यु</strong></td>
+<td style="text-align: left;">मौत / देहांत</td>
+<td style="text-align: left;">Death</td>
+<td style="text-align: left;">మరణము</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;"><strong>शोक</strong></td>
+<td style="text-align: left;">दुःख / विलाप</td>
+<td style="text-align: left;">Sorrow / Grief</td>
+<td style="text-align: left;">దుఃఖము / శోకము</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;"><strong>मदद</strong></td>
+<td style="text-align: left;">सहायता</td>
+<td style="text-align: left;">Help</td>
+<td style="text-align: left;">సహాయము</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;"><strong>मौखिक</strong></td>
+<td style="text-align: left;">जबानी / बिना लिखे</td>
+<td style="text-align: left;">Oral / Mental</td>
+<td style="text-align: left;">మౌఖికము / నోటి మాటగా</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;"><strong>प्रसिद्ध</strong></td>
+<td style="text-align: left;">विख्यात / मशहूर</td>
+<td style="text-align: left;">Famous / Renowned</td>
+<td style="text-align: left;">ప్రసిద్ధి చెందిన</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;"><strong>परीक्षा</strong></td>
+<td style="text-align: left;">इम्तिहान</td>
+<td style="text-align: left;">Examination</td>
+<td style="text-align: left;">పరీక్ష</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;"><strong>उत्तीर्ण</strong></td>
+<td style="text-align: left;">पास</td>
+<td style="text-align: left;">Pass / Succeeded</td>
+<td style="text-align: left;">ఉత్తీర్ణత</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;"><strong>सज़ा</strong></td>
+<td style="text-align: left;">दंड</td>
+<td style="text-align: left;">Punishment</td>
+<td style="text-align: left;">శిక్ష</td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: left;"><strong>जेल</strong></td>
+<td style="text-align: left;">कारागार / बंदीगृह</td>
+<td style="text-align: left;">Jail / Prison</td>
+<td style="text-align: left;">కారాగారము / జైలు</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;"><strong>ग्रंथ</strong></td>
+<td style="text-align: left;">पुस्तक / शास्त्र</td>
+<td style="text-align: left;">Scripture / Treatise</td>
+<td style="text-align: left;">గ్రంథము / పుస్తకము</td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: left;"><strong>लक्ष्य</strong></td>
+<td style="text-align: left;">उद्देश्य / ध्येय</td>
+<td style="text-align: left;">Goal / Aim</td>
+<td style="text-align: left;">లక్ష్యము / ధ్యేయము</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: left;"><strong>प्रेम</strong></td>
+<td style="text-align: left;">प्यार / अनुराग</td>
+<td style="text-align: left;">Love / Affection</td>
+<td style="text-align: left;">ప్రేమ / అభిమానము</td>
+</tr>
+<tr>
+<td style="text-align: center;">21</td>
+<td style="text-align: left;"><strong>अवसर</strong></td>
+<td style="text-align: left;">मौका</td>
+<td style="text-align: left;">Occasion / Opportunity</td>
+<td style="text-align: left;">అవకాశము / సందర్భము</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>अभ्यास (Exercise) — पृष्ठ 35–36</h3>
+<h4>I. इन प्रश्नों के उत्तर दीजिए:</h4>
+<p><strong>प्र. 1: बाल गंगाधर तिलक ने कौन-सा नारा दिया?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> बाल गंगाधर तिलक ने नारा दिया—<strong>"स्वराज्य मेरा जन्मसिद्ध अधिकार है, और मैं इसे लेकर रहूँगा।"</strong><br />
+- <em>English:</em> Tilak gave the clarion call: "Swaraj is my birthright, and I shall have it."<br />
+- <em>Telugu:</em> "స్వరాజ్యం నా జన్మహక్కు, దానిని నేను సాధించి తీరుతాను" అని నినదించారు.</p>
+</blockquote>
+<p><strong>प्र. 2: बाल गंगाधर तिलक का जन्म कब तथा कहाँ हुआ?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> तिलक जी का जन्म 23 जुलाई, 1856 को महाराष्ट्र के रत्नागिरि जिले के चिखली गाँव में हुआ था।<br />
+- <em>Telugu:</em> తిలక్ 1856 జూలై 23న మహారాష్ట్రలోని రత్నగిరి జిల్లా చిఖలీ గ్రామంలో జన్మించారు.</p>
+</blockquote>
+<p><strong>प्र. 3: तिलक को श्लोक याद कराने के लिए उसके पिता क्या किया करते थे?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> तिलक के पिता संस्कृत श्लोक सिखाने के लिए कागज़ के टुकड़े पर श्लोक लिखकर उस पर एक पैसा रख देते थे। जब तिलक वह श्लोक याद कर लेते, तो वह पैसा उन्हें मिल जाता था।<br />
+- <em>Telugu:</em> సంస్కృత శ్లోకం కాగితంపై రాసి దానిపై ఒక పైసా ఉంచేవారు. తిలక్ ఆ శ్లోకం కంఠస్థం చేయగానే ఆ పైసా బహుమతిగా దక్కేది.</p>
+</blockquote>
+<p><strong>प्र. 4: 'कादंबरी' के लेखक कौन थे?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> 'कादंबरी' संस्कृत के सुप्रसिद्ध महाकवि <strong>बाणभट्ट</strong> की अमर रचना है।<br />
+- <em>Telugu:</em> 'కాదంబరి' గ్రంథ కర్త మహాకవి బాణభట్టుడు.</p>
+</blockquote>
+<p><strong>प्र. 5: बाल गंगाधर तिलक ने कौन-से अख़बार निकाले?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> उन्होंने जनजागरण के लिए <strong>'केसरी'</strong> (मराठी में) और <strong>'मराठा'</strong> (अंग्रेजी में) समाचार-पत्र निकाले।<br />
+- <em>Telugu:</em> తిలక్ 'కేసరి' (మరాఠీ) మరియు 'మరాఠా' (ఇంగ్లీష్) పత్రికలను స్థాపించారు.</p>
+</blockquote>
+<p><strong>प्र. 6: तिलक जी का देहांत कब तथा कहाँ हुआ?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> तिलक जी का देहांत <strong>1 अगस्त, 1920</strong> को <strong>मुंबई</strong> में हुआ।<br />
+- <em>Telugu:</em> తిలక్ గారు 1920 ఆగస్టు 1వ తేదీన ముంబై నగరంలో పరమపదించారు.</p>
+</blockquote>
+<hr />
+<h4>II. खाली स्थान भरिए:</h4>
+<ol>
+<li>तिलक <strong>पढ़ाई-लिखाई</strong> में तेज़ और अपनी <strong>धुन</strong> के पक्के थे।</li>
+<li>मैं <strong>गणित</strong> का एक प्रश्न देता हूँ।</li>
+<li>तिलक पर <strong>मुकदमा</strong> चलाया गया।</li>
+<li><strong>स्वराज्य</strong> मेरा जन्मसिद्ध अधिकार है, मैं इसे लेकर रहूँगा।</li>
+<li>मुझे अपने देश को <strong>आज़ाद</strong> कराना है।</li>
+</ol>
+<hr />
+<h4>III. वाक्य बनाइए:</h4>
+<ol>
+<li><strong>स्वराज्य:</strong> स्वराज्य प्राप्ति के लिए अनेक वीरों ने अपने प्राणों का बलिदान दिया।</li>
+<li><strong>स्वाध्याय:</strong> स्वाध्याय से ज्ञान और एकाग्रता में वृद्धि होती है।</li>
+<li><strong>प्रसिद्ध:</strong> ताजमहल संसार का एक प्रसिद्ध ऐतिहासिक स्मारक है।</li>
+<li><strong>निर्भीकता:</strong> तिलक जी ने अदालत में निर्भीकता से अपनी बात रखी।</li>
+<li><strong>विश्वास:</strong> हमें अपनी मेहनत और क्षमताओं पर पूरा विश्वास होना चाहिए।</li>
+</ol>
+<hr />
+<h3>भाषा-ज्ञान (Learn the Language) — पृष्ठ 36–37</h3>
+<h4>1. विलोम शब्द लिखिए:</h4>
+<ul>
+<li>जन्म $\times$ <strong>मृत्यु (मरण)</strong></li>
+<li>पक्का $\times$ <strong>कच्चा</strong></li>
+<li>इच्छा $\times$ <strong>अनिच्छा</strong></li>
+<li>प्रश्न $\times$ <strong>उत्तर</strong></li>
+<li>जटिल $\times$ <strong>सरल (सहज)</strong></li>
+<li>उत्तीर्ण $\times$ <strong>अनुत्तीर्ण</strong></li>
+<li>न्याय $\times$ <strong>अन्याय</strong></li>
+<li>दंड $\times$ <strong>पुरस्कार (क्षमा)</strong></li>
+<li>सज्जन $\times$ <strong>दुर्जन</strong></li>
+<li>आज़ाद $\times$ <strong>गुलाम (परतंत्र)</strong></li>
+</ul>
+<h4>2. दो-दो पर्यायवाची शब्द लिखिए:</h4>
+<ul>
+<li><strong>स्वतंत्रता:</strong> आज़ादी, स्वाधीनता, मुक्ति</li>
+<li><strong>दिन:</strong> दिवस, वासर, वार</li>
+<li><strong>पिता:</strong> जनक, तात, बापू</li>
+<li><strong>मित्र:</strong> सखा, दोस्त, सहचर</li>
+<li><strong>मृत्यु:</strong> मौत, देहांत, निधन</li>
+</ul>
+<h4>3. सही जोड़े बनाइए (लिंग बदलिए):</h4>
+<ul>
+<li>पिता $\longleftrightarrow$ <strong>माता</strong></li>
+<li>अध्यापक $\longleftrightarrow$ <strong>अध्यापिका</strong></li>
+<li>शिष्य $\longleftrightarrow$ <strong>शिष्या</strong></li>
+<li>नर $\longleftrightarrow$ <strong>नारी</strong></li>
+<li>गुणवान $\longleftrightarrow$ <strong>गुणवती</strong></li>
+<li>श्रीमान $\longleftrightarrow$ <strong>श्रीमती</strong></li>
+</ul>
+<h4>4. वचन बदलिए:</h4>
+<ul>
+<li>नारा $\rightarrow$ <strong>नारे</strong></li>
+<li>बात $\rightarrow$ <strong>बातें</strong></li>
+<li>खुशी $\rightarrow$ <strong>खुशियाँ</strong></li>
+<li>माता $\rightarrow$ <strong>माताएँ</strong></li>
+<li>शिक्षा $\rightarrow$ <strong>शिक्षाएँ</strong></li>
+<li>पुस्तक $\rightarrow$ <strong>पुस्तकें</strong></li>
+<li>मुकदमा $\rightarrow$ <strong>मुकदमे</strong></li>
+<li>बहन $\rightarrow$ <strong>बहनें</strong></li>
+</ul>
+<h4>5. मानक वर्तनी (Read, understand and write in two ways):</h4>
+<ul>
+<li>बुलंद $=$ <strong>बुलन्द</strong></li>
+<li>सिद्ध $=$ <strong>सिद्ध</strong></li>
+<li>विद्यार्थी $=$ <strong>विद्यार्थी</strong></li>
+<li>बाणभट्ट $=$ <strong>बाणभट्ट</strong></li>
+<li>स्वतंत्र $=$ <strong>स्वतन्त्र</strong></li>
+<li>हिंदुस्तान $=$ <strong>हिन्दुस्तान</strong></li>
+<li>मुंबई $=$ <strong>मुम्बई</strong></li>
+<li>ग्रंथ $=$ <strong>ग्रन्थ</strong></li>
+<li>पंत $=$ <strong>पन्त</strong></li>
+<li>द्वारा $=$ <strong>द्वारा</strong></li>
+</ul>
+<hr />
+<h1>पाठ 10: अपना काम स्वयं करो (Do your Work Yourself) — पृष्ठ 38–40</h1>
+<h3>📖 पाठ का सारांश (Lesson Summary):</h3>
+<ul>
+<li><strong>हिन्दी सारांश:</strong> एक गेहूँ के खेत में एक चिड़िया अपने दो छोटे-छोटे बच्चों के साथ रहती थी। जब गेहूँ पकने लगा, तो एक दिन किसान अपने बेटे के साथ खेत पर आया और बोला कि गेहूँ पक गया है, कल पड़ोसियों से कहकर इसे कटवाएँगे। बच्चे डरकर माँ से उड़ चलने की जिद करने लगे। चिड़िया ने कहा—"डरो मत, पड़ोसी फसल काटने नहीं आएँगे।" तीन दिन बाद किसान फिर आया और बोला कि कल अपने भाइयों से कटवाएँगे। चिड़िया ने फिर बच्चों से कहा कि कोई भाई नहीं आएगा। आखिरकार, जब भाइयों ने भी सहायता नहीं की, तो किसान ने बेटे से कहा—"अब हम किसी के भरोसे नहीं रहेंगे, कल हम स्वयं फसल काटेंगे।" यह सुनते ही चिड़िया ने बच्चों से कहा—"अब तुरंत यहाँ से उड़ने की तैयारी करो, क्योंकि जब मनुष्य अपना काम स्वयं करने का निश्चय कर लेता है, तब वह काम अवश्य पूरा होता है।" अगले दिन किसान के आने से पहले चिड़िया बच्चों सहित सुरक्षित उड़ गई।</li>
+<li><strong>English Summary:</strong> A mother bird lives in a wheat field with her two young fledglings. As the crop ripens, the farmer arrives and says he will ask his neighbours to reap the harvest. The terrified chicks beg their mother to relocate, but she calmly tells them not to worry because neighbours rarely do someone else's chores. A few days later, the farmer returns, announcing his brothers will harvest the field. The mother bird reassures her children that relatives won't show up either. Finally, the farmer realizes his folly and tells his son that tomorrow they will cut the crop themselves. Hearing this, the wise mother bird immediately tells her chicks to fly away, declaring: <em>"When a man resolves to do his own work himself, the task will certainly be accomplished."</em></li>
+<li><strong>తెలుగు తాత్పర్యం (Telugu Summary):</strong> ఒక గోధుమ చేనులో ఒక పక్షి తన రెండు పిల్లలతో నివసిస్తోంది. పంట పండినప్పుడు రైతు వచ్చి ఇరుగుపొరుగు వారిని పిలిచి కోయిస్తానన్నాడు. పక్షిపిల్లలు భయపడగా, తల్లి పక్షి "ఎవరూ రారు, భయపడకండి" అంది. మళ్లీ రైతు వచ్చి తన బంధువులతో కోయిస్తానన్నాడు. అప్పుడు కూడా పక్షి "బంధువులు రారు" అంది. చివరకు ఎవరూ రాకపోవడంతో రైతు తన కొడుకుతో "రేపు మనమే స్వయంగా పంట కోద్దాం" అన్నాడు. అది విన్న తల్లి పక్షి "ఇక మనం ఇక్కడి నుంచి ఎగిరిపోవాలి, ఎందుకంటే మనిషి తన పని తాను స్వయంగా చేయాలని సంకల్పించినప్పుడు ఆ పని కచ్చితంగా పూర్తవుతుంది" అని పిల్లలతో కలిసి ఎగిరిపోయింది.</li>
+<li>💡 <strong>नैतिक सीख:</strong> स्वावलंबन (आत्मनिर्भरता) ही सफलता की कुंजी है। जो व्यक्ति दूसरों के भरोसे रहता है, उसका काम कभी समय पर पूरा नहीं होता।</li>
+</ul>
+<hr />
+<h3>शब्द-ज्ञान (Word Power) — पृष्ठ 39</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">क्र.सं.</th>
+<th style="text-align: left;">शब्द</th>
+<th style="text-align: left;">अर्थ</th>
+<th style="text-align: left;">English Meaning</th>
+<th style="text-align: left;">తెలుగు అర్థం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>भोजन</strong></td>
+<td style="text-align: left;">खाना</td>
+<td style="text-align: left;">Food</td>
+<td style="text-align: left;">ఆహారము / భోజనము</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>बेटा</strong></td>
+<td style="text-align: left;">पुत्र / लड़का</td>
+<td style="text-align: left;">Son</td>
+<td style="text-align: left;">కుమారుడు / కొడుకు</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>डर</strong></td>
+<td style="text-align: left;">भय</td>
+<td style="text-align: left;">Fear</td>
+<td style="text-align: left;">భయము</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>किसान</strong></td>
+<td style="text-align: left;">कृषक / खेतीहर</td>
+<td style="text-align: left;">Farmer</td>
+<td style="text-align: left;">రైతు / వ్యవసాయదారుడు</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><strong>शाम</strong></td>
+<td style="text-align: left;">साँझ / संध्या</td>
+<td style="text-align: left;">Evening</td>
+<td style="text-align: left;">సాయంత్రము</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>दिन</strong></td>
+<td style="text-align: left;">दिवस</td>
+<td style="text-align: left;">Day</td>
+<td style="text-align: left;">పగలు / దినము</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><strong>पड़ोसी</strong></td>
+<td style="text-align: left;">आसपास रहने वाले</td>
+<td style="text-align: left;">Neighbour</td>
+<td style="text-align: left;">ఇరుగుపొరుగు వారు</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><strong>स्वयं</strong></td>
+<td style="text-align: left;">खुद / अपने आप</td>
+<td style="text-align: left;">By oneself / Self</td>
+<td style="text-align: left;">స్వయంగా / తనకు తానే</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>अभ्यास (Exercise) — पृष्ठ 39–40</h3>
+<h4>I. इन प्रश्नों के उत्तर दीजिए:</h4>
+<p><strong>प्र. 1: चिड़िया अपने बच्चों के साथ कहाँ रहती थी?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> चिड़िया अपने बच्चों के साथ एक गेहूँ के खेत में घोंसला बनाकर रहती थी।<br />
+- <em>Telugu:</em> పక్షి తన పిల్లలతో కలిసి ఒక గోధుమ చేనులో నివసించేది.</p>
+</blockquote>
+<p><strong>प्र. 2: किसान खेत पर खड़ा होकर अपने बेटे से क्या कह रहा था?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> किसान अपने बेटे से कह रहा था कि गेहूँ पकने लगे हैं, दो-तीन दिन में इन्हें पड़ोसियों से कटवा लेना चाहिए।<br />
+- <em>Telugu:</em> గోధుమ పంట పండింది, రెండు మూడు రోజుల్లో ఇరుగుపొరుగు వారిని పిలిచి కోయించాలని రైతు కొడుకుతో అన్నాడు.</p>
+</blockquote>
+<p><strong>प्र. 3: चिड़िया के बच्चे एक साथ क्यों चिल्लाने लगे?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> किसान की बातें सुनकर फसल कटने और जान जाने के डर से चिड़िया के बच्चे चीं-चीं चिल्लाने लगे।<br />
+- <em>Telugu:</em> రైతు మాటలు విని భయంతో పక్షిపిల్లలు ఒకేసారి కీచుకీచుమంటూ అరవడం మొదలుపెట్టాయి.</p>
+</blockquote>
+<p><strong>प्र. 4: अंत में गेहूँ का खेत किसने काटा?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> अंत में किसान और उसके बेटे ने स्वयं मिलकर गेहूँ की फसल काटी।<br />
+- <em>Telugu:</em> చివరకు రైతు మరియు అతని కొడుకు స్వయంగా గోధుమ చేనును కోశారు.</p>
+</blockquote>
+<p><strong>प्र. 5: इस कहानी से क्या शिक्षा मिलती है?</strong></p>
+<blockquote>
+<p><strong>उत्तर:</strong> इस कहानी से यह शिक्षा मिलती है कि हमें अपना काम दूसरों के भरोसे न छोड़कर स्वयं करना चाहिए। स्वावलंबन से ही कार्य सिद्ध होता है।<br />
+- <em>Telugu:</em> మన పనిని ఇతరులపై ఆధారపడకుండా మనమే స్వయంగా చేసుకోవాలనే నీతి ఈ కథ ద్వారా తెలుస్తుంది.</p>
+</blockquote>
+<hr />
+<h4>II. किसने किससे कहा (Write, who said to whom):</h4>
+<ol>
+<li><strong>"देखो, अब गेहूँ पकने लगे हैं।"</strong> $\rightarrow$ <strong>किसान ने अपने बेटे से कहा।</strong></li>
+<li><strong>"यहाँ से चलो।"</strong> $\rightarrow$ <strong>एक छोटे बच्चे ने अपनी माँ (चिड़िया) से कहा।</strong></li>
+<li><strong>"तुम इतने डरे हुए क्यों हो?"</strong> $\rightarrow$ <strong>चिड़िया ने अपने बच्चों से पूछा।</strong></li>
+<li><strong>"कल हम स्वयं इन्हें काटेंगे।"</strong> $\rightarrow$ <strong>किसान ने अपने बेटे से कहा।</strong></li>
+</ol>
+<hr />
+<h4>III. सही वाक्य पर (✓) का चिह्न लगाइए:</h4>
+<ol>
+<li>चिड़िया बहुत समझदार थी। [ <strong>✓</strong> ]</li>
+<li>हमें अपना काम दूसरों से करवाना चाहिए। [ <strong>✗</strong> ]</li>
+<li>किसान बहुत परिश्रमी था। [ <strong>✓</strong> ]</li>
+<li>अंत में चिड़िया और उसके बच्चे खेत से उड़ गए। [ <strong>✓</strong> ]</li>
+</ol>
+<hr />
+<h3>भाषा-ज्ञान (Learn the Language) — पृष्ठ 40</h3>
+<h4>1. बहुवचन रूप लिखिए:</h4>
+<ul>
+<li>किसान $\rightarrow$ <strong>किसानों</strong></li>
+<li>बच्चा $\rightarrow$ <strong>बच्चे</strong></li>
+<li>बेटा $\rightarrow$ <strong>बेटे</strong></li>
+<li>चिड़िया $\rightarrow$ <strong>चिड़ियाँ</strong></li>
+<li>घोंसला $\rightarrow$ <strong>घोंसले</strong></li>
+<li>पड़ोसी $\rightarrow$ <strong>पड़ोसियों</strong></li>
+<li>खेत $\rightarrow$ <strong>खेतों</strong></li>
+<li>बालक $\rightarrow$ <strong>बालकों</strong></li>
+</ul>
+<h4>2. उदाहरण के अनुसार वाक्य बदलिए:</h4>
+<p><em>उदाहरण: बच्चों ने सारी बात बताई। $\rightarrow$ बच्चे सारी बात बताने लगे।</em><br />
+1. किसानों ने खेतों से गेहूँ काटे। $\rightarrow$ <strong>किसान खेतों से गेहूँ काटने लगे।</strong><br />
+2. चिड़िया के बच्चे खेत से उड़े। $\rightarrow$ <strong>चिड़िया के बच्चे खेत से उड़ने लगे।</strong></p>
+<h4>3. विलोम शब्द लिखिए:</h4>
+<ul>
+<li>बाहर $\times$ <strong>अंदर</strong></li>
+<li>सुबह $\times$ <strong>शाम</strong></li>
+<li>दिन $\times$ <strong>रात</strong></li>
+<li>अपना $\times$ <strong>पराया</strong></li>
+<li>पहला $\times$ <strong>अंतिम (आखिरी)</strong></li>
+<li>उचित $\times$ <strong>अनुचित</strong></li>
+<li>सुंदर $\times$ <strong>कुरूप (बदसूरत)</strong></li>
+<li>डरपोक $\times$ <strong>निडर (साहसी)</strong></li>
+</ul>
+<hr />
+<h1>🎯 SA-1 त्वरित पुनरावृत्ति सूत्र (Quick Revision Memory Bank)</h1>
+<ol>
+<li><strong>सोने का हिरण किसने बनाया?</strong> पाप ने।</li>
+<li><strong>कुएँ में संदूक किसने फेंका?</strong> चतुर सेन ने (ईंट-पत्थर भरकर)।</li>
+<li><strong>धान की फसल की सिंचाई किसने कर दी?</strong> चोरों ने रात भर पानी निकाल कर।</li>
+<li><strong>'गीतारहस्य' के रचयिता कौन हैं?</strong> लोकमान्य बालगंगाधर तिलक (मांडले जेल में रचित)।</li>
+<li><strong>तिलक जी के समाचार-पत्र:</strong> केसरी (मराठी) एवं मराठा (अंग्रेजी)।</li>
+<li><strong>'कादंबरी' के रचयिता:</strong> महाकवि बाणभट्ट।</li>
+<li><strong>तिलक जी का अमर नारा:</strong> "स्वराज्य मेरा जन्मसिद्ध अधिकार है, और मैं इसे लेकर रहूँगा।"</li>
+<li><strong>फसल काटने का काम कब पूरा हुआ?</strong> जब किसान ने स्वयं काटने का निर्णय लिया।</li>
+</ol>
+      </div>
+    </div>
+
+    <!-- TAB 2: QUESTION PAPER -->
+    <div id="tab-qp" class="tab-content">
+      <div class="card rendered-content">
+        <div style="text-align: right; margin-bottom: 12px;">
+          <button class="btn btn-primary" onclick="window.print()">🖨️ Print Question Paper Now</button>
+        </div>
+        <h1>योगात्मक मूल्यांकन - I (SA-1) परीक्षा (2026-27)</h1>
+<h2>कक्षा: 7वीं | विषय: हिन्दी (द्वितीय भाषा)</h2>
+<p><strong>समय:</strong> 2 घंटे 30 मिनट | <strong>अधिकतम अंक:</strong> 80 अंक</p>
+<hr />
+<h3>सामान्य निर्देश:</h3>
+<ol>
+<li>सभी प्रश्न अनिवार्य हैं। प्रत्येक प्रश्न को ध्यानपूर्वक पढ़कर उत्तर पुस्तिका में सुंदर लेख में लिखिए।</li>
+<li>प्रश्नों के अंक उनके सम्मुख अंकित हैं।</li>
+<li>व्याकरण एवं वर्तनी की शुद्धता पर विशेष ध्यान दीजिए।</li>
+</ol>
+<hr />
+<h2>खण्ड 'क' : पठन बोध एवं वस्तुनिष्ठ प्रश्न (20 अंक)</h2>
+<h3>I. निम्नलिखित गद्यांश को पढ़कर दिए गए प्रश्नों के उत्तर लिखिए: [5 अंक]</h3>
+<blockquote>
+<p>"बहुत पुरानी घटना है। एक दिन पाप और पुण्य एक जंगल में अचानक मिले। पाप ने पुण्य से कर्कश आवाज़ में पूछा—'कौन हो तुम?' पुण्य ने शांति और शालीनता से उत्तर दिया—'मेरा नाम पुण्य है।' पाप ने अकड़कर कहा—'तुम कोई करामात दिखा सकते हो? मेरी करामात देखना पसंद करोगे?' इतना सुनते ही पाप ने अपने आपको सोने का मृग बना लिया। पुण्य एक पेड़ के पीछे छिप गया।"</p>
+</blockquote>
+<ol>
+<li>पाप और पुण्य की मुलाकात कहाँ हुई? [1M]</li>
+<li>पुण्य ने किस भाव से अपना नाम बताया? [1M]</li>
+<li>पाप ने अपनी करामात दिखाने के लिए किसका रूप धारण किया? [1M]</li>
+<li>गद्यांश से 'गर्व से' का समानार्थक शब्द चुनकर लिखिए। [1M]</li>
+<li>'पाप' तथा 'शांति' शब्दों के विलोम शब्द लिखिए। [1M]</li>
+</ol>
+<hr />
+<h3>II. सही शब्द चुनकर रिक्त स्थान भरिए: [5 अंक]</h3>
+<ol>
+<li>एक दिन पाप और <strong><em>_</em></strong>___ जंगल में अचानक मिले। (भगवान / पुण्य)</li>
+<li>किसी गाँव में <strong><em>_</em></strong>___ नाम का एक धनी व्यक्ति रहता था। (चतुर सेन / राम सेन)</li>
+<li>'स्वराज्य मेरा जन्मसिद्ध अधिकार है' का नारा <strong><em>_</em></strong>___ ने दिया। (तिलक जी / गाँधी जी)</li>
+<li>खेत में चिड़िया अपने <strong><em>_</em></strong>___ छोटे बच्चों के साथ रहती थी। (दो / चार)</li>
+<li>'कादंबरी' के रचयिता महाकवि <strong><em>_</em></strong>___ थे। (कालिदास / बाणभट्ट)</li>
+</ol>
+<hr />
+<h3>III. सही वाक्य पर (✓) तथा गलत पर (✗) का चिह्न लगाइए: [5 अंक]</h3>
+<ol>
+<li>पाप ने अपनी शक्ति से मरे हुए शिकारियों को जीवित कर दिया। [ &nbsp;&nbsp;&nbsp; ]</li>
+<li>चतुर सेन के संदूक में सोने-चाँदी के भारी आभूषण भरे हुए थे। [ &nbsp;&nbsp;&nbsp; ]</li>
+<li>लोकमान्य तिलक ने 'केसरी' और 'मराठा' समाचार-पत्र निकाले। [ &nbsp;&nbsp;&nbsp; ]</li>
+<li>किसान के भाइयों ने आकर पूरी फसल काट दी। [ &nbsp;&nbsp;&nbsp; ]</li>
+<li>जब मनुष्य अपना काम स्वयं करता है, तभी कार्य सिद्ध होता है। [ &nbsp;&nbsp;&nbsp; ]</li>
+</ol>
+<hr />
+<h3>IV. किसने किससे कहा लिखिए: [5 अंक]</h3>
+<ol>
+<li>"देखो, अब गेहूँ पकने लगे हैं।" $\rightarrow$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_____</li>
+<li>"यहाँ से चलो।" $\rightarrow$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_____</li>
+<li>"तुम इतने डरे हुए क्यों हो?" $\rightarrow$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_____</li>
+<li>"कल हम स्वयं इन्हें काटेंगे।" $\rightarrow$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_____</li>
+<li>"तुमने एक तीर से दो शिकार कर लिए।" $\rightarrow$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_____</li>
+</ol>
+<hr />
+<h2>खण्ड 'ख' : पाठ्यपुस्तक प्रश्नोत्तर (लघु एवं दीर्घ उत्तरीय) (25 अंक)</h2>
+<h3>I. निम्नलिखित प्रश्नों के उत्तर संक्षेप में दीजिए: (कोई 5) [5 × 3 = 15 अंक]</h3>
+<ol>
+<li>पानी लेने गए शिकारियों के मन में क्या पाप आया और उसका क्या परिणाम हुआ?</li>
+<li>चतुर सेन की पत्नी उसके संदूक को कुएँ में फेंकने पर हैरत में क्यों पड़ गई?</li>
+<li>चोरों ने रात भर कुएँ का पानी क्यों खाली किया? इससे चतुर सेन को क्या लाभ हुआ?</li>
+<li>तिलक को श्लोक याद कराने के लिए उनके पिता क्या अनोखा ढंग अपनाते थे?</li>
+<li>तिलक जी ने मांडले जेल में किस अमर ग्रंथ की रचना की और वे जनता को क्या संदेश देना चाहते थे?</li>
+<li>चिड़िया के बच्चे किसान की बातें सुनकर क्यों चिल्लाने लगे? चिड़िया ने उन्हें क्या समझाया?</li>
+</ol>
+<hr />
+<h3>II. निम्नलिखित प्रश्नों के सविस्तार उत्तर लिखिए: (कोई 2) [2 × 5 = 10 अंक]</h3>
+<ol>
+<li>'पाप और पुण्य' पाठ के आधार पर स्पष्ट कीजिए कि दूसरों को नुकसान पहुँचाना करामात क्यों नहीं है? सच्ची शक्ति किसमें है?</li>
+<li>'अपना काम स्वयं करो' कहानी से हमें क्या नैतिक शिक्षा मिलती है? अपने जीवन के किसी उदाहरण द्वारा स्पष्ट कीजिए।</li>
+<li>लोकमान्य बालगंगाधर तिलक के जीवन से हमें देशप्रेम और निर्भीकता की क्या सीख मिलती है?</li>
+</ol>
+<hr />
+<h2>खण्ड 'ग' : व्याकरण एवं भाषा-ज्ञान (25 अंक)</h2>
+<h3>I. निम्नलिखित शब्दों के विलोम शब्द लिखिए: [5 अंक]</h3>
+<ol>
+<li>जन्म $\times$ <strong><em>_</em></strong>___</li>
+<li>धनी $\times$ <strong><em>_</em></strong>___</li>
+<li>न्याय $\times$ <strong><em>_</em></strong>___</li>
+<li>उत्तीर्ण $\times$ <strong><em>_</em></strong>___</li>
+<li>डरपोक $\times$ <strong><em>_</em></strong>___</li>
+</ol>
+<hr />
+<h3>II. निम्नलिखित शब्दों के वचन बदलिए: [5 अंक]</h3>
+<ol>
+<li>चिड़िया $\rightarrow$ <strong><em>_</em></strong>___</li>
+<li>घटना $\rightarrow$ <strong><em>_</em></strong>___</li>
+<li>पुस्तक $\rightarrow$ <strong><em>_</em></strong>___</li>
+<li>सड़क $\rightarrow$ <strong><em>_</em></strong>___</li>
+<li>आँख $\rightarrow$ <strong><em>_</em></strong>___</li>
+</ol>
+<hr />
+<h3>III. दो-दो पर्यायवाची शब्द लिखिए: [4 अंक]</h3>
+<ol>
+<li>स्वतंत्रता $=$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_ , </em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+<li>मित्र $=$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_ , </em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+<li>दिन $=$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_ , </em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+<li>मृत्यु $=$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_ , </em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ol>
+<hr />
+<h3>IV. सही जोड़े बनाइए (लिंग बदलिए): [3 अंक]</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">शब्द</th>
+<th style="text-align: left;">सही जोड़ा</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1. अध्यापक</td>
+<td style="text-align: left;">( &nbsp; ) a. श्रीमती</td>
+</tr>
+<tr>
+<td style="text-align: left;">2. गुणवान</td>
+<td style="text-align: left;">( &nbsp; ) b. अध्यापिका</td>
+</tr>
+<tr>
+<td style="text-align: left;">3. श्रीमान</td>
+<td style="text-align: left;">( &nbsp; ) c. गुणवती</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>V. दिए गए शब्दों के उचित विशेषण चुनकर लिखिए: [4 अंक]</h3>
+<p><em>(घना, दयालु, ऊँची, ठंडा)</em><br />
+1. <strong><em>_</em></strong><strong><em> राजा<br />
+2. </em></strong><strong><em>_</em></strong> इमारत<br />
+3. <strong><em>_</em></strong><strong><em> जंगल<br />
+4. </em></strong><strong><em>_</em></strong> पानी</p>
+<hr />
+<h3>VI. उदाहरण के अनुसार बदलिए: [4 अंक]</h3>
+<p><em>(क) प्रेरणार्थक क्रिया बनाइए:</em><br />
+1. चलना $\rightarrow$ <strong>चलवाना</strong><br />
+2. लिखना $\rightarrow$ <strong><em>_</em></strong><strong><em><br />
+3. पढ़ना $\rightarrow$ </em></strong><strong><em>_</em></strong></p>
+<p><em>(ख) प्रत्यय जोड़कर लिखिए:</em><br />
+1. आदर $\rightarrow$ <strong>आदरपूर्वक</strong><br />
+2. शांति $\rightarrow$ <strong><em>_</em></strong>___</p>
+<hr />
+<h2>खण्ड 'घ' : रचनात्मक लेखन (10 अंक)</h2>
+<h3>I. निम्नलिखित शब्दों का अपने वाक्यों में सार्थक प्रयोग कीजिए: [5 अंक]</h3>
+<ol>
+<li>स्वराज्य</li>
+<li>बुद्धिमत्ता</li>
+<li>स्वाध्याय</li>
+<li>करामात</li>
+<li>फैसला</li>
+</ol>
+<hr />
+<h3>II. किसी एक विषय पर 8 से 10 वाक्यों में अनुच्छेद लिखिए: [5 अंक]</h3>
+<ul>
+<li>(क) स्वावलंबन (आत्मनिर्भरता का महत्त्व)</li>
+<li>(ख) हमारे राष्ट्रनायक: लोकमान्य बालगंगाधर तिलक</li>
+</ul>
+<hr />
+<p><strong>शुभकामनाएँ (ALL THE BEST)</strong></p>
+      </div>
+    </div>
+
+    <!-- TAB 3: OVERVIEW & BLUEPRINT -->
+    <div id="tab-overview" class="tab-content">
+      <div class="card">
+        <h2 style="color: var(--primary); margin-bottom: 12px;">📋 Summative Assessment - 1 Curriculum Blueprint</h2>
+        <p><strong>Subject:</strong> हिन्दी (द्वितीय भाषा) - Hindi</p>
+        <p><strong>Prescribed Syllabus:</strong> हिन्दी पाठमाला - 7 (Lessons 7, 8, 9, 10 एवं सम्पूर्ण पाठ्यपुस्तक व्याकरण)</p>
+        <p><strong>Date of Examination:</strong> 29-09-2026</p>
+        <p><strong>Total Marks:</strong> 80 Marks</p>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Key High-Yield Topics:</h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
+          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">पाठ 7: पाप और पुण्य</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">पाठ 8: चतुर धनवान</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">पाठ 9: बालगंगाधर तिलक</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">पाठ 10: अपना काम स्वयं करो</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">व्याकरण</span>
+        </div>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Official Documents Download:</h3>
+        <ul style="margin-left: 20px; line-height: 2;">
+          <li><a href="SA1_Hindi_Master_Solutions.pdf" target="_blank" style="color: #38bdf8;">Complete Master Answer Key (PDF)</a></li>
+          <li><a href="SA1_Hindi_Question_Paper.pdf" target="_blank" style="color: #38bdf8;">Formal Student Question Paper (PDF)</a></li>
+          <li><a href="SA1_Hindi_Master_Solutions.docx" download style="color: #38bdf8;">Editable Master Solutions (DOCX)</a></li>
+          <li><a href="SA1_Hindi_Question_Paper.docx" download style="color: #38bdf8;">Editable Question Paper (DOCX)</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      if (tabId === 'master') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('tab-master').classList.add('active');
+      } else if (tabId === 'qp') {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('tab-qp').classList.add('active');
+      } else if (tabId === 'overview') {
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+        document.getElementById('tab-overview').classList.add('active');
+      }
+    }
+
+    function filterContent() {
+      const query = document.getElementById('masterSearch').value.toLowerCase();
+      const content = document.getElementById('masterContent');
+      const paragraphs = content.querySelectorAll('p, li, tr, blockquote');
+      
+      paragraphs.forEach(el => {
+        if (!query || el.innerText.toLowerCase().includes(query)) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+
+    // Text to speech utility
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.95;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 7 English SA-1 Master Portal | 2026-27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nirmala+UI&family=Gautami&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8b5cf6;
+      --primary-dark: #1e3a8a;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-light: #334155;
+      --card-bg: rgba(30, 41, 59, 0.75);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --font-main: 'Outfit', 'Nirmala UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding-bottom: 70px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 18px 0;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .subject-icon {
+      font-size: 2rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+    .title-group h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .title-group p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    /* Nav Tabs */
+    .tabs-nav {
+      display: flex;
+      gap: 10px;
+      margin: 24px 0 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid var(--card-border);
+    }
+
+    /* Search Bar */
+    .search-box {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px 18px 12px 42px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--surface);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+    }
+    .search-box::before {
+      content: "🔍";
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.95rem;
+    }
+
+    /* Content Area */
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Typography inside content */
+    .rendered-content h1 {
+      font-size: 1.45rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--card-border);
+      padding-bottom: 6px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .rendered-content h2 {
+      font-size: 1.25rem;
+      color: #38bdf8;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+    .rendered-content h3 {
+      font-size: 1.1rem;
+      color: #7dd3fc;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+    .rendered-content h4 {
+      font-size: 1rem;
+      color: #bae6fd;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+    .rendered-content p {
+      margin-bottom: 10px;
+      color: #e2e8f0;
+    }
+    .rendered-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .rendered-content th, .rendered-content td {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+    .rendered-content th {
+      background: rgba(255, 255, 255, 0.08);
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .rendered-content blockquote {
+      border-left: 4px solid var(--primary);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 16px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      color: #cbd5e1;
+    }
+    .rendered-content strong {
+      color: #fff;
+    }
+    .rendered-content code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      color: #f472b6;
+    }
+    .rendered-content hr {
+      border: none;
+      border-top: 1px solid var(--card-border);
+      margin: 20px 0;
+    }
+
+    /* Action bar on cards */
+    .tts-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      border: 1px solid var(--card-border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .tts-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Print View */
+    @media print {
+      header, .tabs-nav, .search-box, .btn-group, .tts-btn {
+        display: none !important;
+      }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .card {
+        background: #fff !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .rendered-content h1, .rendered-content h2, .rendered-content h3 {
+        color: #000 !important;
+      }
+      .rendered-content table {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .rendered-content th {
+        background: #eee !important;
+        color: #000 !important;
+      }
+      .rendered-content td {
+        border: 1px solid #ccc !important;
+      }
+      #tab-qp {
+        display: block !important;
+      }
+      #tab-master {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="subject-icon">📖</div>
+        <div class="title-group">
+          <h1>Class 7 English SA-1 Master Portal</h1>
+          <p>English Adventure - 7 (Lessons 5, 6, Poem: Past & Future, Lesson 7 & Full Grammar) | Exam: 30-09-2026 | Marks: 80</p>
+        </div>
+      </div>
+      <div class="btn-group">
+        <a class="btn" href="index.html" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: #fff;">🏠 All Subjects</a>
+        <button class="btn" onclick="window.print()">🖨️ Print Exam Paper</button>
+        <a class="btn btn-primary" href="SA1_English_Master_Solutions.pdf" target="_blank">📄 Master Solutions PDF</a>
+        <a class="btn" href="SA1_English_Question_Paper.pdf" target="_blank">📝 Question Paper PDF</a>
+        <a class="btn" href="SA1_English_Master_Solutions.docx" download>📥 Word DOCX</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 20px;">
+    
+    <!-- EMBEDDED ENGLISH AUDIO GUIDE -->
+    <div style="background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(139, 92, 246, 0.4); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.8rem;">🎧</span>
+        <div>
+          <h3 style="margin: 0; font-size: 1rem; color: #a78bfa;">Class 7 English SA-1 Audio Study Guide</h3>
+          <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">Expressive neural English narration covering all lessons and grammar</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; max-width: 450px;">
+        <audio controls style="width: 100%; height: 38px; border-radius: 8px;">
+          <source src="SA1_English_Audio_Guide.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <a href="SA1_English_Audio_Guide.mp3" download class="btn" style="padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">⬇️ MP3</a>
+      </div>
+    </div>
+
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('master')">📘 Master Solutions & Study Guide</button>
+      <button class="tab-btn" onclick="switchTab('qp')">📝 Student Question Paper (80 Marks)</button>
+      <button class="tab-btn" onclick="switchTab('overview')">⚡ Syllabus & Exam Blueprint</button>
+    </div>
+
+    <!-- TAB 1: MASTER SOLUTIONS -->
+    <div id="tab-master" class="tab-content active">
+      <div class="search-box">
+        <input type="text" id="masterSearch" placeholder="Type to search questions, keywords, Telugu translations..." onkeyup="filterContent()">
+      </div>
+      <div class="card rendered-content" id="masterContent">
+        <h1>Class 7 English (English Adventure - 7) — SA1 Master Solutions &amp; Study Guide</h1>
+<h2>The English Scholar &amp; Student's Complete SA-1 Master Key (Bilingual: English &amp; Telugu)</h2>
+<blockquote>
+<p><strong>Syllabus Scope (SA-1 Timetable &amp; Portions Covered):</strong><br />
+1. <strong>Lesson 5: The Adventure of the Mason</strong> (Pages 58–66) — Washington Irving<br />
+2. <strong>Lesson 6: The Train Saviours</strong> (Pages 67–78) — E. Nesbit (The Railway Children)<br />
+3. <strong>Poem: Past and Future</strong> (Pages 79–83) — Elizabeth Barrett Browning<br />
+4. <strong>Lesson 7: The Happy Prince</strong> (Pages 84–93) — Oscar Wilde<br />
+5. <strong>Grammar &amp; Language Blueprint:</strong><br />
+   - Active Voice and Passive Voice (Rules, Formulae &amp; Complete Conversions)<br />
+   - Direct and Indirect Speech (Reported Speech: Tense shifts, Pronoun rules &amp; Transformations)<br />
+   - Compound Words (Closed, Hyphenated &amp; Open Compounds)<br />
+   - Phrasal Verbs &amp; Contextual Usage<br />
+   - Formal vs. Informal Language Register<br />
+   - Proverbs, Idioms &amp; Comprehension Passages</p>
+<p><strong>Pedagogical Standards:</strong><br />
+- Every exercise, multiple-choice question, fill-in-the-blank, true/false statement, reference to context (RTC), short &amp; long answer question, vocabulary builder, and grammar exercise is 100% solved with zero omissions.<br />
+- Detailed explanations provided in <strong>English</strong> and <strong>Telugu (తెలుగు తాత్పర్యం &amp; ప్రతిపదార్థాలు)</strong> for bilingual mastery.</p>
+</blockquote>
+<hr />
+<h1>Lesson 5: The Adventure of the Mason (Pages 58–66)</h1>
+<p><strong>Author:</strong> Washington Irving (1783–1859)</p>
+<h3>📖 Story Synopsis:</h3>
+<ul>
+<li><strong>English Summary:</strong> In the ancient Spanish city of Granada, an honest but impoverished mason struggles to feed his family. One night, a tall, pale stranger knocks on his door and hires him for a secret task on the condition that he be blindfolded. Led through twisting alleys into a grand courtyard with an old Moorish fountain, the mason builds a concealed brick vault. Before sealing it, the stranger has him place two heavy sacks into the vault; to the mason's touch, the sacks feel not like corpses, but like heavy coins or gold. Paid generously with gold coins, he is guided back blindfolded and warned never to remove the blindfold until he reaches home. Years later, an elderly, tight-fisted landlord complains that his abandoned house is considered unlucky and haunted by the sound of clinking coins after an old miser died there without an heir. Recognizing the Moorish fountain in the courtyard as the exact site of his midnight work, the mason cunningly offers to live there rent-free in exchange for repairing the dilapidated property. The landlord agrees. The mason moves in, quietly retrieves the hidden gold from behind the vault, repairs the house, becomes one of the wealthiest and most respected citizens of Granada, and takes the secret of the hidden vault to his grave.</li>
+<li><strong>తెలుగు సారాంశం (Telugu Summary):</strong> గ్రనడా నగరంలో నిరుపేద రాతి మేస్త్రీ ఒకడు ఉండేవాడు. ఒక అర్ధరాత్రి ఒక విచిత్రమైన ఆగంతకుడు వచ్చి కళ్లకు గంతలు కట్టి ఒక పాత భవనంలోని నీళ్ల ఫౌంటెన్ కింద రహస్య గదిని నిర్మించమని చెప్పాడు. మేస్త్రీతో రెండు బరువైన సంచులను ఆ గదిలో పెట్టించి గోడ కట్టించాడు. ఆ సంచులను తాకినప్పుడు అందులో శవాలు కాక బంగారు నాణేలు ఉన్నాయని మేస్త్రీ గ్రహించాడు. మేస్త్రీకి బంగారు నాణేలు కూలీగా ఇచ్చి తిరిగి గంతలు కట్టి పంపించారు. కొన్నేళ్ల తర్వాత ఒక పిసినారి యజమాని తన పాడుబడ్డ ఇంట్లో అర్ధరాత్రి నాణేల చప్పుడు వస్తోందని, ఎవరూ అద్దెకు రావడం లేదని వాపోయాడు. ఆ ఇంటిని చూడగానే గతంలో తాను గోడ కట్టిన ప్రదేశమేనని మేస్త్రీ గుర్తించాడు. ఉచితంగా ఇల్లు బాగుచేసి ఉంటానని యజమానితో ఒప్పందం కుదుర్చుకుని, లోపల ఉన్న రహస్య ధనాన్ని తీసి అత్యంత ధనవంతుడయ్యాడు. ఆ రహస్యాన్ని ఎవరికీ చెప్పకుండా తనతోనే సమాధి చేసుకున్నాడు.</li>
+</ul>
+<hr />
+<h3>Vocabulary &amp; Word Meanings (Page 58–61)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Word</th>
+<th style="text-align: left;">English Definition</th>
+<th style="text-align: left;">తెలుగు అర్థం (Telugu Meaning)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Mason</strong></td>
+<td style="text-align: left;">A person who builds with bricks and stones</td>
+<td style="text-align: left;">తాపీ మేస్త్రీ / రాతి పనివాడు</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Stranger</strong></td>
+<td style="text-align: left;">An unknown person</td>
+<td style="text-align: left;">అపరిచితుడు / కొత్త వ్యక్తి</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Blindfolded</strong></td>
+<td style="text-align: left;">Having eyes covered so one cannot see</td>
+<td style="text-align: left;">కళ్లకు గంతలు కట్టిన</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alley</strong></td>
+<td style="text-align: left;">A narrow street or passageway</td>
+<td style="text-align: left;">సందు / ఇరుకైన వీధి</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chamber</strong></td>
+<td style="text-align: left;">A large room</td>
+<td style="text-align: left;">గది / అంతఃపుర గది</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Vault</strong></td>
+<td style="text-align: left;">An arched underground room used to store valuables</td>
+<td style="text-align: left;">నేలమాళిగ / రహస్య ధనాగారము</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Treasure</strong></td>
+<td style="text-align: left;">A hidden collection of valuable things / gold</td>
+<td style="text-align: left;">నిధి / బంగారు సంపద</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Silence</strong></td>
+<td style="text-align: left;">Complete quietness</td>
+<td style="text-align: left;">నిశ్శబ్దము</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Honesty</strong></td>
+<td style="text-align: left;">Truthfulness and fairness</td>
+<td style="text-align: left;">నిజాయితీ / నిష్కపటత్వము</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Miser</strong></td>
+<td style="text-align: left;">A greedy person who hoards wealth and lives poorly</td>
+<td style="text-align: left;">పిసినారి / లోభి</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fortune</strong></td>
+<td style="text-align: left;">A large amount of wealth or luck</td>
+<td style="text-align: left;">అదృష్టము / అపార సంపద</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Textbook Exercises (Pages 62–64)</h3>
+<h4>A. Tick (✓) the correct options (Page 62):</h4>
+<ol>
+<li><strong>Who came to the mason's door late at night?</strong></li>
+<li>a. friend &nbsp;&nbsp; <strong>b. stranger [ ✓ ]</strong> &nbsp;&nbsp; c. soldier &nbsp;&nbsp; d. landlord</li>
+<li><strong>What did the mason build inside the hidden chamber?</strong></li>
+<li>a. room with windows &nbsp;&nbsp; b. treasure box &nbsp;&nbsp; <strong>c. small wall [ ✓ ]</strong> &nbsp;&nbsp; d. staircase</li>
+<li><strong>What did the mason feel when he touched the 'bodies'?</strong></li>
+<li><strong>a. they felt like sacks filled with coins [ ✓ ]</strong> &nbsp;&nbsp; b. they were warm and heavy &nbsp;&nbsp; c. they were light as a feather &nbsp;&nbsp; d. they were made of stone</li>
+<li><strong>What was the landlord's opinion about the old house?</strong></li>
+<li>a. it was a lucky place &nbsp;&nbsp; b. it was full of gold &nbsp;&nbsp; <strong>c. it was haunted and unlucky [ ✓ ]</strong> &nbsp;&nbsp; d. it was ready to rent</li>
+<li><strong>Why did people start admiring the mason?</strong></li>
+<li>a. because he found a treasure &nbsp;&nbsp; b. because he became rich overnight &nbsp;&nbsp; <strong>c. because he was honest and hard-working [ ✓ ]</strong> &nbsp;&nbsp; d. because he shared his secret</li>
+</ol>
+<hr />
+<h4>B. Fill in the blanks (Pages 62–63):</h4>
+<ol>
+<li>The mason was <strong>blindfolded</strong> by the stranger before being taken to the secret location.</li>
+<li>In the centre of the hidden hall, there was a large dry <strong>fountain</strong> carved in Moorish style.</li>
+<li>The mason received a small bag of <strong>gold coins</strong> as payment for his night's work.</li>
+<li>The <strong>fountain</strong> of the landlord's house reminded the mason of the secret place.</li>
+<li>The mason never spoke a word about the hidden <strong>vault / treasure</strong>, not even to his family.</li>
+</ol>
+<hr />
+<h4>C. Write T for True and F for False statements (Page 63):</h4>
+<ol>
+<li>The stranger chose the mason because he was known to be skilled with gold. $\rightarrow$ <strong>[ F ]</strong> <em>(He chose him because he was an honest man he could trust).</em></li>
+<li>The mason asked many questions before doing the mysterious work. $\rightarrow$ <strong>[ F ]</strong> <em>(He worked silently without asking questions).</em></li>
+<li>The mason was taken through a secret path while blindfolded. $\rightarrow$ <strong>[ T ]</strong></li>
+<li>The fountain in the abandoned house looked exactly like the one in the hidden hall. $\rightarrow$ <strong>[ T ]</strong></li>
+<li>The landlord was generous and always gave money to the poor. $\rightarrow$ <strong>[ F ]</strong> <em>(The landlord was stern, wealthy, and tight-fisted).</em></li>
+</ol>
+<hr />
+<h4>D. Reference to Context (RTC) (Page 63):</h4>
+<p><strong>1. "I have heard that you are an honest man. I am in need of someone I can trust."</strong><br />
+- <strong>a. Who said this line and to whom?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> The tall, pale stranger said this line to the poor mason standing at his door late at night.<br />
+- <strong>b. Why do you think the stranger chose the mason?</strong><br />
+<strong>Answer:</strong> The stranger needed an honest, trustworthy craftsman who would carry out a top-secret construction task without prying, asking suspicious questions, or revealing the hidden vault to anyone.<br />
+- <strong>c. What does this tell us about the mason's character?</strong><br />
+<strong>Answer:</strong> It proves that the mason enjoyed an unblemished reputation for integrity, honesty, and professional discretion throughout Granada.</p>
+</blockquote>
+<p><strong>2. "Let me live in this house rent-free until a proper tenant comes along."</strong><br />
+- <strong>a. Why did the mason make this request?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> The mason recognized the Moorish fountain in the dilapidated courtyard and realized this was the very house where he had sealed the gold coins in the vault. Living there rent-free gave him uninterrupted access to recover the treasure.<br />
+- <strong>b. What did the mason plan to do in return?</strong><br />
+<strong>Answer:</strong> He promised to repair the crumbling walls, replace broken roof tiles, and restore the abandoned property to fit living condition.<br />
+- <strong>c. How did this decision affect his future?</strong><br />
+<strong>Answer:</strong> It transformed his life completely; by secretly retrieving the hoard of gold coins, he escaped lifelong poverty, educated and supported his family, and became one of the wealthiest and most esteemed men in Granada.</p>
+</blockquote>
+<hr />
+<h4>E. Answer the following questions in detail (Page 63):</h4>
+<p><strong>Q1: Why did the stranger blindfold the mason before taking him to the secret place?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> The stranger blindfolded the mason so that he could never discover the geographical location or route to the hidden property in Granada, thereby keeping the concealed vault and its treasure absolutely secure from theft or exposure.</p>
+</blockquote>
+<p><strong>Q2: How did the mason feel when he touched the sacks that looked like bodies?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> The mason was initially terrified because he was told he was carrying corpses. However, upon lifting them, he noticed the unusual metallic weight and clinking feel, realizing they were actually heavy sacks loaded with gold coins rather than human bodies.</p>
+</blockquote>
+<p><strong>Q3: What made the mason believe that the old house was the same place he had visited before?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> When the landlord walked him into the dusty, cobweb-covered courtyard, the mason saw the unique, dry Moorish fountain in the center, identical in shape, carving, and surrounding layout to the hall he had worked in years earlier.</p>
+</blockquote>
+<p><strong>Q4: How did the mason's life change after he moved into the old house?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> His fortunes soared. While diligently repairing the house brick-by-brick, he accessed the secret vault and retrieved the gold coins. He bought neat clothes, provided nutritious food and education for his children, and lived in comfort and high social respect.</p>
+</blockquote>
+<p><strong>Q5: What moral does the story of the mason teach us?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> The story teaches that honesty, patient diligence, and quiet discretion (the wisdom of knowing when to remain silent) yield far greater and more enduring rewards than greed and boastfulness.</p>
+</blockquote>
+<hr />
+<h4>F. Think and Answer (Page 63):</h4>
+<ol>
+<li><strong>Why do you think the mason never revealed the secret of the hidden vault even to his own family? Do you believe silence can sometimes be wiser than sharing everything?</strong><blockquote>
+<p><strong>Answer:</strong> The mason kept silent because disclosing the vault could invite greed, legal disputes with the landlord, or public suspicion of stolen property. Yes, discreet silence is often wiser than loose talk because it protects one's family and preserves hard-earned peace.</p>
+</blockquote>
+</li>
+<li><strong>The mason became rich but stayed honest and hardworking. Do you think a person's character should change when they gain wealth or success?</strong><blockquote>
+<p><strong>Answer:</strong> No, wealth should never corrupt one's moral values. The mason set an inspiring example by continuing his honest labour and using his wealth charitably without arrogance.</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h3>Vocabulary: Compound Words (Pages 64–65)</h3>
+<ul>
+<li><strong>Definition:</strong> A compound word is formed when two separate words join together to create a single new word with a distinct meaning.</li>
+<li><strong>Three Types of Compound Words:</strong></li>
+<li><strong>Closed Compound Words:</strong> Written as a single combined word without spaces. <em>(Examples: notebook, classroom, sunlight, passageway, courtyard, blindfold, deathbed).</em></li>
+<li><strong>Hyphenated Compound Words:</strong> Joined together by a hyphen (<code>-</code>). <em>(Examples: mother-in-law, well-known, runner-up, lantern-light, moon-lit, run-down).</em></li>
+<li><strong>Open Compound Words:</strong> Written as two separate words that together function as a single conceptual unit. <em>(Examples: post office, high school, ice cream, gold coins, stone path, brick wall).</em></li>
+</ul>
+<h4>G. Choose the correct compound word (Page 64):</h4>
+<ol>
+<li>The mason was guided through a dark, twisting <strong>passageway</strong> (c).</li>
+<li>A dry, old fountain stood at the heart of a square <strong>courtyard</strong> (b).</li>
+<li>The room was lit by a dim <strong>lantern-light</strong> (b) placed in a corner.</li>
+<li>The mason kept the secret of the treasure until his <strong>deathbed</strong> (a).</li>
+<li>The stranger warned him not to remove the <strong>blindfold</strong> (a) too early.</li>
+</ol>
+<h4>H. Identify the type of each compound word (Page 64):</h4>
+<ol>
+<li><strong>courtyard</strong> $\rightarrow$ <strong>Closed Compound</strong></li>
+<li><strong>gold coins</strong> $\rightarrow$ <strong>Open Compound</strong></li>
+<li><strong>well-built</strong> $\rightarrow$ <strong>Hyphenated Compound</strong></li>
+<li><strong>blindfold</strong> $\rightarrow$ <strong>Closed Compound</strong></li>
+<li><strong>stone path</strong> $\rightarrow$ <strong>Open Compound</strong></li>
+<li><strong>run-down</strong> $\rightarrow$ <strong>Hyphenated Compound</strong></li>
+<li><strong>lantern-light</strong> $\rightarrow$ <strong>Hyphenated Compound</strong></li>
+<li><strong>brick wall</strong> $\rightarrow$ <strong>Open Compound</strong></li>
+<li><strong>moon-lit</strong> $\rightarrow$ <strong>Hyphenated Compound</strong></li>
+<li><strong>deathbed</strong> $\rightarrow$ <strong>Closed Compound</strong></li>
+</ol>
+<h4>I. Match the words to form meaningful compound words (Page 65):</h4>
+<ol>
+<li><strong>blind</strong> $\rightarrow$ <strong>b. fold</strong> (blindfold)</li>
+<li><strong>death</strong> $\rightarrow$ <strong>c. bed</strong> (deathbed)</li>
+<li><strong>lantern</strong> $\rightarrow$ <strong>d. light</strong> (lantern-light)</li>
+<li><strong>court</strong> $\rightarrow$ <strong>e. yard</strong> (courtyard)</li>
+<li><strong>run</strong> $\rightarrow$ <strong>a. down</strong> (run-down)</li>
+</ol>
+<hr />
+<h3>Grammar Time: Active Voice and Passive Voice (Page 65)</h3>
+<ul>
+<li><strong>Core Rule &amp; Formula:</strong></li>
+<li><strong>Active Voice:</strong> The subject performs the action. $\text{Subject} + \text{Verb} + \text{Object}$.</li>
+<li><strong>Passive Voice:</strong> The object becomes the subject and receives the action. $\text{Object} + \text{Helping Verb (be)} + \text{Past Participle (V3)} + \text{by} + \text{Agent}$.</li>
+</ul>
+<h4>J. Rewrite the Active Voice sentences in the Passive Voice:</h4>
+<ol>
+<li><em>The stranger blindfolded the mason.</em><blockquote>
+<p><strong>Passive:</strong> <strong>The mason was blindfolded by the stranger.</strong></p>
+</blockquote>
+</li>
+<li><em>The mason built a wall inside the courtyard.</em><blockquote>
+<p><strong>Passive:</strong> <strong>A wall was built inside the courtyard by the mason.</strong></p>
+</blockquote>
+</li>
+<li><em>The man gave the mason a bag of gold.</em><blockquote>
+<p><strong>Passive:</strong> <strong>The mason was given a bag of gold by the man.</strong> <em>(or: A bag of gold was given to the mason by the man).</em></p>
+</blockquote>
+</li>
+<li><em>The mason repaired the old fountain.</em><blockquote>
+<p><strong>Passive:</strong> <strong>The old fountain was repaired by the mason.</strong></p>
+</blockquote>
+</li>
+<li><em>The stranger sealed the vault carefully.</em><blockquote>
+<p><strong>Passive:</strong> <strong>The vault was sealed carefully by the stranger.</strong></p>
+</blockquote>
+</li>
+<li><em>The landlord offered him a job.</em><blockquote>
+<p><strong>Passive:</strong> <strong>He was offered a job by the landlord.</strong> <em>(or: A job was offered to him by the landlord).</em></p>
+</blockquote>
+</li>
+<li><em>The mason restored the broken house.</em><blockquote>
+<p><strong>Passive:</strong> <strong>The broken house was restored by the mason.</strong></p>
+</blockquote>
+</li>
+<li><em>The city people admired the mason's honesty.</em><blockquote>
+<p><strong>Passive:</strong> <strong>The mason's honesty was admired by the city people.</strong></p>
+</blockquote>
+</li>
+</ol>
+<h4>K. Rewrite the Passive Voice sentences in the Active Voice:</h4>
+<ol>
+<li><em>The mason was awakened by a knock at his door.</em><blockquote>
+<p><strong>Active:</strong> <strong>A knock at his door awakened the mason.</strong></p>
+</blockquote>
+</li>
+<li><em>The mason's eyes were covered by the stranger.</em><blockquote>
+<p><strong>Active:</strong> <strong>The stranger covered the mason's eyes.</strong></p>
+</blockquote>
+</li>
+<li><em>A small wall was constructed by the mason during the night.</em><blockquote>
+<p><strong>Active:</strong> <strong>The mason constructed a small wall during the night.</strong></p>
+</blockquote>
+</li>
+<li><em>Two shining gold coins were slipped into the mason's palm by the stranger.</em><blockquote>
+<p><strong>Active:</strong> <strong>The stranger slipped two shining gold coins into the mason's palm.</strong></p>
+</blockquote>
+</li>
+<li><em>The abandoned house was owned by a wealthy and stern landlord.</em><blockquote>
+<p><strong>Active:</strong> <strong>A wealthy and stern landlord owned the abandoned house.</strong></p>
+</blockquote>
+</li>
+<li><em>The crumbling walls were mended by the mason.</em><blockquote>
+<p><strong>Active:</strong> <strong>The mason mended the crumbling walls.</strong></p>
+</blockquote>
+</li>
+<li><em>The mason's honesty and hard work were admired by the people.</em><blockquote>
+<p><strong>Active:</strong> <strong>The people admired the mason's honesty and hard work.</strong></p>
+</blockquote>
+</li>
+<li><em>The secret of the vault was never shared by the mason.</em><blockquote>
+<p><strong>Active:</strong> <strong>The mason never shared the secret of the vault.</strong></p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h1>Lesson 6: The Train Saviours (Pages 67–78)</h1>
+<p><strong>Author:</strong> E. Nesbit (Edith Nesbit, 1858–1924) — adapted from <em>The Railway Children</em></p>
+<h3>📖 Story Synopsis:</h3>
+<ul>
+<li><strong>English Summary:</strong> Three siblings—Bobbie (Roberta), Peter, and Phyllis—live near a railway line in the countryside. While on a walk towards the railway tunnel, they hear a sinister rustling sound on the steep wooded slope above the tracks. Suddenly, an enormous landslide occurs: rocks, loose earth, and large trees crash down, completely burying the railway line. Knowing that the 11:29 train is due in minutes and that running to the distant station in time is impossible, Peter devises a brilliant plan. Remembering that red signifies danger, they persuade the girls to take off their bright red flannel petticoats. Peter cuts them into six flags and fixes them onto wooden broomsticks and branches. Stationing themselves along the curve before the tunnel, the children wave their red flags frantically as the heavy express train roars towards them. Bobbie runs onto the tracks, waving her flag until the last second. The driver spots the red warning signals, engages the emergency brakes, and brings the train to a screeching halt just twenty yards before the heap of trees and rubble. The passengers and driver hail the brave children as heroes who saved hundreds of lives.</li>
+<li><strong>తెలుగు సారాంశం (Telugu Summary):</strong> బాబీ, పీటర్, మరియు ఫిలిస్ అనే ముగ్గురు పిల్లలు రైల్వే లైన్ సమీపంలో నివసిస్తుంటారు. ఒకరోజు వారు నడుస్తుండగా కొండచరియలు విరిగిపడి పెద్ద చెట్లు, రాళ్లతో రైల్వే ట్రాక్ పూర్తిగా మూసుకుపోతుంది. కొద్ది నిమిషాల్లో ఎక్స్‌ప్రెస్ రైలు రాబోతోంది. స్టేషన్‌కు వెళ్లి చెప్పే సమయం లేదు. ఎరుపు రంగు ప్రమాదానికి సంకేతం అని గుర్తుచేసుకున్న పీటర్, బాలికల ఎరుపు రంగు పావడాలను (పెటికోట్స్) ముక్కలుగా కోసి ఆరు జెండాలు తయారు చేశాడు. రైలు వేగంగా వస్తుండగా ట్రాక్ పక్కన నిలబడి ఆ జెండాలను ఊపారు. బాబీ ధైర్యంతో ట్రాక్ పై నిలబడి జెండా ఊపడంతో డ్రైవర్ ప్రమాదాన్ని గుర్తించి ఎమర్జెన్సీ బ్రేకులు వేసి రైలును ఆపాడు. వందలాది ప్రయాణికుల ప్రాణాలను కాపాడిన ఆ పిల్లలను అందరూ హీరోలుగా కొనియాడారు.</li>
+</ul>
+<hr />
+<h3>Vocabulary &amp; Meaning (Pages 67–70)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Word</th>
+<th style="text-align: left;">English Meaning</th>
+<th style="text-align: left;">తెలుగు అర్థం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Slope</strong></td>
+<td style="text-align: left;">A surface that is not flat / inclined ground</td>
+<td style="text-align: left;">ఏటవాలు ప్రాంతము</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tunnel</strong></td>
+<td style="text-align: left;">A long hollow passage through a hill/ground</td>
+<td style="text-align: left;">సొరంగము</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Whispering</strong></td>
+<td style="text-align: left;">Speaking or rustling very softly</td>
+<td style="text-align: left;">గుసగుసలాడుట / సన్నని శబ్దము</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pale</strong></td>
+<td style="text-align: left;">Having little colour; looking shocked/tired</td>
+<td style="text-align: left;">పాలిపోయిన ముఖము</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Signal</strong></td>
+<td style="text-align: left;">To give a message using a sign or flag</td>
+<td style="text-align: left;">సంకేతము / సైగ</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Steep</strong></td>
+<td style="text-align: left;">Rising or falling very sharply</td>
+<td style="text-align: left;">నిటారైన</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Disaster</strong></td>
+<td style="text-align: left;">A sudden accident causing great damage/loss of life</td>
+<td style="text-align: left;">ఘోర ప్రమాదము / విపత్తు</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Petticoat</strong></td>
+<td style="text-align: left;">A woman's light undergarment worn under a skirt</td>
+<td style="text-align: left;">పావడా / లోపలి లంగా</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Exercises (Pages 72–75)</h3>
+<h4>A. Tick (✓) the correct options (Page 72):</h4>
+<ol>
+<li><strong>What caused the landslide near the railway track?</strong></li>
+<li>a. strong wind &nbsp;&nbsp; b. earthquake &nbsp;&nbsp; <strong>c. loose stones and sliding trees [ ✓ ]</strong> &nbsp;&nbsp; d. heavy rain</li>
+<li><strong>Why couldn't the children run to the railway station to give a warning?</strong></li>
+<li>a. the train had already passed &nbsp;&nbsp; <strong>b. the station was too far [ ✓ ]</strong> &nbsp;&nbsp; c. they got lost &nbsp;&nbsp; d. they were scared</li>
+<li><strong>Which item did the children use to signal the train?</strong></li>
+<li>a. red ribbons &nbsp;&nbsp; b. school uniforms &nbsp;&nbsp; <strong>c. red petticoats [ ✓ ]</strong> &nbsp;&nbsp; d. picnic cloth</li>
+<li><strong>How many red flags did the children make?</strong></li>
+<li>a. four &nbsp;&nbsp; <strong>b. six [ ✓ ]</strong> &nbsp;&nbsp; c. two &nbsp;&nbsp; d. three</li>
+</ol>
+<h4>B. Fill in the blanks (Page 72):</h4>
+<ol>
+<li>The children were walking along the railway line towards the <strong>tunnel</strong>.</li>
+<li>A sudden <strong>landslide</strong> caused huge rocks and trees to block the railway line.</li>
+<li>Peter remembered that <strong>red</strong> is the universal signal for danger.</li>
+<li>The children made warning flags using their <strong>petticoats</strong>.</li>
+<li>The train came to a stop just <strong>twenty yards</strong> before the blocked track.</li>
+</ol>
+<h4>C. Reference to Context (Page 72):</h4>
+<p><strong>"Wait! There's no time to run all the way to the station. It's already past eleven..."</strong><br />
+- <strong>a. Who said this and what was he worried about?</strong></p>
+<blockquote>
+<p><strong>Answer:</strong> Peter said this to his sisters Bobbie and Phyllis. He was worried that the 11:29 train would arrive before they could reach the station.<br />
+- <strong>b. What solution did they find to warn the train?</strong><br />
+<strong>Answer:</strong> They cut the girls' red petticoats into six flags and waved them along the tracks.<br />
+- <strong>c. Why did they decide not to go to the station?</strong><br />
+<strong>Answer:</strong> The station was nearly two miles away, and running there would take far too long.</p>
+</blockquote>
+<hr />
+<h3>Grammar Time: Direct and Indirect Speech (Pages 74–75)</h3>
+<ul>
+<li><strong>Rules for Changing Direct into Indirect (Reported) Speech:</strong></li>
+<li>Remove inverted commas (<code>"..."</code>) and insert the conjunction <strong>that</strong> (for statements).</li>
+<li>Shift tenses one step backward when the reporting verb is in the past:<ul>
+<li>Present Simple $\rightarrow$ Past Simple (<em>is/am $\rightarrow$ was, are $\rightarrow$ were, go $\rightarrow$ went</em>).</li>
+<li>Present Continuous $\rightarrow$ Past Continuous (<em>is running $\rightarrow$ was running</em>).</li>
+<li>Present Perfect $\rightarrow$ Past Perfect (<em>has seen $\rightarrow$ had seen</em>).</li>
+<li>Simple Past $\rightarrow$ Past Perfect (<em>saw $\rightarrow$ had seen</em>).</li>
+</ul>
+</li>
+<li>Change pronouns according to the speaker and listener.</li>
+<li>Time/Place changes: <em>now $\rightarrow$ then, today $\rightarrow$ that day, here $\rightarrow$ there, tomorrow $\rightarrow$ the next day</em>.</li>
+</ul>
+<h4>Exercises: Change into Indirect Speech:</h4>
+<ol>
+<li><em>Peter said, "The train is coming."</em><blockquote>
+<p>$\rightarrow$ <strong>Peter said that the train was coming.</strong></p>
+</blockquote>
+</li>
+<li><em>Bobbie said, "I hear a strange sound in the bushes."</em><blockquote>
+<p>$\rightarrow$ <strong>Bobbie said that she heard a strange sound in the bushes.</strong></p>
+</blockquote>
+</li>
+<li><em>Phyllis said, "We must stop the train."</em><blockquote>
+<p>$\rightarrow$ <strong>Phyllis said that they had to stop the train.</strong></p>
+</blockquote>
+</li>
+<li><em>The driver said, "You children have saved hundreds of lives."</em><blockquote>
+<p>$\rightarrow$ <strong>The driver said that those children had saved hundreds of lives.</strong></p>
+</blockquote>
+</li>
+<li><em>The children said, "We made flags from our red petticoats."</em><blockquote>
+<p>$\rightarrow$ <strong>The children said that they had made flags from their red petticoats.</strong></p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h1>Poem: Past and Future (Pages 79–83)</h1>
+<p><strong>Poet:</strong> Elizabeth Barrett Browning (1806–1861)</p>
+<h3>📖 Stanza-by-Stanza Analysis &amp; Theme:</h3>
+<ul>
+<li><strong>Core Meaning:</strong> The poem reflects upon the passage of human time—how the past, filled with sorrow, grief, and dead memories, must yield to the radiant promise of the future.</li>
+<li><strong>Poetic Devices:</strong></li>
+<li><strong>Metaphor:</strong> The past is compared to an old, austere <strong>hermit</strong> residing in a dark, quiet mountain cell. In contrast, the future is depicted as a radiant, veiled <strong>bride</strong> entering a festive banquet hall with joy and anticipation.</li>
+<li><strong>Rhyme Scheme:</strong> Petrarcan Sonnet structure (<em>ABBA ABBA CDCDCD</em>).</li>
+<li><strong>తెలుగు భావార్థము:</strong> గతంలో జరిగిన బాధలను, శోకాలను ముసలి సన్యాసి వలె గుండె లోతుల్లో విడిచిపెట్టి, నూతన వధువులా ఉజ్వలంగా ఆహ్వానించే భవిష్యత్తు వైపు ఆశావహ దృక్పథంతో అడుగులు వేయాలని కవయిత్రి ప్రబోధిస్తున్నారు.</li>
+</ul>
+<h4>Textbook Questions &amp; Answers (Pages 81–82):</h4>
+<ol>
+<li><strong>What does the poem compare the past to?</strong><blockquote>
+<p><strong>Answer:</strong> An old hermit sitting peacefully in a solitary mountain cave/cell.</p>
+</blockquote>
+</li>
+<li><strong>What does the poet compare the future to?</strong><blockquote>
+<p><strong>Answer:</strong> A youthful, hopeful <strong>bride</strong> bringing fresh happiness and new beginnings.</p>
+</blockquote>
+</li>
+<li><strong>What is the central message of the poem?</strong><blockquote>
+<p><strong>Answer:</strong> We should let go of past griefs, regrets, and disappointments, and embrace the future with optimism, vitality, and renewed faith.</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h1>Lesson 7: The Happy Prince (Pages 84–93)</h1>
+<p><strong>Author:</strong> Oscar Wilde (1854–1900)</p>
+<h3>📖 Story Synopsis:</h3>
+<ul>
+<li><strong>English Summary:</strong> High above a European city stands the majestic, gilded statue of the Happy Prince, adorned with leaves of fine gold, two bright sapphires for eyes, and a rich red ruby glowing on his sword-hilt. In life, the Prince lived in the Palace of Sans-Souci where sorrow was forbidden. But now, raised on a tall column, he witnesses the misery, poverty, and disease of the common people and weeps bitterly. A little Swallow, en route to warm Egypt for the winter, stops between the Prince's feet to rest. Moved by the Prince's compassion, the Swallow agrees to stay night after night to act as his messenger. At the Prince's bidding, the bird plucks the ruby for a poor, exhausted seamstress nursing her feverish son, extracts one sapphire for a starving young playwright freezing in an attic, gives the other sapphire to a weeping little match-girl who dropped her matches in the gutter, and strips off the fine gold leaf-by-leaf to feed starving street children. Completely blind and stripped of his former splendor, the Prince is now accompanied by the Swallow, who refuses to abandon him even as winter sets in. Frozen by the bitter frost, the devoted bird kisses the Prince and drops dead at his feet; at that exact moment, the Prince's leaden heart snaps into two pieces. The next day, the vain Town Councillors pull down the dull, shabby statue and melt it in a furnace, throwing the lead heart onto a dustheap beside the dead bird. In heaven, God commands His angels to bring Him the two most precious things in the city; the angel returns with the broken leaden heart and the dead swallow. God declares: <em>"You have chosen well, for in my garden of Paradise this little bird shall sing for evermore, and in my city of gold the Happy Prince shall praise me."</em></li>
+<li><strong>తెలుగు సారాంశం (Telugu Summary):</strong> ఒక నగరం మధ్యలో ఆనంద యువరాజు (హ్యాపీ ప్రిన్స్) విగ్రహం ఉంటుంది. దానికి బంగారు పూత, కళ్లకు నీలాలు, ఖడ్గానికి కెంపు పొదిగి ఉంటాయి. బతికున్నప్పుడు అంతఃపురంలో ఆనందంగా గడిపిన యువరాజు, విగ్రహమైన తర్వాత ప్రజల కష్టాలను చూసి కన్నీరు కారుస్తాడు. ఈజిప్టుకు వెళ్తున్న ఒక చిన్న పిట్ట (స్వాల్లో) యువరాజుకు సహాయకుడిగా మారుతుంది. యువరాజు ఆదేశంతో ఆ పిట్ట కెంపును నిరుపేద దర్జీ స్త్రీకి, కళ్లలోని నీలాలను పేద రచయితకు మరియు అగ్గిపెట్టెలమ్మే చిన్నారికి అందిస్తుంది. ఒంటిపై ఉన్న బంగారాన్ని ఆకలితో అలమటించే పేద పిల్లలకు పంచిపెడుతుంది. పూర్తిగా గుడ్డివాడైపోయిన యువరాజును విడిచివెళ్లలేక ఆ పిట్ట చలికి అక్కడే మరణిస్తుంది. ఆ బాధతో విగ్రహంలోని సీసపు గుండె పగిలిపోతుంది. నగరం మేయర్ ఆ విగ్రహాన్ని కరిగించి, పిట్టను, పగిలిన గుండెను చెత్తకుప్పపై పారేస్తారు. దేవుడు దేవదూతను నగరంలోని అత్యంత పవిత్రమైన రెండు వస్తువులు తెమ్మన్నప్పుడు, దేవదూత ఆ పగిలిన గుండెను, మరణించిన పిట్టను స్వర్గానికి తీసుకెళ్తాడు.</li>
+</ul>
+<hr />
+<h3>Vocabulary: Phrasal Verbs &amp; Register (Pages 91–93)</h3>
+<h4>J. Phrasal Verbs in Context (Page 91):</h4>
+<ol>
+<li><strong>give away:</strong> To donate freely without expecting return. <em>(e.g., The Prince decided to </em><em>give away</em><em> all his golden leaves).</em></li>
+<li><strong>throw away:</strong> To discard as useless. <em>(e.g., The workmen </em><em>threw away</em><em> the lead heart on the dustheap).</em></li>
+<li><strong>fly away:</strong> To depart by flying. <em>(e.g., The swallow could not </em><em>fly away</em><em> because he loved the Prince).</em></li>
+<li><strong>look after:</strong> To care for someone. <em>(e.g., The mother tried to </em><em>look after</em><em> her sick child).</em></li>
+<li><strong>break down:</strong> To collapse emotionally or shatter. <em>(e.g., The lead heart </em><em>broke down</em><em> into two).</em></li>
+</ol>
+<h4>H. Formal vs. Informal Language Register (Page 92):</h4>
+<ul>
+<li><strong>Informal:</strong> "Can you give this to the boy?" $\rightarrow$ <strong>Formal:</strong> "Could you please deliver this to the young gentleman?"</li>
+<li><strong>Informal:</strong> "Do you want me to help you with that?" $\rightarrow$ <strong>Formal:</strong> "May I assist you with that task?"</li>
+<li><strong>Informal:</strong> "I'm telling you, it's really bad." $\rightarrow$ <strong>Formal:</strong> "I assure you that the situation is exceedingly grave."</li>
+</ul>
+<hr />
+<h3>SA-1 Exam Model Revision Check:</h3>
+<ol>
+<li><strong>Who wrote The Adventure of the Mason?</strong> Washington Irving.</li>
+<li><strong>Who wrote The Train Saviours?</strong> E. Nesbit.</li>
+<li><strong>Who wrote The Happy Prince?</strong> Oscar Wilde.</li>
+<li><strong>Who wrote Past and Future?</strong> Elizabeth Barrett Browning.</li>
+<li><strong>What did Bobbie, Peter, and Phyllis use to stop the train?</strong> Flags made from red petticoats.</li>
+<li><strong>What was inside the two heavy sacks carried by the mason?</strong> Gold coins.</li>
+<li><strong>What did God consider the two most precious things?</strong> The broken lead heart of the Happy Prince and the dead body of the little swallow.</li>
+</ol>
+      </div>
+    </div>
+
+    <!-- TAB 2: QUESTION PAPER -->
+    <div id="tab-qp" class="tab-content">
+      <div class="card rendered-content">
+        <div style="text-align: right; margin-bottom: 12px;">
+          <button class="btn btn-primary" onclick="window.print()">🖨️ Print Question Paper Now</button>
+        </div>
+        <h1>SUMMATIVE ASSESSMENT - I (SA-1) EXAMINATION (2026-27)</h1>
+<h2>CLASS: VII | SUBJECT: GENERAL ENGLISH</h2>
+<p><strong>Time Allowed:</strong> 2 Hours 30 Minutes | <strong>Maximum Marks:</strong> 80 Marks</p>
+<hr />
+<h3>General Instructions:</h3>
+<ol>
+<li>This paper is divided into FOUR sections:</li>
+<li><strong>Section A: Reading Comprehension</strong> (20 Marks)</li>
+<li><strong>Section B: Writing &amp; Composition</strong> (15 Marks)</li>
+<li><strong>Section C: Grammar &amp; Vocabulary</strong> (25 Marks)</li>
+<li><strong>Section D: Literature &amp; Poetry</strong> (20 Marks)</li>
+<li>All questions are compulsory. Marks are indicated against each question.</li>
+<li>Write clean, legible answers maintaining correct spelling and punctuation.</li>
+</ol>
+<hr />
+<h2>SECTION A: READING COMPREHENSION (20 Marks)</h2>
+<h3>I. Read the following passage carefully and answer the questions that follow: [10 Marks]</h3>
+<blockquote>
+<p>"Once, in the ancient city of Granada, there lived a poor mason. He could barely afford to feed his large family. One night, as he lay resting, he was suddenly awakened by a knock at his door. When he opened it, he saw a tall, pale stranger with a serious and haunting look on his face. 'Good evening,' the man said, 'I have heard that you are an honest man. I am in need of someone I can trust. Would you be willing to carry out a task for me this very night?' The mason agreed on the condition that the work was fair. The stranger blindfolded him and guided him through twisting alleys to a grand hall with a Moorish fountain."</p>
+</blockquote>
+<ol>
+<li>Where did the poor mason live, and what problem was he facing? [2M]</li>
+<li>Describe the appearance of the stranger who knocked at the door. [2M]</li>
+<li>Why did the stranger choose the mason for the midnight task? [2M]</li>
+<li>What condition did the stranger put forward before starting the journey? [2M]</li>
+<li>Find words from the passage which mean: [2M]</li>
+<li>(a) A person who builds walls with stone or brick: <strong><em>_</em></strong><strong><em>_</em></strong>______</li>
+<li>(b) A narrow street or passageway: <strong><em>_</em></strong><strong><em>_</em></strong>______</li>
+</ol>
+<hr />
+<h3>II. Read the poetic lines and answer the questions: [10 Marks]</h3>
+<blockquote>
+<p>"The new hath come and now the old retires:<br />
+And sorrow from the heart must pass away,<br />
+As mist before the sunbeam's rising ray.<br />
+The future beckons like a radiant bride,<br />
+While memory's hermit dwells on mountains wide."</p>
+</blockquote>
+<ol>
+<li>What must pass away from the human heart according to the poet? [2M]</li>
+<li>What natural comparison (simile) is used to describe the disappearance of sorrow? [2M]</li>
+<li>What poetic image (metaphor) is used to represent the future? [2M]</li>
+<li>How is the past depicted in the poem? [2M]</li>
+<li>Identify the rhyme scheme of the given lines. [2M]</li>
+</ol>
+<hr />
+<h2>SECTION B: WRITING &amp; COMPOSITION (15 Marks)</h2>
+<ol>
+<li>
+<p><strong>Dialogue Writing:</strong> [7 Marks]<br />
+   Imagine you meet a mysterious traveler who claims to have discovered an underground secret chamber filled with ancient coins and symbols. Write a conversation between you and the traveler in about 8 to 10 dialogues.</p>
+</li>
+<li>
+<p><strong>Letter Writing:</strong> [8 Marks]<br />
+<em>(Attempt any ONE of the following)</em></p>
+</li>
+<li><strong>(A) Formal Letter:</strong> Write a letter to your School Principal requesting permission to organize a 'Railway Safety &amp; Bravery Exhibition' inspired by the story <em>The Train Saviours</em>.</li>
+<li><strong>(B) Informal Letter:</strong> Write a letter to your friend describing how the Happy Prince and the little Swallow sacrificed everything to bring joy to the suffering citizens of their town.</li>
+</ol>
+<hr />
+<h2>SECTION C: GRAMMAR &amp; VOCABULARY (25 Marks)</h2>
+<h3>I. Active and Passive Voice: [6 Marks]</h3>
+<p><em>Rewrite the following sentences in Passive Voice:</em><br />
+1. The stranger blindfolded the mason. [1M]<br />
+2. The children made six flags from red petticoats. [1M]<br />
+3. The Happy Prince gave away his sapphire eyes to the poor. [1M]</p>
+<p><em>Rewrite the following sentences in Active Voice:</em><br />
+4. A small wall was constructed inside the courtyard by the mason. [1M]<br />
+5. The runaway train was stopped by the brave children. [1M]<br />
+6. The broken lead heart was thrown on the dustheap by the workmen. [1M]</p>
+<hr />
+<h3>II. Direct and Indirect (Reported) Speech: [6 Marks]</h3>
+<p><em>Change the following into Indirect Speech:</em><br />
+1. Peter said, "The 11:29 train is approaching fast." [2M]<br />
+2. Bobbie cried, "I hear a strange sound in the hillside bushes." [2M]<br />
+3. The Prince said to the swallow, "Take the ruby from my sword-hilt." [2M]</p>
+<hr />
+<h3>III. Compound Words: [5 Marks]</h3>
+<p><em>Classify each compound word as </em><em>Closed</em><em>, </em><em>Hyphenated</em><em>, or </em><em>Open</em><em>:</em><br />
+1. <strong>courtyard</strong> $\rightarrow$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em>_<br />
+2. <strong>lantern-light</strong> $\rightarrow$ </strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_<br />
+3. <strong>gold coins</strong> $\rightarrow$ </em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em><br />
+4. <strong>deathbed</strong> $\rightarrow$ </em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em><br />
+5. <strong>well-known</strong> $\rightarrow$ </em></strong><strong><em>_</em></strong><strong><em>_</em></strong>___</p>
+<hr />
+<h3>IV. Phrasal Verbs &amp; Register: [8 Marks]</h3>
+<p><em>(A) Fill in the blanks with suitable phrasal verbs from the box:</em> [4M]<br />
+<em>(give away, break down, fly away, look after)</em><br />
+1. The little bird refused to <strong><em>_</em></strong><strong><em> to Egypt and stayed with the blind Prince.<br />
+2. The Prince decided to </em></strong><strong><em>_</em></strong> all his fine golden leaves to starving children.<br />
+3. The mother struggled to <strong><em>_</em></strong><strong><em> her sick child in the cold attic.<br />
+4. When the swallow died, the leaden heart seemed to </em></strong><strong><em>_</em></strong> into two.</p>
+<p><em>(B) Convert the informal statements into formal language:</em> [4M]<br />
+1. "Can you give this to the boy?" $\rightarrow$ <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em><br />
+2. "I'm telling you, it's really bad." $\rightarrow$ </strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>___</p>
+<hr />
+<h2>SECTION D: LITERATURE &amp; TEXTBOOK QUESTIONS (20 Marks)</h2>
+<h3>I. Reference to Context (RTC): [6 Marks]</h3>
+<p><strong>"Stop, stop, please stop! she screamed. But the sound of the train was too loud — no one could hear her."</strong><br />
+1. Who is 'she' in the given line? [2M]<br />
+2. Why was she screaming at the roaring train? [2M]<br />
+3. What danger lay directly on the railway tracks around the curve? [2M]</p>
+<hr />
+<h3>II. Short Answer Questions: (Answer any 4) [4 × 2 = 8 Marks]</h3>
+<ol>
+<li>How did the mason discover that the sacks he carried did not contain corpses?</li>
+<li>Why did Peter decide not to run to the railway station to give the warning?</li>
+<li>What two most precious things did the angel bring from the city to God's throne?</li>
+<li>How did the landlord's ruined house prove to be a blessing for the poor mason?</li>
+<li>Why did the Happy Prince weep when he was placed upon the tall pillar?</li>
+</ol>
+<hr />
+<h3>III. Long Analytical Question: (Answer any 1) [1 × 6 = 6 Marks]</h3>
+<ol>
+<li><strong>Character Sketch &amp; Moral Lesson:</strong><br />
+   Compare the character of the <strong>Happy Prince</strong> with that of the <strong>poor mason</strong>. How did both characters demonstrate selflessness, honesty, and empathy, and what lasting values do they teach students today?</li>
+<li><strong>Bravery &amp; Presence of Mind:</strong><br />
+   Narrate how Bobbie, Peter, and Phyllis averted a catastrophic railway disaster in <em>The Train Saviours</em>. What qualities make ordinary children real-life heroes?</li>
+</ol>
+<hr />
+<p><strong>ALL THE BEST</strong></p>
+      </div>
+    </div>
+
+    <!-- TAB 3: OVERVIEW & BLUEPRINT -->
+    <div id="tab-overview" class="tab-content">
+      <div class="card">
+        <h2 style="color: var(--primary); margin-bottom: 12px;">📋 Summative Assessment - 1 Curriculum Blueprint</h2>
+        <p><strong>Subject:</strong> General English</p>
+        <p><strong>Prescribed Syllabus:</strong> English Adventure - 7 (Lessons 5, 6, Poem: Past & Future, Lesson 7 & Full Grammar)</p>
+        <p><strong>Date of Examination:</strong> 30-09-2026</p>
+        <p><strong>Total Marks:</strong> 80 Marks</p>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Key High-Yield Topics:</h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
+          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">L5: Mason Adventure</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">L6: Secret Agent</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Poem: Past & Future</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">L7: An Unusual Trip</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Grammar & Voice</span>
+        </div>
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
+        <h3 style="color: #38bdf8; margin-bottom: 8px;">Official Documents Download:</h3>
+        <ul style="margin-left: 20px; line-height: 2;">
+          <li><a href="SA1_English_Master_Solutions.pdf" target="_blank" style="color: #38bdf8;">Complete Master Answer Key (PDF)</a></li>
+          <li><a href="SA1_English_Question_Paper.pdf" target="_blank" style="color: #38bdf8;">Formal Student Question Paper (PDF)</a></li>
+          <li><a href="SA1_English_Master_Solutions.docx" download style="color: #38bdf8;">Editable Master Solutions (DOCX)</a></li>
+          <li><a href="SA1_English_Question_Paper.docx" download style="color: #38bdf8;">Editable Question Paper (DOCX)</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      if (tabId === 'master') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('tab-master').classList.add('active');
+      } else if (tabId === 'qp') {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('tab-qp').classList.add('active');
+      } else if (tabId === 'overview') {
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+        document.getElementById('tab-overview').classList.add('active');
+      }
+    }
+
+    function filterContent() {
+      const query = document.getElementById('masterSearch').value.toLowerCase();
+      const content = document.getElementById('masterContent');
+      const paragraphs = content.querySelectorAll('p, li, tr, blockquote');
+      
+      paragraphs.forEach(el => {
+        if (!query || el.innerText.toLowerCase().includes(query)) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+
+    // Text to speech utility
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.95;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+  </script>
+</body>
+</html>
