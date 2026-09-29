@@ -343,6 +343,8 @@
 
 
 
+
+
 /* --- Next-Gen Enhancements Inlined --- */
 /* ==========================================================================
    Maths SA-1 Next-Gen Interactive Enhancements Stylesheet
@@ -1580,6 +1582,11 @@ input[type="range"]::-moz-range-thumb {
           Explore all branches: Classifications, Medians & Altitudes, Angle Sum Property, Exterior Angle Theorem, and Structural Rigidity. Click on any node to hear its audio explanation!
         </p>
         <div class="mindmap-viewport">
+          <div class="mindmap-toolbar">
+            <button class="btn btn-sm mm-expand-btn" data-target="ch7" style="padding:6px 14px; font-size:0.82rem; background:#eff6ff; color:#1d4ed8; border:1.5px solid #bfdbfe; border-radius:8px; cursor:pointer; font-weight:700;">➕ Expand All</button>
+            <button class="btn btn-sm mm-collapse-btn" data-target="ch7" style="padding:6px 14px; font-size:0.82rem; background:#f8fafc; color:#475569; border:1.5px solid #cbd5e1; border-radius:8px; cursor:pointer; font-weight:700;">➖ Collapse All</button>
+            <span style="font-size:0.82rem; color:#64748b; margin-left:auto; display:flex; align-items:center; gap:6px;">💡 Tap [+] / [−] to collapse • Tap [📖 Study Section ↗] to jump</span>
+          </div>
           <div id="mindmap-ch7-container" class="mindmap-tree-container"></div>
         </div>
       </article>
@@ -1596,6 +1603,11 @@ input[type="range"]::-moz-range-thumb {
           Explore all branches: Fraction Fundamentals, Proper vs Improper, Operations with LCM, Area Models, and Reciprocal Scoops.
         </p>
         <div class="mindmap-viewport">
+          <div class="mindmap-toolbar">
+            <button class="btn btn-sm mm-expand-btn" data-target="ch8" style="padding:6px 14px; font-size:0.82rem; background:#eff6ff; color:#1d4ed8; border:1.5px solid #bfdbfe; border-radius:8px; cursor:pointer; font-weight:700;">➕ Expand All</button>
+            <button class="btn btn-sm mm-collapse-btn" data-target="ch8" style="padding:6px 14px; font-size:0.82rem; background:#f8fafc; color:#475569; border:1.5px solid #cbd5e1; border-radius:8px; cursor:pointer; font-weight:700;">➖ Collapse All</button>
+            <span style="font-size:0.82rem; color:#64748b; margin-left:auto; display:flex; align-items:center; gap:6px;">💡 Tap [+] / [−] to collapse • Tap [📖 Study Section ↗] to jump</span>
+          </div>
           <div id="mindmap-ch8-container" class="mindmap-tree-container"></div>
         </div>
       </article>
@@ -2885,6 +2897,8 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
   
   
   
+  
+  
   <!-- Inlined Canvas Confetti Library (100% Offline) -->
   <script>
 /**
@@ -4035,49 +4049,117 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
   };
 
   /* =========================================================================
-     2. Interactive Concept Mind Maps (SVG-based with zoom & pan)
+     2. Interactive Concept Mind Maps (Hierarchical Auto-Wrapping & Collapsible)
      ========================================================================= */
   const MindMapEngine = {
     dataCh7: {
       id: 'root-ch7',
       label: '📐 Triangles Universe',
       color: '#0284c7',
+      targetId: 'grant-sanderson-3blue1brown-pedagogical-blueprint-for-triangles',
+      targetTab: 'ch7',
       children: [
         {
           id: 'anatomy',
           label: '1. Anatomy & Classification',
           color: '#0f766e',
+          targetId: '1-pages-118122-anatomy-of-a-triangle-classifications-mental-maths',
+          targetTab: 'ch7',
+          collapsed: false,
           children: [
-            { id: 'sides', label: 'By Sides: Equilateral (all equal), Isosceles (2 equal), Scalene (all distinct)', color: '#14b8a6' },
-            { id: 'angles', label: 'By Angles: Acute (<90°), Right (90°), Obtuse (>90°)', color: '#14b8a6' },
-            { id: 'elements', label: '3 Vertices, 3 Sides, 3 Angles, Perimeter = a+b+c', color: '#14b8a6' }
+            {
+              id: 'sides',
+              label: 'By Sides: Equilateral (all equal), Isosceles (2 equal), Scalene (all distinct)',
+              color: '#14b8a6',
+              targetId: 'triangle-classification-hierarchy',
+              targetTab: 'ch7'
+            },
+            {
+              id: 'angles',
+              label: 'By Angles: Acute (<90°), Right (90°), Obtuse (>90°)',
+              color: '#14b8a6',
+              targetId: 'triangle-classification-hierarchy',
+              targetTab: 'ch7'
+            },
+            {
+              id: 'elements',
+              label: '3 Vertices, 3 Sides, 3 Angles, Perimeter = a + b + c',
+              color: '#14b8a6',
+              targetId: '1-pages-118122-anatomy-of-a-triangle-classifications-mental-maths',
+              targetTab: 'ch7'
+            }
           ]
         },
         {
           id: 'lines',
           label: '2. Special Lines & Centers',
           color: '#d97706',
+          targetId: '2-pages-123127-medians-altitudes-orthocenter-centroid',
+          targetTab: 'ch7',
+          collapsed: false,
           children: [
-            { id: 'median', label: 'Median: Midpoint connector → Meets at Centroid (G). Physical center of mass (2:1 ratio)', color: '#f59e0b' },
-            { id: 'altitude', label: 'Altitude: Perpendicular drop → Meets at Orthocenter (H). (Inside / On 90° vertex / Outside)', color: '#f59e0b' }
+            {
+              id: 'median',
+              label: 'Median: Midpoint connector → Meets at Centroid (G). Physical center of mass (2:1 ratio)',
+              color: '#f59e0b',
+              targetId: '1-median-centroid',
+              targetTab: 'ch7'
+            },
+            {
+              id: 'altitude',
+              label: 'Altitude: Perpendicular drop → Meets at Orthocenter (H). (Inside / On 90° vertex / Outside)',
+              color: '#f59e0b',
+              targetId: '2-pages-123127-medians-altitudes-orthocenter-centroid',
+              targetTab: 'ch7'
+            }
           ]
         },
         {
           id: 'theorems',
           label: '3. Golden Theorems',
           color: '#2563eb',
+          targetId: '3-pages-128130-the-angle-sum-property-exercise-71',
+          targetTab: 'ch7',
+          collapsed: false,
           children: [
-            { id: 'sum', label: 'Angle Sum Property: ∠A + ∠B + ∠C = 180° (Parallel Ceiling Proof)', color: '#3b82f6' },
-            { id: 'ext', label: 'Exterior Angle: ∠Ext = Sum of two remote interior angles (∠ACD = ∠A + ∠B)', color: '#3b82f6' },
-            { id: 'ineq', label: 'Triangle Inequality: Sum of any two sides > 3rd side (a + b > c). Drawbridge rule!', color: '#3b82f6' }
+            {
+              id: 'sum',
+              label: 'Angle Sum Property: ∠A + ∠B + ∠C = 180° (Parallel Ceiling Proof)',
+              color: '#3b82f6',
+              targetId: '3-pages-128130-the-angle-sum-property-exercise-71',
+              targetTab: 'ch7'
+            },
+            {
+              id: 'ext',
+              label: 'Exterior Angle: ∠Ext = Sum of two remote interior angles (∠ACD = ∠A + ∠B)',
+              color: '#3b82f6',
+              targetId: '4-pages-130133-the-exterior-angle-theorem-applications',
+              targetTab: 'ch7'
+            },
+            {
+              id: 'ineq',
+              label: 'Triangle Inequality: Sum of any two sides > 3rd side (a + b > c). Drawbridge rule!',
+              color: '#3b82f6',
+              targetId: '5-pages-133134-triangle-inequality-theorem-structural-rigidity',
+              targetTab: 'ch7'
+            }
           ]
         },
         {
           id: 'rigidity',
           label: '4. Real-World Applications',
           color: '#7c3aed',
+          targetId: '5-pages-133134-triangle-inequality-theorem-structural-rigidity',
+          targetTab: 'ch7',
+          collapsed: false,
           children: [
-            { id: 'bridges', label: 'Structural Rigidity: Truss bridges, bicycle frames, roof rafters do not deform', color: '#8b5cf6' }
+            {
+              id: 'bridges',
+              label: 'Structural Rigidity: Truss bridges, bicycle frames, roof rafters do not deform',
+              color: '#8b5cf6',
+              targetId: '5-pages-133134-triangle-inequality-theorem-structural-rigidity',
+              targetTab: 'ch7'
+            }
           ]
         }
       ]
@@ -4087,51 +4169,194 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
       id: 'root-ch8',
       label: '🍰 Fractions Mastery',
       color: '#d97706',
+      targetId: 'grant-sanderson-3blue1brown-pedagogical-blueprint-for-fractions',
+      targetTab: 'ch8',
       children: [
         {
           id: 'concepts',
           label: '1. What is a Fraction?',
           color: '#0f766e',
+          targetId: '1-pages-139141-types-of-fractions-equivalent-fractions-mental-maths',
+          targetTab: 'ch8',
+          collapsed: false,
           children: [
-            { id: 'part-whole', label: 'Part of a Whole: Numerator = parts chosen, Denominator = total equal parts', color: '#14b8a6' },
-            { id: 'division', label: 'Division meaning: a/b is identical to a ÷ b', color: '#14b8a6' }
+            {
+              id: 'part-whole',
+              label: 'Part of a Whole: Numerator = parts chosen, Denominator = total equal parts',
+              color: '#14b8a6',
+              targetId: 'taxonomy-of-fractions',
+              targetTab: 'ch8'
+            },
+            {
+              id: 'division',
+              label: 'Division meaning: a/b is identical to a ÷ b',
+              color: '#14b8a6',
+              targetId: 'taxonomy-of-fractions',
+              targetTab: 'ch8'
+            }
           ]
         },
         {
           id: 'types',
           label: '2. Types of Fractions',
           color: '#2563eb',
+          targetId: '1-pages-139141-types-of-fractions-equivalent-fractions-mental-maths',
+          targetTab: 'ch8',
+          collapsed: false,
           children: [
-            { id: 'proper', label: 'Proper: Numerator < Denominator (Value < 1, e.g. 3/4)', color: '#3b82f6' },
-            { id: 'improper', label: 'Improper: Numerator ≥ Denominator (Value ≥ 1, e.g. 7/4)', color: '#3b82f6' },
-            { id: 'mixed', label: 'Mixed: Whole Number + Proper Fraction (e.g. 1 3/4)', color: '#3b82f6' },
-            { id: 'equiv', label: 'Equivalent: Multiply or divide top & bottom by the same non-zero number', color: '#3b82f6' }
+            {
+              id: 'proper',
+              label: 'Proper: Numerator < Denominator (Value < 1, e.g. 3/4)',
+              color: '#3b82f6',
+              targetId: 'taxonomy-of-fractions',
+              targetTab: 'ch8'
+            },
+            {
+              id: 'improper',
+              label: 'Improper: Numerator ≥ Denominator (Value ≥ 1, e.g. 7/4)',
+              color: '#3b82f6',
+              targetId: 'taxonomy-of-fractions',
+              targetTab: 'ch8'
+            },
+            {
+              id: 'mixed',
+              label: 'Mixed: Whole Number + Proper Fraction (e.g. 1 3/4)',
+              color: '#3b82f6',
+              targetId: 'taxonomy-of-fractions',
+              targetTab: 'ch8'
+            },
+            {
+              id: 'equiv',
+              label: 'Equivalent: Multiply or divide top & bottom by the same non-zero number',
+              color: '#3b82f6',
+              targetId: 'question-2-fill-in-the-missing-numbers-for-equivalence',
+              targetTab: 'ch8'
+            }
           ]
         },
         {
           id: 'ops',
           label: '3. Operations & Models',
           color: '#e11d48',
+          targetId: '3-pages-144146-simplification-hcf-method-multiplication-of-fractions-exercise-83',
+          targetTab: 'ch8',
+          collapsed: false,
           children: [
-            { id: 'add-sub', label: 'Add/Subtract: Find LCM of denominators, convert to like fractions', color: '#f43f5e' },
-            { id: 'mult', label: 'Multiplication: Area Model! (a/b) × (c/d) = (a×c)/(b×d). "Of" means multiply', color: '#f43f5e' },
-            { id: 'div', label: 'Division: Scoop Model! Flip & multiply by reciprocal. a/b ÷ c/d = (a/b) × (d/c)', color: '#f43f5e' }
+            {
+              id: 'add-sub',
+              label: 'Add/Subtract: Find LCM of denominators, convert to like fractions',
+              color: '#f43f5e',
+              targetId: '2-pages-142144-comparing-adding-subtracting-unlike-fractions',
+              targetTab: 'ch8'
+            },
+            {
+              id: 'mult',
+              label: 'Multiplication: Area Model! (a/b) × (c/d) = (a×c)/(b×d). "Of" means multiply',
+              color: '#f43f5e',
+              targetId: '3-pages-144146-simplification-hcf-method-multiplication-of-fractions-exercise-83',
+              targetTab: 'ch8'
+            },
+            {
+              id: 'div',
+              label: 'Division: Scoop Model! Flip & multiply by reciprocal. a/b ÷ c/d = (a/b) × (d/c)',
+              color: '#f43f5e',
+              targetId: '4-pages-146148-division-of-fractions-reciprocals-word-problems',
+              targetTab: 'ch8'
+            }
           ]
         },
         {
           id: 'word-prob',
           label: '4. Word Problem Strategy',
           color: '#7c3aed',
+          targetId: '4-pages-146148-division-of-fractions-reciprocals-word-problems',
+          targetTab: 'ch8',
+          collapsed: false,
           children: [
-            { id: 'recipes', label: 'Scaling recipes, cutting ropes, sharing pizzas, finding remainder parts (1 - x)', color: '#8b5cf6' }
+            {
+              id: 'recipes',
+              label: 'Scaling recipes, cutting ropes, sharing pizzas, finding remainder parts (1 - x)',
+              color: '#8b5cf6',
+              targetId: 'section-e-case-study-competency-based-question-4-marks_1',
+              targetTab: 'ch8'
+            }
           ]
         }
       ]
     },
 
+    wrapText: function (text, maxChars) {
+      if (!text) return [];
+      const words = text.split(/\s+/);
+      const lines = [];
+      let current = '';
+      for (const w of words) {
+        if (!current) {
+          current = w;
+        } else if ((current + ' ' + w).length <= maxChars) {
+          current += ' ' + w;
+        } else {
+          lines.push(current);
+          current = w;
+        }
+      }
+      if (current) lines.push(current);
+      return lines;
+    },
+
+    jumpToSection: function (targetId, targetTab) {
+      if (!targetId) return;
+      if (targetTab) {
+        const tabBtn = document.querySelector(`.tab[data-tab="${targetTab}"]`);
+        if (tabBtn) tabBtn.click();
+      }
+      setTimeout(() => {
+        const target = document.getElementById(targetId) || document.querySelector(`[name="${targetId}"]`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.classList.add('audio-highlight');
+          setTimeout(() => target.classList.remove('audio-highlight'), 2600);
+        }
+      }, 140);
+    },
+
+    toggleBranch: function (containerId, branch) {
+      branch.collapsed = !branch.collapsed;
+      const data = containerId.includes('ch7') ? this.dataCh7 : this.dataCh8;
+      this.renderMap(containerId, data);
+    },
+
+    expandAll: function (containerId) {
+      const data = containerId.includes('ch7') ? this.dataCh7 : this.dataCh8;
+      data.children.forEach((b) => { b.collapsed = false; });
+      this.renderMap(containerId, data);
+    },
+
+    collapseAll: function (containerId) {
+      const data = containerId.includes('ch7') ? this.dataCh7 : this.dataCh8;
+      data.children.forEach((b) => { b.collapsed = true; });
+      this.renderMap(containerId, data);
+    },
+
     init: function () {
       this.renderMap('mindmap-ch7-container', this.dataCh7);
       this.renderMap('mindmap-ch8-container', this.dataCh8);
+      this.bindToolbar();
+    },
+
+    bindToolbar: function () {
+      document.querySelectorAll('.mm-expand-btn').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const target = btn.getAttribute('data-target');
+          this.expandAll(`mindmap-${target}-container`);
+        });
+      });
+      document.querySelectorAll('.mm-collapse-btn').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const target = btn.getAttribute('data-target');
+          this.collapseAll(`mindmap-${target}-container`);
+        });
+      });
     },
 
     renderMap: function (containerId, data) {
@@ -4139,51 +4364,120 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
       if (!container) return;
 
       container.innerHTML = '';
+
+      // Dimensions & Grid Configuration
+      const rootWidth = 210;
+      const branchWidth = 250;
+      const leafWidth = 330;
+
+      const rootX = 40;
+      const branchX = 320;
+      const leafX = 630;
+
+      const leafGap = 16;
+      const branchSeparation = 28;
+
+      let currentY = 40;
+
+      // 1. Calculate Layouts Bottom-Up
+      const branchLayouts = data.children.map((branch) => {
+        const branchLines = this.wrapText(branch.label, 24);
+        const branchHeight = 36 + branchLines.length * 18.5; // accommodates text + link button
+
+        const isCollapsed = !!branch.collapsed;
+        let children = [];
+
+        if (!isCollapsed && branch.children && branch.children.length > 0) {
+          children = branch.children.map((sub) => {
+            const subLines = this.wrapText(sub.label, 32);
+            const subHeight = 34 + subLines.length * 17; // text + jump link
+            const subY = currentY + subHeight / 2;
+            currentY += subHeight + leafGap;
+            return {
+              data: sub,
+              lines: subLines,
+              width: leafWidth,
+              height: subHeight,
+              x: leafX,
+              y: subY
+            };
+          });
+          currentY += branchSeparation - leafGap;
+        } else {
+          // If collapsed, branch itself consumes vertical space
+          currentY += branchHeight + branchSeparation;
+        }
+
+        const branchY = children.length > 0
+          ? (children[0].y + children[children.length - 1].y) / 2
+          : currentY - branchSeparation - branchHeight / 2;
+
+        return {
+          data: branch,
+          lines: branchLines,
+          width: branchWidth,
+          height: branchHeight,
+          x: branchX,
+          y: branchY,
+          isCollapsed: isCollapsed,
+          children: children
+        };
+      });
+
+      // Calculate Root Position
+      const rootLines = this.wrapText(data.label, 20);
+      const rootHeight = 36 + rootLines.length * 20;
+      const rootY = branchLayouts.length > 0
+        ? (branchLayouts[0].y + branchLayouts[branchLayouts.length - 1].y) / 2
+        : currentY / 2;
+
+      const totalHeight = Math.max(560, currentY + 30);
+      const totalWidth = leafX + leafWidth + 50;
+
+      // 2. Build SVG Element
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       svg.setAttribute('width', '100%');
-      svg.setAttribute('height', '520');
-      svg.setAttribute('viewBox', '0 0 960 480');
-      svg.style.cursor = 'grab';
+      svg.setAttribute('height', totalHeight);
+      svg.setAttribute('viewBox', `0 0 ${totalWidth} ${totalHeight}`);
+      svg.style.minWidth = '800px';
 
-      // Defs for gradients & filters
       const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
       defs.innerHTML = `
-        <filter id="shadow-${containerId}" x="-10%" y="-10%" width="120%" height="130%">
-          <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.15" />
+        <filter id="shadow-${containerId}" x="-6%" y="-6%" width="115%" height="120%">
+          <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-opacity="0.10" />
         </filter>
       `;
       svg.appendChild(defs);
 
-      const mainGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      svg.appendChild(mainGroup);
+      const curvesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      const nodesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      svg.appendChild(curvesGroup);
+      svg.appendChild(nodesGroup);
 
-      // Simple tree layout generator
-      const rootX = 60;
-      const rootY = 240;
+      // 3. Draw Curves (beneath nodes)
+      branchLayouts.forEach((b) => {
+        // From Root right edge to Branch left edge
+        this.drawCurve(curvesGroup, rootX + rootWidth, rootY, b.x, b.y, b.data.color);
 
-      // Draw Root Node
-      this.drawNode(mainGroup, rootX, rootY, data.label, data.color, true, containerId);
+        // From Branch right edge to each Child left edge (if expanded)
+        if (!b.isCollapsed) {
+          b.children.forEach((c) => {
+            this.drawCurve(curvesGroup, b.x + b.width, b.y, c.x, c.y, b.data.color);
+          });
+        }
+      });
 
-      const totalBranches = data.children.length;
-      const branchGap = 380 / (totalBranches - 1 || 1);
+      // 4. Draw Root Node
+      this.drawNode(nodesGroup, rootX, rootY, rootWidth, rootHeight, rootLines, data.color, true, containerId, false, data.label, false, 0, data.targetId, data.targetTab);
 
-      data.children.forEach((branch, bIdx) => {
-        const bX = 280;
-        const bY = 50 + bIdx * branchGap;
+      // 5. Draw Branch Nodes & Leaf Nodes
+      branchLayouts.forEach((b) => {
+        const childCount = (b.data.children || []).length;
+        this.drawNode(nodesGroup, b.x, b.y, b.width, b.height, b.lines, b.data.color, false, containerId, false, b.data.label, b.isCollapsed, childCount, b.data.targetId, b.data.targetTab, b.data);
 
-        // Path from Root to Branch
-        this.drawCurve(mainGroup, rootX + 90, rootY, bX, bY, data.color);
-        this.drawNode(mainGroup, bX, bY, branch.label, branch.color, false, containerId);
-
-        // Sub branches
-        if (branch.children) {
-          const subCount = branch.children.length;
-          const subGap = Math.min(48, 120 / (subCount || 1));
-          branch.children.forEach((sub, sIdx) => {
-            const sX = 580;
-            const sY = bY - ((subCount - 1) * subGap) / 2 + sIdx * subGap;
-            this.drawCurve(mainGroup, bX + 130, bY, sX, sY, branch.color);
-            this.drawNode(mainGroup, sX, sY, sub.label, sub.color, false, containerId, true);
+        if (!b.isCollapsed) {
+          b.children.forEach((c) => {
+            this.drawNode(nodesGroup, c.x, c.y, c.width, c.height, c.lines, c.data.color, false, containerId, true, c.data.label, false, 0, c.data.targetId, c.data.targetTab);
           });
         }
       });
@@ -4191,51 +4485,147 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
       container.appendChild(svg);
     },
 
-    drawNode: function (group, x, y, text, color, isRoot, containerId, isLeaf) {
+    drawNode: function (group, x, y, width, height, lines, color, isRoot, containerId, isLeaf, fullText, isCollapsed, childCount, targetId, targetTab, branchData) {
       const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       g.setAttribute('class', 'mindmap-node');
-      g.style.transition = 'transform 0.2s';
+      g.style.transition = 'transform 0.18s cubic-bezier(0.16, 1, 0.3, 1)';
+      g.style.cursor = 'pointer';
 
-      const paddingX = 14;
-      const paddingY = 8;
-      const fontSize = isRoot ? 15 : isLeaf ? 11.5 : 13;
-      const charWidth = fontSize * 0.58;
-      const textWidth = Math.min(320, Math.max(80, text.length * charWidth));
-      const boxHeight = fontSize + paddingY * 2;
-
+      // Card Background Rect
       const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      rect.setAttribute('class', 'node-card');
       rect.setAttribute('x', x);
-      rect.setAttribute('y', y - boxHeight / 2);
-      rect.setAttribute('width', textWidth);
-      rect.setAttribute('height', boxHeight);
-      rect.setAttribute('rx', isRoot ? 12 : 8);
+      rect.setAttribute('y', y - height / 2);
+      rect.setAttribute('width', width);
+      rect.setAttribute('height', height);
+      rect.setAttribute('rx', isRoot ? 14 : 10);
       rect.setAttribute('fill', isRoot ? color : '#ffffff');
       rect.setAttribute('stroke', color);
-      rect.setAttribute('stroke-width', isRoot ? '3' : '2');
+      rect.setAttribute('stroke-width', isRoot ? '3' : isLeaf ? '1.5' : '2.2');
       rect.setAttribute('filter', `url(#shadow-${containerId})`);
       g.appendChild(rect);
 
-      const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      label.setAttribute('x', x + textWidth / 2);
-      label.setAttribute('y', y + fontSize * 0.35);
-      label.setAttribute('text-anchor', 'middle');
-      label.setAttribute('fill', isRoot ? '#ffffff' : '#0f172a');
-      label.setAttribute('font-size', fontSize);
-      label.setAttribute('font-weight', isRoot || !isLeaf ? '700' : '500');
-      label.textContent = text.length > 42 ? text.substring(0, 40) + '…' : text;
-      g.appendChild(label);
+      // Left Accent Color Bar for Leaf Nodes
+      if (isLeaf) {
+        const bar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        bar.setAttribute('x', x);
+        bar.setAttribute('y', y - height / 2);
+        bar.setAttribute('width', 5);
+        bar.setAttribute('height', height);
+        bar.setAttribute('rx', 3);
+        bar.setAttribute('fill', color);
+        g.appendChild(bar);
+      }
 
-      // Native tooltip for full text display on hover
+      // Multi-Line Text Rendering with <tspan>
+      const fontSize = isRoot ? 15 : isLeaf ? 12 : 13.5;
+      const lineHeight = isRoot ? 20 : isLeaf ? 17 : 18.5;
+      const paddingX = isLeaf ? 16 : 14;
+
+      const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      textEl.setAttribute('fill', isRoot ? '#ffffff' : '#0f172a');
+      textEl.setAttribute('font-size', fontSize);
+      textEl.setAttribute('font-weight', isRoot ? '800' : isLeaf ? '550' : '700');
+      textEl.setAttribute('font-family', 'system-ui, -apple-system, Segoe UI, Roboto, sans-serif');
+
+      // Vertical text centering above link
+      const textBlockHeight = lines.length * lineHeight;
+      const startY = y - height / 2 + 16 + fontSize * 0.75;
+
+      lines.forEach((line, idx) => {
+        const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+        if (isRoot) {
+          tspan.setAttribute('x', x + width / 2);
+          tspan.setAttribute('text-anchor', 'middle');
+        } else {
+          tspan.setAttribute('x', x + paddingX);
+          tspan.setAttribute('text-anchor', 'start');
+        }
+        tspan.setAttribute('y', startY + idx * lineHeight);
+        tspan.textContent = line;
+        textEl.appendChild(tspan);
+      });
+      g.appendChild(textEl);
+
+      // Link to Section: Clickable "Study Section ↗" Badge
+      if (targetId) {
+        const linkG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        linkG.style.cursor = 'pointer';
+
+        const linkY = y + height / 2 - 12;
+        const linkX = isRoot ? x + width / 2 : x + paddingX;
+
+        const linkText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        linkText.setAttribute('x', linkX);
+        linkText.setAttribute('y', linkY);
+        linkText.setAttribute('fill', isRoot ? '#e0f2fe' : '#2563eb');
+        linkText.setAttribute('font-size', '10.5');
+        linkText.setAttribute('font-weight', '700');
+        if (isRoot) linkText.setAttribute('text-anchor', 'middle');
+        linkText.textContent = isRoot ? '📖 Jump to Chapter Overview ↗' : '📖 Study Section in Solutions ↗';
+
+        linkG.addEventListener('click', (e) => {
+          e.stopPropagation();
+          MindMapEngine.jumpToSection(targetId, targetTab);
+        });
+
+        linkG.appendChild(linkText);
+        g.appendChild(linkG);
+      }
+
+      // Collapse / Expand Toggle Button for Branch Nodes
+      if (!isRoot && !isLeaf && childCount > 0 && branchData) {
+        const toggleG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        toggleG.style.cursor = 'pointer';
+
+        const toggleCx = x + width;
+        const toggleCy = y;
+        const toggleR = 12;
+
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', toggleCx);
+        circle.setAttribute('cy', toggleCy);
+        circle.setAttribute('r', toggleR);
+        circle.setAttribute('fill', isCollapsed ? '#2563eb' : '#ffffff');
+        circle.setAttribute('stroke', '#2563eb');
+        circle.setAttribute('stroke-width', '2');
+        circle.setAttribute('filter', 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))');
+        toggleG.appendChild(circle);
+
+        const sym = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        sym.setAttribute('x', toggleCx);
+        sym.setAttribute('y', toggleCy + 3.5);
+        sym.setAttribute('text-anchor', 'middle');
+        sym.setAttribute('fill', isCollapsed ? '#ffffff' : '#2563eb');
+        sym.setAttribute('font-size', isCollapsed ? '10' : '13');
+        sym.setAttribute('font-weight', '800');
+        sym.textContent = isCollapsed ? `+${childCount}` : '−';
+        toggleG.appendChild(sym);
+
+        const tip = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+        tip.textContent = isCollapsed ? `Click to expand ${childCount} topics` : 'Click to collapse branch';
+        toggleG.appendChild(tip);
+
+        toggleG.addEventListener('click', (e) => {
+          e.stopPropagation();
+          MindMapEngine.toggleBranch(containerId, branchData);
+        });
+
+        g.appendChild(toggleG);
+      }
+
+      // Complete Tooltip
       const titleEl = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-      titleEl.textContent = text;
+      titleEl.textContent = `${fullText}\n(Click card to hear audio narration | Click link to jump to lesson)`;
       g.appendChild(titleEl);
 
-      // Tactile scale feedback & audio speech on tap/click
-      g.style.cursor = 'pointer';
+      // Card Click Handler -> Audio Speech
       g.addEventListener('click', () => {
-        g.style.transform = 'scale(1.05)';
+        g.style.transform = 'scale(1.03)';
         setTimeout(() => { g.style.transform = 'scale(1)'; }, 180);
-        AudioEngine.speakText(text);
+        if (window.AudioEngine && window.AudioEngine.speakText) {
+          window.AudioEngine.speakText(fullText);
+        }
       });
 
       group.appendChild(g);
@@ -4243,14 +4633,14 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
 
     drawCurve: function (group, x1, y1, x2, y2, color) {
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      const dx = (x2 - x1) * 0.5;
+      const dx = Math.max(30, (x2 - x1) * 0.48);
       const d = `M ${x1} ${y1} C ${x1 + dx} ${y1}, ${x2 - dx} ${y2}, ${x2} ${y2}`;
       path.setAttribute('d', d);
       path.setAttribute('fill', 'none');
       path.setAttribute('stroke', color);
       path.setAttribute('stroke-width', '2.5');
       path.setAttribute('stroke-linecap', 'round');
-      path.setAttribute('opacity', '0.7');
+      path.setAttribute('opacity', '0.75');
       group.appendChild(path);
     }
   };
