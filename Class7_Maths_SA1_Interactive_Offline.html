@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Class 7 Maths SA1 - Chapters 7 and 8</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📐</text></svg>">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.9/dist/katex.min.css" integrity="sha384-lPx0C4zIUZLpveABMwOFcFeGZwsvKBJfhJ85FN1PYOV7xApBcFMhcAEMVKF8loOI" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.9/dist/katex.min.js" integrity="sha384-19KE2cFb3U+RUWmyhBz7aLOGDG8WrRC6hE3oY/HTZZlAAVWYTdmvLC//+TIV3zUx" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.9/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
@@ -336,6 +337,7 @@
       }
     }
   
+
 
 
 
@@ -1165,6 +1167,17 @@ input[type="range"]::-moz-range-thumb {
     margin-bottom: 14px !important;
   }
 
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .wrap {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
   .tabs {
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -1175,6 +1188,16 @@ input[type="range"]::-moz-range-thumb {
     padding: 4px 2px 10px !important;
     scrollbar-width: thin;
     scrollbar-color: #3b82f6 transparent;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .katex-display, .formula-box, table {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
   }
 
   .tabs::-webkit-scrollbar {
@@ -1433,22 +1456,22 @@ input[type="range"]::-moz-range-thumb {
           <h2>3D Fraction Voxel Cake Slicer</h2>
           <p>Slicing a 3D cake along Width ($X$), Height ($Y$), and Depth ($Z$). Pull voxels apart to count individual fractional pieces.</p>
           <div class="control-row">
-            <label>X-Slices:</label>
+            <label for="divX">X-Slices:</label>
             <input id="divX" type="range" aria-label="X axis slice divisions" min="1" max="5" value="2">
             <span id="divXVal" class="readout">2</span>
           </div>
           <div class="control-row">
-            <label>Y-Slices:</label>
+            <label for="divY">Y-Slices:</label>
             <input id="divY" type="range" aria-label="Y axis slice divisions" min="1" max="5" value="3">
             <span id="divYVal" class="readout">3</span>
           </div>
           <div class="control-row">
-            <label>Z-Slices:</label>
+            <label for="divZ">Z-Slices:</label>
             <input id="divZ" type="range" aria-label="Z axis slice divisions" min="1" max="5" value="2">
             <span id="divZVal" class="readout">2</span>
           </div>
           <div class="control-row" style="border-top:1px dashed #cbd5e1; padding-top:8px;">
-            <label>Explode Voxels:</label>
+            <label for="fracExplodeSlider">Explode Voxels:</label>
             <input id="fracExplodeSlider" type="range" aria-label="Explode 3D voxels distance" min="0" max="100" value="0">
             <span class="readout" style="color:#059669;">Expand</span>
           </div>
@@ -2651,9 +2674,9 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
         if (pPlane) pPlane.style.display = 'block';
         if (pFrac) pFrac.style.display = 'block';
       } else {
-        if (pPoly) pPoly.style.display = toolKey === 'poly' ? 'block' : (window.innerWidth > 992 ? 'block' : 'none');
-        if (pPlane) pPlane.style.display = toolKey === 'plane' ? 'block' : (window.innerWidth > 992 ? 'block' : 'none');
-        if (pFrac) pFrac.style.display = toolKey === 'frac' ? 'block' : (window.innerWidth > 992 ? 'block' : 'none');
+        if (pPoly) pPoly.style.display = toolKey === 'poly' ? 'block' : 'none';
+        if (pPlane) pPlane.style.display = toolKey === 'plane' ? 'block' : 'none';
+        if (pFrac) pFrac.style.display = toolKey === 'frac' ? 'block' : 'none';
 
         const target = toolKey === 'poly' ? pPoly : (toolKey === 'plane' ? pPlane : pFrac);
         if (target) {
@@ -2856,6 +2879,7 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
   
   
 
+  
   
   
   
@@ -4201,8 +4225,16 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
       label.textContent = text.length > 42 ? text.substring(0, 40) + '…' : text;
       g.appendChild(label);
 
-      // Hover and click interaction
+      // Native tooltip for full text display on hover
+      const titleEl = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+      titleEl.textContent = text;
+      g.appendChild(titleEl);
+
+      // Tactile scale feedback & audio speech on tap/click
+      g.style.cursor = 'pointer';
       g.addEventListener('click', () => {
+        g.style.transform = 'scale(1.05)';
+        setTimeout(() => { g.style.transform = 'scale(1)'; }, 180);
         AudioEngine.speakText(text);
       });
 
@@ -4845,7 +4877,8 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
 
       if (fab && modal) {
         fab.addEventListener('click', () => {
-          modal.classList.toggle('open');
+          const isOpen = modal.classList.toggle('open');
+          modal.classList.toggle('active', isOpen);
           this.resize();
         });
       }
@@ -4853,6 +4886,7 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
       if (closeBtn && modal) {
         closeBtn.addEventListener('click', () => {
           modal.classList.remove('open');
+          modal.classList.remove('active');
         });
       }
 
@@ -4996,6 +5030,15 @@ On Saturday, the master baker decides to make $4\frac{1}{2}$ batches to supply a
     ScratchpadEngine.init();
     SmartNavigator.init();
   });
+
+  window.AudioEngine = AudioEngine;
+  window.MindMapEngine = MindMapEngine;
+  window.FlashcardEngine = FlashcardEngine;
+  window.QuizEngine = QuizEngine;
+  window.ExamSimulator = ExamSimulator;
+  window.MistakeNotebook = MistakeNotebook;
+  window.ScratchpadEngine = ScratchpadEngine;
+  window.SmartNavigator = SmartNavigator;
 
 })();
 

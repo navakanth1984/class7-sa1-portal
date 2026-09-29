@@ -440,8 +440,16 @@
       label.textContent = text.length > 42 ? text.substring(0, 40) + '…' : text;
       g.appendChild(label);
 
-      // Hover and click interaction
+      // Native tooltip for full text display on hover
+      const titleEl = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+      titleEl.textContent = text;
+      g.appendChild(titleEl);
+
+      // Tactile scale feedback & audio speech on tap/click
+      g.style.cursor = 'pointer';
       g.addEventListener('click', () => {
+        g.style.transform = 'scale(1.05)';
+        setTimeout(() => { g.style.transform = 'scale(1)'; }, 180);
         AudioEngine.speakText(text);
       });
 
@@ -1084,7 +1092,8 @@
 
       if (fab && modal) {
         fab.addEventListener('click', () => {
-          modal.classList.toggle('open');
+          const isOpen = modal.classList.toggle('open');
+          modal.classList.toggle('active', isOpen);
           this.resize();
         });
       }
@@ -1092,6 +1101,7 @@
       if (closeBtn && modal) {
         closeBtn.addEventListener('click', () => {
           modal.classList.remove('open');
+          modal.classList.remove('active');
         });
       }
 
@@ -1235,5 +1245,14 @@
     ScratchpadEngine.init();
     SmartNavigator.init();
   });
+
+  window.AudioEngine = AudioEngine;
+  window.MindMapEngine = MindMapEngine;
+  window.FlashcardEngine = FlashcardEngine;
+  window.QuizEngine = QuizEngine;
+  window.ExamSimulator = ExamSimulator;
+  window.MistakeNotebook = MistakeNotebook;
+  window.ScratchpadEngine = ScratchpadEngine;
+  window.SmartNavigator = SmartNavigator;
 
 })();

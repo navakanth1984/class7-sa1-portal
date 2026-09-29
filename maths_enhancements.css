@@ -821,6 +821,17 @@ input[type="range"]::-moz-range-thumb {
     margin-bottom: 14px !important;
   }
 
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .wrap {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
   .tabs {
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -831,6 +842,16 @@ input[type="range"]::-moz-range-thumb {
     padding: 4px 2px 10px !important;
     scrollbar-width: thin;
     scrollbar-color: #3b82f6 transparent;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .katex-display, .formula-box, table {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
   }
 
   .tabs::-webkit-scrollbar {
