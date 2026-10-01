@@ -3,5 +3,4 @@
 test_tetra_math.py
 fix_inventory_links.py
 check_links.py
-
-.vercel
+*.wav

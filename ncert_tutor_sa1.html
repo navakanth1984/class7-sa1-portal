@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIKosh NCERT-Tutor v3 — Class 7 SA-1 Interactive Exam Prep Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #131b2e;
+      --card-bg: rgba(22, 32, 54, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(30, 44, 75, 0.95);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.25);
+      --accent: #818cf8;
+      --success: #34d399;
+      --amber: #fbbf24;
+      --rose: #f43f5e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.12) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px 80px;
+    }
+    .container { max-width: 1160px; margin: 0 auto; }
+    header {
+      background: rgba(19, 27, 46, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .title-group h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 40%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .title-group p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-top: 4px;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #000;
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      border: none;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0369a1, #1d4ed8);
+      color: #fff;
+    }
+    .subject-nav {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+    .sub-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .sub-btn:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+    .sub-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+    .overview-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .overview-card h3 {
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .filter-chip.active {
+      background: var(--primary);
+      color: #000;
+      border-color: var(--primary);
+    }
+    .question-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s ease;
+    }
+    .question-card:hover { border-color: rgba(56, 189, 248, 0.3); }
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .q-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(129, 140, 248, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(129, 140, 248, 0.3);
+    }
+    .q-marks {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--amber);
+      background: rgba(251, 191, 36, 0.1);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .q-text {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .action-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .action-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+    .action-btn:hover { background: rgba(255,255,255,0.12); }
+    .hint-box, .worked-box, .scoring-box {
+      display: none;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      line-height: 1.55;
+    }
+    .hint-box {
+      background: rgba(251, 191, 36, 0.08);
+      border-left: 4px solid var(--amber);
+      color: #fef3c7;
+    }
+    .worked-box {
+      background: rgba(56, 189, 248, 0.08);
+      border-left: 4px solid var(--primary);
+      color: #e0f2fe;
+    }
+    .scoring-box {
+      background: rgba(52, 211, 153, 0.08);
+      border-left: 4px solid var(--success);
+      color: #d1fae5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="title-group">
+        <div class="badge-pill">🇮🇳 IndiaAI AIKosh • NCERT-TUTOR-v3</div>
+        <h1>Class 7 SA-1 Socratic Exam Prep Hub</h1>
+        <p>Curriculum-aligned worked reasoning, active recall drills &amp; exam scoring keys</p>
+      </div>
+      <div class="btn-group">
+        <a class="btn" href="index.html">🏠 All Subjects</a>
+        <a class="btn btn-primary" href="SA1_NCERT_Tutor_Comprehensive_Exam_Guide.pdf" target="_blank">📄 Download PDF Guide</a>
+        <a class="btn" href="SA1_NCERT_Tutor_Comprehensive_Exam_Guide.docx" download>📥 Word DOCX</a>
+      </div>
+    </header>
+
+    <div class="subject-nav">
+      <button class="sub-btn active" onclick="setSubject('science', this)">🔬 General Science (Lessons 5 & 6)</button>
+      <button class="sub-btn" onclick="setSubject('social', this)">🏛️ Social Studies (Geog, Hist, Civics, Econ)</button>
+      <button class="sub-btn" onclick="setSubject('computers', this)">💻 Computers (Excel & Adobe Animate)</button>
+      <button class="sub-btn" onclick="setSubject('gk', this)">🌐 General Knowledge (Fresh Finds)</button>
+    </div>
+
+    <div id="overviewCard" class="overview-card">
+      <h3 id="overviewTitle">🔬 General Science — Portion Scope</h3>
+      <p id="overviewDesc" style="color:var(--text-muted); font-size:0.92rem;"></p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-chip active" onclick="filterQuestions('all', this)">All Questions</button>
+      <button class="filter-chip" onclick="filterQuestions('1mark', this)">1-Mark Quick Drills</button>
+      <button class="filter-chip" onclick="filterQuestions('2mark', this)">2 & 3 Mark Conceptual</button>
+      <button class="filter-chip" onclick="filterQuestions('5mark', this)">5-Mark Long Answers</button>
+    </div>
+
+    <div id="questionList">
+      <!-- Dynamic question cards rendered by JS -->
+    </div>
+  </div>
+
+  <script>
+    const KNOWLEDGE_BASE = {
+      science: {
+        title: "🔬 General Science — Lessons 5 & 6",
+        desc: "Lesson 5: Changes Around Us (Physical vs Chemical, Rusting, Crystallisation) & Lesson 6: Adolescence (Puberty, Hormones, Nutrition).",
+        questions: [
+          {
+            type: "1mark",
+            tag: "Lesson 5: Physical & Chemical Changes",
+            marks: "1 Mark",
+            text: "Assertion (A): Rusting of iron ships occurs much faster in seawater than in freshwater rivers.\nReason (R): Seawater contains high concentrations of dissolved salts that accelerate electrochemical oxidation.",
+            hint: "Think about what dissolved salts (electrolytes) do to electrical and chemical conductivity in water.",
+            worked: "Both (A) and (R) are true, and (R) is the correct explanation of (A). The presence of sodium chloride and other salts accelerates the electrochemical oxidation of iron into hydrated ferric oxide.",
+            scoring: "Full mark formula: Confirm both statements are true and explicitly state that dissolved salts act as electrolytes."
+          },
+          {
+            type: "2mark",
+            tag: "Lesson 5: Core Distinction",
+            marks: "2 Marks",
+            text: "Differentiate between a Physical Change and a Chemical Change with two points each.",
+            hint: "Focus on two criteria: formation of a new substance, and reversibility.",
+            worked: "1. Formation of New Substance: In a physical change, no new substance is formed (e.g. melting ice). In a chemical change, one or more new substances with different properties are formed (e.g. burning paper).\n2. Reversibility: Physical changes are usually easily reversible; chemical changes are typically irreversible.",
+            scoring: "1 mark for new substance contrast + 1 mark for reversibility contrast."
+          },
+          {
+            type: "2mark",
+            tag: "Lesson 6: Hormones & Endocrine",
+            marks: "3 Marks",
+            text: "Name the hormones secreted by: (a) Thyroid Gland, (b) Pancreas, (c) Adrenal Glands, and state one function of each.",
+            hint: "Recall goitre, diabetes, and fight-or-flight stress responses.",
+            worked: "(a) Thyroid: Thyroxine — regulates basal metabolic rate; deficiency causes Goitre.\n(b) Pancreas: Insulin — maintains blood glucose balance; deficiency causes Diabetes.\n(c) Adrenal Glands: Adrenaline — fight-or-flight hormone controlling heart rate and emergency stress responses.",
+            scoring: "1 mark per gland-hormone-function triad."
+          },
+          {
+            type: "5mark",
+            tag: "Lesson 5: Long Answer Master",
+            marks: "5 Marks",
+            text: "Explain the process of rusting of iron. Write its chemical formula, name the two essential conditions, and state three industrial prevention methods.",
+            hint: "Rusting requires both gas and liquid phases. Think about painting, galvanisation, and alloying.",
+            worked: "1. Process: Slow oxidation of iron exposed to air and moisture forming hydrated iron(III) oxide.\n2. Equation: 4Fe + 3O₂ + 2xH₂O → 2Fe₂O₃·xH₂O.\n3. Essential Conditions: (i) Oxygen (O₂), (ii) Moisture (H₂O).\n4. Prevention Methods:\n   • Barrier Coating: Painting or greasing to block air contact.\n   • Galvanisation: Coating with molten Zinc.\n   • Alloying: Making Stainless Steel with Cr and Ni.",
+            scoring: "1 mark definition + 1 mark equation + 1 mark conditions + 2 marks prevention methods."
+          }
+        ]
+      },
+      social: {
+        title: "🏛️ Social Studies — SA-1 Portion",
+        desc: "Geography Ch 3 (Climates of India), History Ch 8 (Age of Reorganisation), Civics Ch 13 (Tapestry of Communities), Economics Ch 17 (From Barter to Money).",
+        questions: [
+          {
+            type: "1mark",
+            tag: "Geography Ch 3: Climates of India",
+            marks: "1 Mark",
+            text: "Which parallel of latitude divides India into almost two equal halves, influencing its climatic zones?",
+            hint: "It passes through 8 Indian states at 23°30' N.",
+            worked: "The Tropic of Cancer (23°30' N) divides India into a tropical southern half and a subtropical northern half.",
+            scoring: "Write both the name ('Tropic of Cancer') and the exact latitude value ('23°30\' N')."
+          },
+          {
+            type: "2mark",
+            tag: "Economics Ch 17: Barter System",
+            marks: "2 Marks",
+            text: "Explain the term 'Double Coincidence of Wants' and why it made barter trade difficult.",
+            hint: "Both parties must desire what the other has.",
+            worked: "Double Coincidence of Wants is the condition where two traders simultaneously want what the other person is offering. It made barter trade difficult because finding someone with a mutual exchange desire was extremely rare, slowing down transactions.",
+            scoring: "1 mark for definition + 1 mark for practical friction explanation."
+          },
+          {
+            type: "2mark",
+            tag: "Geography Ch 3: Monsoon Dynamics",
+            marks: "3 Marks",
+            text: "Why does Chennai receive rainfall during winter (October–December), while Mumbai receives rainfall in July?",
+            hint: "Compare the Southwest Monsoon (Arabian Sea) with the Retreating/Northeast Monsoon (Bay of Bengal).",
+            worked: "1. Mumbai lies on the western coast and receives heavy rain in July from the Southwest Monsoon (Arabian Sea branch) as it hits the Western Ghats.\n2. Chennai lies on the eastern Coromandel Coast in the rain-shadow of the Western Ghats during summer. In winter, the Retreating / Northeast Monsoon blows across the Bay of Bengal, picking up moisture and delivering heavy rainfall to Tamil Nadu.",
+            scoring: "1.5 marks for Mumbai/SW Monsoon + 1.5 marks for Chennai/Retreating Monsoon."
+          },
+          {
+            type: "5mark",
+            tag: "Civics & Economics Synthesis",
+            marks: "5 Marks",
+            text: "Why is modern paper currency accepted as a medium of exchange without intrinsic value like gold? How does it protect economic coexistence?",
+            hint: "Think about sovereign authority, Reserve Bank of India, and legal tender laws.",
+            worked: "1. Sovereign Legal Guarantee: Backed by the Central Government and issued by the Reserve Bank of India (RBI) with a promissory guarantee.\n2. Legal Tender Status: By law, no citizen can refuse payment made in Rupees for settling debts.\n3. Universal Standard: Provides a common unit of account, eliminating the double coincidence of wants.\n4. Divisibility & Portability: Lightweight and divided into exact fractional denominations.\n5. Economic Coexistence: Standardized national currency enables equal trade across all diverse communities.",
+            scoring: "1 mark per clear point (total 5)."
+          }
+        ]
+      },
+      computers: {
+        title: "💻 Computers & IT — Chapters 1 to 4",
+        desc: "Excel Formulas & Functions, Charts, Advanced Tools, and Adobe Animate 2020.",
+        questions: [
+          {
+            type: "1mark",
+            tag: "Chapter 1: Excel Formula Rules",
+            marks: "1 Mark",
+            text: "What symbol must every formula and function in Excel begin with? What is the shortcut key to insert a Keyframe in Adobe Animate?",
+            hint: "Equals sign, and function key F6.",
+            worked: "1. In Excel, every formula must begin with an equals sign (=).\n2. In Adobe Animate, pressing F6 inserts a Keyframe on the Timeline.",
+            scoring: "0.5 mark for '=' + 0.5 mark for 'F6'."
+          },
+          {
+            type: "2mark",
+            tag: "Chapter 1: Cell Referencing",
+            marks: "3 Marks",
+            text: "Differentiate between Relative Referencing (A1) and Absolute Referencing ($A$1) in Excel with examples.",
+            hint: "What happens when you copy the formula down to the next row?",
+            worked: "1. Relative Referencing (A1): References change automatically based on the relative position when copied (e.g. =A1+B1 copied down becomes =A2+B2).\n2. Absolute Referencing ($A$1): Cell coordinates are locked with dollar signs ($) and remain constant when copied anywhere (e.g. =$A$1*B2).",
+            scoring: "1.5 marks for Relative explanation + 1.5 marks for Absolute explanation with '$'."
+          },
+          {
+            type: "5mark",
+            tag: "Chapter 2 & 4: Charts and Animate Tools",
+            marks: "5 Marks",
+            text: "Describe the components of an Excel Chart (Plot Area, Legend, Data Series). Explain the difference between Shape Tween and Motion Tween in Adobe Animate.",
+            hint: "Shape tween morphs drawings; motion tween moves symbols across the stage.",
+            worked: "1. Excel Chart Components:\n   • Plot Area: The visual region containing actual data bars/lines.\n   • Legend: The color key identifying distinct data series.\n   • Data Series: The actual numeric values plotted on the axes.\n2. Tweening in Adobe Animate:\n   • Shape Tween: Morphs one raw vector shape into another over time (e.g. circle turning into a star).\n   • Motion/Classic Tween: Smoothly shifts the position, scale, or rotation of an object/symbol across frames.",
+            scoring: "3 marks for Excel components + 2 marks for Tweening comparison."
+          }
+        ]
+      },
+      gk: {
+        title: "🌐 General Knowledge — Unit 1 (Fresh Finds)",
+        desc: "Union Budget 2025, State Governors, Port Blair renaming to Sri Vijaya Puram, Robot Teachers in Schools.",
+        questions: [
+          {
+            type: "1mark",
+            tag: "GK Ch 1 & Ch 3",
+            marks: "1 Mark",
+            text: "What was the historic capital of the Andaman & Nicobar Islands (Port Blair) officially renamed to in September 2024?",
+            hint: "It honors India's freedom fighters and victory.",
+            worked: "Sri Vijaya Puram.",
+            scoring: "Exact correct spelling: 'Sri Vijaya Puram'."
+          },
+          {
+            type: "1mark",
+            tag: "GK Ch 4: AI in Education",
+            marks: "1 Mark",
+            text: "Name India's first generative AI robot teacher introduced in Kerala primary schools.",
+            hint: "Named after a flower / Greek goddess.",
+            worked: "Iris.",
+            scoring: "1 mark for 'Iris'."
+          },
+          {
+            type: "2mark",
+            tag: "GK Ch 1 & 2: Polity & Economy",
+            marks: "2 Marks",
+            text: "(a) Who appoints the Governor of an Indian State? (b) On which date is the Union Budget presented annually?",
+            hint: "President of India; start of February.",
+            worked: "(a) The President of India (under Article 155 of the Constitution).\n(b) February 1st.",
+            scoring: "1 mark for President of India + 1 mark for February 1st."
+          }
+        ]
+      }
+    };
+
+    let currentSubject = 'science';
+    let currentFilter = 'all';
+
+    function setSubject(sub, btn) {
+      currentSubject = sub;
+      document.querySelectorAll('.sub-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      render();
+    }
+
+    function filterQuestions(type, chip) {
+      currentFilter = type;
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      if (chip) chip.classList.add('active');
+      render();
+    }
+
+    function toggleBox(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.rate = 0.95;
+        window.speechSynthesis.speak(utter);
+      } else {
+        alert('Web Speech API is not supported on this browser.');
+      }
+    }
+
+    function render() {
+      const data = KNOWLEDGE_BASE[currentSubject];
+      document.getElementById('overviewTitle').innerText = data.title;
+      document.getElementById('overviewDesc').innerText = data.desc;
+
+      const qList = document.getElementById('questionList');
+      qList.innerHTML = '';
+
+      const filtered = data.questions.filter(q => currentFilter === 'all' || q.type === currentFilter);
+
+      filtered.forEach((q, idx) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+        card.innerHTML = `
+          <div class="q-header">
+            <span class="q-tag">${q.tag}</span>
+            <span class="q-marks">${q.marks}</span>
+          </div>
+          <div class="q-text">${q.text.replace(/\n/g, '<br>')}</div>
+          <div class="action-row">
+            <button class="action-btn" onclick="toggleBox('hint_${idx}')">💡 Socratic Hint</button>
+            <button class="action-btn" onclick="toggleBox('worked_${idx}')">📝 Worked Steps</button>
+            <button class="action-btn" onclick="toggleBox('score_${idx}')">🎯 Scoring Formula</button>
+            <button class="action-btn" onclick="speakText('${q.worked.replace(/'/g, "\\'").replace(/\n/g, " ")}')">🔊 Listen Tutor</button>
+          </div>
+          <div id="hint_${idx}" class="hint-box"><strong>🤔 Think First:</strong> ${q.hint}</div>
+          <div id="worked_${idx}" class="worked-box"><strong>📝 NCERT-Tutor Worked Solution:</strong><br>${q.worked.replace(/\n/g, '<br>')}</div>
+          <div id="score_${idx}" class="scoring-box"><strong>🎯 Exam Scoring Strategy:</strong> ${q.scoring}</div>
+        `;
+        qList.appendChild(card);
+      });
+    }
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>
