@@ -2,86 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class 7 GK SA-1 Master Portal | 2026-27</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Class 7 General Knowledge (GK) SA-1 Master Portal</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nirmala+UI&family=Gautami&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
   <style>
     :root {
-      --primary: #0ea5e9;
-      --primary-dark: #1e3a8a;
-      --bg: #0f172a;
-      --surface: #1e293b;
-      --surface-light: #334155;
-      --card-bg: rgba(30, 41, 59, 0.75);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #f59e0b;
-      --success: #10b981;
-      --font-main: 'Outfit', 'Nirmala UI', sans-serif;
+      --primary: #0284c7;
+      --primary-light: #38bdf8;
+      --primary-dark: #0369a1;
+      --accent: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --bg: #090e1a;
+      --panel: #111a2e;
+      --panel-soft: #1a2640;
+      --panel-hover: #223254;
+      --line: #2b3b5c;
+      --ink: #f8fafc;
+      --muted: #94a3b8;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background: var(--bg);
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
-      background-attachment: fixed;
-      color: var(--text);
-      font-family: var(--font-main);
+      color: var(--ink);
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
-      padding-bottom: 70px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+      padding-bottom: 90px;
+      overflow-x: hidden;
     }
 
     /* Header */
     header {
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--card-border);
       position: sticky;
       top: 0;
       z-index: 100;
-      padding: 18px 0;
+      background: rgba(9, 14, 26, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
     }
-    .header-inner {
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+    .topbar {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
       flex-wrap: wrap;
-      gap: 12px;
     }
-    .logo-area {
+    .brand {
       display: flex;
       align-items: center;
       gap: 12px;
     }
-    .subject-icon {
-      font-size: 2rem;
-      background: rgba(255, 255, 255, 0.08);
+    .brand-icon {
+      font-size: 1.8rem;
+      background: rgba(2, 132, 199, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.4);
       padding: 6px 12px;
       border-radius: 12px;
-      border: 1px solid var(--card-border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
-    .title-group h1 {
-      font-size: 1.35rem;
+    .brand h1 {
+      font-size: 1.25rem;
       font-weight: 700;
       color: #fff;
     }
-    .title-group p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    .brand p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
-
-    .btn-group {
+    .actions {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
@@ -90,285 +95,1002 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--surface);
-      color: #fff;
-      padding: 8px 14px;
+      min-height: 36px;
+      padding: 6px 14px;
+      border: 1px solid var(--line);
       border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      background: var(--panel-soft);
+      color: var(--ink);
       text-decoration: none;
-      border: 1px solid var(--card-border);
+      font-size: 0.84rem;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
     }
     .btn:hover {
       background: var(--primary);
-      border-color: var(--primary);
+      border-color: var(--primary-light);
+      color: #fff;
       transform: translateY(-1px);
     }
-    .btn-primary {
+    .btn.primary {
       background: var(--primary);
-      border-color: var(--primary);
-    }
-    .btn-primary:hover {
-      opacity: 0.9;
+      border-color: var(--primary-light);
+      color: #fff;
     }
 
-    /* Nav Tabs */
-    .tabs-nav {
+    /* Audio Guide Bar */
+    .audio-guide-bar {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.25) 0%, rgba(16, 185, 129, 0.15) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 12px;
+      padding: 12px 18px;
+      margin: 16px 0;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .audio-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .audio-info span {
+      font-size: 1.6rem;
+    }
+    .audio-info h3 {
+      margin: 0;
+      font-size: 0.96rem;
+      color: var(--primary-light);
+    }
+    .audio-info p {
+      margin: 2px 0 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .audio-controls {
+      display: flex;
+      align-items: center;
       gap: 10px;
-      margin: 24px 0 16px;
-      border-bottom: 1px solid var(--card-border);
+      flex-grow: 1;
+      max-width: 480px;
+    }
+    .audio-controls audio {
+      width: 100%;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    /* Metrics Navigation */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .metric:hover {
+      border-color: var(--primary-light);
+      background: var(--panel-hover);
+      transform: translateY(-2px);
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--primary-light);
+    }
+    .metric span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* Main Desktop Tabs */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
       padding-bottom: 12px;
     }
-    .tab-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 8px 16px;
+    .tab {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
       border-radius: 8px;
+      padding: 8px 14px;
+      font-weight: 600;
+      font-size: 0.88rem;
       cursor: pointer;
       transition: all 0.2s;
     }
-    .tab-btn.active {
-      background: rgba(255, 255, 255, 0.1);
+    .tab:hover {
       color: #fff;
-      border: 1px solid var(--card-border);
-    }
-
-    /* Search Bar */
-    .search-box {
-      margin-bottom: 20px;
-      position: relative;
-    }
-    .search-box input {
-      width: 100%;
-      padding: 12px 18px 12px 42px;
-      border-radius: 10px;
-      border: 1px solid var(--card-border);
-      background: var(--surface);
-      color: #fff;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border 0.2s;
-    }
-    .search-box input:focus {
       border-color: var(--primary);
     }
-    .search-box::before {
-      content: "🔍";
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.95rem;
+    .tab.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary-light);
     }
 
-    /* Content Area */
-    .tab-content {
+    .tab-panel {
       display: none;
     }
-    .tab-content.active {
+    .tab-panel.active {
       display: block;
     }
 
-    .card {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--card-border);
+    /* 3D Lab Studio */
+    .lab-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+    .lab-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .lab-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+    .lab-btn:hover {
+      background: var(--panel-hover);
+      border-color: var(--primary);
+    }
+    .lab-btn.active {
+      background: var(--primary);
+      border-color: var(--primary-light);
+      color: #fff;
+    }
+    .lab-viewport {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      background: #040813;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    #three-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .lab-controls-hud {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      background: rgba(17, 26, 46, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.82rem;
+    }
+    .hud-desc {
+      color: var(--muted);
+      max-width: 60%;
+    }
+    .hud-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .hud-btn {
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .hud-btn:hover {
+      background: var(--primary);
+    }
+
+    /* 2D Infographics */
+    .infographics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .info-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .info-card h3 {
+      font-size: 1.05rem;
+      color: var(--primary-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .svg-container {
+      width: 100%;
+      background: #080d1a;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      overflow: hidden;
+    }
+    .svg-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Mind Map */
+    .mindmap-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding: 12px 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .mindmap-wrapper {
+      background: #050914;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      overflow-x: auto;
+      box-shadow: var(--shadow);
+    }
+    .mindmap-node {
+      cursor: pointer;
+      transition: filter 0.2s;
+    }
+    .mindmap-node:hover {
+      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+    }
+
+    /* Content Cards (Solutions & QP) */
+    .content-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: var(--shadow);
     }
-
-    /* Typography inside content */
-    .rendered-content h1 {
+    .content-card h1 {
       font-size: 1.45rem;
-      color: var(--primary);
-      border-bottom: 2px solid var(--card-border);
-      padding-bottom: 6px;
-      margin-top: 24px;
-      margin-bottom: 12px;
-    }
-    .rendered-content h2 {
-      font-size: 1.25rem;
-      color: #38bdf8;
-      margin-top: 18px;
-      margin-bottom: 10px;
-    }
-    .rendered-content h3 {
-      font-size: 1.1rem;
-      color: #7dd3fc;
+      color: var(--primary-light);
       margin-top: 14px;
-      margin-bottom: 8px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 8px;
     }
-    .rendered-content h4 {
-      font-size: 1rem;
-      color: #bae6fd;
-      margin-top: 12px;
-      margin-bottom: 6px;
+    .content-card h2 {
+      font-size: 1.25rem;
+      margin-top: 22px;
+      color: #38bdf8;
     }
-    .rendered-content p {
-      margin-bottom: 10px;
+    .content-card h3 {
+      font-size: 1.05rem;
+      margin-top: 16px;
+      color: #34d399;
+    }
+    .content-card h4 {
+      font-size: 0.98rem;
+      color: #fbbf24;
+      margin-top: 14px;
+    }
+    .content-card blockquote {
+      margin: 14px 0;
+      border-left: 4px solid var(--primary);
+      background: rgba(2, 132, 199, 0.1);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
       color: #e2e8f0;
     }
-    .rendered-content table {
+    .content-card table {
       width: 100%;
       border-collapse: collapse;
       margin: 16px 0;
-      background: rgba(15, 23, 42, 0.6);
-      border-radius: 8px;
-      overflow: hidden;
+      font-size: 0.92rem;
     }
-    .rendered-content th, .rendered-content td {
+    .content-card th, .content-card td {
+      border: 1px solid var(--line);
       padding: 8px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
       text-align: left;
+      vertical-align: top;
     }
-    .rendered-content th {
-      background: rgba(255, 255, 255, 0.08);
-      color: #38bdf8;
-      font-weight: 600;
-    }
-    .rendered-content blockquote {
-      border-left: 4px solid var(--primary);
-      background: rgba(255, 255, 255, 0.05);
-      padding: 10px 16px;
-      margin: 12px 0;
-      border-radius: 0 8px 8px 0;
-      color: #cbd5e1;
-    }
-    .rendered-content strong {
+    .content-card th {
+      background: rgba(2, 132, 199, 0.2);
       color: #fff;
     }
-    .rendered-content code {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: Consolas, monospace;
-      color: #f472b6;
+    .content-card tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
     }
-    .rendered-content hr {
-      border: none;
-      border-top: 1px solid var(--card-border);
-      margin: 20px 0;
+    .content-card ul, .content-card ol {
+      margin: 8px 0 12px;
+      padding-left: 24px;
+    }
+    .content-card li {
+      margin-bottom: 4px;
     }
 
-    /* Action bar on cards */
-    .tts-btn {
+    /* Inline TTS button */
+    .q-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .inline-tts-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #cbd5e1;
-      border: 1px solid var(--card-border);
+      gap: 5px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--primary-light);
       padding: 4px 10px;
       border-radius: 6px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       cursor: pointer;
-      margin-bottom: 8px;
+      transition: all 0.2s;
     }
-    .tts-btn:hover {
+    .inline-tts-btn:hover {
       background: var(--primary);
       color: #fff;
     }
+    .inline-tts-btn.speaking {
+      background: var(--accent);
+      color: #000;
+      border-color: #a7f3d0;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
 
-    /* Print View */
-    @media print {
-      header, .tabs-nav, .search-box, .btn-group, .tts-btn {
-        display: none !important;
+    /* Practice Quiz Arena */
+    .quiz-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    .quiz-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .quiz-opt {
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .quiz-opt:hover {
+      background: var(--panel-hover);
+      border-color: var(--primary-light);
+    }
+    .quiz-opt.correct {
+      background: rgba(16, 185, 129, 0.25);
+      border-color: #10b981;
+      color: #a7f3d0;
+      font-weight: 700;
+    }
+    .quiz-opt.wrong {
+      background: rgba(239, 68, 68, 0.25);
+      border-color: #ef4444;
+      color: #fca5a5;
+    }
+    .quiz-feedback {
+      display: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 0.88rem;
+    }
+    .quiz-score-banner {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.3) 0%, rgba(16, 185, 129, 0.2) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Mobile Bottom Navigation Bar */
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: rgba(9, 14, 26, 0.96);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--line);
+      padding: 6px 4px;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+    }
+    .bottom-nav-inner {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .bottom-nav-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 8px;
+      min-width: 52px;
+      transition: color 0.2s;
+    }
+    .bottom-nav-btn span.icon {
+      font-size: 1.25rem;
+    }
+    .bottom-nav-btn.active {
+      color: var(--primary-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .lab-container {
+        grid-template-columns: 1fr;
+      }
+      .lab-viewport {
+        height: 380px;
+      }
+      .infographics-grid {
+        grid-template-columns: 1fr;
+      }
+      .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 768px) {
+      .tabs {
+        display: none;
+      }
+      .mobile-bottom-nav {
+        display: block;
       }
       body {
-        background: #fff !important;
-        color: #000 !important;
+        padding-bottom: 80px;
       }
-      .card {
-        background: #fff !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-      }
-      .rendered-content h1, .rendered-content h2, .rendered-content h3 {
-        color: #000 !important;
-      }
-      .rendered-content table {
-        background: #fff !important;
-        color: #000 !important;
-      }
-      .rendered-content th {
-        background: #eee !important;
-        color: #000 !important;
-      }
-      .rendered-content td {
-        border: 1px solid #ccc !important;
-      }
-      #tab-qp {
-        display: block !important;
-      }
-      #tab-master {
-        display: none !important;
+      .hud-desc {
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Sticky Header -->
   <header>
-    <div class="container header-inner">
-      <div class="logo-area">
-        <div class="subject-icon">🌍</div>
-        <div class="title-group">
-          <h1>Class 7 GK SA-1 Master Portal</h1>
-          <p>Encyclopaedia Express - 7 (Unit 1: Lessons 1 to 4) | Exam: 07-10-2026 | Marks: 50</p>
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="brand-icon">🌍</div>
+        <div>
+          <h1>Class 7 General Knowledge (GK) SA-1</h1>
+          <p>Encyclopaedia Express - 7 (Unit 1: Fresh Finds) | Marks: 50</p>
         </div>
       </div>
-      <div class="btn-group">
-        <a class="btn" href="index.html" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: #fff;">🏠 All Subjects</a>
-        <button class="btn" onclick="window.print()">🖨️ Print Exam Paper</button>
-        <a class="btn btn-primary" href="SA1_GK_Master_Solutions.pdf" target="_blank">📄 Master Solutions PDF</a>
+      <div class="actions">
+        <button class="btn" onclick="window.print()">🖨️ Print</button>
+        <a class="btn primary" href="SA1_GK_Master_Solutions.pdf" target="_blank">📄 Master Solutions PDF</a>
         <a class="btn" href="SA1_GK_Question_Paper.pdf" target="_blank">📝 Question Paper PDF</a>
         <a class="btn" href="SA1_GK_Master_Solutions.docx" download>📥 Word DOCX</a>
       </div>
     </div>
   </header>
 
-  <main class="container" style="margin-top: 20px;">
+  <main class="wrap" style="margin-top: 16px;">
     
-    <!-- EMBEDDED ENGLISH AUDIO GUIDE -->
-    <div style="background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 1.8rem;">🎧</span>
+    <!-- Audio Guide Banner -->
+    <div class="audio-guide-bar">
+      <div class="audio-info">
+        <span>🎧</span>
         <div>
-          <h3 style="margin: 0; font-size: 1rem; color: #38bdf8;">Complete English Audio Study Guide</h3>
-          <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">High-clarity neural English narration for comprehensive revision</p>
+          <h3>Full GK Audio Study Companion</h3>
+          <p>High-clarity neural English voice guide for Union Budget, State Governors, Sri Vijaya Puram & Robot Teachers</p>
         </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; max-width: 450px;">
-        <audio controls style="width: 100%; height: 38px; border-radius: 8px;">
+      <div class="audio-controls">
+        <audio id="main-audio" controls>
           <source src="SA1_GK_English_Audio_Guide.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
         </audio>
-        <a href="SA1_GK_English_Audio_Guide.mp3" download class="btn" style="padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">⬇️ MP3</a>
+        <a href="SA1_GK_English_Audio_Guide.mp3" download class="btn" style="padding: 5px 10px; font-size: 0.78rem;">⬇️ MP3</a>
       </div>
     </div>
 
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab('master')">📘 Master Solutions & Study Guide</button>
-      <button class="tab-btn" onclick="switchTab('qp')">📝 Student Question Paper (50 Marks)</button>
-      <button class="tab-btn" onclick="switchTab('overview')">⚡ Syllabus & Exam Blueprint</button>
+    <!-- Quick Metrics Jump -->
+    <div class="summary-grid">
+      <div class="metric" onclick="switchTab('lab3d')">
+        <strong>🌐 3D Explorer Lab</strong>
+        <span>India Globe, Budget Rupee, Robot Teacher</span>
+      </div>
+      <div class="metric" onclick="switchTab('visuals')">
+        <strong>📊 2D Infographics</strong>
+        <span>Budget Flow, Governors, Timeline</span>
+      </div>
+      <div class="metric" onclick="switchTab('mindmaps')">
+        <strong>🧠 Concept Mind Maps</strong>
+        <span>Unit 1 Fresh Finds Knowledge Tree</span>
+      </div>
+      <div class="metric" onclick="switchTab('quiz')">
+        <strong>🎯 Practice Arena</strong>
+        <span>20 Interactive MCQs & Explanations</span>
+      </div>
     </div>
 
-    <!-- TAB 1: MASTER SOLUTIONS -->
-    <div id="tab-master" class="tab-content active">
-      <div class="search-box">
-        <input type="text" id="masterSearch" placeholder="Type to search questions, keywords, Telugu translations..." onkeyup="filterContent()">
+    <!-- Desktop Navigation Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="lab3d" onclick="switchTab('lab3d')">🌐 3D Explorer Lab</button>
+      <button class="tab" data-tab="visuals" onclick="switchTab('visuals')">📊 2D Visuals</button>
+      <button class="tab" data-tab="mindmaps" onclick="switchTab('mindmaps')">🧠 Mind Maps</button>
+      <button class="tab" data-tab="solutions" onclick="switchTab('solutions')">📘 Master Solutions</button>
+      <button class="tab" data-tab="qp" onclick="switchTab('qp')">📝 Question Paper</button>
+      <button class="tab" data-tab="quiz" onclick="switchTab('quiz')">🎯 Practice Quiz</button>
+    </div>
+
+    <!-- ================= TAB 1: 3D EXPLORER LAB ================= -->
+    <div id="tab-lab3d" class="tab-panel active">
+      <div class="lab-container">
+        <div class="lab-sidebar">
+          <h3 style="font-size: 1rem; color: var(--primary-light); margin-bottom: 6px;">Interactive 3D Explorer</h3>
+          <button class="lab-btn active" onclick="loadModel('globe', this)">
+            <span>🌍</span> 1. Interactive Globe & Andaman
+          </button>
+          <button class="lab-btn" onclick="loadModel('budget', this)">
+            <span>💰</span> 2. Union Budget 3D Rupee Flow
+          </button>
+          <button class="lab-btn" onclick="loadModel('robot', this)">
+            <span>🤖</span> 3. Humanoid Robot Teacher
+          </button>
+          <button class="lab-btn" onclick="loadModel('cellular', this)">
+            <span>🏛️</span> 4. Cellular Jail Memorial
+          </button>
+        </div>
+        <div class="lab-viewport">
+          <canvas id="three-canvas"></canvas>
+          <div class="lab-controls-hud">
+            <div class="hud-desc" id="model-desc">
+              <strong>Model: 3D Interactive Earth Globe & Andaman Marker</strong><br>
+              Rotating 3D globe with highlighted Indian subcontinent and Sri Vijaya Puram archipelago pin.
+            </div>
+            <div class="hud-actions">
+              <button class="hud-btn" onclick="toggleAutoRotate()">🔄 Auto Rotate</button>
+              <button class="hud-btn" onclick="resetCamera()">🎯 Reset View</button>
+              <button class="hud-btn" id="model-action-btn" onclick="triggerModelAction()">📍 Highlight Andaman</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card rendered-content" id="masterContent">
-        <h1>7th Class General Knowledge (G.K.) — SA1 Master Solutions &amp; Comprehensive Guide</h1>
+    </div>
+
+    <!-- ================= TAB 2: 2D VISUAL INFOGRAPHICS ================= -->
+    <div id="tab-visuals" class="tab-panel">
+      <div class="infographics-grid">
+        
+        <!-- SVG 1: Union Budget Rupee Flow -->
+        <div class="info-card">
+          <h3>💰 1. Union Budget 2025 Rupee Breakdown & Macro Indicators</h3>
+          <div class="svg-container">
+            <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+              <rect width="700" height="250" fill="#0b1329" rx="8"/>
+              
+              <!-- Total Expenditure Header -->
+              <rect x="40" y="25" width="620" height="45" rx="8" fill="#1e3a8a" stroke="#38bdf8"/>
+              <text x="350" y="53" font-family="Outfit" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">TOTAL BUDGET EXPENDITURE: ₹50.65 LAKH CRORE</text>
+
+              <!-- 4 Key Metric Pillars -->
+              <!-- Pillar 1: CapEx -->
+              <rect x="40" y="85" width="145" height="135" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+              <circle cx="112" cy="115" r="18" fill="#065f46"/>
+              <text x="112" y="122" font-family="Outfit" font-size="16" fill="#a7f3d0" text-anchor="middle">🏗️</text>
+              <text x="112" y="150" font-family="Outfit" font-size="13" font-weight="bold" fill="#34d399" text-anchor="middle">₹11.21 L Cr</text>
+              <text x="112" y="170" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Capital Outlay</text>
+              <text x="112" y="188" font-family="Outfit" font-size="9" fill="#94a3b8" text-anchor="middle">Highways, Rail, Infra</text>
+              <text x="112" y="202" font-family="Outfit" font-size="8.5" fill="#38bdf8" text-anchor="middle">~3.4% of GDP</text>
+
+              <!-- Pillar 2: Fiscal Deficit -->
+              <rect x="198" y="85" width="145" height="135" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+              <circle cx="270" cy="115" r="18" fill="#78350f"/>
+              <text x="270" y="122" font-family="Outfit" font-size="16" fill="#fde68a" text-anchor="middle">📉</text>
+              <text x="270" y="150" font-family="Outfit" font-size="13" font-weight="bold" fill="#fbbf24" text-anchor="middle">4.4% of GDP</text>
+              <text x="270" y="170" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Fiscal Deficit</text>
+              <text x="270" y="188" font-family="Outfit" font-size="9" fill="#94a3b8" text-anchor="middle">Consolidation Target</text>
+              <text x="270" y="202" font-family="Outfit" font-size="8.5" fill="#38bdf8" text-anchor="middle">Down from 5.1%</text>
+
+              <!-- Pillar 3: Net Tax Receipts -->
+              <rect x="356" y="85" width="145" height="135" rx="8" fill="#1e293b" stroke="#0284c7" stroke-width="2"/>
+              <circle cx="428" cy="115" r="18" fill="#0c4a6e"/>
+              <text x="428" y="122" font-family="Outfit" font-size="16" fill="#bae6fd" text-anchor="middle">💵</text>
+              <text x="428" y="150" font-family="Outfit" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="middle">₹28.37 L Cr</text>
+              <text x="428" y="170" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Net Tax Revenue</text>
+              <text x="428" y="188" font-family="Outfit" font-size="9" fill="#94a3b8" text-anchor="middle">After 41% state share</text>
+              <text x="428" y="202" font-family="Outfit" font-size="8.5" fill="#38bdf8" text-anchor="middle">Direct + Indirect Tax</text>
+
+              <!-- Pillar 4: Agriculture Engine -->
+              <rect x="514" y="85" width="145" height="135" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+              <circle cx="586" cy="115" r="18" fill="#831843"/>
+              <text x="586" y="122" font-family="Outfit" font-size="16" fill="#fbcfe8" text-anchor="middle">🌾</text>
+              <text x="586" y="150" font-family="Outfit" font-size="12" font-weight="bold" fill="#f472b6" text-anchor="middle">1st Engine</text>
+              <text x="586" y="170" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Of Development</text>
+              <text x="586" y="188" font-family="Outfit" font-size="9" fill="#94a3b8" text-anchor="middle">Annadata / Rural Pulse</text>
+              <text x="586" y="202" font-family="Outfit" font-size="8.5" fill="#38bdf8" text-anchor="middle">Self-sufficiency</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- SVG 2: State Governors Constitutional Framework -->
+        <div class="info-card">
+          <h3>🏛️ 2. State Governors of India — Constitutional Architecture</h3>
+          <div class="svg-container">
+            <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+              <rect width="700" height="250" fill="#0b1329" rx="8"/>
+              
+              <!-- President of India Box -->
+              <rect x="230" y="20" width="240" height="50" rx="8" fill="#0284c7" stroke="#38bdf8"/>
+              <text x="350" y="42" font-family="Outfit" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">President of India</text>
+              <text x="350" y="58" font-family="Outfit" font-size="9.5" fill="#e0f2fe" text-anchor="middle">Appoints under Article 155</text>
+
+              <!-- Arrow down -->
+              <path d="M 350 70 L 350 95" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+              <!-- Governor Role Box -->
+              <rect x="180" y="95" width="340" height="42" rx="6" fill="#1e293b" stroke="#10b981"/>
+              <text x="350" y="114" font-family="Outfit" font-size="12" font-weight="bold" fill="#34d399" text-anchor="middle">State Governor (Article 153)</text>
+              <text x="350" y="128" font-family="Outfit" font-size="9" fill="#cbd5e1" text-anchor="middle">Constitutional & Executive Head of the State</text>
+
+              <!-- Key High-Yield Governors -->
+              <rect x="40" y="155" width="145" height="75" rx="6" fill="#0f172a" stroke="#334155"/>
+              <text x="112" y="175" font-family="Outfit" font-size="10.5" font-weight="bold" fill="#38bdf8" text-anchor="middle">Andhra Pradesh</text>
+              <text x="112" y="195" font-family="Outfit" font-size="9.5" fill="#fff" text-anchor="middle">Justice S. Abdul Nazeer</text>
+              <text x="112" y="212" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Ex-Supreme Court Judge</text>
+
+              <rect x="198" y="155" width="145" height="75" rx="6" fill="#0f172a" stroke="#334155"/>
+              <text x="270" y="175" font-family="Outfit" font-size="10.5" font-weight="bold" fill="#34d399" text-anchor="middle">Kerala</text>
+              <text x="270" y="195" font-family="Outfit" font-size="9.5" fill="#fff" text-anchor="middle">Arif Mohammad Khan</text>
+              <text x="270" y="212" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Scholar & Statesman</text>
+
+              <rect x="356" y="155" width="145" height="75" rx="6" fill="#0f172a" stroke="#334155"/>
+              <text x="428" y="175" font-family="Outfit" font-size="10.5" font-weight="bold" fill="#fbbf24" text-anchor="middle">Haryana</text>
+              <text x="428" y="195" font-family="Outfit" font-size="9.5" fill="#fff" text-anchor="middle">Bandaru Dattatreya</text>
+              <text x="428" y="212" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Former Union Minister</text>
+
+              <rect x="514" y="155" width="145" height="75" rx="6" fill="#0f172a" stroke="#334155"/>
+              <text x="586" y="175" font-family="Outfit" font-size="10.5" font-weight="bold" fill="#f472b6" text-anchor="middle">Odisha</text>
+              <text x="586" y="195" font-family="Outfit" font-size="9.5" fill="#fff" text-anchor="middle">Dr. K. Hari Babu</text>
+              <text x="586" y="212" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Eminent Telugu Leader</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- SVG 3: Sri Vijaya Puram Historical Timeline -->
+        <div class="info-card">
+          <h3>🌴 3. Sri Vijaya Puram (Port Blair) Historical Evolution</h3>
+          <div class="svg-container">
+            <svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg">
+              <rect width="700" height="230" fill="#0b1329" rx="8"/>
+              
+              <!-- Timeline Bar -->
+              <line x1="70" y1="100" x2="630" y2="100" stroke="#334155" stroke-width="4"/>
+              
+              <!-- Milestone 1: 1789 Archibald Blair -->
+              <circle cx="110" cy="100" r="12" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+              <text x="110" y="75" font-family="Outfit" font-size="12" font-weight="bold" fill="#38bdf8" text-anchor="middle">1789</text>
+              <rect x="50" y="125" width="120" height="65" rx="6" fill="#1e293b"/>
+              <text x="110" y="145" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Port Blair Founded</text>
+              <text x="110" y="162" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Named after British</text>
+              <text x="110" y="176" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Lt. Archibald Blair</text>
+
+              <!-- Milestone 2: 1906 Cellular Jail -->
+              <circle cx="280" cy="100" r="12" fill="#dc2626" stroke="#f87171" stroke-width="2"/>
+              <text x="280" y="75" font-family="Outfit" font-size="12" font-weight="bold" fill="#f87171" text-anchor="middle">1906</text>
+              <rect x="220" y="125" width="120" height="65" rx="6" fill="#1e293b"/>
+              <text x="280" y="145" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Cellular Jail Built</text>
+              <text x="280" y="162" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Kala Pani torture</text>
+              <text x="280" y="176" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Veer Savarkar held</text>
+
+              <!-- Milestone 3: 1943 Netaji Tricolour -->
+              <circle cx="450" cy="100" r="12" fill="#16a34a" stroke="#4ade80" stroke-width="2"/>
+              <text x="450" y="75" font-family="Outfit" font-size="12" font-weight="bold" fill="#4ade80" text-anchor="middle">1943</text>
+              <rect x="390" y="125" width="120" height="65" rx="6" fill="#1e293b"/>
+              <text x="450" y="145" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Netaji Liberation</text>
+              <text x="450" y="162" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">30 Dec 1943 Flag</text>
+              <text x="450" y="176" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Shaheed & Swaraj</text>
+
+              <!-- Milestone 4: Sept 2024 Renaming -->
+              <circle cx="590" cy="100" r="12" fill="#eab308" stroke="#facc15" stroke-width="2"/>
+              <text x="590" y="75" font-family="Outfit" font-size="12" font-weight="bold" fill="#facc15" text-anchor="middle">2024</text>
+              <rect x="530" y="125" width="120" height="65" rx="6" fill="#1e293b"/>
+              <text x="590" y="145" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Sri Vijaya Puram</text>
+              <text x="590" y="162" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Renamed by Govt</text>
+              <text x="590" y="176" font-family="Outfit" font-size="8.5" fill="#94a3b8" text-anchor="middle">Shed colonial name</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- SVG 4: Educational Robots Taxonomy -->
+        <div class="info-card">
+          <h3>🤖 4. Educational & Social Robot Teachers Taxonomy</h3>
+          <div class="svg-container">
+            <svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg">
+              <rect width="700" height="230" fill="#0b1329" rx="8"/>
+              
+              <!-- Robot 1: Nao -->
+              <rect x="35" y="30" width="145" height="170" rx="8" fill="#1e293b" stroke="#38bdf8"/>
+              <circle cx="107" cy="65" r="22" fill="#0369a1"/>
+              <text x="107" y="72" font-family="Outfit" font-size="18" fill="#fff" text-anchor="middle">🦾</text>
+              <text x="107" y="105" font-family="Outfit" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="middle">NAO</text>
+              <text x="107" y="125" font-family="Outfit" font-size="9" fill="#94a3b8" text-anchor="middle">58 cm Humanoid</text>
+              <text x="107" y="145" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Maths & Science</text>
+              <text x="107" y="165" font-family="Outfit" font-size="9" fill="#cbd5e1" text-anchor="middle">Foreign Languages</text>
+              <text x="107" y="180" font-family="Outfit" font-size="8.5" fill="#34d399" text-anchor="middle">Bipedal Walker</text>
+
+              <!-- Robot 2: Pepper -->
+              <rect x="195" y="30" width="145" height="170" rx="8" fill="#1e293b" stroke="#34d399"/>
+              <circle cx="267" cy="65" r="22" fill="#065f46"/>
+              <text x="267" y="72" font-family="Outfit" font-size="18" fill="#fff" text-anchor="middle">💖</text>
+              <text x="267" y="105" font-family="Outfit" font-size="13" font-weight="bold" fill="#34d399" text-anchor="middle">PEPPER</text>
+              <text x="267" y="125" font-family="Outfit" font-size="9" fill="#94a3b8" text-anchor="middle">120 cm Mobile Base</text>
+              <text x="267" y="145" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Emotion Reading</text>
+              <text x="267" y="165" font-family="Outfit" font-size="9" fill="#cbd5e1" text-anchor="middle">Facial Expressions</text>
+              <text x="267" y="180" font-family="Outfit" font-size="8.5" fill="#38bdf8" text-anchor="middle">Social Conversational</text>
+
+              <!-- Robot 3: Robovie -->
+              <rect x="355" y="30" width="145" height="170" rx="8" fill="#1e293b" stroke="#fbbf24"/>
+              <circle cx="427" cy="65" r="22" fill="#78350f"/>
+              <text x="427" y="72" font-family="Outfit" font-size="18" fill="#fff" text-anchor="middle">💻</text>
+              <text x="427" y="105" font-family="Outfit" font-size="13" font-weight="bold" fill="#fbbf24" text-anchor="middle">ROBOVIE</text>
+              <text x="427" y="125" font-family="Outfit" font-size="9" fill="#94a3b8" text-anchor="middle">ATR Japan Platform</text>
+              <text x="427" y="145" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Coding & Logic</text>
+              <text x="427" y="165" font-family="Outfit" font-size="9" fill="#cbd5e1" text-anchor="middle">Algorithms & Syntax</text>
+              <text x="427" y="180" font-family="Outfit" font-size="8.5" fill="#f472b6" text-anchor="middle">Computer Science</text>
+
+              <!-- Robot 4: Tega -->
+              <rect x="515" y="30" width="145" height="170" rx="8" fill="#1e293b" stroke="#f472b6"/>
+              <circle cx="587" cy="65" r="22" fill="#831843"/>
+              <text x="587" y="72" font-family="Outfit" font-size="18" fill="#fff" text-anchor="middle">📖</text>
+              <text x="587" y="105" font-family="Outfit" font-size="13" font-weight="bold" fill="#f472b6" text-anchor="middle">TEGA</text>
+              <text x="587" y="125" font-family="Outfit" font-size="9" fill="#94a3b8" text-anchor="middle">MIT Media Lab</text>
+              <text x="587" y="145" font-family="Outfit" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Reading & Writing</text>
+              <text x="587" y="165" font-family="Outfit" font-size="9" fill="#cbd5e1" text-anchor="middle">Storytelling Literacy</text>
+              <text x="587" y="180" font-family="Outfit" font-size="8.5" fill="#38bdf8" text-anchor="middle">Early Childhood</text>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= TAB 3: MIND MAPS ================= -->
+    <div id="tab-mindmaps" class="tab-panel">
+      <div class="mindmap-header">
+        <div>
+          <h2 style="font-size: 1.15rem; color: var(--primary-light); margin: 0;">General Knowledge SA-1 Curriculum Mind Map</h2>
+          <p style="margin: 3px 0 0; font-size: 0.82rem; color: var(--muted);">Click any node to jump to answers. Use Expand/Collapse to toggle detail.</p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn" onclick="expandAllMindmap()">➕ Expand All</button>
+          <button class="btn" onclick="collapseAllMindmap()">➖ Collapse All</button>
+        </div>
+      </div>
+
+      <div class="mindmap-wrapper">
+        <svg id="mindmap-svg" viewBox="0 0 1100 680" width="100%" height="680" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-gk" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.7"/>
+            </pattern>
+          </defs>
+          <rect width="1100" height="680" fill="#090f1d"/>
+          <rect width="1100" height="680" fill="url(#grid-gk)"/>
+
+          <!-- Connecting Lines -->
+          <path d="M 550 340 C 350 340, 260 120, 160 120" stroke="#0284c7" stroke-width="3" fill="none"/>
+          <path d="M 550 340 C 350 340, 260 520, 160 520" stroke="#10b981" stroke-width="3" fill="none"/>
+          <path d="M 550 340 C 750 340, 840 120, 940 120" stroke="#f59e0b" stroke-width="3" fill="none"/>
+          <path d="M 550 340 C 750 340, 840 520, 940 520" stroke="#ec4899" stroke-width="3" fill="none"/>
+
+          <!-- Branch Lines -->
+          <g id="branch-ch1-lines">
+            <line x1="160" y1="120" x2="80" y2="70" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="160" y1="120" x2="80" y2="120" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="160" y1="120" x2="80" y2="170" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2,2"/>
+          </g>
+          <g id="branch-ch2-lines">
+            <line x1="160" y1="520" x2="80" y2="470" stroke="#34d399" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="160" y1="520" x2="80" y2="520" stroke="#34d399" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="160" y1="520" x2="80" y2="570" stroke="#34d399" stroke-width="1.5" stroke-dasharray="2,2"/>
+          </g>
+          <g id="branch-ch3-lines">
+            <line x1="940" y1="120" x2="1020" y2="70" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="940" y1="120" x2="1020" y2="120" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="940" y1="120" x2="1020" y2="170" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2,2"/>
+          </g>
+          <g id="branch-ch4-lines">
+            <line x1="940" y1="520" x2="1020" y2="470" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="940" y1="520" x2="1020" y2="520" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="940" y1="520" x2="1020" y2="570" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="2,2"/>
+          </g>
+
+          <!-- ROOT NODE -->
+          <g class="mindmap-node" onclick="switchTab('solutions')">
+            <rect x="450" y="300" width="200" height="80" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+            <text x="550" y="332" font-family="Outfit" font-size="15" font-weight="bold" fill="#fff" text-anchor="middle">CLASS 7 GK SA-1</text>
+            <text x="550" y="352" font-family="Outfit" font-size="12" fill="#38bdf8" text-anchor="middle">Unit 1: Fresh Finds</text>
+            <text x="550" y="368" font-family="Outfit" font-size="10" fill="#94a3b8" text-anchor="middle">Chapters 1 to 4 (50 Marks)</text>
+          </g>
+
+          <!-- CH 1: Union Budget -->
+          <g class="mindmap-node" onclick="jumpToSection('ch1')">
+            <rect x="70" y="85" width="180" height="70" rx="12" fill="#0369a1" stroke="#38bdf8" stroke-width="2"/>
+            <text x="160" y="112" font-family="Outfit" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">CH 1: Union Budget 2025</text>
+            <text x="160" y="130" font-family="Outfit" font-size="10" fill="#e0f2fe" text-anchor="middle">₹50.65L Cr Total Expenditure</text>
+            <text x="160" y="145" font-family="Outfit" font-size="9" fill="#bae6fd" text-anchor="middle">CapEx ₹11.21L Cr | Deficit 4.4%</text>
+          </g>
+          <g id="branch-ch1-nodes">
+            <g class="mindmap-node" onclick="jumpToSection('ch1')">
+              <rect x="10" y="55" width="110" height="30" rx="6" fill="#0f172a" stroke="#38bdf8"/>
+              <text x="65" y="74" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">CapEx ₹11.21L Cr</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch1')">
+              <rect x="10" y="105" width="110" height="30" rx="6" fill="#0f172a" stroke="#38bdf8"/>
+              <text x="65" y="124" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Deficit 4.4%</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch1')">
+              <rect x="10" y="155" width="110" height="30" rx="6" fill="#0f172a" stroke="#38bdf8"/>
+              <text x="65" y="174" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Agri: 1st Engine</text>
+            </g>
+          </g>
+
+          <!-- CH 2: Governors -->
+          <g class="mindmap-node" onclick="jumpToSection('ch2')">
+            <rect x="70" y="485" width="180" height="70" rx="12" fill="#047857" stroke="#34d399" stroke-width="2"/>
+            <text x="160" y="512" font-family="Outfit" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">CH 2: State Governors</text>
+            <text x="160" y="530" font-family="Outfit" font-size="10" fill="#d1fae5" text-anchor="middle">Constitutional Head (Art 153)</text>
+            <text x="160" y="545" font-family="Outfit" font-size="9" fill="#a7f3d0" text-anchor="middle">Appointed by President (Art 155)</text>
+          </g>
+          <g id="branch-ch2-nodes">
+            <g class="mindmap-node" onclick="jumpToSection('ch2')">
+              <rect x="10" y="455" width="110" height="30" rx="6" fill="#0f172a" stroke="#34d399"/>
+              <text x="65" y="474" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">AP: S. Abdul Nazeer</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch2')">
+              <rect x="10" y="505" width="110" height="30" rx="6" fill="#0f172a" stroke="#34d399"/>
+              <text x="65" y="524" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Kerala: Arif M. Khan</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch2')">
+              <rect x="10" y="555" width="110" height="30" rx="6" fill="#0f172a" stroke="#34d399"/>
+              <text x="65" y="574" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Haryana: B. Dattatreya</text>
+            </g>
+          </g>
+
+          <!-- CH 3: Sri Vijaya Puram -->
+          <g class="mindmap-node" onclick="jumpToSection('ch3')">
+            <rect x="850" y="85" width="180" height="70" rx="12" fill="#b45309" stroke="#fbbf24" stroke-width="2"/>
+            <text x="940" y="112" font-family="Outfit" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">CH 3: Sri Vijaya Puram</text>
+            <text x="940" y="130" font-family="Outfit" font-size="10" fill="#fef3c7" text-anchor="middle">Formerly Port Blair</text>
+            <text x="940" y="145" font-family="Outfit" font-size="9" fill="#fde68a" text-anchor="middle">1943 Netaji Tricolour & Cellular Jail</text>
+          </g>
+          <g id="branch-ch3-nodes">
+            <g class="mindmap-node" onclick="jumpToSection('ch3')">
+              <rect x="980" y="55" width="110" height="30" rx="6" fill="#0f172a" stroke="#fbbf24"/>
+              <text x="1035" y="74" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Bay of Bengal</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch3')">
+              <rect x="980" y="105" width="110" height="30" rx="6" fill="#0f172a" stroke="#fbbf24"/>
+              <text x="1035" y="124" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">1943 Netaji Flag</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch3')">
+              <rect x="980" y="155" width="110" height="30" rx="6" fill="#0f172a" stroke="#fbbf24"/>
+              <text x="1035" y="174" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Cellular Jail</text>
+            </g>
+          </g>
+
+          <!-- CH 4: Robot Teachers -->
+          <g class="mindmap-node" onclick="jumpToSection('ch4')">
+            <rect x="850" y="485" width="180" height="70" rx="12" fill="#be185d" stroke="#f472b6" stroke-width="2"/>
+            <text x="940" y="512" font-family="Outfit" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">CH 4: Robot Teachers</text>
+            <text x="940" y="530" font-family="Outfit" font-size="10" fill="#fce7f3" text-anchor="middle">STEM & Language AI</text>
+            <text x="940" y="545" font-family="Outfit" font-size="9" fill="#fbcfe8" text-anchor="middle">Nao, Pepper, Robovie, Tega</text>
+          </g>
+          <g id="branch-ch4-nodes">
+            <g class="mindmap-node" onclick="jumpToSection('ch4')">
+              <rect x="980" y="455" width="110" height="30" rx="6" fill="#0f172a" stroke="#f472b6"/>
+              <text x="1035" y="474" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Nao: Maths/Lang</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch4')">
+              <rect x="980" y="505" width="110" height="30" rx="6" fill="#0f172a" stroke="#f472b6"/>
+              <text x="1035" y="524" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Robovie: Coding</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch4')">
+              <rect x="980" y="555" width="110" height="30" rx="6" fill="#0f172a" stroke="#f472b6"/>
+              <text x="1035" y="574" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Tega: Reading</text>
+            </g>
+          </g>
+
+        </svg>
+      </div>
+    </div>
+
+    <!-- ================= TAB 4: MASTER SOLUTIONS ================= -->
+    <div id="tab-solutions" class="tab-panel">
+      
+        <div class="content-card" id="sec-overview">
+            <h1>7th Class General Knowledge (G.K.) — SA1 Master Solutions &amp; Comprehensive Guide</h1>
 <h2>Encyclopaedia Express - 7 (Unit 1: Fresh Finds) — Summative Assessment-1 Complete Blueprint</h2>
 <blockquote>
 <p><strong>Syllabus Scope (SA-1 Timetable &amp; Textbook Portion):</strong><br />
@@ -382,12 +1104,15 @@
 - <strong>5-Layer Architecture:</strong> Target Answer Key, Formal Explanation, Real-World Context &amp; Memory Hack, ⚠️ Ninja Exam Trap, and ✅ Sanity Check.</p>
 </blockquote>
 <hr />
-<h1>Chapter 1: Union Budget 2025 (Page 5)</h1>
-<h3>Context &amp; Core Summary:</h3>
+        </div>
+        
+        <div class="content-card" id="ch1">
+            <h1>Chapter 1: Union Budget 2025 (Page 5)</h1>
+<div class="q-header-row"><h3>Context &amp; Core Summary:</h3><button class="inline-tts-btn" onclick="speakText(this, 'Context &amp; Core Summary:')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p>The Union Budget presented by the Finance Minister focuses on 4 core pillars: Youth, Women, Farmers (Annadata), and the Poor (Gareeb). Key budgetary allocations prioritize capital expenditure (CapEx) to spur infrastructure, fiscal consolidation to bring down the fiscal deficit below 4.5% of GDP, and positioning agriculture as the primary engine of inclusive economic growth.</p>
 <hr />
-<h3>Textbook Exercises: Tick (✓) the correct option</h3>
-<h4>Question 1</h4>
+<div class="q-header-row"><h3>Textbook Exercises: Tick (✓) the correct option</h3><button class="inline-tts-btn" onclick="speakText(this, 'Textbook Exercises: Tick (✓) the correct option')" title="Listen to question & explanation">🔊 Listen</button></div>
+<div class="q-header-row"><h4>Question 1</h4><button class="inline-tts-btn" onclick="speakText(this, 'Question 1')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p><strong>The total expenditure estimated for the budget year 2025-26 (excluding borrowings) is approximately:</strong><br />
 - a. ₹34.96 lakh crore<br />
 - b. ₹50.65 lakh crore<br />
@@ -401,7 +1126,7 @@
 <p>✅ <strong>Sanity Check:</strong> Total expenditure is always the largest figure in the budget equation: $\text{Expenditure} = \text{Revenue Receipts} + \text{Capital Receipts} + \text{Borrowings}$.</p>
 </blockquote>
 <hr />
-<h4>Question 2</h4>
+<div class="q-header-row"><h4>Question 2</h4><button class="inline-tts-btn" onclick="speakText(this, 'Question 2')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p><strong>The fiscal deficit target for the year 2025-26 is set at:</strong><br />
 - a. 5.0% of GDP<br />
 - b. 4.4% of GDP<br />
@@ -415,7 +1140,7 @@
 <p>✅ <strong>Sanity Check:</strong> Fiscal deficit trend must show a declining trajectory year-on-year (e.g., $5.8\% \rightarrow 5.1\% \rightarrow 4.4\%$).</p>
 </blockquote>
 <hr />
-<h4>Question 3</h4>
+<div class="q-header-row"><h4>Question 3</h4><button class="inline-tts-btn" onclick="speakText(this, 'Question 3')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p><strong>The estimated capital expenditure (CapEx) for 2025-26 amounts to about:</strong><br />
 - a. ₹11.21 lakh crore<br />
 - b. ₹8.50 lakh crore<br />
@@ -429,7 +1154,7 @@
 <p>✅ <strong>Sanity Check:</strong> CapEx should be roughly 22% of total budget expenditure ($\frac{11.21}{50.65} \approx 22.1\%$).</p>
 </blockquote>
 <hr />
-<h4>Question 4</h4>
+<div class="q-header-row"><h4>Question 4</h4><button class="inline-tts-btn" onclick="speakText(this, 'Question 4')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p><strong>Under the Budget, agriculture is referred to as:</strong><br />
 - a. The third engine of growth<br />
 - b. The second engine of growth<br />
@@ -442,7 +1167,7 @@
 <p>⚠️ <strong>Ninja Exam Trap:</strong> Do not pick "The second engine of growth" or "third engine". The official speech calls it the <em>First Engine of Development</em>.</p>
 </blockquote>
 <hr />
-<h4>Question 5</h4>
+<div class="q-header-row"><h4>Question 5</h4><button class="inline-tts-btn" onclick="speakText(this, 'Question 5')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p><strong>The estimated net tax receipts (other than borrowings) for 2025-26 are:</strong><br />
 - a. ₹34.96 lakh crore<br />
 - b. ₹28.37 lakh crore<br />
@@ -455,7 +1180,7 @@
 <p>✅ <strong>Sanity Check:</strong> Net tax receipts (₹28.37L Cr) + Non-tax revenue (~₹5.5L Cr) + Capital receipts &amp; Borrowings (~₹16.8L Cr) = Total Expenditure (₹50.65L Cr).</p>
 </blockquote>
 <hr />
-<h4>Question 6</h4>
+<div class="q-header-row"><h4>Question 6</h4><button class="inline-tts-btn" onclick="speakText(this, 'Question 6')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p><strong>The government's nominal GDP growth estimate for 2025-26 is about:</strong><br />
 - a. 9.2%<br />
 - b. 10.1%<br />
@@ -468,7 +1193,7 @@
 <p>⚠️ <strong>Ninja Exam Trap:</strong> Real GDP growth is around 6.5%–7.0%. Nominal GDP includes inflation and is therefore 10.1%–11.0%. Always check if the question asks for <em>Real</em> or <em>Nominal</em>.</p>
 </blockquote>
 <hr />
-<h4>Question 7</h4>
+<div class="q-header-row"><h4>Question 7</h4><button class="inline-tts-btn" onclick="speakText(this, 'Question 7')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p><strong>The outstanding liabilities of the central government for March 2031 are aimed to be around what percentage of GDP?</strong><br />
 - a. 60%<br />
 - b. 56.1%<br />
@@ -481,17 +1206,20 @@
 <p>⚠️ <strong>Ninja Exam Trap:</strong> 56.1% is the current level. The future target for March 2031 is 50%.</p>
 </blockquote>
 <hr />
-<h3>Fact Box &amp; Teacher's Note (Page 5)</h3>
+<div class="q-header-row"><h3>Fact Box &amp; Teacher's Note (Page 5)</h3><button class="inline-tts-btn" onclick="speakText(this, 'Fact Box &amp; Teacher\'s Note (Page 5)')" title="Listen to question & explanation">🔊 Listen</button></div>
 <ul>
 <li><strong>Teacher's Note:</strong> Encourage students to relate budget highlights with real-life benefits for society and citizens (e.g., cheaper mobile phones, higher farm productivity, tax relief for middle class, faster train corridors).</li>
 <li><strong>Core Concept:</strong> A budget is an Annual Financial Statement presented under Article 112 of the Constitution of India.</li>
 </ul>
 <hr />
-<h1>Chapter 2: State Governors of India (Pages 6 &amp; 7)</h1>
-<h3>Constitutional Background:</h3>
+        </div>
+        
+        <div class="content-card" id="ch2">
+            <h1>Chapter 2: State Governors of India (Pages 6 &amp; 7)</h1>
+<div class="q-header-row"><h3>Constitutional Background:</h3><button class="inline-tts-btn" onclick="speakText(this, 'Constitutional Background:')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p>Under <strong>Article 153</strong> of the Constitution of India, there shall be a Governor for each State. The Governor is appointed by the <strong>President of India</strong> under Article 155 and holds office during the pleasure of the President. The Governor is the constitutional and executive head of the state.</p>
 <hr />
-<h3>Complete Governors Table (Items 1 to 13):</h3>
+<div class="q-header-row"><h3>Complete Governors Table (Items 1 to 13):</h3><button class="inline-tts-btn" onclick="speakText(this, 'Complete Governors Table (Items 1 to 13):')" title="Listen to question & explanation">🔊 Listen</button></div>
 <table>
 <thead>
 <tr>
@@ -583,15 +1311,18 @@
 </tbody>
 </table>
 <hr />
-<h3>High-Yield Exam Memory Aids:</h3>
+<div class="q-header-row"><h3>High-Yield Exam Memory Aids:</h3><button class="inline-tts-btn" onclick="speakText(this, 'High-Yield Exam Memory Aids:')" title="Listen to question & explanation">🔊 Listen</button></div>
 <ul>
 <li><strong>Andhra Pradesh Governor:</strong> Justice S. Abdul Nazeer (former Supreme Court Judge).</li>
 <li><strong>Telugu Leaders as Governors:</strong> Dr. Kambhampati Hari Babu (Odisha) and Bandaru Dattatreya (Haryana).</li>
 <li><strong>Military Generals as Governors:</strong> Gen. V. K. Singh (Mizoram) and Lt. Gen. K. T. Parnaik (Arunachal Pradesh).</li>
 </ul>
 <hr />
-<h1>Chapter 3: Port Blair to Sri Vijaya Puram (Page 8)</h1>
-<h3>Complete Historical Narrative:</h3>
+        </div>
+        
+        <div class="content-card" id="ch3">
+            <h1>Chapter 3: Port Blair to Sri Vijaya Puram (Page 8)</h1>
+<div class="q-header-row"><h3>Complete Historical Narrative:</h3><button class="inline-tts-btn" onclick="speakText(this, 'Complete Historical Narrative:')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p>In September 2024, the Government of India officially renamed <strong>Port Blair</strong>, the capital city of the Union Territory of Andaman and Nicobar Islands, to <strong>Sri Vijaya Puram</strong>. <br />
 - <strong>Symbolism of Sri Vijaya Puram:</strong> While 'Port Blair' honored British naval surveyor Archibald Blair, 'Sri Vijaya Puram' symbolizes the victory of India's freedom struggle and honours the ancient maritime legacy of the Chola Empire (Sri Vijaya kingdom).<br />
 - <strong>Geographical Location:</strong> Located in the Bay of Bengal, the Andaman &amp; Nicobar archipelago forms a strategic maritime gateway.<br />
@@ -600,7 +1331,7 @@
   2. <strong>Cellular Jail (Kala Pani):</strong> Built by the British between 1896 and 1906, it housed heroic Indian freedom fighters including <strong>Vinayak Damodar Savarkar (Veer Savarkar)</strong>, Batukeshwar Dutt, and Yogendra Shukla in solitary confinement.<br />
   3. <strong>World War II History:</strong> During WWII (1942–1945), Japanese forces occupied the islands and built fortified concrete bunkers near Corbyn's Cove, which remain standing today as historical landmarks.</p>
 <hr />
-<h3>Textbook Exercises: Fill in the blanks (Page 8)</h3>
+<div class="q-header-row"><h3>Textbook Exercises: Fill in the blanks (Page 8)</h3><button class="inline-tts-btn" onclick="speakText(this, 'Textbook Exercises: Fill in the blanks (Page 8)')" title="Listen to question & explanation">🔊 Listen</button></div>
 <h4>1. The former name of Sri Vijaya Puram was <strong><em>_</em></strong>___.</h4>
 <blockquote>
 <p><strong>Target Answer Key:</strong> <strong>Port Blair</strong></p>
@@ -627,17 +1358,20 @@
 <p><strong>Explanation:</strong> It is the administrative headquarters and sole municipal council of the Andaman and Nicobar Islands Union Territory.</p>
 </blockquote>
 <hr />
-<h3>Fact Box &amp; Hint Box Verification (Page 8):</h3>
+<div class="q-header-row"><h3>Fact Box &amp; Hint Box Verification (Page 8):</h3><button class="inline-tts-btn" onclick="speakText(this, 'Fact Box &amp; Hint Box Verification (Page 8):')" title="Listen to question & explanation">🔊 Listen</button></div>
 <ul>
 <li><strong>Fact:</strong> During World War II, the Japanese occupied Sri Vijaya Puram and constructed bunkers near Corbyn's Cove, which still stand today as historical remnants.</li>
 <li><strong>Hint Box Check:</strong> <code>Bay of Bengal</code>, <code>freedom struggle</code>, <code>1943</code>, <code>Andaman</code>, <code>Nicobar</code>, <code>Port Blair</code> — all 6 hint keywords perfectly match the 5 questions!</li>
 </ul>
 <hr />
-<h1>Chapter 4: Robot Teachers in Schools (Page 9)</h1>
-<h3>Technological Overview:</h3>
+        </div>
+        
+        <div class="content-card" id="ch4">
+            <h1>Chapter 4: Robot Teachers in Schools (Page 9)</h1>
+<div class="q-header-row"><h3>Technological Overview:</h3><button class="inline-tts-btn" onclick="speakText(this, 'Technological Overview:')" title="Listen to question & explanation">🔊 Listen</button></div>
 <p>Modern classrooms worldwide are incorporating Social and Educational Robotics to make STEM education and language acquisition engaging, adaptive, and interactive.</p>
 <hr />
-<h3>Robot Profiles &amp; Functionalities:</h3>
+<div class="q-header-row"><h3>Robot Profiles &amp; Functionalities:</h3><button class="inline-tts-btn" onclick="speakText(this, 'Robot Profiles &amp; Functionalities:')" title="Listen to question & explanation">🔊 Listen</button></div>
 <ol>
 <li><strong>Nao Robot:</strong></li>
 <li><strong>Form Factor:</strong> Small (58 cm tall), bipedal humanoid robot.</li>
@@ -669,7 +1403,7 @@
 <li><strong>Educational Role:</strong> Specifically tailored for early childhood education to improve <strong>reading, storytelling, and writing literacy</strong>.</li>
 </ol>
 <hr />
-<h3>Textbook Exercises: A. Match the following (Page 9)</h3>
+<div class="q-header-row"><h3>Textbook Exercises: A. Match the following (Page 9)</h3><button class="inline-tts-btn" onclick="speakText(this, 'Textbook Exercises: A. Match the following (Page 9)')" title="Listen to question & explanation">🔊 Listen</button></div>
 <table>
 <thead>
 <tr>
@@ -702,7 +1436,7 @@
 </tbody>
 </table>
 <hr />
-<h3>Fact Box &amp; Teacher's Note (Page 9):</h3>
+<div class="q-header-row"><h3>Fact Box &amp; Teacher's Note (Page 9):</h3><button class="inline-tts-btn" onclick="speakText(this, 'Fact Box &amp; Teacher\'s Note (Page 9):')" title="Listen to question & explanation">🔊 Listen</button></div>
 <ul>
 <li><strong>Fact:</strong> Robots like Pepper and Nao are equipped with sensors, microphones, and cameras to understand and respond to students' emotions and queries in real time.</li>
 <li><strong>Teacher's Note:</strong> Encourage students to explore the exciting possibilities of learning with technology, highlighting the unique features and ethical safety considerations of teaching robots.</li>
@@ -714,7 +1448,10 @@
   Do not swap Robovie and Tega!</li>
 </ul>
 <hr />
-<h1>Comprehensive SA-1 Quick-Revision Flashcards</h1>
+        </div>
+        
+        <div class="content-card" id="ch5">
+            <h1>Comprehensive SA-1 Quick-Revision Flashcards</h1>
 <ol>
 <li><strong>New Name of Port Blair:</strong> Sri Vijaya Puram.</li>
 <li><strong>Year Netaji hoisted Tricolour in Andaman:</strong> 1943.</li>
@@ -733,15 +1470,13 @@
 <li><strong>Emotion-displaying Robot:</strong> Pepper.</li>
 <li><strong>Multilingual humanoid:</strong> Nao.</li>
 </ol>
-      </div>
+        </div>
+        
     </div>
 
-    <!-- TAB 2: QUESTION PAPER -->
-    <div id="tab-qp" class="tab-content">
-      <div class="card rendered-content">
-        <div style="text-align: right; margin-bottom: 12px;">
-          <button class="btn btn-primary" onclick="window.print()">🖨️ Print Question Paper Now</button>
-        </div>
+    <!-- ================= TAB 5: STUDENT QUESTION PAPER ================= -->
+    <div id="tab-qp" class="tab-panel">
+      <div class="content-card">
         <h1>SUMMATIVE ASSESSMENT - I (SA-1) EXAMINATION (2026-27)</h1>
 <h2>CLASS: VII | SUBJECT: GENERAL KNOWLEDGE (G.K.)</h2>
 <p><strong>Time Allowed:</strong> 1 Hour | <strong>Maximum Marks:</strong> 50 Marks</p>
@@ -927,86 +1662,653 @@
       </div>
     </div>
 
-    <!-- TAB 3: OVERVIEW & BLUEPRINT -->
-    <div id="tab-overview" class="tab-content">
-      <div class="card">
-        <h2 style="color: var(--primary); margin-bottom: 12px;">📋 Summative Assessment - 1 Curriculum Blueprint</h2>
-        <p><strong>Subject:</strong> General Knowledge (G.K.)</p>
-        <p><strong>Prescribed Syllabus:</strong> Encyclopaedia Express - 7 (Unit 1: Lessons 1 to 4)</p>
-        <p><strong>Date of Examination:</strong> 07-10-2026</p>
-        <p><strong>Total Marks:</strong> 50 Marks</p>
-        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
-        <h3 style="color: #38bdf8; margin-bottom: 8px;">Key High-Yield Topics:</h3>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
-          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Budget 2025</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">State Governors</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Robots</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Indian States</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Economy</span>
+    <!-- ================= TAB 6: PRACTICE QUIZ ARENA ================= -->
+    <div id="tab-quiz" class="tab-panel">
+      <div class="quiz-score-banner">
+        <div>
+          <h2 style="font-size: 1.25rem; color: #fff; margin: 0;">🎯 General Knowledge SA-1 Quiz Arena</h2>
+          <p style="margin: 3px 0 0; font-size: 0.85rem; color: var(--muted);">20 Practice Questions with instant feedback & explanations</p>
         </div>
-        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
-        <h3 style="color: #38bdf8; margin-bottom: 8px;">Official Documents Download:</h3>
-        <ul style="margin-left: 20px; line-height: 2;">
-          <li><a href="SA1_GK_Master_Solutions.pdf" target="_blank" style="color: #38bdf8;">Complete Master Answer Key (PDF)</a></li>
-          <li><a href="SA1_GK_Question_Paper.pdf" target="_blank" style="color: #38bdf8;">Formal Student Question Paper (PDF)</a></li>
-          <li><a href="SA1_GK_Master_Solutions.docx" download style="color: #38bdf8;">Editable Master Solutions (DOCX)</a></li>
-          <li><a href="SA1_GK_Question_Paper.docx" download style="color: #38bdf8;">Editable Question Paper (DOCX)</a></li>
-        </ul>
+        <div style="font-size: 1.1rem; font-weight: 700; color: #38bdf8;">
+          Score: <span id="quiz-score">0</span> / 20
+        </div>
+      </div>
+
+      <div id="quiz-list">
+        <!-- Rendered by JS -->
       </div>
     </div>
+
   </main>
 
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <div class="bottom-nav-inner">
+      <button class="bottom-nav-btn active" onclick="switchTab('lab3d')">
+        <span class="icon">🌐</span>
+        <span>3D Lab</span>
+      </button>
+      <button class="bottom-nav-btn" onclick="switchTab('visuals')">
+        <span class="icon">📊</span>
+        <span>Visuals</span>
+      </button>
+      <button class="bottom-nav-btn" onclick="switchTab('mindmaps')">
+        <span class="icon">🧠</span>
+        <span>Mind Map</span>
+      </button>
+      <button class="bottom-nav-btn" onclick="switchTab('solutions')">
+        <span class="icon">📘</span>
+        <span>Answers</span>
+      </button>
+      <button class="bottom-nav-btn" onclick="switchTab('qp')">
+        <span class="icon">📝</span>
+        <span>Exam QP</span>
+      </button>
+      <button class="bottom-nav-btn" onclick="switchTab('quiz')">
+        <span class="icon">🎯</span>
+        <span>Quiz</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================= JAVASCRIPT ================= -->
   <script>
     function switchTab(tabId) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-
-      if (tabId === 'master') {
-        document.querySelectorAll('.tab-btn')[0].classList.add('active');
-        document.getElementById('tab-master').classList.add('active');
-      } else if (tabId === 'qp') {
-        document.querySelectorAll('.tab-btn')[1].classList.add('active');
-        document.getElementById('tab-qp').classList.add('active');
-      } else if (tabId === 'overview') {
-        document.querySelectorAll('.tab-btn')[2].classList.add('active');
-        document.getElementById('tab-overview').classList.add('active');
+      document.querySelectorAll('.tab').forEach(t => {
+        t.classList.toggle('active', t.getAttribute('data-tab') === tabId);
+      });
+      document.querySelectorAll('.bottom-nav-btn').forEach(b => {
+        const txt = b.innerText.toLowerCase();
+        b.classList.toggle('active', 
+          (tabId === 'lab3d' && txt.includes('3d')) ||
+          (tabId === 'visuals' && txt.includes('visual')) ||
+          (tabId === 'mindmaps' && txt.includes('mind')) ||
+          (tabId === 'solutions' && txt.includes('answer')) ||
+          (tabId === 'qp' && txt.includes('exam')) ||
+          (tabId === 'quiz' && txt.includes('quiz'))
+        );
+      });
+      document.querySelectorAll('.tab-panel').forEach(p => {
+        p.classList.toggle('active', p.id === 'tab-' + tabId);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (tabId === 'lab3d' && window.renderer) {
+        window.onResize();
       }
     }
 
-    function filterContent() {
-      const query = document.getElementById('masterSearch').value.toLowerCase();
-      const content = document.getElementById('masterContent');
-      const paragraphs = content.querySelectorAll('p, li, tr, blockquote');
-      
-      paragraphs.forEach(el => {
-        if (!query || el.innerText.toLowerCase().includes(query)) {
-          el.style.display = '';
-        } else {
-          el.style.display = 'none';
+    function jumpToSection(secId) {
+      switchTab('solutions');
+      setTimeout(() => {
+        const el = document.getElementById(secId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+      }, 150);
+    }
+
+    let mmExpanded = true;
+    function expandAllMindmap() {
+      ['branch-ch1-nodes', 'branch-ch1-lines', 'branch-ch2-nodes', 'branch-ch2-lines',
+       'branch-ch3-nodes', 'branch-ch3-lines', 'branch-ch4-nodes', 'branch-ch4-lines'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'block';
+      });
+      mmExpanded = true;
+    }
+    function collapseAllMindmap() {
+      ['branch-ch1-nodes', 'branch-ch1-lines', 'branch-ch2-nodes', 'branch-ch2-lines',
+       'branch-ch3-nodes', 'branch-ch3-lines', 'branch-ch4-nodes', 'branch-ch4-lines'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+      mmExpanded = false;
+    }
+
+    let speakingBtn = null;
+    function speakText(btn, text) {
+      if ('speechSynthesis' in window) {
+        if (window.speechSynthesis.speaking) {
+          window.speechSynthesis.cancel();
+          if (speakingBtn) {
+            speakingBtn.classList.remove('speaking');
+            speakingBtn.innerHTML = '🔊 Listen';
+          }
+          if (speakingBtn === btn) {
+            speakingBtn = null;
+            return;
+          }
+        }
+        const clean = text.replace(/[*_#`]/g, '');
+        const utter = new SpeechSynthesisUtterance(clean);
+        utter.rate = 0.95;
+        utter.pitch = 1.0;
+        utter.onend = () => {
+          btn.classList.remove('speaking');
+          btn.innerHTML = '🔊 Listen';
+          speakingBtn = null;
+        };
+        utter.onerror = () => {
+          btn.classList.remove('speaking');
+          btn.innerHTML = '🔊 Listen';
+          speakingBtn = null;
+        };
+        btn.classList.add('speaking');
+        btn.innerHTML = '⏹️ Stop';
+        speakingBtn = btn;
+        window.speechSynthesis.speak(utter);
+      } else {
+        alert('Text-to-speech is not supported by your browser.');
+      }
+    }
+
+    // ================= THREE.JS 3D LAB =================
+    let scene, camera, renderer, controls, activeGroup;
+    let isAutoRotate = true;
+    let currentModelName = 'globe';
+
+    function init3D() {
+      const container = document.querySelector('.lab-viewport');
+      const canvas = document.getElementById('three-canvas');
+      
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x040813);
+
+      camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 10, 26);
+
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+      scene.add(ambientLight);
+
+      const dirLight = new THREE.DirectionalLight(0x38bdf8, 1.3);
+      dirLight.position.set(20, 25, 20);
+      scene.add(dirLight);
+
+      const pointLight = new THREE.PointLight(0x10b981, 1.2, 50);
+      pointLight.position.set(-15, 15, -10);
+      scene.add(pointLight);
+
+      loadGlobeModel();
+
+      window.addEventListener('resize', onResize);
+      animate();
+    }
+
+    function onResize() {
+      const container = document.querySelector('.lab-viewport');
+      if (!container || !renderer) return;
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if (controls) controls.update();
+      if (activeGroup && isAutoRotate) {
+        activeGroup.rotation.y += 0.005;
+      }
+      if (renderer && scene && camera) {
+        renderer.render(scene, camera);
+      }
+    }
+
+    function clearActiveModel() {
+      if (activeGroup) {
+        scene.remove(activeGroup);
+        activeGroup = null;
+      }
+    }
+
+    // Model 1: 3D Globe with India & Andaman Marker
+    function loadGlobeModel() {
+      clearActiveModel();
+      activeGroup = new THREE.Group();
+
+      // Earth Sphere
+      const earthGeo = new THREE.SphereGeometry(7, 36, 36);
+      const earthMat = new THREE.MeshStandardMaterial({ 
+        color: 0x0369a1, 
+        roughness: 0.6,
+        metalness: 0.1
+      });
+      const earth = new THREE.Mesh(earthGeo, earthMat);
+      activeGroup.add(earth);
+
+      // Continent landmass shapes (Stylized green patches)
+      for (let i = 0; i < 18; i++) {
+        const landGeo = new THREE.DodecahedronGeometry(1.2 + Math.random() * 0.8, 1);
+        const landMat = new THREE.MeshStandardMaterial({ color: 0x15803d, roughness: 0.8 });
+        const land = new THREE.Mesh(landGeo, landMat);
+        const phi = Math.random() * Math.PI;
+        const theta = Math.random() * Math.PI * 2;
+        land.position.setFromSphericalCoords(7.1, phi, theta);
+        land.lookAt(0, 0, 0);
+        activeGroup.add(land);
+      }
+
+      // Andaman & Nicobar Archipelago Marker Pin
+      const pinGroup = new THREE.Group();
+      pinGroup.name = "andaman_pin";
+      const pinPoleGeo = new THREE.CylinderGeometry(0.08, 0.08, 2.5, 16);
+      const pinPoleMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
+      const pinPole = new THREE.Mesh(pinPoleGeo, pinPoleMat);
+      pinPole.position.y = 1.25;
+      pinGroup.add(pinPole);
+
+      const pinHeadGeo = new THREE.SphereGeometry(0.5, 16, 16);
+      const pinHeadMat = new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xef4444, emissiveIntensity: 0.8 });
+      const pinHead = new THREE.Mesh(pinHeadGeo, pinHeadMat);
+      pinHead.position.y = 2.5;
+      pinGroup.add(pinHead);
+
+      // Position in Bay of Bengal coordinates
+      pinGroup.position.set(4.5, 2.8, 4.8);
+      pinGroup.lookAt(0, 0, 0);
+      pinGroup.rotateX(Math.PI);
+      activeGroup.add(pinGroup);
+
+      // Atmosphere Glow Ring
+      const atmoGeo = new THREE.RingGeometry(7.2, 7.8, 36);
+      const atmoMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, side: THREE.DoubleSide, transparent: true, opacity: 0.3 });
+      const atmo = new THREE.Mesh(atmoGeo, atmoMat);
+      atmo.rotation.x = Math.PI / 2;
+      activeGroup.add(atmo);
+
+      scene.add(activeGroup);
+      document.getElementById('model-desc').innerHTML = '<strong>Model: Interactive Earth Globe & Sri Vijaya Puram Marker</strong><br>Pulsing red marker designates Sri Vijaya Puram in the Bay of Bengal. Drag to rotate.';
+      document.getElementById('model-action-btn').innerText = '📍 Focus Andaman';
+    }
+
+    // Model 2: Union Budget 3D Rupee Flow Donut
+    function loadBudgetModel() {
+      clearActiveModel();
+      activeGroup = new THREE.Group();
+
+      const slices = [
+        { label: "Net Tax Receipts (₹28.37L Cr)", angle: 1.8, col: 0x0284c7 },
+        { label: "Capital Expenditure (₹11.21L Cr)", angle: 1.1, col: 0x10b981 },
+        { label: "Fiscal Borrowings (~₹11L Cr)", angle: 1.0, col: 0xf59e0b },
+        { label: "Other Receipts", angle: 2.38, col: 0x8b5cf6 }
+      ];
+
+      let curAngle = 0;
+      slices.forEach((s, idx) => {
+        const shape = new THREE.Shape();
+        const innerR = 3.5;
+        const outerR = 7.0;
+        const startA = curAngle;
+        const endA = curAngle + s.angle;
+
+        shape.absarc(0, 0, outerR, startA, endA, false);
+        shape.absarc(0, 0, innerR, endA, startA, true);
+
+        const extrudeSettings = { depth: 1.5, bevelEnabled: true, bevelSegments: 3, steps: 1, bevelSize: 0.1, bevelThickness: 0.1 };
+        const geo = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+        const mat = new THREE.MeshStandardMaterial({ color: s.col, roughness: 0.3, metalness: 0.2 });
+        const mesh = new THREE.Mesh(geo, mat);
+        mesh.rotation.x = -Math.PI / 2;
+        mesh.name = `slice_${idx}`;
+        activeGroup.add(mesh);
+        curAngle = endA;
+      });
+
+      // Center Rupee Symbol Base
+      const rupeeBaseGeo = new THREE.CylinderGeometry(2.5, 2.5, 0.4, 32);
+      const rupeeBaseMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, metalness: 0.7 });
+      const rupeeBase = new THREE.Mesh(rupeeBaseGeo, rupeeBaseMat);
+      rupeeBase.position.y = 0.75;
+      activeGroup.add(rupeeBase);
+
+      scene.add(activeGroup);
+      document.getElementById('model-desc').innerHTML = '<strong>Model: Union Budget 2025 3D Fiscal Rupee Donut</strong><br>3D segments represent Total Expenditure (₹50.65L Cr), CapEx (₹11.21L Cr), and Net Tax (₹28.37L Cr).';
+      document.getElementById('model-action-btn').innerText = '💥 Explode Slices';
+    }
+
+    // Model 3: Humanoid Robot Teacher
+    function loadRobotModel() {
+      clearActiveModel();
+      activeGroup = new THREE.Group();
+
+      // Torso
+      const torsoGeo = new THREE.BoxGeometry(3, 4, 2);
+      const torsoMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.2, metalness: 0.4 });
+      const torso = new THREE.Mesh(torsoGeo, torsoMat);
+      torso.position.y = 4;
+      activeGroup.add(torso);
+
+      // Chest Display Screen
+      const screenGeo = new THREE.BoxGeometry(2, 1.8, 0.2);
+      const screenMat = new THREE.MeshStandardMaterial({ color: 0x0284c7, emissive: 0x0284c7, emissiveIntensity: 0.5 });
+      const screen = new THREE.Mesh(screenGeo, screenMat);
+      screen.position.set(0, 4.2, 1.05);
+      screen.name = "robot_screen";
+      activeGroup.add(screen);
+
+      // Head
+      const headGeo = new THREE.SphereGeometry(1.2, 24, 24);
+      const headMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.2 });
+      const head = new THREE.Mesh(headGeo, headMat);
+      head.position.y = 7;
+      activeGroup.add(head);
+
+      // Eyes
+      for (let e = -1; e <= 1; e += 2) {
+        const eyeGeo = new THREE.SphereGeometry(0.2, 16, 16);
+        const eyeMat = new THREE.MeshStandardMaterial({ color: 0x38bdf8, emissive: 0x38bdf8 });
+        const eye = new THREE.Mesh(eyeGeo, eyeMat);
+        eye.position.set(e * 0.45, 7.2, 1.1);
+        activeGroup.add(eye);
+      }
+
+      // Arms
+      for (let a = -1; a <= 1; a += 2) {
+        const armGeo = new THREE.CylinderGeometry(0.4, 0.35, 3.2, 16);
+        const armMat = new THREE.MeshStandardMaterial({ color: 0xe2e8f0 });
+        const arm = new THREE.Mesh(armGeo, armMat);
+        arm.position.set(a * 2.2, 3.8, 0);
+        arm.rotation.z = a * 0.2;
+        activeGroup.add(arm);
+      }
+
+      // Legs / Base
+      for (let l = -1; l <= 1; l += 2) {
+        const legGeo = new THREE.CylinderGeometry(0.5, 0.45, 3.5, 16);
+        const legMat = new THREE.MeshStandardMaterial({ color: 0x94a3b8 });
+        const leg = new THREE.Mesh(legGeo, legMat);
+        leg.position.set(l * 0.9, 0.5, 0);
+        activeGroup.add(leg);
+      }
+
+      scene.add(activeGroup);
+      document.getElementById('model-desc').innerHTML = '<strong>Model: Social Classroom Robot Teacher (Nao & Pepper)</strong><br>Articulated humanoid robot with interactive chest screen and cognitive perception sensors.';
+      document.getElementById('model-action-btn').innerText = '💡 Toggle Teacher Mode';
+    }
+
+    // Model 4: Cellular Jail National Memorial
+    function loadCellularModel() {
+      clearActiveModel();
+      activeGroup = new THREE.Group();
+
+      // Central Watchtower
+      const towerGeo = new THREE.CylinderGeometry(1.5, 1.8, 8, 24);
+      const towerMat = new THREE.MeshStandardMaterial({ color: 0x78350f, roughness: 0.8 });
+      const tower = new THREE.Mesh(towerGeo, towerMat);
+      tower.position.y = 4;
+      activeGroup.add(tower);
+
+      // Tower Conical Roof
+      const roofGeo = new THREE.ConeGeometry(2.2, 2.5, 24);
+      const roofMat = new THREE.MeshStandardMaterial({ color: 0x991b1b });
+      const roof = new THREE.Mesh(roofGeo, roofMat);
+      roof.position.y = 9.25;
+      activeGroup.add(roof);
+
+      // Radiating Prison Wings (Historic 7 spokes)
+      for (let w = 0; w < 7; w++) {
+        const angle = (w / 7) * Math.PI * 2;
+        const wingGeo = new THREE.BoxGeometry(8, 2.8, 1.2);
+        const wingMat = new THREE.MeshStandardMaterial({ color: 0xd97706, roughness: 0.9 });
+        const wing = new THREE.Mesh(wingGeo, wingMat);
+        wing.position.set(Math.cos(angle) * 5.5, 1.4, Math.sin(angle) * 5.5);
+        wing.rotation.y = -angle;
+        activeGroup.add(wing);
+      }
+
+      // Base courtyard
+      const baseGeo = new THREE.CylinderGeometry(11, 11, 0.3, 32);
+      const baseMat = new THREE.MeshStandardMaterial({ color: 0x1e293b });
+      const base = new THREE.Mesh(baseGeo, baseMat);
+      base.position.y = -0.15;
+      activeGroup.add(base);
+
+      scene.add(activeGroup);
+      document.getElementById('model-desc').innerHTML = '<strong>Model: Cellular Jail (Kala Pani) National Memorial</strong><br>Panopticon radial architecture featuring 7 wings spreading from a central watchtower in Sri Vijaya Puram.';
+      document.getElementById('model-action-btn').innerText = '🔥 Freedom Flame';
+    }
+
+    function loadModel(name, btn) {
+      document.querySelectorAll('.lab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      currentModelName = name;
+      camera.position.set(0, 10, 26);
+      if (name === 'globe') loadGlobeModel();
+      else if (name === 'budget') loadBudgetModel();
+      else if (name === 'robot') loadRobotModel();
+      else if (name === 'cellular') loadCellularModel();
+    }
+
+    function toggleAutoRotate() {
+      isAutoRotate = !isAutoRotate;
+    }
+
+    function resetCamera() {
+      camera.position.set(0, 10, 26);
+      controls.target.set(0, 0, 0);
+      controls.update();
+    }
+
+    let isExploded = false;
+    function triggerModelAction() {
+      if (currentModelName === 'globe') {
+        camera.position.set(7, 5, 8);
+        controls.target.set(4.5, 2.8, 4.8);
+        controls.update();
+      } else if (currentModelName === 'budget') {
+        isExploded = !isExploded;
+        for (let i = 0; i < 4; i++) {
+          const sl = activeGroup.getObjectByName(`slice_${i}`);
+          if (sl) {
+            sl.position.x = isExploded ? (i - 1.5) * 1.5 : 0;
+            sl.position.z = isExploded ? (i % 2 === 0 ? 1.5 : -1.5) : 0;
+          }
+        }
+      } else if (currentModelName === 'robot') {
+        const scr = activeGroup.getObjectByName("robot_screen");
+        if (scr) {
+          const colors = [0x0284c7, 0x10b981, 0xf59e0b, 0xec4899];
+          const nextCol = colors[Math.floor(Math.random() * colors.length)];
+          scr.material.color.setHex(nextCol);
+          scr.material.emissive.setHex(nextCol);
+        }
+      } else if (currentModelName === 'cellular') {
+        alert('Sri Vijaya Puram honors the sacrifices of Veer Savarkar, Netaji Subhash Chandra Bose, and countless freedom fighters.');
+      }
+    }
+
+    // ================= PRACTICE QUIZ DATA =================
+    const quizQuestions = [
+      {
+        q: "1. What is the estimated total expenditure for the Union Budget year 2025-26?",
+        opts: ["a. ₹34.96 lakh crore", "b. ₹50.65 lakh crore", "c. ₹28.37 lakh crore", "d. ₹14.82 lakh crore"],
+        ans: 1,
+        exp: "The Union Budget crosses the landmark ₹50 lakh crore threshold, pegged at ₹50.65 lakh crore."
+      },
+      {
+        q: "2. The fiscal deficit target for 2025-26 is set at what percentage of GDP?",
+        opts: ["a. 5.1%", "b. 4.4%", "c. 3.5%", "d. 6.0%"],
+        ans: 1,
+        exp: "Government committed to bringing the fiscal deficit strictly below 4.5%, setting the target at 4.4%."
+      },
+      {
+        q: "3. What is the estimated Capital Expenditure (CapEx) for 2025-26?",
+        opts: ["a. ₹11.21 lakh crore", "b. ₹8.50 lakh crore", "c. ₹15.00 lakh crore", "d. ₹5.20 lakh crore"],
+        ans: 0,
+        exp: "CapEx is maintained at an all-time high of ₹11.21 lakh crore (~3.4% of GDP) for infrastructure."
+      },
+      {
+        q: "4. Under the Union Budget, Agriculture is officially referred to as:",
+        opts: ["a. The second engine", "b. The third engine", "c. The first engine of development", "d. Minor priority sector"],
+        ans: 2,
+        exp: "The Finance Minister designated Agriculture as the 'First Engine of Development' focusing on rural prosperity."
+      },
+      {
+        q: "5. Who is currently serving as the Governor of Andhra Pradesh?",
+        opts: ["a. Arif Mohammad Khan", "b. Justice S. Abdul Nazeer", "c. Bandaru Dattatreya", "d. Acharya Devvrat"],
+        ans: 1,
+        exp: "Justice S. Abdul Nazeer, former Judge of the Supreme Court of India, serves as Governor of AP."
+      },
+      {
+        q: "6. Who is the Governor of Kerala?",
+        opts: ["a. Arif Mohammad Khan", "b. Ramen Deka", "c. Dr. K. Hari Babu", "d. Shiv Pratap Shukla"],
+        ans: 0,
+        exp: "Eminent scholar and constitutionalist Arif Mohammad Khan serves as the Governor of Kerala."
+      },
+      {
+        q: "7. Dr. Kambhampati Hari Babu serves as the Governor of which state?",
+        opts: ["a. Bihar", "b. Odisha", "c. Gujarat", "d. Assam"],
+        ans: 1,
+        exp: "Distinguished Telugu leader Dr. Kambhampati Hari Babu is the Governor of Odisha (previously Mizoram)."
+      },
+      {
+        q: "8. Bandaru Dattatreya serves as the Governor of which state?",
+        opts: ["a. Punjab", "b. Haryana", "c. Rajasthan", "d. Goa"],
+        ans: 1,
+        exp: "Veteran statesman Bandaru Dattatreya serves as the Governor of Haryana."
+      },
+      {
+        q: "9. Under which Article of the Constitution does the President appoint a State Governor?",
+        opts: ["a. Article 112", "b. Article 153", "c. Article 155", "d. Article 356"],
+        ans: 2,
+        exp: "Article 155 governs the appointment of Governors by the President of India."
+      },
+      {
+        q: "10. In September 2024, Port Blair was officially renamed to:",
+        opts: ["a. Swaraj Dweep", "b. Sri Vijaya Puram", "c. Netaji Nagar", "d. Shaheed Dweep"],
+        ans: 1,
+        exp: "The Government of India officially renamed Port Blair to Sri Vijaya Puram to discard colonial vestiges."
+      },
+      {
+        q: "11. Netaji Subhash Chandra Bose hoisted the National Tricolour at Port Blair in which year?",
+        opts: ["a. 1942", "b. 1943", "c. 1945", "d. 1947"],
+        ans: 1,
+        exp: "On 30th December 1943, Netaji hoisted the tricolour, declaring the islands the first liberated Indian territory."
+      },
+      {
+        q: "12. The historic Cellular Jail in Sri Vijaya Puram is associated with:",
+        opts: ["a. India's Freedom Struggle", "b. Space Research", "c. Maritime Trade", "d. Mughal Architecture"],
+        ans: 0,
+        exp: "Cellular Jail (Kala Pani) housed heroic Indian freedom fighters including Veer Savarkar in solitary confinement."
+      },
+      {
+        q: "13. The Union Territory of Andaman and Nicobar Islands is located in which water body?",
+        opts: ["a. Arabian Sea", "b. Bay of Bengal", "c. Indian Ocean (South)", "d. Laccadive Sea"],
+        ans: 1,
+        exp: "The Andaman and Nicobar archipelago is situated in the Bay of Bengal."
+      },
+      {
+        q: "14. Which educational robot is specialized in teaching Mathematics, Science, and Languages?",
+        opts: ["a. Pepper", "b. Nao", "c. Robovie", "d. Tega"],
+        ans: 1,
+        exp: "Nao is a 58 cm bipedal humanoid robot widely used for teaching Maths, Science, and foreign languages."
+      },
+      {
+        q: "15. Which robot is equipped with emotion recognition software to interpret feelings?",
+        opts: ["a. Pepper", "b. Robovie", "c. Tega", "d. Roomba"],
+        ans: 0,
+        exp: "Pepper is specifically engineered to analyze human emotions, voice tone, and facial expressions."
+      },
+      {
+        q: "16. Which educational robot assists students in learning computer programming and coding?",
+        opts: ["a. Nao", "b. Robovie", "c. Tega", "d. Pepper"],
+        ans: 1,
+        exp: "Robovie was developed by ATR Japan specifically to tutor students in coding and algorithm logic."
+      },
+      {
+        q: "17. Which cute robotic platform from MIT Media Lab improves reading and storytelling?",
+        opts: ["a. Tega", "b. Robovie", "c. Pepper", "d. Sophia"],
+        ans: 0,
+        exp: "Tega is an expressive, squash-and-stretch robot designed for early childhood reading and writing."
+      },
+      {
+        q: "18. What was the original name of Sri Vijaya Puram before September 2024?",
+        opts: ["a. Fort William", "b. Port Blair", "c. Port Cornwallis", "d. Havelock"],
+        ans: 1,
+        exp: "It was named Port Blair after 18th-century British surveyor Archibald Blair."
+      },
+      {
+        q: "19. The central government aims to bring outstanding public debt to what percentage of GDP by 2031?",
+        opts: ["a. 60%", "b. 50%", "c. 40%", "d. 35%"],
+        ans: 1,
+        exp: "The debt-to-GDP roadmap targets reducing public liabilities to 50% of GDP by March 2031."
+      },
+      {
+        q: "20. Which Governor is a former Chief of Army Staff (4-star General)?",
+        opts: ["a. Gen. V. K. Singh (Mizoram)", "b. Arif Mohammad Khan", "c. Bandaru Dattatreya", "d. Acharya Devvrat"],
+        ans: 0,
+        exp: "General V. K. Singh, former Chief of Army Staff, is the Governor of Mizoram."
+      }
+    ];
+
+    let quizScore = 0;
+    const answered = new Set();
+
+    function renderQuiz() {
+      const container = document.getElementById('quiz-list');
+      if (!container) return;
+      container.innerHTML = '';
+
+      quizQuestions.forEach((item, qIdx) => {
+        const card = document.createElement('div');
+        card.className = 'quiz-card';
+        card.id = `qcard-${qIdx}`;
+
+        let optsHtml = '';
+        item.opts.forEach((opt, oIdx) => {
+          optsHtml += `<div class="quiz-opt" onclick="selectAnswer(${qIdx}, ${oIdx})">${opt}</div>`;
+        });
+
+        card.innerHTML = `
+          <h3>${item.q}</h3>
+          <div class="quiz-options">${optsHtml}</div>
+          <div class="quiz-feedback" id="feedback-${qIdx}"></div>
+        `;
+        container.appendChild(card);
       });
     }
 
-    // Text to speech utility
-    // Strict English Text-to-Speech Engine
-    function speakText(text) {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        // Strip HTML and Telugu characters to ensure clean English pronunciation
-        const cleanText = text.replace(/<[^>]*>/g, '').replace(/[\u0C00-\u0C7F]/g, '');
-        const utterance = new SpeechSynthesisUtterance(cleanText);
-        utterance.rate = 0.92;
-        utterance.pitch = 1.0;
+    function selectAnswer(qIdx, selectedOptIdx) {
+      if (answered.has(qIdx)) return;
+      answered.add(qIdx);
 
-        // Force selection of natural English voices
-        const voices = window.speechSynthesis.getVoices();
-        const preferredVoice = voices.find(v => (v.lang === 'en-IN' || v.lang === 'en-US' || v.lang === 'en-GB') && 
-          (v.name.includes('Natural') || v.name.includes('Neural') || v.name.includes('Online') || v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('Neerja')))
-          || voices.find(v => v.lang.startsWith('en'));
-        
-        if (preferredVoice) {
-          utterance.voice = preferredVoice;
-        }
-        utterance.lang = 'en-US';
-        window.speechSynthesis.speak(utterance);
+      const item = quizQuestions[qIdx];
+      const card = document.getElementById(`qcard-${qIdx}`);
+      const options = card.querySelectorAll('.quiz-opt');
+      const feedback = document.getElementById(`feedback-${qIdx}`);
+
+      if (selectedOptIdx === item.ans) {
+        quizScore++;
+        options[selectedOptIdx].classList.add('correct');
+        feedback.style.display = 'block';
+        feedback.style.background = 'rgba(16, 185, 129, 0.2)';
+        feedback.style.border = '1px solid #10b981';
+        feedback.style.color = '#a7f3d0';
+        feedback.innerHTML = `<strong>✅ Correct!</strong> ${item.exp}`;
+      } else {
+        options[selectedOptIdx].classList.add('wrong');
+        options[item.ans].classList.add('correct');
+        feedback.style.display = 'block';
+        feedback.style.background = 'rgba(239, 68, 68, 0.2)';
+        feedback.style.border = '1px solid #ef4444';
+        feedback.style.color = '#fca5a5';
+        feedback.innerHTML = `<strong>❌ Incorrect.</strong> Correct Answer: <em>${item.opts[item.ans]}</em><br>${item.exp}`;
       }
+
+      document.getElementById('quiz-score').innerText = quizScore;
     }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      init3D();
+      renderQuiz();
+    });
   </script>
 </body>
 </html>

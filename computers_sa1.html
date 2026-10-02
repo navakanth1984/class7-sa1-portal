@@ -2,86 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class 7 Computers SA-1 Master Portal | 2026-27</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Class 7 Computer Science SA-1 Interactive Learning Portal</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nirmala+UI&family=Gautami&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
   <style>
     :root {
-      --primary: #10b981;
-      --primary-dark: #1e3a8a;
-      --bg: #0f172a;
-      --surface: #1e293b;
-      --surface-light: #334155;
-      --card-bg: rgba(30, 41, 59, 0.75);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #f59e0b;
-      --success: #10b981;
-      --font-main: 'Outfit', 'Nirmala UI', sans-serif;
+      --primary: #0284c7;
+      --primary-light: #38bdf8;
+      --primary-dark: #0369a1;
+      --accent: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --bg: #0b1120;
+      --panel: #131d35;
+      --panel-soft: #1e293b;
+      --panel-hover: #26354f;
+      --line: #334155;
+      --ink: #f8fafc;
+      --muted: #94a3b8;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background: var(--bg);
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
-      background-attachment: fixed;
-      color: var(--text);
-      font-family: var(--font-main);
+      color: var(--ink);
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
-      padding-bottom: 70px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+      padding-bottom: 90px;
+      overflow-x: hidden;
     }
 
     /* Header */
     header {
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--card-border);
       position: sticky;
       top: 0;
       z-index: 100;
-      padding: 18px 0;
+      background: rgba(11, 17, 32, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
     }
-    .header-inner {
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+    .topbar {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
       flex-wrap: wrap;
-      gap: 12px;
     }
-    .logo-area {
+    .brand {
       display: flex;
       align-items: center;
       gap: 12px;
     }
-    .subject-icon {
-      font-size: 2rem;
-      background: rgba(255, 255, 255, 0.08);
+    .brand-icon {
+      font-size: 1.8rem;
+      background: rgba(2, 132, 199, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.4);
       padding: 6px 12px;
       border-radius: 12px;
-      border: 1px solid var(--card-border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
-    .title-group h1 {
-      font-size: 1.35rem;
+    .brand h1 {
+      font-size: 1.25rem;
       font-weight: 700;
       color: #fff;
     }
-    .title-group p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    .brand p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
-
-    .btn-group {
+    .actions {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
@@ -90,285 +95,1002 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--surface);
-      color: #fff;
-      padding: 8px 14px;
+      min-height: 36px;
+      padding: 6px 14px;
+      border: 1px solid var(--line);
       border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      background: var(--panel-soft);
+      color: var(--ink);
       text-decoration: none;
-      border: 1px solid var(--card-border);
+      font-size: 0.84rem;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
     }
     .btn:hover {
       background: var(--primary);
-      border-color: var(--primary);
+      border-color: var(--primary-light);
+      color: #fff;
       transform: translateY(-1px);
     }
-    .btn-primary {
+    .btn.primary {
       background: var(--primary);
-      border-color: var(--primary);
-    }
-    .btn-primary:hover {
-      opacity: 0.9;
+      border-color: var(--primary-light);
+      color: #fff;
     }
 
-    /* Nav Tabs */
-    .tabs-nav {
+    /* Global Audio Bar */
+    .audio-guide-bar {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.25) 0%, rgba(16, 185, 129, 0.15) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 12px;
+      padding: 12px 18px;
+      margin: 16px 0;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .audio-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .audio-info span {
+      font-size: 1.6rem;
+    }
+    .audio-info h3 {
+      margin: 0;
+      font-size: 0.96rem;
+      color: var(--primary-light);
+    }
+    .audio-info p {
+      margin: 2px 0 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .audio-controls {
+      display: flex;
+      align-items: center;
       gap: 10px;
-      margin: 24px 0 16px;
-      border-bottom: 1px solid var(--card-border);
+      flex-grow: 1;
+      max-width: 480px;
+    }
+    .audio-controls audio {
+      width: 100%;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    /* Metrics Navigation */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .metric:hover {
+      border-color: var(--primary-light);
+      background: var(--panel-hover);
+      transform: translateY(-2px);
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--primary-light);
+    }
+    .metric span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* Main Desktop Tabs */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
       padding-bottom: 12px;
     }
-    .tab-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 8px 16px;
+    .tab {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
       border-radius: 8px;
+      padding: 8px 14px;
+      font-weight: 600;
+      font-size: 0.88rem;
       cursor: pointer;
       transition: all 0.2s;
     }
-    .tab-btn.active {
-      background: rgba(255, 255, 255, 0.1);
+    .tab:hover {
       color: #fff;
-      border: 1px solid var(--card-border);
-    }
-
-    /* Search Bar */
-    .search-box {
-      margin-bottom: 20px;
-      position: relative;
-    }
-    .search-box input {
-      width: 100%;
-      padding: 12px 18px 12px 42px;
-      border-radius: 10px;
-      border: 1px solid var(--card-border);
-      background: var(--surface);
-      color: #fff;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border 0.2s;
-    }
-    .search-box input:focus {
       border-color: var(--primary);
     }
-    .search-box::before {
-      content: "🔍";
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.95rem;
+    .tab.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary-light);
     }
 
-    /* Content Area */
-    .tab-content {
+    .tab-panel {
       display: none;
     }
-    .tab-content.active {
+    .tab-panel.active {
       display: block;
     }
 
-    .card {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--card-border);
+    /* 3D Lab Studio */
+    .lab-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+    .lab-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .lab-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+    .lab-btn:hover {
+      background: var(--panel-hover);
+      border-color: var(--primary);
+    }
+    .lab-btn.active {
+      background: var(--primary);
+      border-color: var(--primary-light);
+      color: #fff;
+    }
+    .lab-viewport {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      background: #060913;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    #three-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .lab-controls-hud {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      background: rgba(19, 29, 53, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.82rem;
+    }
+    .hud-desc {
+      color: var(--muted);
+      max-width: 60%;
+    }
+    .hud-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .hud-btn {
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .hud-btn:hover {
+      background: var(--primary);
+    }
+
+    /* 2D Infographics */
+    .infographics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .info-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .info-card h3 {
+      font-size: 1.05rem;
+      color: var(--primary-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .svg-container {
+      width: 100%;
+      background: #090f1d;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      overflow: hidden;
+    }
+    .svg-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Mind Map */
+    .mindmap-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding: 12px 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .mindmap-wrapper {
+      background: #060913;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      overflow-x: auto;
+      box-shadow: var(--shadow);
+    }
+    .mindmap-node {
+      cursor: pointer;
+      transition: filter 0.2s;
+    }
+    .mindmap-node:hover {
+      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+    }
+
+    /* Content Cards (Solutions & QP) */
+    .content-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: var(--shadow);
     }
-
-    /* Typography inside content */
-    .rendered-content h1 {
+    .content-card h1 {
       font-size: 1.45rem;
-      color: var(--primary);
-      border-bottom: 2px solid var(--card-border);
-      padding-bottom: 6px;
-      margin-top: 24px;
-      margin-bottom: 12px;
-    }
-    .rendered-content h2 {
-      font-size: 1.25rem;
-      color: #38bdf8;
-      margin-top: 18px;
-      margin-bottom: 10px;
-    }
-    .rendered-content h3 {
-      font-size: 1.1rem;
-      color: #7dd3fc;
+      color: var(--primary-light);
       margin-top: 14px;
-      margin-bottom: 8px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 8px;
     }
-    .rendered-content h4 {
-      font-size: 1rem;
-      color: #bae6fd;
-      margin-top: 12px;
-      margin-bottom: 6px;
+    .content-card h2 {
+      font-size: 1.25rem;
+      margin-top: 22px;
+      color: #38bdf8;
     }
-    .rendered-content p {
-      margin-bottom: 10px;
+    .content-card h3 {
+      font-size: 1.05rem;
+      margin-top: 16px;
+      color: #34d399;
+    }
+    .content-card h4 {
+      font-size: 0.98rem;
+      color: #fbbf24;
+      margin-top: 14px;
+    }
+    .content-card blockquote {
+      margin: 14px 0;
+      border-left: 4px solid var(--primary);
+      background: rgba(2, 132, 199, 0.1);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
       color: #e2e8f0;
     }
-    .rendered-content table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
-      background: rgba(15, 23, 42, 0.6);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .rendered-content th, .rendered-content td {
-      padding: 8px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      text-align: left;
-    }
-    .rendered-content th {
-      background: rgba(255, 255, 255, 0.08);
-      color: #38bdf8;
-      font-weight: 600;
-    }
-    .rendered-content blockquote {
-      border-left: 4px solid var(--primary);
-      background: rgba(255, 255, 255, 0.05);
-      padding: 10px 16px;
-      margin: 12px 0;
-      border-radius: 0 8px 8px 0;
-      color: #cbd5e1;
-    }
-    .rendered-content strong {
-      color: #fff;
-    }
-    .rendered-content code {
+    .content-card code {
       background: rgba(255, 255, 255, 0.1);
       padding: 2px 6px;
       border-radius: 4px;
-      font-family: Consolas, monospace;
+      font-family: 'JetBrains Mono', Consolas, monospace;
       color: #f472b6;
+      font-size: 0.9em;
     }
-    .rendered-content hr {
-      border: none;
-      border-top: 1px solid var(--card-border);
-      margin: 20px 0;
+    .content-card table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.92rem;
+    }
+    .content-card th, .content-card td {
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .content-card th {
+      background: rgba(2, 132, 199, 0.2);
+      color: #fff;
+    }
+    .content-card tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .content-card ul, .content-card ol {
+      margin: 8px 0 12px;
+      padding-left: 24px;
+    }
+    .content-card li {
+      margin-bottom: 4px;
     }
 
-    /* Action bar on cards */
-    .tts-btn {
+    /* Inline TTS button */
+    .q-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .inline-tts-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #cbd5e1;
-      border: 1px solid var(--card-border);
+      gap: 5px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--primary-light);
       padding: 4px 10px;
       border-radius: 6px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       cursor: pointer;
-      margin-bottom: 8px;
+      transition: all 0.2s;
     }
-    .tts-btn:hover {
+    .inline-tts-btn:hover {
       background: var(--primary);
       color: #fff;
     }
+    .inline-tts-btn.speaking {
+      background: var(--accent);
+      color: #000;
+      border-color: #a7f3d0;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
 
-    /* Print View */
-    @media print {
-      header, .tabs-nav, .search-box, .btn-group, .tts-btn {
-        display: none !important;
+    /* Practice Quiz Arena */
+    .quiz-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    .quiz-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .quiz-opt {
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .quiz-opt:hover {
+      background: var(--panel-hover);
+      border-color: var(--primary-light);
+    }
+    .quiz-opt.correct {
+      background: rgba(16, 185, 129, 0.25);
+      border-color: #10b981;
+      color: #a7f3d0;
+      font-weight: 700;
+    }
+    .quiz-opt.wrong {
+      background: rgba(239, 68, 68, 0.25);
+      border-color: #ef4444;
+      color: #fca5a5;
+    }
+    .quiz-feedback {
+      display: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 0.88rem;
+    }
+    .quiz-score-banner {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.3) 0%, rgba(16, 185, 129, 0.2) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Mobile Bottom Navigation Bar */
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: rgba(11, 17, 32, 0.96);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--line);
+      padding: 6px 4px;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+    }
+    .bottom-nav-inner {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .bottom-nav-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 8px;
+      min-width: 52px;
+      transition: color 0.2s;
+    }
+    .bottom-nav-btn span.icon {
+      font-size: 1.25rem;
+    }
+    .bottom-nav-btn.active {
+      color: var(--primary-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .lab-container {
+        grid-template-columns: 1fr;
+      }
+      .lab-viewport {
+        height: 380px;
+      }
+      .infographics-grid {
+        grid-template-columns: 1fr;
+      }
+      .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 768px) {
+      .tabs {
+        display: none; /* Replaced by bottom nav */
+      }
+      .mobile-bottom-nav {
+        display: block;
       }
       body {
-        background: #fff !important;
-        color: #000 !important;
+        padding-bottom: 80px;
       }
-      .card {
-        background: #fff !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-      }
-      .rendered-content h1, .rendered-content h2, .rendered-content h3 {
-        color: #000 !important;
-      }
-      .rendered-content table {
-        background: #fff !important;
-        color: #000 !important;
-      }
-      .rendered-content th {
-        background: #eee !important;
-        color: #000 !important;
-      }
-      .rendered-content td {
-        border: 1px solid #ccc !important;
-      }
-      #tab-qp {
-        display: block !important;
-      }
-      #tab-master {
-        display: none !important;
+      .hud-desc {
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Sticky Header -->
   <header>
-    <div class="container header-inner">
-      <div class="logo-area">
-        <div class="subject-icon">💻</div>
-        <div class="title-group">
-          <h1>Class 7 Computers SA-1 Master Portal</h1>
-          <p>Click and Learn - 7 (Chapters 1 to 4 & Test Paper - 1) | Exam: 06-10-2026 | Marks: 50</p>
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="brand-icon">💻</div>
+        <div>
+          <h1>Class 7 Computer Science SA-1</h1>
+          <p>Click and Learn - 7 | Chapters 1 to 4 & Test Paper - 1 | Marks: 50</p>
         </div>
       </div>
-      <div class="btn-group">
-        <a class="btn" href="index.html" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: #fff;">🏠 All Subjects</a>
-        <button class="btn" onclick="window.print()">🖨️ Print Exam Paper</button>
-        <a class="btn btn-primary" href="SA1_Computers_Master_Solutions.pdf" target="_blank">📄 Master Solutions PDF</a>
+      <div class="actions">
+        <button class="btn" onclick="window.print()">🖨️ Print</button>
+        <a class="btn primary" href="SA1_Computers_Master_Solutions.pdf" target="_blank">📄 Master Solutions PDF</a>
         <a class="btn" href="SA1_Computers_Question_Paper.pdf" target="_blank">📝 Question Paper PDF</a>
         <a class="btn" href="SA1_Computers_Master_Solutions.docx" download>📥 Word DOCX</a>
       </div>
     </div>
   </header>
 
-  <main class="container" style="margin-top: 20px;">
+  <main class="wrap" style="margin-top: 16px;">
     
-    <!-- EMBEDDED ENGLISH AUDIO GUIDE -->
-    <div style="background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 1.8rem;">🎧</span>
+    <!-- Audio Guide Banner -->
+    <div class="audio-guide-bar">
+      <div class="audio-info">
+        <span>🎧</span>
         <div>
-          <h3 style="margin: 0; font-size: 1rem; color: #38bdf8;">Complete English Audio Study Guide</h3>
-          <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">High-clarity neural English narration for comprehensive revision</p>
+          <h3>Full Computer Science Audio Companion</h3>
+          <p>Neural English high-clarity voice guide for Chapters 1-4 & Exam Preparation</p>
         </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; max-width: 450px;">
-        <audio controls style="width: 100%; height: 38px; border-radius: 8px;">
+      <div class="audio-controls">
+        <audio id="main-audio" controls>
           <source src="SA1_Computers_English_Audio_Guide.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
         </audio>
-        <a href="SA1_Computers_English_Audio_Guide.mp3" download class="btn" style="padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">⬇️ MP3</a>
+        <a href="SA1_Computers_English_Audio_Guide.mp3" download class="btn" style="padding: 5px 10px; font-size: 0.78rem;">⬇️ MP3</a>
       </div>
     </div>
 
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab('master')">📘 Master Solutions & Study Guide</button>
-      <button class="tab-btn" onclick="switchTab('qp')">📝 Student Question Paper (50 Marks)</button>
-      <button class="tab-btn" onclick="switchTab('overview')">⚡ Syllabus & Exam Blueprint</button>
+    <!-- Quick Metrics Jump -->
+    <div class="summary-grid">
+      <div class="metric" onclick="switchTab('lab3d')">
+        <strong>🎮 3D Tech Lab</strong>
+        <span>Motherboard, 3D Charts, Animate Layers</span>
+      </div>
+      <div class="metric" onclick="switchTab('visuals')">
+        <strong>📊 2D Infographics</strong>
+        <span>Formulas, Chart Elements, Timeline</span>
+      </div>
+      <div class="metric" onclick="switchTab('mindmaps')">
+        <strong>🧠 Concept Mind Maps</strong>
+        <span>Collapsible Hierarchy & Links</span>
+      </div>
+      <div class="metric" onclick="switchTab('quiz')">
+        <strong>🎯 Practice Arena</strong>
+        <span>20 Interactive MCQs & Explanations</span>
+      </div>
     </div>
 
-    <!-- TAB 1: MASTER SOLUTIONS -->
-    <div id="tab-master" class="tab-content active">
-      <div class="search-box">
-        <input type="text" id="masterSearch" placeholder="Type to search questions, keywords, Telugu translations..." onkeyup="filterContent()">
+    <!-- Desktop Navigation Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="lab3d" onclick="switchTab('lab3d')">🎮 3D Tech Lab</button>
+      <button class="tab" data-tab="visuals" onclick="switchTab('visuals')">📊 2D Visuals</button>
+      <button class="tab" data-tab="mindmaps" onclick="switchTab('mindmaps')">🧠 Mind Maps</button>
+      <button class="tab" data-tab="solutions" onclick="switchTab('solutions')">📘 Master Solutions</button>
+      <button class="tab" data-tab="qp" onclick="switchTab('qp')">📝 Question Paper</button>
+      <button class="tab" data-tab="quiz" onclick="switchTab('quiz')">🎯 Practice Quiz</button>
+    </div>
+
+    <!-- ================= TAB 1: 3D TECH LAB ================= -->
+    <div id="tab-lab3d" class="tab-panel active">
+      <div class="lab-container">
+        <div class="lab-sidebar">
+          <h3 style="font-size: 1rem; color: var(--primary-light); margin-bottom: 6px;">Interactive 3D Models</h3>
+          <button class="lab-btn active" onclick="loadModel('motherboard', this)">
+            <span>🖥️</span> 1. Hardware Architecture (CPU & RAM)
+          </button>
+          <button class="lab-btn" onclick="loadModel('chart3d', this)">
+            <span>📊</span> 2. Excel 3D Bar & Column Chart
+          </button>
+          <button class="lab-btn" onclick="loadModel('layers', this)">
+            <span>🎬</span> 3. Animate 3D Layer Stack
+          </button>
+          <button class="lab-btn" onclick="loadModel('logicgates', this)">
+            <span>⚡</span> 4. Binary Logic Gate Circuit
+          </button>
+        </div>
+        <div class="lab-viewport">
+          <canvas id="three-canvas"></canvas>
+          <div class="lab-controls-hud">
+            <div class="hud-desc" id="model-desc">
+              <strong>Model: Computer Motherboard Architecture</strong><br>
+              Inspect CPU socket, Heat sink, RAM DIMM slots, and PCIe slot. Drag to rotate in 360°, scroll to zoom.
+            </div>
+            <div class="hud-actions">
+              <button class="hud-btn" onclick="toggleAutoRotate()">🔄 Auto Rotate</button>
+              <button class="hud-btn" onclick="resetCamera()">🎯 Reset View</button>
+              <button class="hud-btn" id="model-action-btn" onclick="triggerModelAction()">⚙️ Explode View</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card rendered-content" id="masterContent">
-        <h1>Class 7 Computer Science (Click and Learn - 7) — SA1 Master Solutions &amp; Complete Guide</h1>
+    </div>
+
+    <!-- ================= TAB 2: 2D VISUAL INFOGRAPHICS ================= -->
+    <div id="tab-visuals" class="tab-panel">
+      <div class="infographics-grid">
+        
+        <!-- SVG 1: Excel Formula Anatomy -->
+        <div class="info-card">
+          <h3>📐 1. Excel Formula Anatomy & Syntax Breakdown</h3>
+          <div class="svg-container">
+            <svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg">
+              <rect width="700" height="240" fill="#0f172a" rx="8"/>
+              <!-- Formula Box -->
+              <rect x="50" y="40" width="600" height="70" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+              <text x="80" y="88" font-family="JetBrains Mono" font-size="34" font-weight="bold" fill="#38bdf8">=</text>
+              <text x="110" y="88" font-family="JetBrains Mono" font-size="34" font-weight="bold" fill="#34d399">SUM</text>
+              <text x="180" y="88" font-family="JetBrains Mono" font-size="34" font-weight="bold" fill="#f8fafc">(</text>
+              <text x="200" y="88" font-family="JetBrains Mono" font-size="34" font-weight="bold" fill="#fbbf24">A1</text>
+              <text x="245" y="88" font-family="JetBrains Mono" font-size="34" font-weight="bold" fill="#f43f5e">:</text>
+              <text x="270" y="88" font-family="JetBrains Mono" font-size="34" font-weight="bold" fill="#fbbf24">A10</text>
+              <text x="345" y="88" font-family="JetBrains Mono" font-size="34" font-weight="bold" fill="#f8fafc">)</text>
+              
+              <!-- Callout Lines and Labels -->
+              <!-- Equal Sign -->
+              <path d="M 88 120 L 88 160" stroke="#38bdf8" stroke-width="2" stroke-dasharray="3,3"/>
+              <rect x="40" y="165" width="100" height="40" rx="6" fill="#0284c7"/>
+              <text x="90" y="188" font-family="Outfit" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Equal Sign (=)</text>
+              <text x="90" y="200" font-family="Outfit" font-size="9" fill="#e0f2fe" text-anchor="middle">Mandatory Start</text>
+
+              <!-- Function Name -->
+              <path d="M 145 120 L 145 160" stroke="#34d399" stroke-width="2" stroke-dasharray="3,3"/>
+              <rect x="155" y="165" width="110" height="40" rx="6" fill="#059669"/>
+              <text x="210" y="188" font-family="Outfit" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Function Name</text>
+              <text x="210" y="200" font-family="Outfit" font-size="9" fill="#d1fae5" text-anchor="middle">Pre-built algorithm</text>
+
+              <!-- Range Colon -->
+              <path d="M 252 120 L 252 160" stroke="#f43f5e" stroke-width="2" stroke-dasharray="3,3"/>
+              <rect x="280" y="165" width="105" height="40" rx="6" fill="#e11d48"/>
+              <text x="332" y="188" font-family="Outfit" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Range Colon (:)</text>
+              <text x="332" y="200" font-family="Outfit" font-size="9" fill="#ffe4e6" text-anchor="middle">Separates endpoints</text>
+
+              <!-- Arguments / Range -->
+              <path d="M 310 120 L 420 160" stroke="#fbbf24" stroke-width="2" stroke-dasharray="3,3"/>
+              <rect x="400" y="165" width="125" height="40" rx="6" fill="#d97706"/>
+              <text x="462" y="188" font-family="Outfit" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Cell Range Argument</text>
+              <text x="462" y="200" font-family="Outfit" font-size="9" fill="#fef3c7" text-anchor="middle">Contiguous 10 cells</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- SVG 2: Excel Chart Components -->
+        <div class="info-card">
+          <h3>📊 2. Components of an Excel Chart Anatomy</h3>
+          <div class="svg-container">
+            <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+              <rect width="700" height="320" fill="#0f172a" rx="8"/>
+              <!-- Chart Area Outer -->
+              <rect x="30" y="25" width="640" height="270" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4"/>
+              <text x="45" y="45" font-family="Outfit" font-size="12" font-weight="bold" fill="#38bdf8">Chart Area (Entire Canvas)</text>
+              
+              <!-- Chart Title -->
+              <rect x="250" y="40" width="200" height="28" rx="6" fill="#0284c7"/>
+              <text x="350" y="58" font-family="Outfit" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">Chart Title: Term 1 Marks</text>
+
+              <!-- Plot Area -->
+              <rect x="120" y="85" width="420" height="150" fill="#0b1329" stroke="#64748b" stroke-width="1.5"/>
+              <text x="135" y="105" font-family="Outfit" font-size="11" fill="#94a3b8">Plot Area (Data Region)</text>
+
+              <!-- Gridlines -->
+              <line x1="120" y1="125" x2="540" y2="125" stroke="#334155" stroke-dasharray="2,2"/>
+              <line x1="120" y1="165" x2="540" y2="165" stroke="#334155" stroke-dasharray="2,2"/>
+              <line x1="120" y1="205" x2="540" y2="205" stroke="#334155" stroke-dasharray="2,2"/>
+
+              <!-- Value Axis Y -->
+              <line x1="120" y1="85" x2="120" y2="235" stroke="#cbd5e1" stroke-width="2"/>
+              <text x="60" y="160" font-family="Outfit" font-size="11" font-weight="bold" fill="#34d399">Y: Value Axis</text>
+              <text x="105" y="128" font-family="JetBrains Mono" font-size="10" fill="#94a3b8">80</text>
+              <text x="105" y="168" font-family="JetBrains Mono" font-size="10" fill="#94a3b8">50</text>
+              <text x="105" y="208" font-family="JetBrains Mono" font-size="10" fill="#94a3b8">20</text>
+
+              <!-- Category Axis X -->
+              <line x1="120" y1="235" x2="540" y2="235" stroke="#cbd5e1" stroke-width="2"/>
+              <text x="330" y="255" font-family="Outfit" font-size="11" font-weight="bold" fill="#fbbf24" text-anchor="middle">X: Category Axis (Subjects / Names)</text>
+
+              <!-- Columns / Data Series -->
+              <rect x="160" y="115" width="35" height="120" fill="#38bdf8" rx="3"/>
+              <rect x="200" y="145" width="35" height="90" fill="#f43f5e" rx="3"/>
+              <rect x="290" y="95" width="35" height="140" fill="#38bdf8" rx="3"/>
+              <rect x="330" y="130" width="35" height="105" fill="#f43f5e" rx="3"/>
+              <rect x="420" y="105" width="35" height="130" fill="#38bdf8" rx="3"/>
+              <rect x="460" y="160" width="35" height="75" fill="#f43f5e" rx="3"/>
+
+              <!-- Legend Box -->
+              <rect x="555" y="110" width="105" height="80" rx="6" fill="#1e293b" stroke="#475569"/>
+              <text x="607" y="130" font-family="Outfit" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">Legend</text>
+              <rect x="565" y="142" width="14" height="14" fill="#38bdf8" rx="2"/>
+              <text x="585" y="154" font-family="Outfit" font-size="10" fill="#e2e8f0">Maths</text>
+              <rect x="565" y="164" width="14" height="14" fill="#f43f5e" rx="2"/>
+              <text x="585" y="176" font-family="Outfit" font-size="10" fill="#e2e8f0">Science</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- SVG 3: Sorting vs Filtering Pipeline -->
+        <div class="info-card">
+          <h3>⚡ 3. Excel Sorting vs. Filtering Mechanisms</h3>
+          <div class="svg-container">
+            <svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg">
+              <rect width="700" height="240" fill="#0f172a" rx="8"/>
+              
+              <!-- Sorting Section -->
+              <rect x="40" y="30" width="300" height="180" rx="8" fill="#1e293b" stroke="#3b82f6"/>
+              <text x="190" y="55" font-family="Outfit" font-size="13" font-weight="bold" fill="#60a5fa" text-anchor="middle">SORTING (Rearranges Order)</text>
+              <rect x="70" y="75" width="240" height="24" rx="4" fill="#1e3a8a"/>
+              <text x="80" y="91" font-family="JetBrains Mono" font-size="11" fill="#fff">John Doe | Marks: 45</text>
+              <rect x="70" y="105" width="240" height="24" rx="4" fill="#1e3a8a"/>
+              <text x="80" y="121" font-family="JetBrains Mono" font-size="11" fill="#fff">Alice Roy | Marks: 92</text>
+              <rect x="70" y="135" width="240" height="24" rx="4" fill="#1e3a8a"/>
+              <text x="80" y="151" font-family="JetBrains Mono" font-size="11" fill="#fff">Bob Cole | Marks: 78</text>
+              <text x="190" y="190" font-family="Outfit" font-size="11" fill="#93c5fd" text-anchor="middle">⬇️ Sort A to Z / Descending: All rows kept!</text>
+
+              <!-- Filtering Section -->
+              <rect x="360" y="30" width="300" height="180" rx="8" fill="#1e293b" stroke="#10b981"/>
+              <text x="510" y="55" font-family="Outfit" font-size="13" font-weight="bold" fill="#34d399" text-anchor="middle">FILTERING (Hides Rows)</text>
+              <rect x="390" y="75" width="240" height="24" rx="4" fill="#065f46"/>
+              <text x="400" y="91" font-family="JetBrains Mono" font-size="11" fill="#fff">Alice Roy | Marks: 92 [Pass]</text>
+              <rect x="390" y="105" width="240" height="24" rx="4" fill="#065f46"/>
+              <text x="400" y="121" font-family="JetBrains Mono" font-size="11" fill="#fff">Bob Cole | Marks: 78 [Pass]</text>
+              <rect x="390" y="135" width="240" height="24" rx="4" fill="#334155" stroke="#ef4444" stroke-dasharray="3,3"/>
+              <text x="400" y="151" font-family="JetBrains Mono" font-size="11" fill="#94a3b8">John Doe | Marks: 45 [HIDDEN]</text>
+              <text x="510" y="190" font-family="Outfit" font-size="11" fill="#6ee7b7" text-anchor="middle">🔍 Rule: Marks >= 50. Row 3 temporarily hidden!</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- SVG 4: Adobe Animate Workspace -->
+        <div class="info-card">
+          <h3>🎬 4. Adobe Animate 2020 Workspace Architecture</h3>
+          <div class="svg-container">
+            <svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg">
+              <rect width="700" height="240" fill="#0f172a" rx="8"/>
+              
+              <!-- Tools Panel Left -->
+              <rect x="30" y="25" width="60" height="190" rx="6" fill="#1e293b" stroke="#475569"/>
+              <text x="60" y="45" font-family="Outfit" font-size="10" font-weight="bold" fill="#38bdf8" text-anchor="middle">Tools</text>
+              <rect x="42" y="60" width="36" height="20" rx="3" fill="#334155"/>
+              <text x="60" y="74" font-family="JetBrains Mono" font-size="10" fill="#fff" text-anchor="middle">V (Sel)</text>
+              <rect x="42" y="85" width="36" height="20" rx="3" fill="#334155"/>
+              <text x="60" y="99" font-family="JetBrains Mono" font-size="10" fill="#fff" text-anchor="middle">Q (Tr)</text>
+              <rect x="42" y="110" width="36" height="20" rx="3" fill="#334155"/>
+              <text x="60" y="124" font-family="JetBrains Mono" font-size="10" fill="#fff" text-anchor="middle">T (Txt)</text>
+
+              <!-- Central Canvas & Pasteboard -->
+              <rect x="105" y="25" width="460" height="130" rx="6" fill="#475569" stroke="#64748b"/>
+              <text x="120" y="42" font-family="Outfit" font-size="10" font-weight="bold" fill="#cbd5e1">Pasteboard (Off-screen staging area)</text>
+              <!-- Stage -->
+              <rect x="175" y="45" width="320" height="90" rx="4" fill="#ffffff"/>
+              <text x="335" y="95" font-family="Outfit" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">Stage (Visible Export Window)</text>
+
+              <!-- Timeline Bottom -->
+              <rect x="105" y="165" width="460" height="50" rx="6" fill="#1e293b" stroke="#3b82f6"/>
+              <text x="120" y="185" font-family="Outfit" font-size="10" font-weight="bold" fill="#60a5fa">Timeline (F6 Keyframe ● | F7 Blank ○ | Layers)</text>
+              <!-- Timeline Frames -->
+              <g transform="translate(130, 192)">
+                <rect x="0" y="0" width="16" height="14" fill="#3b82f6"/><circle cx="8" cy="7" r="3" fill="#000"/>
+                <rect x="18" y="0" width="16" height="14" fill="#1e3a8a"/>
+                <rect x="36" y="0" width="16" height="14" fill="#1e3a8a"/>
+                <rect x="54" y="0" width="16" height="14" fill="#3b82f6"/><circle cx="62" cy="7" r="3" fill="#000"/>
+                <rect x="72" y="0" width="16" height="14" fill="#0284c7"/>
+                <rect x="90" y="0" width="16" height="14" fill="#0284c7"/>
+                <rect x="108" y="0" width="16" height="14" fill="#10b981"/><circle cx="116" cy="7" r="3" fill="#000"/>
+              </g>
+
+              <!-- Library & Properties Right -->
+              <rect x="580" y="25" width="90" height="190" rx="6" fill="#1e293b" stroke="#475569"/>
+              <text x="625" y="45" font-family="Outfit" font-size="10" font-weight="bold" fill="#34d399" text-anchor="middle">Properties</text>
+              <text x="625" y="120" font-family="Outfit" font-size="10" font-weight="bold" fill="#fbbf24" text-anchor="middle">Library</text>
+              <text x="625" y="140" font-family="Outfit" font-size="9" fill="#94a3b8" text-anchor="middle">(Ctrl + L)</text>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= TAB 3: MIND MAPS ================= -->
+    <div id="tab-mindmaps" class="tab-panel">
+      <div class="mindmap-header">
+        <div>
+          <h2 style="font-size: 1.15rem; color: var(--primary-light); margin: 0;">Interactive Computer Science Knowledge Map</h2>
+          <p style="margin: 3px 0 0; font-size: 0.82rem; color: var(--muted);">Click any node to jump to textbook answers. Use Expand/Collapse to toggle detail.</p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn" onclick="expandAllMindmap()">➕ Expand All</button>
+          <button class="btn" onclick="collapseAllMindmap()">➖ Collapse All</button>
+        </div>
+      </div>
+
+      <div class="mindmap-wrapper">
+        <svg id="mindmap-svg" viewBox="0 0 1100 680" width="100%" height="680" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background Grid -->
+          <defs>
+            <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.7"/>
+            </pattern>
+          </defs>
+          <rect width="1100" height="680" fill="#090f1d"/>
+          <rect width="1100" height="680" fill="url(#grid)"/>
+
+          <!-- Connecting Lines -->
+          <!-- Root to Branches -->
+          <path d="M 550 340 C 350 340, 260 120, 160 120" stroke="#0284c7" stroke-width="3" fill="none"/>
+          <path d="M 550 340 C 350 340, 260 520, 160 520" stroke="#10b981" stroke-width="3" fill="none"/>
+          <path d="M 550 340 C 750 340, 840 120, 940 120" stroke="#f59e0b" stroke-width="3" fill="none"/>
+          <path d="M 550 340 C 750 340, 840 520, 940 520" stroke="#ec4899" stroke-width="3" fill="none"/>
+
+          <!-- Sub-branches lines -->
+          <g id="branch-ch1-lines">
+            <line x1="160" y1="120" x2="80" y2="70" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="160" y1="120" x2="80" y2="120" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="160" y1="120" x2="80" y2="170" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2,2"/>
+          </g>
+          <g id="branch-ch2-lines">
+            <line x1="160" y1="520" x2="80" y2="470" stroke="#34d399" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="160" y1="520" x2="80" y2="520" stroke="#34d399" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="160" y1="520" x2="80" y2="570" stroke="#34d399" stroke-width="1.5" stroke-dasharray="2,2"/>
+          </g>
+          <g id="branch-ch3-lines">
+            <line x1="940" y1="120" x2="1020" y2="70" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="940" y1="120" x2="1020" y2="120" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="940" y1="120" x2="1020" y2="170" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2,2"/>
+          </g>
+          <g id="branch-ch4-lines">
+            <line x1="940" y1="520" x2="1020" y2="470" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="940" y1="520" x2="1020" y2="520" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <line x1="940" y1="520" x2="1020" y2="570" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="2,2"/>
+          </g>
+
+          <!-- ROOT NODE (Centered) -->
+          <g class="mindmap-node" onclick="switchTab('solutions')">
+            <rect x="450" y="300" width="200" height="80" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+            <text x="550" y="332" font-family="Outfit" font-size="15" font-weight="bold" fill="#fff" text-anchor="middle">CLASS 7 COMPUTERS</text>
+            <text x="550" y="352" font-family="Outfit" font-size="12" fill="#38bdf8" text-anchor="middle">SA-1 Syllabus Blueprint</text>
+            <text x="550" y="368" font-family="Outfit" font-size="10" fill="#94a3b8" text-anchor="middle">Chapters 1 to 4 (50 Marks)</text>
+          </g>
+
+          <!-- BRANCH 1: CHAPTER 1 (Top Left) -->
+          <g class="mindmap-node" onclick="jumpToSection('ch1')">
+            <rect x="70" y="85" width="180" height="70" rx="12" fill="#0369a1" stroke="#38bdf8" stroke-width="2"/>
+            <text x="160" y="112" font-family="Outfit" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">CH 1: Formulas & Functions</text>
+            <text x="160" y="130" font-family="Outfit" font-size="10" fill="#e0f2fe" text-anchor="middle">Starts with (=), Cell ranges (:)</text>
+            <text x="160" y="145" font-family="Outfit" font-size="9" fill="#bae6fd" text-anchor="middle">SUM, AVG, Relative & Absolute ($)</text>
+          </g>
+          <!-- Sub-nodes Ch 1 -->
+          <g id="branch-ch1-nodes">
+            <g class="mindmap-node" onclick="jumpToSection('ch1')">
+              <rect x="10" y="55" width="110" height="30" rx="6" fill="#0f172a" stroke="#38bdf8"/>
+              <text x="65" y="74" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Starts with (=)</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch1')">
+              <rect x="10" y="105" width="110" height="30" rx="6" fill="#0f172a" stroke="#38bdf8"/>
+              <text x="65" y="124" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Cell Range A1:A10</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch1')">
+              <rect x="10" y="155" width="110" height="30" rx="6" fill="#0f172a" stroke="#38bdf8"/>
+              <text x="65" y="174" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Absolute ($A$1)</text>
+            </g>
+          </g>
+
+          <!-- BRANCH 2: CHAPTER 2 (Bottom Left) -->
+          <g class="mindmap-node" onclick="jumpToSection('ch2')">
+            <rect x="70" y="485" width="180" height="70" rx="12" fill="#047857" stroke="#34d399" stroke-width="2"/>
+            <text x="160" y="512" font-family="Outfit" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">CH 2: Charts in Excel</text>
+            <text x="160" y="530" font-family="Outfit" font-size="10" fill="#d1fae5" text-anchor="middle">Chart Area vs. Plot Area</text>
+            <text x="160" y="545" font-family="Outfit" font-size="9" fill="#a7f3d0" text-anchor="middle">Column, Bar, Pie (Single series)</text>
+          </g>
+          <!-- Sub-nodes Ch 2 -->
+          <g id="branch-ch2-nodes">
+            <g class="mindmap-node" onclick="jumpToSection('ch2')">
+              <rect x="10" y="455" width="110" height="30" rx="6" fill="#0f172a" stroke="#34d399"/>
+              <text x="65" y="474" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Chart & Plot Area</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch2')">
+              <rect x="10" y="505" width="110" height="30" rx="6" fill="#0f172a" stroke="#34d399"/>
+              <text x="65" y="524" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Value (Y) & Cat (X)</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch2')">
+              <rect x="10" y="555" width="110" height="30" rx="6" fill="#0f172a" stroke="#34d399"/>
+              <text x="65" y="574" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Legend & Gridlines</text>
+            </g>
+          </g>
+
+          <!-- BRANCH 3: CHAPTER 3 (Top Right) -->
+          <g class="mindmap-node" onclick="jumpToSection('ch3')">
+            <rect x="850" y="85" width="180" height="70" rx="12" fill="#b45309" stroke="#fbbf24" stroke-width="2"/>
+            <text x="940" y="112" font-family="Outfit" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">CH 3: Advanced Features</text>
+            <text x="940" y="130" font-family="Outfit" font-size="10" fill="#fef3c7" text-anchor="middle">Sorting (Ascending/Descending)</text>
+            <text x="940" y="145" font-family="Outfit" font-size="9" fill="#fde68a" text-anchor="middle">Filter (Ctrl+Shift+L) & Cond. Format</text>
+          </g>
+          <!-- Sub-nodes Ch 3 -->
+          <g id="branch-ch3-nodes">
+            <g class="mindmap-node" onclick="jumpToSection('ch3')">
+              <rect x="980" y="55" width="110" height="30" rx="6" fill="#0f172a" stroke="#fbbf24"/>
+              <text x="1035" y="74" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Sort A to Z / Z to A</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch3')">
+              <rect x="980" y="105" width="110" height="30" rx="6" fill="#0f172a" stroke="#fbbf24"/>
+              <text x="1035" y="124" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">AutoFilter Funnel</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch3')">
+              <rect x="980" y="155" width="110" height="30" rx="6" fill="#0f172a" stroke="#fbbf24"/>
+              <text x="1035" y="174" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Conditional Colors</text>
+            </g>
+          </g>
+
+          <!-- BRANCH 4: CHAPTER 4 (Bottom Right) -->
+          <g class="mindmap-node" onclick="jumpToSection('ch4')">
+            <rect x="850" y="485" width="180" height="70" rx="12" fill="#be185d" stroke="#f472b6" stroke-width="2"/>
+            <text x="940" y="512" font-family="Outfit" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">CH 4: Adobe Animate</text>
+            <text x="940" y="530" font-family="Outfit" font-size="10" fill="#fce7f3" text-anchor="middle">Stage & Pasteboard Workspaces</text>
+            <text x="940" y="545" font-family="Outfit" font-size="9" fill="#fbcfe8" text-anchor="middle">Timeline: F6 Keyframe, F8 Symbol</text>
+          </g>
+          <!-- Sub-nodes Ch 4 -->
+          <g id="branch-ch4-nodes">
+            <g class="mindmap-node" onclick="jumpToSection('ch4')">
+              <rect x="980" y="455" width="110" height="30" rx="6" fill="#0f172a" stroke="#f472b6"/>
+              <text x="1035" y="474" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Stage vs Pasteboard</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch4')">
+              <rect x="980" y="505" width="110" height="30" rx="6" fill="#0f172a" stroke="#f472b6"/>
+              <text x="1035" y="524" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">F6 Keyframe (●)</text>
+            </g>
+            <g class="mindmap-node" onclick="jumpToSection('ch4')">
+              <rect x="980" y="555" width="110" height="30" rx="6" fill="#0f172a" stroke="#f472b6"/>
+              <text x="1035" y="574" font-family="Outfit" font-size="9.5" fill="#e2e8f0" text-anchor="middle">Ctrl+B Break Apart</text>
+            </g>
+          </g>
+
+        </svg>
+      </div>
+    </div>
+
+    <!-- ================= TAB 4: MASTER SOLUTIONS ================= -->
+    <div id="tab-solutions" class="tab-panel">
+      
+        <div class="content-card" id="sec-overview">
+            <h1>Class 7 Computer Science (Click and Learn - 7) — SA1 Master Solutions &amp; Complete Guide</h1>
 <h2>Summative Assessment - 1 Complete Curriculum Blueprint (Chapters 1 to 4 &amp; Test Paper - 1)</h2>
 <blockquote>
 <p><strong>Syllabus Scope (SA-1 Timetable &amp; Portions Covered):</strong><br />
@@ -382,8 +1104,11 @@
 - Detailed step-by-step explanations, syntax breakdowns, ⚠️ Ninja Exam Traps, and ✅ Sanity Checks included for every single technical concept.</p>
 </blockquote>
 <hr />
-<h1>Chapter 1: Formulae and Functions in Excel 2016 (Pages 1–15)</h1>
-<h3>Core Theoretical Concepts:</h3>
+        </div>
+        
+        <div class="content-card" id="ch1">
+            <h1>Chapter 1: Formulae and Functions in Excel 2016 (Pages 1–15)</h1>
+<div class="q-header-row"><h3>Core Theoretical Concepts:</h3><button class="inline-tts-btn" onclick="speakText(this, 'Core Theoretical Concepts:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><strong>What is a Formula?</strong></li>
 <li>A formula is an expression that calculates values in a cell or range of cells.</li>
@@ -445,8 +1170,8 @@
 <li><code>#REF!</code>: Invalid cell reference (occurs when referenced cells were deleted).</li>
 </ol>
 <hr />
-<h3>Textbook Exercises — Chapter 1</h3>
-<h4>A. Tick (✓) the correct option:</h4>
+<div class="q-header-row"><h3>Textbook Exercises — Chapter 1</h3><button class="inline-tts-btn" onclick="speakText(this, 'Textbook Exercises — Chapter 1')" title="Listen to question & answer">🔊 Listen</button></div>
+<div class="q-header-row"><h4>A. Tick (✓) the correct option:</h4><button class="inline-tts-btn" onclick="speakText(this, 'A. Tick (✓) the correct option:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><strong>Which symbol must every Excel formula begin with?</strong></li>
 <li>a. <code>+</code> &nbsp;&nbsp; <strong>b. <code>=</code> [ ✓ ]</strong> &nbsp;&nbsp; c. <code>@</code> &nbsp;&nbsp; d. <code>#</code></li>
@@ -460,7 +1185,7 @@
 <li>a. 15 &nbsp;&nbsp; <strong>b. 20 [ ✓ ]</strong> &nbsp;&nbsp; c. 12 &nbsp;&nbsp; d. 24<br />
 <em>(Working: 4 columns [B, C, D, E] $\times$ 5 rows [2, 3, 4, 5, 6] = 20 cells).</em></li>
 </ol>
-<h4>B. Fill in the blanks:</h4>
+<div class="q-header-row"><h4>B. Fill in the blanks:</h4><button class="inline-tts-btn" onclick="speakText(this, 'B. Fill in the blanks:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li>A formula in Excel always begins with an <strong>equal to (<code>=</code>)</strong> sign.</li>
 <li>The colon (<strong><code>:</code></strong>) symbol is used to separate the starting and ending cell addresses of a range.</li>
@@ -468,7 +1193,7 @@
 <li>The <strong><code>PRODUCT</code></strong> function multiplies all numbers given as arguments.</li>
 <li>In <strong>absolute</strong> referencing, a dollar sign (<code>$</code>) is placed before both column letter and row number.</li>
 </ol>
-<h4>C. State True (T) or False (F):</h4>
+<div class="q-header-row"><h4>C. State True (T) or False (F):</h4><button class="inline-tts-btn" onclick="speakText(this, 'C. State True (T) or False (F):')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><code>=A1+B1</code> is an example of an absolute reference. $\rightarrow$ <strong>[ F ]</strong> <em>(It is a relative reference).</em></li>
 <li>Functions in Excel are pre-designed formulas to perform complex calculations. $\rightarrow$ <strong>[ T ]</strong></li>
@@ -476,7 +1201,7 @@
 <li>The <code>COUNT</code> function counts both text and numeric cells. $\rightarrow$ <strong>[ F ]</strong> <em>(It counts only cells containing numerical values).</em></li>
 <li>The <code>TODAY()</code> function requires no arguments inside its parentheses. $\rightarrow$ <strong>[ T ]</strong></li>
 </ol>
-<h4>D. Answer the following questions in brief:</h4>
+<div class="q-header-row"><h4>D. Answer the following questions in brief:</h4><button class="inline-tts-btn" onclick="speakText(this, 'D. Answer the following questions in brief:')" title="Listen to question & answer">🔊 Listen</button></div>
 <p><strong>Q1: Define a Cell Range with an example.</strong></p>
 <blockquote>
 <p><strong>Answer:</strong> A cell range is a collection or block of two or more adjacent cells selected in an Excel worksheet. It is represented by the starting cell address and ending cell address separated by a colon (<code>:</code>).<br />
@@ -498,7 +1223,7 @@
 <blockquote>
 <p><strong>Answer:</strong> The <code>#NAME?</code> error occurs when Excel does not recognize text entered in a formula, most commonly caused by misspelling a function name (e.g., typing <code>=SUUM(A1:A5)</code>) or referencing an undefined range name.</p>
 </blockquote>
-<h4>E. Answer the following questions in detail:</h4>
+<div class="q-header-row"><h4>E. Answer the following questions in detail:</h4><button class="inline-tts-btn" onclick="speakText(this, 'E. Answer the following questions in detail:')" title="Listen to question & answer">🔊 Listen</button></div>
 <p><strong>Q1: Explain the three types of cell referencing in Excel 2016 with suitable examples.</strong></p>
 <blockquote>
 <p><strong>Answer:</strong><br />
@@ -510,8 +1235,11 @@
 <em>Example:</em> <code>=$A1</code> (locks column A, row changes) or <code>=A$1</code> (locks row 1, column changes).</p>
 </blockquote>
 <hr />
-<h1>Chapter 2: Charts in Excel 2016 (Pages 16–29)</h1>
-<h3>Core Theoretical Concepts:</h3>
+        </div>
+        
+        <div class="content-card" id="ch2">
+            <h1>Chapter 2: Charts in Excel 2016 (Pages 16–29)</h1>
+<div class="q-header-row"><h3>Core Theoretical Concepts:</h3><button class="inline-tts-btn" onclick="speakText(this, 'Core Theoretical Concepts:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><strong>What is a Chart?</strong></li>
 <li>A chart is a graphical, pictorial representation of numeric worksheet data.</li>
@@ -551,8 +1279,8 @@
 <li><strong>Moving a Chart:</strong> Click <strong>Move Chart</strong> in the Location group on the Design tab to move the chart to a dedicated <strong>Chart Sheet</strong> or another worksheet.</li>
 </ol>
 <hr />
-<h3>Textbook Exercises — Chapter 2</h3>
-<h4>A. Tick (✓) the correct option:</h4>
+<div class="q-header-row"><h3>Textbook Exercises — Chapter 2</h3><button class="inline-tts-btn" onclick="speakText(this, 'Textbook Exercises — Chapter 2')" title="Listen to question & answer">🔊 Listen</button></div>
+<div class="q-header-row"><h4>A. Tick (✓) the correct option:</h4><button class="inline-tts-btn" onclick="speakText(this, 'A. Tick (✓) the correct option:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><strong>The entire area occupied by a chart and all its components is called the:</strong></li>
 <li>a. Plot Area &nbsp;&nbsp; <strong>b. Chart Area [ ✓ ]</strong> &nbsp;&nbsp; c. Gridline &nbsp;&nbsp; d. Legend</li>
@@ -565,7 +1293,7 @@
 <li><strong>Excel's tool for modifying a chart type is located under which tab?</strong></li>
 <li><strong>a. Design Tab [ ✓ ]</strong> &nbsp;&nbsp; b. View Tab &nbsp;&nbsp; c. Review Tab &nbsp;&nbsp; d. Home Tab</li>
 </ol>
-<h4>B. Fill in the blanks:</h4>
+<div class="q-header-row"><h4>B. Fill in the blanks:</h4><button class="inline-tts-btn" onclick="speakText(this, 'B. Fill in the blanks:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li>A <strong>chart</strong> is an effective visual representation of worksheet data.</li>
 <li>The <strong>Legend</strong> helps identify different data series by assigning distinct colors or patterns.</li>
@@ -573,7 +1301,7 @@
 <li><strong>Data Labels</strong> provide the exact values directly on the plotted bars or points.</li>
 <li>In a Column Chart, values are plotted along the <strong>vertical</strong> axis and categories along the <strong>horizontal</strong> axis.</li>
 </ol>
-<h4>C. State True (T) or False (F):</h4>
+<div class="q-header-row"><h4>C. State True (T) or False (F):</h4><button class="inline-tts-btn" onclick="speakText(this, 'C. State True (T) or False (F):')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li>A Pie chart can be used to compare multiple data series simultaneously. $\rightarrow$ <strong>[ F ]</strong> <em>(Pie charts can represent only one single data series).</em></li>
 <li>The Plot Area contains the chart title and legends. $\rightarrow$ <strong>[ F ]</strong> <em>(The Plot Area contains only the plotted data series and gridlines).</em></li>
@@ -581,7 +1309,7 @@
 <li>A Bar chart displays data using horizontal bars. $\rightarrow$ <strong>[ T ]</strong></li>
 <li>Gridlines cannot be removed once a chart is created. $\rightarrow$ <strong>[ F ]</strong> <em>(They can be added or removed using the Chart Elements button).</em></li>
 </ol>
-<h4>D. Differentiate between the following:</h4>
+<div class="q-header-row"><h4>D. Differentiate between the following:</h4><button class="inline-tts-btn" onclick="speakText(this, 'D. Differentiate between the following:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><strong>Column Chart vs. Bar Chart:</strong></li>
 <li><strong>Column Chart:</strong> Displays data using <strong>vertical columns</strong>. The category axis is horizontal (X-axis) and the value axis is vertical (Y-axis).</li>
@@ -590,7 +1318,7 @@
 <li><strong>Chart Area:</strong> The complete rectangular space encompassing all chart elements (title, legends, axes, and plot area).</li>
 <li><strong>Plot Area:</strong> The inner region bounded by the axes where the actual graphical data (bars, lines, slices) is rendered.</li>
 </ol>
-<h4>E. Answer the following questions in brief:</h4>
+<div class="q-header-row"><h4>E. Answer the following questions in brief:</h4><button class="inline-tts-btn" onclick="speakText(this, 'E. Answer the following questions in brief:')" title="Listen to question & answer">🔊 Listen</button></div>
 <p><strong>Q1: What are the main components of a chart in Excel?</strong></p>
 <blockquote>
 <p><strong>Answer:</strong> The primary components are: Chart Area, Plot Area, Chart Title, Category Axis (X-axis), Value Axis (Y-axis), Data Series, Legend, Gridlines, and Data Labels.</p>
@@ -600,8 +1328,11 @@
 <p><strong>Answer:</strong> Click on the chart $\rightarrow$ Go to the <strong>Design Tab</strong> under Chart Tools $\rightarrow$ Click <strong>Move Chart</strong> in the Location group $\rightarrow$ In the Move Chart dialog box, choose either <strong>New sheet</strong> or select an existing worksheet from the <strong>Object in</strong> dropdown $\rightarrow$ Click <strong>OK</strong>.</p>
 </blockquote>
 <hr />
-<h1>Chapter 3: Advanced Features of Excel 2016 (Pages 30–41)</h1>
-<h3>Core Theoretical Concepts:</h3>
+        </div>
+        
+        <div class="content-card" id="ch3">
+            <h1>Chapter 3: Advanced Features of Excel 2016 (Pages 30–41)</h1>
+<div class="q-header-row"><h3>Core Theoretical Concepts:</h3><button class="inline-tts-btn" onclick="speakText(this, 'Core Theoretical Concepts:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><strong>Sorting Data:</strong></li>
 <li>Organizing data in a specific sequential order to analyze it efficiently.</li>
@@ -639,8 +1370,8 @@
 </li>
 </ol>
 <hr />
-<h3>Textbook Exercises — Chapter 3</h3>
-<h4>A. Tick (✓) the correct option:</h4>
+<div class="q-header-row"><h3>Textbook Exercises — Chapter 3</h3><button class="inline-tts-btn" onclick="speakText(this, 'Textbook Exercises — Chapter 3')" title="Listen to question & answer">🔊 Listen</button></div>
+<div class="q-header-row"><h4>A. Tick (✓) the correct option:</h4><button class="inline-tts-btn" onclick="speakText(this, 'A. Tick (✓) the correct option:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><strong>Arranging data in ascending or descending order is known as:</strong></li>
 <li>a. Filtering &nbsp;&nbsp; <strong>b. Sorting [ ✓ ]</strong> &nbsp;&nbsp; c. Formatting &nbsp;&nbsp; d. Validating</li>
@@ -653,7 +1384,7 @@
 <li><strong>Custom sorting allows sorting data by:</strong></li>
 <li>a. Only one column &nbsp;&nbsp; <strong>b. Multiple columns [ ✓ ]</strong> &nbsp;&nbsp; c. Font color only &nbsp;&nbsp; d. None of these</li>
 </ol>
-<h4>B. Fill in the blanks:</h4>
+<div class="q-header-row"><h4>B. Fill in the blanks:</h4><button class="inline-tts-btn" onclick="speakText(this, 'B. Fill in the blanks:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li>Arranging data from A to Z is known as <strong>ascending</strong> order.</li>
 <li>The keyboard shortcut to turn AutoFilter on or off is <strong><code>Ctrl + Shift + L</code></strong>.</li>
@@ -661,7 +1392,7 @@
 <li>When a filter is applied, the dropdown arrow changes to a <strong>filter funnel icon</strong>.</li>
 <li>Custom sorting is configured using the <strong>Sort Dialog Box</strong> on the Data Tab.</li>
 </ol>
-<h4>C. State True (T) or False (F):</h4>
+<div class="q-header-row"><h4>C. State True (T) or False (F):</h4><button class="inline-tts-btn" onclick="speakText(this, 'C. State True (T) or False (F):')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li>Filtering permanently deletes rows that do not match the criteria. $\rightarrow$ <strong>[ F ]</strong> <em>(It only temporarily hides them).</em></li>
 <li>You can apply Conditional Formatting to highlight students scoring above 90 marks in green. $\rightarrow$ <strong>[ T ]</strong></li>
@@ -669,7 +1400,7 @@
 <li>Multi-level sorting cannot sort both text and numbers simultaneously. $\rightarrow$ <strong>[ F ]</strong> <em>(You can sort by text in Level 1 and number in Level 2).</em></li>
 <li>To clear a filter, click 'Clear' in the Sort &amp; Filter group on the Data tab. $\rightarrow$ <strong>[ T ]</strong></li>
 </ol>
-<h4>D. Answer the following questions in brief:</h4>
+<div class="q-header-row"><h4>D. Answer the following questions in brief:</h4><button class="inline-tts-btn" onclick="speakText(this, 'D. Answer the following questions in brief:')" title="Listen to question & answer">🔊 Listen</button></div>
 <p><strong>Q1: What is the primary difference between Sorting and Filtering?</strong></p>
 <blockquote>
 <p><strong>Answer:</strong><br />
@@ -682,8 +1413,11 @@
 <em>Use Case:</em> Highlighting student test scores where scores below 35 are automatically shaded in red, and scores of 90 or above are shaded in green.</p>
 </blockquote>
 <hr />
-<h1>Chapter 4: Introduction to Adobe Animate 2020 (Pages 42–55)</h1>
-<h3>Core Theoretical Concepts:</h3>
+        </div>
+        
+        <div class="content-card" id="ch4">
+            <h1>Chapter 4: Introduction to Adobe Animate 2020 (Pages 42–55)</h1>
+<div class="q-header-row"><h3>Core Theoretical Concepts:</h3><button class="inline-tts-btn" onclick="speakText(this, 'Core Theoretical Concepts:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><strong>What is Adobe Animate 2020?</strong></li>
 <li>
@@ -730,8 +1464,8 @@
 </li>
 </ol>
 <hr />
-<h3>Textbook Exercises — Chapter 4</h3>
-<h4>A. Tick (✓) the correct option:</h4>
+<div class="q-header-row"><h3>Textbook Exercises — Chapter 4</h3><button class="inline-tts-btn" onclick="speakText(this, 'Textbook Exercises — Chapter 4')" title="Listen to question & answer">🔊 Listen</button></div>
+<div class="q-header-row"><h4>A. Tick (✓) the correct option:</h4><button class="inline-tts-btn" onclick="speakText(this, 'A. Tick (✓) the correct option:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><strong>Adobe Animate 2020 is primarily used for creating:</strong></li>
 <li>a. Word documents &nbsp;&nbsp; b. Spreadsheets &nbsp;&nbsp; <strong>c. 2D Vector Animations [ ✓ ]</strong> &nbsp;&nbsp; d. Operating Systems</li>
@@ -746,7 +1480,7 @@
 <li><strong>The tool used to pick and copy colors from one object to another is the:</strong></li>
 <li>a. Paint Bucket &nbsp;&nbsp; <strong>b. Eyedropper Tool [ ✓ ]</strong> &nbsp;&nbsp; c. Brush Tool &nbsp;&nbsp; d. Pencil Tool</li>
 </ol>
-<h4>B. Fill in the blanks:</h4>
+<div class="q-header-row"><h4>B. Fill in the blanks:</h4><button class="inline-tts-btn" onclick="speakText(this, 'B. Fill in the blanks:')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li>The <strong>Stage</strong> is the visible drawing canvas in Adobe Animate.</li>
 <li>The gray area surrounding the stage is known as the <strong>Pasteboard</strong>.</li>
@@ -755,7 +1489,7 @@
 <li>In Adobe Animate, <strong>Stroke</strong> refers to the outline of a shape, while <strong>Fill</strong> refers to the interior color.</li>
 <li>Reusable animation assets stored in the Library are called <strong>Symbols</strong>.</li>
 </ol>
-<h4>C. State True (T) or False (F):</h4>
+<div class="q-header-row"><h4>C. State True (T) or False (F):</h4><button class="inline-tts-btn" onclick="speakText(this, 'C. State True (T) or False (F):')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li>Objects drawn on the Pasteboard will be visible in the final exported movie. $\rightarrow$ <strong>[ F ]</strong> <em>(Only objects placed on the Stage are visible).</em></li>
 <li>A keyframe is inserted using the <code>F6</code> shortcut key. $\rightarrow$ <strong>[ T ]</strong></li>
@@ -763,7 +1497,7 @@
 <li>The Library panel stores symbols, movie clips, and audio files. $\rightarrow$ <strong>[ T ]</strong></li>
 <li>Breaking apart text is done using the shortcut <code>Ctrl + B</code>. $\rightarrow$ <strong>[ T ]</strong></li>
 </ol>
-<h4>D. Answer the following questions in brief:</h4>
+<div class="q-header-row"><h4>D. Answer the following questions in brief:</h4><button class="inline-tts-btn" onclick="speakText(this, 'D. Answer the following questions in brief:')" title="Listen to question & answer">🔊 Listen</button></div>
 <p><strong>Q1: What is the difference between the Stage and the Pasteboard?</strong></p>
 <blockquote>
 <p><strong>Answer:</strong><br />
@@ -780,7 +1514,7 @@
 - <strong>Stroke:</strong> The outer border, line, or perimeter outline of an object or shape.<br />
 - <strong>Fill:</strong> The solid color, gradient, or pattern that fills the interior closed area of an object.</p>
 </blockquote>
-<h4>E. Answer the following questions in detail:</h4>
+<div class="q-header-row"><h4>E. Answer the following questions in detail:</h4><button class="inline-tts-btn" onclick="speakText(this, 'E. Answer the following questions in detail:')" title="Listen to question & answer">🔊 Listen</button></div>
 <p><strong>Q1: Describe the major components of the Adobe Animate 2020 workspace.</strong></p>
 <blockquote>
 <p><strong>Answer:</strong><br />
@@ -803,9 +1537,12 @@
 7. Right-click between Frame 1 and Frame 30 and choose <strong>Create Classic Tween</strong> to produce smooth motion.</p>
 </blockquote>
 <hr />
-<h1>Test Paper - 1: Comprehensive Assessment (Chapters 1 to 4) (Pages 56–58)</h1>
-<h3>Complete Section-by-Section Solutions:</h3>
-<h4>Section A: Multiple Choice Questions (MCQs)</h4>
+        </div>
+        
+        <div class="content-card" id="ch5">
+            <h1>Test Paper - 1: Comprehensive Assessment (Chapters 1 to 4) (Pages 56–58)</h1>
+<div class="q-header-row"><h3>Complete Section-by-Section Solutions:</h3><button class="inline-tts-btn" onclick="speakText(this, 'Complete Section-by-Section Solutions:')" title="Listen to question & answer">🔊 Listen</button></div>
+<div class="q-header-row"><h4>Section A: Multiple Choice Questions (MCQs)</h4><button class="inline-tts-btn" onclick="speakText(this, 'Section A: Multiple Choice Questions (MCQs)')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li><strong>Which function calculates the average of numbers in a range?</strong></li>
 <li>a. <code>AVG()</code> &nbsp;&nbsp; <strong>b. <code>AVERAGE()</code> [ ✓ ]</strong> &nbsp;&nbsp; c. <code>MEAN()</code> &nbsp;&nbsp; d. <code>SUM()</code></li>
@@ -820,7 +1557,7 @@
 <li><strong>The tool in Adobe Animate used to modify shapes and rotate objects is the:</strong></li>
 <li>a. Text Tool &nbsp;&nbsp; b. Paint Tool &nbsp;&nbsp; <strong>c. Free Transform Tool [ ✓ ]</strong> &nbsp;&nbsp; d. Hand Tool</li>
 </ol>
-<h4>Section B: Fill in the Blanks</h4>
+<div class="q-header-row"><h4>Section B: Fill in the Blanks</h4><button class="inline-tts-btn" onclick="speakText(this, 'Section B: Fill in the Blanks')" title="Listen to question & answer">🔊 Listen</button></div>
 <ol>
 <li>The <strong><code>COUNT()</code></strong> function in Excel counts only the cells that contain numbers.</li>
 <li>The <strong>Legend</strong> in a chart identifies what each color or pattern represents.</li>
@@ -828,7 +1565,7 @@
 <li>In Adobe Animate, the <strong>Pasteboard</strong> is the off-screen workspace surrounding the stage.</li>
 <li>Pressing <strong><code>Ctrl + B</code></strong> breaks apart grouped objects or text into editable shapes.</li>
 </ol>
-<h4>Section C: Match the Following</h4>
+<div class="q-header-row"><h4>Section C: Match the Following</h4><button class="inline-tts-btn" onclick="speakText(this, 'Section C: Match the Following')" title="Listen to question & answer">🔊 Listen</button></div>
 <table>
 <thead>
 <tr>
@@ -933,15 +1670,13 @@
 </tr>
 </tbody>
 </table>
-      </div>
+        </div>
+        
     </div>
 
-    <!-- TAB 2: QUESTION PAPER -->
-    <div id="tab-qp" class="tab-content">
-      <div class="card rendered-content">
-        <div style="text-align: right; margin-bottom: 12px;">
-          <button class="btn btn-primary" onclick="window.print()">🖨️ Print Question Paper Now</button>
-        </div>
+    <!-- ================= TAB 5: STUDENT QUESTION PAPER ================= -->
+    <div id="tab-qp" class="tab-panel">
+      <div class="content-card">
         <h1>SUMMATIVE ASSESSMENT - I (SA-1) EXAMINATION (2026-27)</h1>
 <h2>CLASS: VII | SUBJECT: COMPUTER SCIENCE</h2>
 <p><strong>Time Allowed:</strong> 2 Hours | <strong>Maximum Marks:</strong> 50 Marks</p>
@@ -1102,86 +1837,652 @@
       </div>
     </div>
 
-    <!-- TAB 3: OVERVIEW & BLUEPRINT -->
-    <div id="tab-overview" class="tab-content">
-      <div class="card">
-        <h2 style="color: var(--primary); margin-bottom: 12px;">📋 Summative Assessment - 1 Curriculum Blueprint</h2>
-        <p><strong>Subject:</strong> Computer Science</p>
-        <p><strong>Prescribed Syllabus:</strong> Click and Learn - 7 (Chapters 1 to 4 & Test Paper - 1)</p>
-        <p><strong>Date of Examination:</strong> 06-10-2026</p>
-        <p><strong>Total Marks:</strong> 50 Marks</p>
-        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
-        <h3 style="color: #38bdf8; margin-bottom: 8px;">Key High-Yield Topics:</h3>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
-          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Ch1: Excel Formulas</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Ch2: Advanced Excel</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Ch3: Animate Workspace</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Ch4: Animate Animation</span> <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid var(--card-border);">Test Paper-1</span>
+    <!-- ================= TAB 6: PRACTICE QUIZ ARENA ================= -->
+    <div id="tab-quiz" class="tab-panel">
+      <div class="quiz-score-banner">
+        <div>
+          <h2 style="font-size: 1.25rem; color: #fff; margin: 0;">🎮 Computer Science SA-1 Quiz Arena</h2>
+          <p style="margin: 3px 0 0; font-size: 0.85rem; color: var(--muted);">20 Practice Questions with instant feedback & explanations</p>
         </div>
-        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--card-border);">
-        <h3 style="color: #38bdf8; margin-bottom: 8px;">Official Documents Download:</h3>
-        <ul style="margin-left: 20px; line-height: 2;">
-          <li><a href="SA1_Computers_Master_Solutions.pdf" target="_blank" style="color: #38bdf8;">Complete Master Answer Key (PDF)</a></li>
-          <li><a href="SA1_Computers_Question_Paper.pdf" target="_blank" style="color: #38bdf8;">Formal Student Question Paper (PDF)</a></li>
-          <li><a href="SA1_Computers_Master_Solutions.docx" download style="color: #38bdf8;">Editable Master Solutions (DOCX)</a></li>
-          <li><a href="SA1_Computers_Question_Paper.docx" download style="color: #38bdf8;">Editable Question Paper (DOCX)</a></li>
-        </ul>
+        <div style="font-size: 1.1rem; font-weight: 700; color: #38bdf8;">
+          Score: <span id="quiz-score">0</span> / 20
+        </div>
+      </div>
+
+      <div id="quiz-list">
+        <!-- Rendered dynamically by JS -->
       </div>
     </div>
+
   </main>
 
-  <script>
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <div class="bottom-nav-inner">
+      <button class="bottom-nav-btn active" onclick="switchTab('lab3d')">
+        <span class="icon">🎮</span>
+        <span>3D Lab</span>
+      </button>
+      <button class="bottom-nav-btn" onclick="switchTab('visuals')">
+        <span class="icon">📊</span>
+        <span>Visuals</span>
+      </button>
+      <button class="bottom-nav-btn" onclick="switchTab('mindmaps')">
+        <span class="icon">🧠</span>
+        <span>Mind Map</span>
+      </button>
+      <button class="bottom-nav-btn" onclick="switchTab('solutions')">
+        <span class="icon">📘</span>
+        <span>Answers</span>
+      </button>
+      <button class="bottom-nav-btn" onclick="switchTab('qp')">
+        <span class="icon">📝</span>
+        <span>Exam QP</span>
+      </button>
+      <button class="bottom-nav-btn" onclick="switchTab('quiz')">
+        <span class="icon">🎯</span>
+        <span>Quiz</span>
+      </button>
+    </div>
+  </nav>
 
-      if (tabId === 'master') {
-        document.querySelectorAll('.tab-btn')[0].classList.add('active');
-        document.getElementById('tab-master').classList.add('active');
-      } else if (tabId === 'qp') {
-        document.querySelectorAll('.tab-btn')[1].classList.add('active');
-        document.getElementById('tab-qp').classList.add('active');
-      } else if (tabId === 'overview') {
-        document.querySelectorAll('.tab-btn')[2].classList.add('active');
-        document.getElementById('tab-overview').classList.add('active');
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // Tab Switching Logic
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab').forEach(t => {
+        t.classList.toggle('active', t.getAttribute('data-tab') === tabId);
+      });
+      document.querySelectorAll('.bottom-nav-btn').forEach(b => {
+        const txt = b.innerText.toLowerCase();
+        b.classList.toggle('active', 
+          (tabId === 'lab3d' && txt.includes('3d')) ||
+          (tabId === 'visuals' && txt.includes('visual')) ||
+          (tabId === 'mindmaps' && txt.includes('mind')) ||
+          (tabId === 'solutions' && txt.includes('answer')) ||
+          (tabId === 'qp' && txt.includes('exam')) ||
+          (tabId === 'quiz' && txt.includes('quiz'))
+        );
+      });
+      document.querySelectorAll('.tab-panel').forEach(p => {
+        p.classList.toggle('active', p.id === 'tab-' + tabId);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (tabId === 'lab3d' && window.renderer) {
+        window.onResize();
       }
     }
 
-    function filterContent() {
-      const query = document.getElementById('masterSearch').value.toLowerCase();
-      const content = document.getElementById('masterContent');
-      const paragraphs = content.querySelectorAll('p, li, tr, blockquote');
-      
-      paragraphs.forEach(el => {
-        if (!query || el.innerText.toLowerCase().includes(query)) {
-          el.style.display = '';
-        } else {
-          el.style.display = 'none';
+    function jumpToSection(secId) {
+      switchTab('solutions');
+      setTimeout(() => {
+        const el = document.getElementById(secId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+      }, 150);
+    }
+
+    // Mindmap Expand / Collapse
+    let mmExpanded = true;
+    function expandAllMindmap() {
+      ['branch-ch1-nodes', 'branch-ch1-lines', 'branch-ch2-nodes', 'branch-ch2-lines',
+       'branch-ch3-nodes', 'branch-ch3-lines', 'branch-ch4-nodes', 'branch-ch4-lines'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'block';
+      });
+      mmExpanded = true;
+    }
+    function collapseAllMindmap() {
+      ['branch-ch1-nodes', 'branch-ch1-lines', 'branch-ch2-nodes', 'branch-ch2-lines',
+       'branch-ch3-nodes', 'branch-ch3-lines', 'branch-ch4-nodes', 'branch-ch4-lines'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+      mmExpanded = false;
+    }
+
+    // Web Speech API Voice synthesis
+    let currentUtterance = null;
+    let speakingBtn = null;
+    function speakText(btn, text) {
+      if ('speechSynthesis' in window) {
+        if (window.speechSynthesis.speaking) {
+          window.speechSynthesis.cancel();
+          if (speakingBtn) {
+            speakingBtn.classList.remove('speaking');
+            speakingBtn.innerHTML = '🔊 Listen';
+          }
+          if (speakingBtn === btn) {
+            speakingBtn = null;
+            return;
+          }
+        }
+        const clean = text.replace(/[*_#`]/g, '');
+        const utter = new SpeechSynthesisUtterance(clean);
+        utter.rate = 0.95;
+        utter.pitch = 1.0;
+        utter.onend = () => {
+          btn.classList.remove('speaking');
+          btn.innerHTML = '🔊 Listen';
+          speakingBtn = null;
+        };
+        utter.onerror = () => {
+          btn.classList.remove('speaking');
+          btn.innerHTML = '🔊 Listen';
+          speakingBtn = null;
+        };
+        btn.classList.add('speaking');
+        btn.innerHTML = '⏹️ Stop';
+        speakingBtn = btn;
+        window.speechSynthesis.speak(utter);
+      } else {
+        alert('Text-to-speech is not supported by your browser.');
+      }
+    }
+
+    // ================= THREE.JS 3D LAB =================
+    let scene, camera, renderer, controls, activeGroup;
+    let isAutoRotate = true;
+    let currentModelName = 'motherboard';
+    let isExploded = false;
+
+    function init3D() {
+      const container = document.querySelector('.lab-viewport');
+      const canvas = document.getElementById('three-canvas');
+      
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x070c18);
+
+      camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 15, 25);
+
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+      scene.add(ambientLight);
+
+      const dirLight = new THREE.DirectionalLight(0x38bdf8, 1.2);
+      dirLight.position.set(15, 25, 15);
+      scene.add(dirLight);
+
+      const pointLight = new THREE.PointLight(0x10b981, 1.5, 50);
+      pointLight.position.set(-10, 10, -10);
+      scene.add(pointLight);
+
+      // Grid Floor
+      const grid = new THREE.GridHelper(30, 30, 0x1e3a8a, 0x0f172a);
+      grid.position.y = -4;
+      scene.add(grid);
+
+      loadMotherboardModel();
+
+      window.addEventListener('resize', onResize);
+      animate();
+    }
+
+    function onResize() {
+      const container = document.querySelector('.lab-viewport');
+      if (!container || !renderer) return;
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if (controls) controls.update();
+      if (activeGroup && isAutoRotate) {
+        activeGroup.rotation.y += 0.005;
+      }
+      if (renderer && scene && camera) {
+        renderer.render(scene, camera);
+      }
+    }
+
+    function clearActiveModel() {
+      if (activeGroup) {
+        scene.remove(activeGroup);
+        activeGroup = null;
+      }
+    }
+
+    // Model 1: Motherboard & CPU
+    function loadMotherboardModel() {
+      clearActiveModel();
+      activeGroup = new THREE.Group();
+
+      // Main PCB Board
+      const pcbGeo = new THREE.BoxGeometry(16, 0.5, 16);
+      const pcbMat = new THREE.MeshStandardMaterial({ color: 0x064e3b, roughness: 0.4 });
+      const pcb = new THREE.Mesh(pcbGeo, pcbMat);
+      activeGroup.add(pcb);
+
+      // CPU Socket
+      const cpuBaseGeo = new THREE.BoxGeometry(4.5, 0.4, 4.5);
+      const cpuBaseMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, metalness: 0.8 });
+      const cpuBase = new THREE.Mesh(cpuBaseGeo, cpuBaseMat);
+      cpuBase.position.set(0, 0.45, 0);
+      activeGroup.add(cpuBase);
+
+      // CPU Heatsink Fins
+      const heatsinkGroup = new THREE.Group();
+      heatsinkGroup.name = "heatsink";
+      for (let i = 0; i < 7; i++) {
+        const finGeo = new THREE.BoxGeometry(4, 2, 0.2);
+        const finMat = new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.9, roughness: 0.2 });
+        const fin = new THREE.Mesh(finGeo, finMat);
+        fin.position.set(0, 1.6, -1.5 + (i * 0.5));
+        heatsinkGroup.add(fin);
+      }
+      activeGroup.add(heatsinkGroup);
+
+      // RAM Slots & Sticks
+      for (let r = 0; r < 2; r++) {
+        const slotGeo = new THREE.BoxGeometry(0.5, 0.4, 9);
+        const slotMat = new THREE.MeshStandardMaterial({ color: 0x0f172a });
+        const slot = new THREE.Mesh(slotGeo, slotMat);
+        slot.position.set(4 + (r * 1.5), 0.4, 0);
+        activeGroup.add(slot);
+
+        const ramStickGeo = new THREE.BoxGeometry(0.3, 1.8, 8.5);
+        const ramStickMat = new THREE.MeshStandardMaterial({ color: 0x0284c7, metalness: 0.5 });
+        const ram = new THREE.Mesh(ramStickGeo, ramStickMat);
+        ram.position.set(4 + (r * 1.5), 1.2, 0);
+        activeGroup.add(ram);
+      }
+
+      // PCIe Slot & Expansion Card
+      const pcieGeo = new THREE.BoxGeometry(9, 0.4, 0.6);
+      const pcieMat = new THREE.MeshStandardMaterial({ color: 0x1e293b });
+      const pcie = new THREE.Mesh(pcieGeo, pcieMat);
+      pcie.position.set(-2, 0.4, 5);
+      activeGroup.add(pcie);
+
+      // GPU Card
+      const gpuGeo = new THREE.BoxGeometry(8.5, 2.5, 0.3);
+      const gpuMat = new THREE.MeshStandardMaterial({ color: 0xd97706, roughness: 0.3 });
+      const gpu = new THREE.Mesh(gpuGeo, gpuMat);
+      gpu.position.set(-2, 1.6, 5);
+      activeGroup.add(gpu);
+
+      // Capacitors
+      for (let c = 0; c < 5; c++) {
+        const capGeo = new THREE.CylinderGeometry(0.3, 0.3, 0.8, 16);
+        const capMat = new THREE.MeshStandardMaterial({ color: 0x38bdf8, metalness: 0.8 });
+        const cap = new THREE.Mesh(capGeo, capMat);
+        cap.position.set(-3.5 + (c * 0.8), 0.6, -3);
+        activeGroup.add(cap);
+      }
+
+      scene.add(activeGroup);
+      document.getElementById('model-desc').innerHTML = '<strong>Model: Computer Motherboard Architecture</strong><br>CPU Chipset, Heatsink cooling fins, RAM slots, and GPU expansion bus. Drag to inspect in 360°.';
+      document.getElementById('model-action-btn').innerText = '⚙️ Explode Heatsink';
+    }
+
+    // Model 2: 3D Excel Bar Chart
+    function load3DChartModel() {
+      clearActiveModel();
+      activeGroup = new THREE.Group();
+
+      const data = [
+        { label: "Maths", val: 8, col: 0x38bdf8 },
+        { label: "Sci", val: 6, col: 0x10b981 },
+        { label: "Eng", val: 9, col: 0xf59e0b },
+        { label: "Comp", val: 10, col: 0xec4899 }
+      ];
+
+      // Base Grid Plane
+      const baseGeo = new THREE.BoxGeometry(16, 0.4, 12);
+      const baseMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.5 });
+      const base = new THREE.Mesh(baseGeo, baseMat);
+      activeGroup.add(base);
+
+      // 3D Columns
+      data.forEach((d, idx) => {
+        const colGeo = new THREE.BoxGeometry(2, d.val, 2);
+        const colMat = new THREE.MeshStandardMaterial({ color: d.col, metalness: 0.3, roughness: 0.2 });
+        const col = new THREE.Mesh(colGeo, colMat);
+        col.position.set(-5 + (idx * 3.4), d.val / 2 + 0.2, 0);
+        activeGroup.add(col);
+
+        // Cap Top
+        const topGeo = new THREE.BoxGeometry(2.1, 0.2, 2.1);
+        const topMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
+        const top = new THREE.Mesh(topGeo, topMat);
+        top.position.set(-5 + (idx * 3.4), d.val + 0.3, 0);
+        activeGroup.add(top);
+      });
+
+      scene.add(activeGroup);
+      document.getElementById('model-desc').innerHTML = '<strong>Model: 3D Excel Bar & Column Chart</strong><br>Vertical columns representing data series (Marks). Height indicates magnitude along Y-axis.';
+      document.getElementById('model-action-btn').innerText = '📊 Randomize Data';
+    }
+
+    // Model 3: Adobe Animate Layer Stack
+    function loadLayersModel() {
+      clearActiveModel();
+      activeGroup = new THREE.Group();
+
+      // Stage (Central Canvas)
+      const stageGeo = new THREE.BoxGeometry(12, 0.2, 8);
+      const stageMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.1 });
+      const stage = new THREE.Mesh(stageGeo, stageMat);
+      stage.position.y = -2;
+      activeGroup.add(stage);
+
+      // Transparent Stacked Acrylic Layers
+      const layerColors = [0x38bdf8, 0x10b981, 0xf43f5e];
+      layerColors.forEach((col, idx) => {
+        const lGeo = new THREE.BoxGeometry(11, 0.1, 7.5);
+        const lMat = new THREE.MeshStandardMaterial({ 
+          color: col, 
+          transparent: true, 
+          opacity: 0.45,
+          roughness: 0.1,
+          metalness: 0.1
+        });
+        const layer = new THREE.Mesh(lGeo, lMat);
+        layer.position.y = 0 + (idx * 2.2);
+        layer.name = `layer_${idx}`;
+        activeGroup.add(layer);
+
+        // Keyframe Marker Pin
+        const pinGeo = new THREE.SphereGeometry(0.35, 16, 16);
+        const pinMat = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: col });
+        const pin = new THREE.Mesh(pinGeo, pinMat);
+        pin.position.set(-3 + (idx * 3), 0.3 + (idx * 2.2), 0);
+        activeGroup.add(pin);
+      });
+
+      scene.add(activeGroup);
+      document.getElementById('model-desc').innerHTML = '<strong>Model: Adobe Animate Transparent Layer Stack</strong><br>Visualizes layers stacked on the Stage. Each layer isolates vector graphics without interfering.';
+      document.getElementById('model-action-btn').innerText = '↕️ Toggle Separation';
+    }
+
+    // Model 4: Logic Gates
+    function loadLogicGatesModel() {
+      clearActiveModel();
+      activeGroup = new THREE.Group();
+
+      // Gate Base Box
+      const gateGeo = new THREE.BoxGeometry(6, 1.2, 5);
+      const gateMat = new THREE.MeshStandardMaterial({ color: 0x1e3a8a, metalness: 0.5 });
+      const gate = new THREE.Mesh(gateGeo, gateMat);
+      activeGroup.add(gate);
+
+      // Input Terminals (Pins A & B)
+      const pinGeo = new THREE.CylinderGeometry(0.2, 0.2, 2.5, 16);
+      const pinMat = new THREE.MeshStandardMaterial({ color: 0xf59e0b, metalness: 0.9 });
+      const pinA = new THREE.Mesh(pinGeo, pinMat);
+      pinA.rotation.z = Math.PI / 2;
+      pinA.position.set(-4, 0, -1.2);
+      activeGroup.add(pinA);
+
+      const pinB = new THREE.Mesh(pinGeo, pinMat);
+      pinB.rotation.z = Math.PI / 2;
+      pinB.position.set(-4, 0, 1.2);
+      activeGroup.add(pinB);
+
+      // Output Terminal (Pin Q)
+      const pinQ = new THREE.Mesh(pinGeo, pinMat);
+      pinQ.rotation.z = Math.PI / 2;
+      pinQ.position.set(4, 0, 0);
+      activeGroup.add(pinQ);
+
+      // Glowing LED Indicator
+      const ledGeo = new THREE.SphereGeometry(0.6, 16, 16);
+      const ledMat = new THREE.MeshStandardMaterial({ color: 0x10b981, emissive: 0x10b981, emissiveIntensity: 0.8 });
+      const led = new THREE.Mesh(ledGeo, ledMat);
+      led.position.set(0, 1, 0);
+      led.name = "output_led";
+      activeGroup.add(led);
+
+      scene.add(activeGroup);
+      document.getElementById('model-desc').innerHTML = '<strong>Model: Digital Logic Gate (AND / OR)</strong><br>Binary input pins on left, processed logic core, and output LED indicator on top.';
+      document.getElementById('model-action-btn').innerText = '💡 Toggle Binary Signal';
+    }
+
+    function loadModel(modelName, btn) {
+      document.querySelectorAll('.lab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      currentModelName = modelName;
+      isExploded = false;
+      camera.position.set(0, 15, 25);
+      if (modelName === 'motherboard') loadMotherboardModel();
+      else if (modelName === 'chart3d') load3DChartModel();
+      else if (modelName === 'layers') loadLayersModel();
+      else if (modelName === 'logicgates') loadLogicGatesModel();
+    }
+
+    function toggleAutoRotate() {
+      isAutoRotate = !isAutoRotate;
+    }
+
+    function resetCamera() {
+      camera.position.set(0, 15, 25);
+      controls.target.set(0, 0, 0);
+      controls.update();
+    }
+
+    function triggerModelAction() {
+      if (currentModelName === 'motherboard') {
+        const hs = activeGroup.getObjectByName("heatsink");
+        if (hs) {
+          isExploded = !isExploded;
+          hs.position.y = isExploded ? 4.5 : 0;
+        }
+      } else if (currentModelName === 'chart3d') {
+        load3DChartModel(); // randomized height
+      } else if (currentModelName === 'layers') {
+        isExploded = !isExploded;
+        for (let i = 0; i < 3; i++) {
+          const l = activeGroup.getObjectByName(`layer_${i}`);
+          if (l) l.position.y = isExploded ? i * 4 : i * 2.2;
+        }
+      } else if (currentModelName === 'logicgates') {
+        const led = activeGroup.getObjectByName("output_led");
+        if (led) {
+          const isGreen = led.material.color.getHex() === 0x10b981;
+          led.material.color.setHex(isGreen ? 0xef4444 : 0x10b981);
+          led.material.emissive.setHex(isGreen ? 0xef4444 : 0x10b981);
+        }
+      }
+    }
+
+    // ================= PRACTICE QUIZ DATA =================
+    const quizQuestions = [
+      {
+        q: "1. Which symbol MUST every formula in Microsoft Excel begin with?",
+        opts: ["a. +", "b. =", "c. @", "d. #"],
+        ans: 1,
+        exp: "Every formula in Excel must begin with an equal sign (=). Without it, Excel treats the entry as plain text."
+      },
+      {
+        q: "2. The cell range B2:E6 contains how many total cells?",
+        opts: ["a. 15", "b. 20", "c. 12", "d. 24"],
+        ans: 1,
+        exp: "Columns (B, C, D, E = 4) × Rows (2, 3, 4, 5, 6 = 5) = 4 × 5 = 20 cells."
+      },
+      {
+        q: "3. Which Excel function is used to find the highest numerical value in a range?",
+        opts: ["a. TOP()", "b. HIGH()", "c. MAX()", "d. LARGE()"],
+        ans: 2,
+        exp: "The MAX() function evaluates numeric ranges and returns the maximum (highest) value."
+      },
+      {
+        q: "4. In Excel, an Absolute reference is indicated by which special character?",
+        opts: ["a. Dollar sign ($)", "b. Percent sign (%)", "c. Ampersand (&)", "d. Hash (#)"],
+        ans: 0,
+        exp: "Absolute referencing locks both column and row using dollar signs (e.g., =$A$1)."
+      },
+      {
+        q: "5. What error code appears when an Excel column is too narrow to display the number?",
+        opts: ["a. #VALUE!", "b. #REF!", "c. #####", "d. #DIV/0!"],
+        ans: 2,
+        exp: "##### indicates that the cell column width is insufficient to display the numerical value."
+      },
+      {
+        q: "6. Which chart type represents data as horizontal bars?",
+        opts: ["a. Column Chart", "b. Bar Chart", "c. Line Chart", "d. Area Chart"],
+        ans: 1,
+        exp: "A Bar Chart plots data horizontally, whereas a Column Chart uses vertical columns."
+      },
+      {
+        q: "7. Which chart type is strictly limited to displaying only a single data series?",
+        opts: ["a. Column Chart", "b. Line Chart", "c. Pie Chart", "d. Scatter Chart"],
+        ans: 2,
+        exp: "A Pie Chart displays parts of a whole for only ONE data series at a time."
+      },
+      {
+        q: "8. The chart element that identifies each data series using colors or patterns is the:",
+        opts: ["a. Plot Area", "b. Legend", "c. Gridline", "d. Axis Title"],
+        ans: 1,
+        exp: "The Legend provides the key connecting colors and patterns to their corresponding data series."
+      },
+      {
+        q: "9. Arranging data in sequential ascending or descending order is called:",
+        opts: ["a. Filtering", "b. Sorting", "c. Formatting", "d. Grouping"],
+        ans: 1,
+        exp: "Sorting rearranges data sequentially without hiding any rows."
+      },
+      {
+        q: "10. What is the keyboard shortcut to apply or remove AutoFilter in Excel?",
+        opts: ["a. Ctrl + Shift + L", "b. Ctrl + F", "c. Alt + F4", "d. Ctrl + A"],
+        ans: 0,
+        exp: "Ctrl + Shift + L toggles AutoFilter dropdown funnels on and off."
+      },
+      {
+        q: "11. Which feature automatically changes the fill color of a cell based on rules you set?",
+        opts: ["a. Data Validation", "b. AutoSum", "c. Conditional Formatting", "d. AutoCorrect"],
+        ans: 2,
+        exp: "Conditional Formatting dynamically changes cell aesthetics based on specific condition thresholds."
+      },
+      {
+        q: "12. In Adobe Animate 2020, what is the central white drawing canvas called?",
+        opts: ["a. Pasteboard", "b. Stage", "c. Timeline", "d. Viewport"],
+        ans: 1,
+        exp: "The Stage is the white rectangular area where animations take place and get rendered."
+      },
+      {
+        q: "13. What is the gray workspace area surrounding the Stage in Adobe Animate?",
+        opts: ["a. Pasteboard", "b. Toolbox", "c. Library", "d. Margin"],
+        ans: 0,
+        exp: "The Pasteboard holds off-stage assets and work-in-progress objects."
+      },
+      {
+        q: "14. Which shortcut key is used to insert a new Keyframe on the Timeline in Adobe Animate?",
+        opts: ["a. F5", "b. F6", "c. F7", "d. F8"],
+        ans: 1,
+        exp: "F6 inserts a Keyframe (represented by a solid black circle signifying an action change)."
+      },
+      {
+        q: "15. Which shortcut key converts a selected drawing into a reusable Symbol?",
+        opts: ["a. F6", "b. F7", "c. F8", "d. F9"],
+        ans: 2,
+        exp: "Pressing F8 opens the Convert to Symbol dialog box."
+      },
+      {
+        q: "16. In Adobe Animate, what does 'Stroke' refer to?",
+        opts: ["a. Interior fill color", "b. Outer outline/border", "c. Shadow effect", "d. Font size"],
+        ans: 1,
+        exp: "Stroke refers to the perimeter border/outline; Fill refers to the interior color."
+      },
+      {
+        q: "17. What keyboard shortcut breaks apart text into individual editable letter shapes?",
+        opts: ["a. Ctrl + B", "b. Ctrl + K", "c. Ctrl + Shift + B", "d. Alt + B"],
+        ans: 0,
+        exp: "Ctrl + B (Break Apart) converts text and grouped objects into raw vector paths."
+      },
+      {
+        q: "18. Which panel in Adobe Animate stores reusable symbols, buttons, and sounds?",
+        opts: ["a. Properties Panel", "b. Library Panel", "c. Timeline Panel", "d. Tools Panel"],
+        ans: 1,
+        exp: "The Library panel (Ctrl + L) stores all reusable graphic symbols and sound media."
+      },
+      {
+        q: "19. The COUNT() function in Excel counts:",
+        opts: ["a. All non-empty cells", "b. Only cells containing text", "c. Only cells containing numbers", "d. Blank cells"],
+        ans: 2,
+        exp: "COUNT() strictly tallies cells that contain numerical values."
+      },
+      {
+        q: "20. What shortcut key activates AutoSum in Excel?",
+        opts: ["a. Alt + =", "b. Ctrl + S", "c. Shift + +", "d. Alt + S"],
+        ans: 0,
+        exp: "Alt + = is the universal shortcut to quickly insert the =SUM() formula."
+      }
+    ];
+
+    let quizScore = 0;
+    const answered = new Set();
+
+    function renderQuiz() {
+      const container = document.getElementById('quiz-list');
+      if (!container) return;
+      container.innerHTML = '';
+
+      quizQuestions.forEach((item, qIdx) => {
+        const card = document.createElement('div');
+        card.className = 'quiz-card';
+        card.id = `qcard-${qIdx}`;
+
+        let optsHtml = '';
+        item.opts.forEach((opt, oIdx) => {
+          optsHtml += `<div class="quiz-opt" onclick="selectAnswer(${qIdx}, ${oIdx})">${opt}</div>`;
+        });
+
+        card.innerHTML = `
+          <h3>${item.q}</h3>
+          <div class="quiz-options">${optsHtml}</div>
+          <div class="quiz-feedback" id="feedback-${qIdx}"></div>
+        `;
+        container.appendChild(card);
       });
     }
 
-    // Text to speech utility
-    // Strict English Text-to-Speech Engine
-    function speakText(text) {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        // Strip HTML and Telugu characters to ensure clean English pronunciation
-        const cleanText = text.replace(/<[^>]*>/g, '').replace(/[\u0C00-\u0C7F]/g, '');
-        const utterance = new SpeechSynthesisUtterance(cleanText);
-        utterance.rate = 0.92;
-        utterance.pitch = 1.0;
+    function selectAnswer(qIdx, selectedOptIdx) {
+      if (answered.has(qIdx)) return;
+      answered.add(qIdx);
 
-        // Force selection of natural English voices
-        const voices = window.speechSynthesis.getVoices();
-        const preferredVoice = voices.find(v => (v.lang === 'en-IN' || v.lang === 'en-US' || v.lang === 'en-GB') && 
-          (v.name.includes('Natural') || v.name.includes('Neural') || v.name.includes('Online') || v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('Neerja')))
-          || voices.find(v => v.lang.startsWith('en'));
-        
-        if (preferredVoice) {
-          utterance.voice = preferredVoice;
-        }
-        utterance.lang = 'en-US';
-        window.speechSynthesis.speak(utterance);
+      const item = quizQuestions[qIdx];
+      const card = document.getElementById(`qcard-${qIdx}`);
+      const options = card.querySelectorAll('.quiz-opt');
+      const feedback = document.getElementById(`feedback-${qIdx}`);
+
+      if (selectedOptIdx === item.ans) {
+        quizScore++;
+        options[selectedOptIdx].classList.add('correct');
+        feedback.style.display = 'block';
+        feedback.style.background = 'rgba(16, 185, 129, 0.2)';
+        feedback.style.border = '1px solid #10b981';
+        feedback.style.color = '#a7f3d0';
+        feedback.innerHTML = `<strong>✅ Correct!</strong> ${item.exp}`;
+      } else {
+        options[selectedOptIdx].classList.add('wrong');
+        options[item.ans].classList.add('correct');
+        feedback.style.display = 'block';
+        feedback.style.background = 'rgba(239, 68, 68, 0.2)';
+        feedback.style.border = '1px solid #ef4444';
+        feedback.style.color = '#fca5a5';
+        feedback.innerHTML = `<strong>❌ Incorrect.</strong> Correct Answer: <em>${item.opts[item.ans]}</em><br>${item.exp}`;
       }
+
+      document.getElementById('quiz-score').innerText = quizScore;
     }
+
+    // Initialization on load
+    window.addEventListener('DOMContentLoaded', () => {
+      init3D();
+      renderQuiz();
+    });
   </script>
 </body>
 </html>
