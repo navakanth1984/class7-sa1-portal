@@ -159,97 +159,73 @@
 ### Section A: Answer the following questions in one or two short sentences:
 
 **Q1. How does oxygen contribute to combustion?**
-> **Answer:** Oxygen acts as an essential supporter of combustion; it chemically combines with the fuel at ignition temperature to sustain the oxidation reaction that releases heat and light.
+> **Answer:** Oxygen is needed for burning. It helps the fuel catch fire and keeps the flame burning.
+> - **తెలుగు వివరణ:** ఆక్సిజన్ దహనానికి (మండటానికి) సహాయపడుతుంది. ఆక్సిజన్ లేకపోతే ఏ వస్తువూ మండదు.
 
 **Q2. What is crystallisation?**
-> **Answer:** Crystallisation is the physical process of obtaining pure, geometric solid crystals from a hot, saturated solution upon cooling or evaporation.
+> **Answer:** Crystallisation is the process of getting pure, solid crystals from a liquid solution when it cools down or evaporates.
+> - **తెలుగు వివరణ:** ఒక ద్రావణం చల్లబడినప్పుడు లేదా ఆవిరైనప్పుడు దాని నుండి స్వచ్ఛమైన స్పటికాలను పొందే పద్ధతిని స్పటికీకరణ అంటారు.
 
 **Q3. How does rusting occur in iron?**
-> **Answer:** Rusting occurs when iron metal is exposed simultaneously to atmospheric oxygen and water/moisture, forming reddish-brown hydrated ferric oxide ($Fe_2O_3 \cdot xH_2O$).
+> **Answer:** Rusting occurs when iron reacts with both oxygen (air) and moisture (water) to form a brown powdery substance called rust.
+> - **తెలుగు వివరణ:** ఇనుము గాలిలోని ఆక్సిజన్ మరియు తేమతో చర్య జరిపినప్పుడు గోధుమ రంగు తుప్పు ఏర్పడుతుంది.
 
 **Q4. Are the changes of water to ice and water to steam, physical or chemical? Explain. [NCERT]**
-> **Answer:** Both are **physical changes** because they only involve reversible changes in the physical state of matter (solid $\rightleftharpoons$ liquid $\rightleftharpoons$ gas); the chemical formula remains $H_2O$ and no new substance is formed.
+> **Answer:** Both are **physical changes** because only the form changes (liquid to solid or gas). No new substance is formed, and ice can melt back into water.
+> - **తెలుగు వివరణ:** నీరు మంచుగా లేదా ఆవిరిగా మారడం **భౌతిక మార్పు**. ఎందుకంటే ఇందులో కొత్త పదార్థం ఏదీ ఏర్పడదు; మంచును వేడి చేస్తే మళ్లీ నీరు వస్తుంది.
 
 **Q5. Is curdling of milk a physical or chemical change? Justify your statement.**
-> **Answer:** Curdling of milk is a **chemical change** because lactic acid bacteria (Lactobacillus) convert lactose sugar into lactic acid, permanently coagulating milk proteins into curd, which cannot be reversed back into milk.
+> **Answer:** Curdling of milk is a **chemical change** because a new substance (curd) with a sour taste is formed, and curd cannot be turned back into milk.
+> - **తెలుగు వివరణ:** పాలు పెరుగుగా మారడం **రసాయనిక మార్పు**. ఎందుకంటే ఇందులో పెరుగు అనే సరికొత్త పదార్థం ఏర్పడుతుంది మరియు పెరుగును మళ్లీ పాలుగా మార్చలేము.
 
 ---
 
-### Section B: Answer the following questions briefly in three to four sentences:
+### Section B: Answer the following questions briefly in three to four sentences (Kid-Friendly & Exam-Ready):
 
 **Q1. How do physical changes differ from chemical changes?**
 > **Answer:**
-> - In a **physical change**, only physical attributes (size, shape, state) change; no new chemical substance is formed, and the change is usually reversible (e.g., melting ice).
-> - In a **chemical change**, one or more entirely new substances with distinct chemical properties are formed, chemical bonds are altered, and the change is permanent and irreversible (e.g., burning wood).
+> 1. In a **physical change**, no new substance is formed (e.g., melting of ice or tearing paper).
+> 2. It only changes the shape, size, or state of matter, and it is usually reversible.
+> 3. In a **chemical change**, an entirely new substance is formed with new properties (e.g., burning wood or cooking food).
+> 4. Chemical changes are permanent and cannot be reversed easily.
+> - **తెలుగు వివరణ:**
+>   - **భౌతిక మార్పు:** కొత్త పదార్థం ఏదీ ఏర్పడదు (ఉదా: మంచు కరగడం). ఇది తాత్కాలికమైనది మరియు వెనక్కి తిప్పవచ్చు.
+>   - **రసాయనిక మార్పు:** సరికొత్త పదార్థం ఏర్పడుతుంది (ఉదా: కలప మండడం). ఇది శాశ్వతమైనది మరియు వెనక్కి మార్చలేము.
 
 **Q2. What are the signs that a chemical change has occurred?**
-> **Answer:** The key observable signs of a chemical change include:
-> 1. Evolution of a gas (effervescence or bubbling).
-> 2. Change in colour (e.g., copper sulphate changing from blue to green when iron is added).
-> 3. Production or absorption of heat and light (temperature change).
-> 4. Formation of an insoluble precipitate or change in smell/odour.
+> **Answer:**
+> We can tell a chemical change has happened by observing these simple signs:
+> 1. **Gas bubbles or fizzing** are produced (e.g., baking soda mixed with vinegar).
+> 2. **Change in colour** takes place (e.g., an iron nail turning reddish-brown).
+> 3. **Heat or light** is given off or taken in (e.g., a matchstick burning).
+> 4. A **new smell** appears or an insoluble solid (precipitate) is formed.
+> - **తెలుగు వివరణ:**
+>   - రసాయనిక మార్పు జరిగినప్పుడు వాయువు బుడగలు రావడం, రంగు మారడం, ఉష్ణం లేదా వెలుగు రావడం మరియు కొత్త వాసన రావడం వంటి గుర్తులు కనిపిస్తాయి.
 
 **Q3. What role does heat play in combustion?**
-> **Answer:** Heat provides the necessary activation energy to raise the temperature of the combustible fuel to its **ignition temperature** (the lowest temperature at which a substance catches fire). Once ignition temperature is attained, the exothermic reaction becomes self-sustaining as long as fuel and oxygen are supplied.
+> **Answer:**
+> 1. Heat warms up the fuel to its **ignition temperature** (the minimum heat needed to catch fire).
+> 2. Without heat, a substance cannot start burning, even if air is present.
+> 3. Once burning begins, the reaction produces its own heat to keep the fire going.
+> - **తెలుగు వివరణ:**
+>   - ఏదైనా పదార్థం మండాలంటే దానికి తగినంత వేడి (జ్వలన ఉష్ణోగ్రత) అవసరం. వేడి లేకుండా నిప్పు రాజుకోదు. మండడం మొదలయ్యాక అది స్వయంగా వేడిని విడుదల చేస్తూ మండుతుంది.
 
 **Q4. How does crystallisation occur in nature or industry?**
-> **Answer:** In nature, crystallisation occurs when mineral-rich hot magma cools slowly deep within the Earth or when seawater evaporates in shallow lagoons forming common salt beds. In industry, it is widely used to purify pharmaceuticals, extract refined table sugar from sugarcane juice, and manufacture pure copper sulphate crystals.
+> **Answer:**
+> 1. **In Nature:** Seawater collects in shallow pits, and when the sun evaporates the water, pure common salt crystals are left behind.
+> 2. **In Industry:** Sugar mills cool down hot, concentrated sugarcane syrup to form clean sugar crystals.
+> 3. It is also used in science labs to obtain pure crystals of copper sulphate.
+> - **తెలుగు వివరణ:**
+>   - ప్రకృతిలో సముద్రపు నీరు ఎండకు ఆవిరైనప్పుడు ఉప్పు స్పటికాలు ఏర్పడతాయి. కర్మాగారాలలో వేడి చెరుకు రసాన్ని చల్లబరిచి స్వచ్ఛమైన పంచదార స్పటికాలను తయారుచేస్తారు.
 
 **Q5. Natural factors, such as wind, rain, etc., help in the formation of soil from rocks. Is this change physical or chemical and why? [NCERT]**
-> **Answer:** Formation of soil involves **both physical and chemical weathering**:
-> - *Physical weathering:* Wind, freezing water, and temperature fluctuations physically crack and break large rocks into smaller mineral grains without changing chemical composition.
-> - *Chemical weathering:* Rainwater containing dissolved atmospheric gases ($CO_2$, acid rain) reacts chemically with rock minerals, breaking them down into new clay minerals and soluble salts.
-
----
-
-### Section C: Answer the following questions in five to seven complete sentences:
-
-**Q1. Describe the steps involved in combustion with an example.**
 > **Answer:**
-> 1. **Availability of Fuel & Supporter:** Combustible fuel (e.g., a candle wick saturated with wax or magnesium ribbon) is placed in contact with atmospheric oxygen.
-> 2. **Application of Heat:** An external heat source (e.g., a matchstick flame) heats the fuel until it reaches its specific ignition temperature.
-> 3. **Vaporisation & Oxidation:** The fuel vaporises and reacts vigorously with oxygen molecules in an exothermic reaction.
-> 4. **Energy Release:** Chemical potential energy is transformed into radiant energy, emitting visible light and thermal energy (heat).
-> 5. **Formation of By-products:** New chemical compounds are formed, such as carbon dioxide ($CO_2$), water vapour ($H_2O$), and ash residues. For example, burning magnesium: $2Mg + O_2 \rightarrow 2MgO$ with dazzling white brilliance.
-
-**Q2. How does rusting weaken iron? What methods can prevent it?**
-> **Answer:**
-> - Rusting converts strong, tough metallic iron into hydrated ferric oxide ($Fe_2O_3 \cdot xH_2O$), which is a porous, brittle, and flaky powder.
-> - As rust flakes off, the underlying fresh iron layer is repeatedly exposed to moist air, causing continuous progressive erosion that weakens structural strength of bridges, ships, railway tracks, and buildings.
-> - **Methods of Prevention:**
->   1. **Barrier Protection (Painting/Greasing):** Applying a coat of paint, grease, or oil shields iron surfaces from direct contact with air and moisture.
->   2. **Galvanisation:** Depositing a protective sacrificial coating of zinc metal over iron; zinc corrodes sacrificially to preserve the iron underneath.
->   3. **Electroplating:** Coating iron with non-corrosive metals like chromium or nickel.
->   4. **Alloying:** Melting iron with carbon, chromium, and nickel to manufacture **Stainless Steel**, which does not rust.
-
-**Q3. Explain different types of changes that happen around us.**
-> **Answer:**
-> 1. **Physical Changes:** Changes affecting only state, size, or shape without forming new substances (e.g., tearing paper, boiling water).
-> 2. **Chemical Changes:** Changes resulting in the formation of new substances with distinct identities (e.g., curdling milk, rusting iron).
-> 3. **Reversible Changes:** Changes that can be undone to obtain original materials (e.g., stretching a rubber band, freezing water).
-> 4. **Irreversible Changes:** Changes that permanently alter matter and cannot be undone (e.g., burning paper, baking a cake).
-> 5. **Periodic vs Non-Periodic Changes:** Changes that repeat at regular intervals (phases of moon) versus irregular events (earthquakes).
-> 6. **Slow vs Fast Changes:** Changes taking months/years (rusting, weathering) versus instantaneous changes (fireworks explosion).
-
-**Q4. Define reversible and irreversible changes with suitable examples.**
-> **Answer:**
-> - **Reversible Changes:** A change in which the system can be restored back to its original state and form by reversing the conditions (such as temperature or pressure). Examples include:
->   - Melting of ice into water, which can be re-frozen into ice by lowering temperature.
->   - Stretching a rubber band, which returns to its original length when the applied force is released.
->   - Dissolving sugar in water, where pure sugar crystals can be recovered through evaporation.
-> - **Irreversible Changes:** A change in which the original substance cannot be retrieved by any physical means once the transformation has occurred. Examples include:
->   - Burning of wood or paper, which yields ash and gases that cannot be reassembled into wood.
->   - Cooking or boiling an egg, where proteins permanently denature and coagulate.
->   - Rusting of iron into hydrated iron oxide.
-
-**Q5. Categorisation Question (Venn Diagram / Areas A, B, C):**
-> *Classify: Burning of a candle; Tearing of paper; Rusting; Curdling of milk; Ripening of fruits; Melting of ice; Folding of clothes; Burning of magnesium; Mixing baking soda with vinegar.*
->
-> | Category | Changes Included | Scientific Rationale |
-> | :--- | :--- | :--- |
-> | **Area A: Physical Changes Only** | 1. Tearing of paper<br>2. Melting of ice<br>3. Folding of clothes | Only shape, size, or physical state changes; no new substance is formed; molecular composition remains identical. |
-> | **Area B: Chemical Changes Only** | 1. Rusting of iron<br>2. Curdling of milk<br>3. Ripening of fruits<br>4. Burning of magnesium<br>5. Mixing baking soda with vinegar | New substances with entirely different chemical properties are produced; irreversible chemical reactions take place. |
-> | **Area C: Both Physical & Chemical Changes** | **Process of burning a candle** | **Physical:** Melting of solid wax to liquid and vaporisation.<br>**Chemical:** Combustion of wax vapour in oxygen to yield $CO_2$, $H_2O$, heat, and light. |
+> Soil formation involves **both physical and chemical changes**:
+> 1. **Physical change:** Strong winds and rushing rainwater break large rocks into small sand grains without changing what they are made of.
+> 2. **Chemical change:** Rainwater and acids in the air react with minerals inside the rocks, breaking them down into new clay and rich soil minerals.
+> - **తెలుగు వివరణ:**
+>   - నేల ఏర్పడటంలో **భౌతిక మరియు రసాయనిక మార్పులు రెండూ** ఉంటాయి.
+>   - గాలి, నీటి ప్రవాహం రాళ్లను పగలగొట్టడం భౌతిక మార్పు; వర్షపు నీరు రాళ్లలోని ఖనిజాలతో చర్య జరిపి మట్టిగా మార్చడం రసాయనిక మార్పు.
 
 ---
 
@@ -440,90 +416,72 @@
 ### Section A: Answer the following questions in one or two short sentences:
 
 **Q1. What is adolescence and what age range does it cover?**
-> **Answer:** Adolescence is the transitional developmental period between childhood and adulthood, covering the age span of **11 to 19 years**.
+> **Answer:** Adolescence is the growing-up stage between childhood and adulthood. It covers the ages of **11 to 19 years** (the teenage years).
+> - **తెలుగు వివరణ:** కౌమారదశ అంటే బాల్యం నుండి యవ్వనానికి మారే ఎదుగుదల కాలం. ఇది **11 నుండి 19 సంవత్సరాల** మధ్య ఉంటుంది.
 
 **Q2. What is puberty and why is it important in adolescence?**
-> **Answer:** Puberty is the physiological stage within adolescence during which sex organs mature and the human body becomes capable of sexual reproduction.
+> **Answer:** Puberty is the time during adolescence when the body physically matures and becomes capable of reproduction.
+> - **తెలుగు వివరణ:** కౌమారదశలో శరీరం పరిపక్వత చెంది ప్రత్యుత్పత్తికి సిద్ధమయ్యే సమయాన్ని 'ప్యూబర్టీ' (యవ్వనారంభం) అంటారు.
 
 **Q3. Name two hormones that play a role in adolescent changes.**
 > **Answer:** **Testosterone** (in boys) and **Oestrogen** (in girls).
+> - **తెలుగు వివరణ:** అబ్బాయిలలో **టెస్టోస్టెరాన్**, అమ్మాయిలలో **ఈస్ట్రోజెన్** హార్మోన్లు మార్పులకు కారణం.
 
 **Q4. What is the primary function of Vitamin B12 in the body?**
-> **Answer:** Vitamin B12 is essential for healthy nerve tissue function, normal brain performance, and the production of healthy red blood cells (erythropoiesis).
+> **Answer:** Vitamin B12 helps in making healthy red blood cells and keeps the brain and nerves working properly.
+> - **తెలుగు వివరణ:** విటమిన్ B12 ఎర్ర రక్త కణాల తయారీకి మరియు నాడీ వ్యవస్థ సరిగ్గా పనిచేయడానికి సహాయపడుతుంది.
 
 **Q5. What is one important tip for ensuring online safety?**
-> **Answer:** Never share private personal information (passwords, phone numbers, home address, photos) with strangers online, and promptly report cyberbullying to trusted adults.
+> **Answer:** Never share private details (like passwords, phone numbers, or home address) with strangers online.
+> - **తెలుగు వివరణ:** ఇంటర్నెట్‌లో అపరిచితులతో పాస్‌వర్డ్‌లు, ఫోన్ నంబర్లు మరియు ఇంటి చిరునామా ఎప్పుడూ పంచుకోకూడదు.
 
 ---
 
-### Section B: Answer the following questions briefly in three to four sentences:
+### Section B: Answer the following questions briefly in three to four sentences (Kid-Friendly & Exam-Ready):
 
 **Q1. Explain two physical changes that occur during adolescence.**
 > **Answer:**
-> 1. **Sudden Increase in Height (Growth Spurt):** Long bones of arms and legs elongate rapidly under growth hormones, changing body proportions.
-> 2. **Development of Secondary Sexual Characteristics:** Boys develop facial hair and a deeper voice with an enlarged Adam's apple; girls develop breasts and experience widening of the pelvic girdle.
+> 1. **Sudden Increase in Height:** Arms and legs grow longer very rapidly during the growth spurt, making teenagers taller.
+> 2. **Body and Voice Changes:** Boys develop facial hair and a deeper voice with a visible Adam's apple, while girls develop breasts and wider hips.
+> - **తెలుగు వివరణ:**
+>   - 1. **ఎత్తు పెరగడం:** కాళ్లు, చేతుల ఎముకలు వేగంగా పెరిగి పిల్లలు చకచకా ఎత్తు పెరుగుతారు.
+>   - 2. **శరీరంలో మార్పులు:** అబ్బాయిలలో మీసాలు రావడం, గొంతు మారడం జరుగుతుంది; అమ్మాయిలలో శరీర ఆకృతి మారుతుంది.
 
 **Q2. Why is it important for girls to maintain menstrual hygiene?**
-> **Answer:** Maintaining menstrual hygiene (changing sanitary napkins every 4–6 hours, using clean water, safe disposal) prevents hazardous bacterial infections of the reproductive and urinary tracts. Poor hygiene can cause severe pelvic inflammatory diseases and long-term health complications.
+> **Answer:**
+> 1. Good menstrual hygiene protects the body from harmful bacterial and fungal infections.
+> 2. Changing sanitary pads every 4 to 6 hours prevents rashes, itching, and unpleasant body odour.
+> 3. Staying clean helps girls feel comfortable, healthy, and confident during school and daily activities.
+> - **తెలుగు వివరణ:**
+>   - పరిశుభ్రత పాటించడం వల్ల హానికరమైన ఇన్ఫెక్షన్లు రాకుండా ఉంటాయి. ప్రతి 4 నుండి 6 గంటలకు ప్యాడ్లు మార్చడం వల్ల ఆరోగ్యం, సౌకర్యం మరియు ఆత్మవిశ్వాసం లభిస్తాయి.
 
 **Q3. Mention two ways to prevent the abuse of harmful substances.**
 > **Answer:**
-> 1. **Developing Strong Assertiveness:** Learning to firmly say "NO" to peer pressure regarding drugs, alcohol, and tobacco.
-> 2. **Open Communication & Healthy Outlets:** Seeking guidance from parents, counselors, and teachers when stressed, and channeling energy into sports, music, or creative arts.
+> 1. **Learn to Say 'NO':** Firmly refuse if anyone or any friend pressures you to try cigarettes, tobacco, alcohol, or drugs.
+> 2. **Talk to Trusted Adults:** Share your problems and feelings with parents or teachers instead of hiding stress.
+> 3. **Engage in Healthy Hobbies:** Spend your free time in sports, outdoor games, music, or art.
+> - **తెలుగు వివరణ:**
+>   - 1. స్నేహితులు ఒత్తిడి తెచ్చినా ధైర్యంగా 'వద్దు (NO)' అని చెప్పడం నేర్చుకోవాలి.
+>   - 2. ఒత్తిడిగా అనిపించినప్పుడు తల్లిదండ్రులు లేదా ఉపాధ్యాయులతో మాట్లాడాలి. ఆటలు, హాబీలలో సమయం గడపాలి.
 
 **Q4. How does balanced nutrition contribute to healthy growth during adolescence?**
-> **Answer:** Because rapid cellular replication, tissue synthesis, and bone ossification take place during adolescence, a balanced diet provides proteins for muscle growth, calcium for bone density, carbohydrates for daily metabolic energy, and iron for building blood haemoglobin. Without proper nutrients, stunted growth, fatigue, and anaemia can occur.
+> **Answer:**
+> 1. Teenagers grow very fast and need a lot of energy and healthy food every day.
+> 2. **Proteins** (pulses, milk, eggs) build strong muscles, while **Calcium** makes bones grow long and tough.
+> 3. **Iron** (leafy vegetables, jaggery) builds healthy blood and prevents tiredness (anaemia).
+> 4. Eating a balanced diet keeps teenagers energetic, fit, and mentally sharp.
+> - **తెలుగు వివరణ:**
+>   - కౌమారదశలో శరీరం వేగంగా పెరుగుతుంది కాబట్టి పౌష్టికాహారం చాలా అవసరం. పాలు, పప్పులు కండరాలను బలంగా చేస్తాయి; కాల్షియం ఎముకలను దృఢపరుస్తుంది; ఆకుకూరలలోని ఐరన్ రక్తాన్ని పెంచి నీరసం రాకుండా కాపాడుతుంది.
 
 **Q5. Adolescents sometimes experience mood swings. On some days, they feel very energetic and happy, while on other days, they may feel low. What other behavioural changes are associated with this age? [NCERT]**
-> **Answer:** In addition to mood swings, adolescents often exhibit:
-> 1. Heightened self-consciousness and preoccupation with physical appearance.
-> 2. A strong drive for independence and peer acceptance, occasionally clashing with parental authority.
-> 3. Increased emotional sensitivity, curiosity, and abstract intellectual thinking.
-
----
-
-### Section C: Answer the following questions in five to seven complete sentences:
-
-**Q1. How do hormones influence puberty and physical growth during adolescence?**
 > **Answer:**
-> - Hormones act as biochemical signaling molecules that orchestrate the onset of puberty.
-> - The pituitary gland (master gland) secretes follicle-stimulating hormone (FSH) and luteinizing hormone (LH), which instruct the testes in boys to produce **testosterone** and the ovaries in girls to produce **oestrogen**.
-> - Testosterone triggers facial hair growth, muscular broadening of shoulders, deepening of the voice, and sperm production.
-> - Oestrogen stimulates breast tissue enlargement, widening of pelvic bones, and the commencement of ovulation and the menstrual cycle.
-> - Simultaneously, pituitary growth hormone promotes bone and tissue elongation, creating the characteristic adolescent growth spurt.
-
-**Q2. Describe the emotional and behavioural changes commonly seen during adolescence.**
-> **Answer:**
-> - Rapid hormonal surges directly interact with brain neurotransmitters, resulting in frequent emotional fluctuations or mood swings.
-> - Adolescents shift from childlike dependence toward establishing a distinct personal identity and seeking autonomy from adults.
-> - Peer relationships and social acceptance assume dominant importance, making adolescents sensitive to peer opinions and peer pressure.
-> - Cognitive capacity expands into abstract reasoning, critical thinking, idealism, and intense curiosity about the future.
-> - Insecurity or self-doubt regarding physical body changes and acne may arise, requiring empathetic reassurance and emotional support.
-
-**Q3. How can adolescents ensure their safety and positivity while using the internet?**
-> **Answer:**
-> - Practice strict digital privacy by setting social media accounts to private and never sharing sensitive information such as home addresses, school names, passwords, or personal financial details.
-> - Interact online only with verified, known friends and family members; avoid accepting friend requests or arranging in-person meetings with online strangers.
-> - Be polite and respectful in online conversations; never participate in trolling, derogatory comments, or forwarding unverified rumors.
-> - If subjected to cyberbullying or inappropriate content, take screenshots as evidence, block the perpetrator, and immediately inform parents or teachers.
-> - Set healthy screen-time limits to safeguard sleep quality, physical activity, and mental peace.
-
-**Q4. Why is it essential for teenagers to avoid drugs and alcohol?**
-> **Answer:**
-> - The adolescent brain is actively developing neural pathways for reasoning, judgment, and emotional regulation; addictive substances permanently impair cognitive faculties and memory.
-> - Drugs, tobacco (nicotine), and alcohol are highly addictive, trapping young individuals in cycles of dependence, severe financial distress, and criminal jeopardy.
-> - Chronic alcohol consumption causes severe liver cirrhosis and cardiovascular dysfunction; tobacco smoking irreversibly damages lungs, causing chronic respiratory diseases and lung cancer.
-> - Substance abuse ruins academic performance, strains family relationships, and induces severe psychiatric disorders such as depression, anxiety, and psychosis.
-> - The government's **Nasha Mukt Bharat Abhiyaan** emphasizes building a resilient, drug-free youth community to safeguard national progress.
-
-**Q5. Categorisation Table: Physical changes during adolescence:**
-> *(i) Change in voice, (ii) Development of breasts, (iii) Growth of moustache, (iv) Growth of facial hair, (v) Pimples on the face, (vi) Growth of hair in the pubic region, (vii) Growth of hair in armpits.*
->
-> | Category | Changes Occurring |
-> | :--- | :--- |
-> | **Changes Exclusive to Boys** | • Growth of moustache<br>• Growth of facial hair (beard)<br>• Significant deepening of voice (Adam's apple enlargement) |
-> | **Changes Exclusive to Girls** | • Development of breasts (mammary glands)<br>• Beginning of menstrual cycle (menarche) |
-> | **Changes Common to Both Boys & Girls** | • Growth of hair in armpits<br>• Growth of hair in the pubic region<br>• Pimples/acne on face due to active oil glands<br>• Rapid increase in height (growth spurt) |
+> Apart from mood swings, teenagers often show these natural behavioural changes:
+> 1. **Caring About Looks:** They pay more attention to their clothes, hairstyles, and physical appearance.
+> 2. **Focusing on Friends:** They enjoy spending time with friends and value their friends' opinions.
+> 3. **Wanting Independence:** They like to make their own choices and do things on their own.
+> 4. **Deeper Thinking:** They start thinking more about their future goals, hobbies, and ideas.
+> - **తెలుగు వివరణ:**
+>   - మానసిక మార్పులతో పాటు టీనేజర్లు తమ రూపం మరియు దుస్తులపై ఎక్కువ శ్రద్ధ పెడతారు, స్నేహితులతో ఎక్కువ సమయం గడపడానికి ఇష్టపడతారు, మరియు స్వతంత్రంగా ఆలోచించడం ప్రారంభిస్తారు. ఇవన్నీ ఎదుగుదలలో అత్యంత సహజమైన మార్పులు.
 
 ---
 
